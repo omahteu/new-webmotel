@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Poco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="https://osmaster.scriptphp.ru/assets/img/favicon.png">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="./css/matrix-style.css">
+    <link rel="stylesheet" href="./css/matrix-media.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/fullcalendar.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="./css/css.css" rel="stylesheet" type="text/css">
+    <link href="./css/css2.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/boxicons.min.css">
+
+</head>
+
+<body>
+    <!--top-Header-menu-->
+    <div class="navebarn">
+        <div id="user-nav" class="navbar navbar-inverse">
+            <ul class="nav" style="width: auto; margin: 0px;">
+                <li class="dropdown"> 
+                    <a href="https://osmaster.scriptphp.ru/index.php/mapos#" class="dropdown-toggle" data-toggle="dropdown" title="Meu Perfil">
+                        <i class="bx bx-user-circle iconN"></i>
+                        <span class="text"> Meu Perfil</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="">
+                            <a title="Meu Perfil" href="#">
+                                <span class="text">Meu Perfil</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="">
+                            <a title="Sair do Sistema" href="#">
+                                <i class="bx bx-log-out-circle"></i> 
+                                <span class="text">Sair do Sistema</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown"> <a href="https://osmaster.scriptphp.ru/index.php/mapos#" class="dropdown-toggle"
+                        data-toggle="dropdown" title="Relatórios"><i class="bx bx-chart iconN"></i><span class="text">
+                            Relatórios</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Quartos</a></li>
+                        <li><a href="#">Produtos</a></li>
+                        <li><a href="#">Ocupações</a></li>
+                        <li><a href="#">Saída de Produtos</a></li>
+                        <li><a href="#">Caixa</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"> <a href="https://osmaster.scriptphp.ru/index.php/mapos#" class="dropdown-toggle"
+                        data-toggle="dropdown" title="Configurações"><i class="bx bx-cog iconN"></i><span class="text">
+                            Configurações</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Quartos</a></li>
+                        <li><a href="#">Produtos</a></li>
+                        <li><a href="#">Informações Gerais</a></li>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Camareira</a></li>
+                        <li><a href="#">Pernoite</a></li>
+                        <li><a href="#">Cartões</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div> <!-- New User -->
+        <div id="userr"
+            style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
+            <div class="user-names userT0"> Bom dia, </div>
+            <div class="userT">admin</div>
+            <section style="display:block;position:absolute;right:10px">
+                <div class="profile">
+                    <div class="profile-img"> 
+                        <a href="#">
+                            <img src="./imagens/a2c0e016d91ff61639ec3d6cfea18e02.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div> <!-- End User -->
+    <!--start-top-serch-->
+    <div style="display: none" id="search">
+        <form action="https://osmaster.scriptphp.ru/index.php/mapos/pesquisar"> <input type="text" name="termo"
+                placeholder="Pesquisar..."> <button type="submit" class="tip-bottom" title=""
+                data-original-title="Pesquisar"><i class="fas fa-search fa-white"></i></button> </form>
+    </div>
+    <!--close-top-serch-->
+
+    <div id="content">
+        <!--start-top-serch-->
+        <div id="content-header">
+            <!-- New Bem-vindos -->
+            <div class="bemv">Dashboard</div>
+
+        </div>
+        <div class="container-flu">
+            <div class="row-fluid">
+                <div class="span12">
+                    <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="https://osmaster.scriptphp.ru/js/dist/excanvas.min.js"></script><![endif]-->
+
+                    <!--<script src="./js/fullcalendar.min.js"></script>-->
+                    <!--<script src="./js/pt-br.js"></script>-->
+                    <link href="./css/fullcalendar.min.css" rel="stylesheet">
+                    <link rel="stylesheet" type="text/css" href="./css/jquery.jqplot.min.css">
+                    <link rel="preconnect" href="https://fonts.googleapis.com/">
+                    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+                    <link href="./css/css2(1).css" rel="stylesheet">
+                    <link href="./css/css2(2).css" rel="stylesheet">
+                    <script src="./js/chart.min.js"></script>
+                    <!--Action boxes-->
+                    <ul class="cardBox">
+                        <li class="card">
+                            <div>
+                                <div class="numbers">Quartos</div>
+                                <div class="cardName">F1</div>
+                            </div> <a href="https://osmaster.scriptphp.ru/index.php/clientes">
+                                <div class="iconBx"> <i class="bx bx-group bx-border-circle"></i> </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <div>
+                                <div class="numbers">Produtos</div>
+                                <div class="cardName">F2</div>
+                            </div> <a href="https://osmaster.scriptphp.ru/index.php/produtos">
+                                <div class="iconBx"> <i class="bx bx-package bx-border-circle"></i> </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <div>
+                                <div class="numbers">Serviços</div>
+                                <div class="cardName">F3</div>
+                            </div> <a href="https://osmaster.scriptphp.ru/index.php/servicos">
+                                <div class="iconBx"> <i class="bx bx-stopwatch bx-border-circle"></i> </div>
+                            </a>
+                        </li>
+                        <li class="card">
+                            <div>
+                                <div class="numbers">Ordens</div>
+                                <div class="cardName">F4</div>
+                            </div> <a href="https://osmaster.scriptphp.ru/index.php/os">
+                                <div class="iconBx"> <i class="bx bx-spreadsheet bx-border-circle"></i> </div>
+                            </a>
+                        </li>
+                        <script src="./js/clock_time.js"></script>
+                        <div class="card-cl">
+                            <div class="clock-card">
+                                <div class="clock-flex"> <span class="num hour_num">07</span>
+                                    <div class="tit">Horas</div>
+                                </div> <span class="colun" id="colun-1">:</span>
+                                <div class="clock-flex"> <span class="num min_num">17</span>
+                                    <div class="tit">Minutos</div>
+                                </div>
+                                <!-- <span class="colun" id="colun-2">:</span> <div class="clock-flex"> <span class="num sec_num">00</span> <div class="tit">Segundos</div> </div> -->
+                                <div class="time_am_pm"> <span class="num am_pm">AM</span> </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <!--End-Action boxes-->
+                    <div class="row-fluid" style="margin-top: 0; display: flex">
+                        <div class="Sspan12">
+                            <div class="widget-box2">
+                                <div>
+                                    <h5 class="cardHeader">Agenda</h5>
+                                </div>
+                                <div class="widget-content">
+                                    <div id="source-calendar"
+                                        class="fc fc-media-screen fc-direction-ltr fc-theme-standard"
+                                        style="height: 500px;">
+                                        <div class="fc-header-toolbar fc-toolbar ">
+                                            <div class="fc-toolbar-chunk">
+                                                <h2 class="fc-toolbar-title">abril de 2022</h2>
+                                            </div>
+                                            <div class="fc-toolbar-chunk"></div>
+                                            <div class="fc-toolbar-chunk"><button disabled=""
+                                                    class="fc-today-button fc-button fc-button-primary"
+                                                    type="button">Hoje</button>
+                                                <div class="fc-button-group"><button
+                                                        class="fc-prev-button fc-button fc-button-primary" type="button"
+                                                        aria-label="prev"><span
+                                                            class="fc-icon fc-icon-chevron-left"></span></button><button
+                                                        class="fc-next-button fc-button fc-button-primary" type="button"
+                                                        aria-label="next"><span
+                                                            class="fc-icon fc-icon-chevron-right"></span></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="fc-view-harness fc-view-harness-active">
+                                            <div class="fc-daygrid fc-dayGridMonth-view fc-view">
+                                                <table class="fc-scrollgrid  fc-scrollgrid-liquid">
+                                                    <thead>
+                                                        <tr class="fc-scrollgrid-section fc-scrollgrid-section-header ">
+                                                            <td>
+                                                                <div class="fc-scroller-harness">
+                                                                    <div class="fc-scroller" style="overflow: hidden;">
+                                                                        <table class="fc-col-header "
+                                                                            style="width: 891px;">
+                                                                            <colgroup></colgroup>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th
+                                                                                        class="fc-col-header-cell fc-day fc-day-sun">
+                                                                                        <div
+                                                                                            class="fc-scrollgrid-sync-inner">
+                                                                                            <a
+                                                                                                class="fc-col-header-cell-cushion ">dom.</a>
+                                                                                        </div>
+                                                                                    </th>
+                                                                                    <th
+                                                                                        class="fc-col-header-cell fc-day fc-day-mon">
+                                                                                        <div
+                                                                                            class="fc-scrollgrid-sync-inner">
+                                                                                            <a
+                                                                                                class="fc-col-header-cell-cushion ">seg.</a>
+                                                                                        </div>
+                                                                                    </th>
+                                                                                    <th
+                                                                                        class="fc-col-header-cell fc-day fc-day-tue">
+                                                                                        <div
+                                                                                            class="fc-scrollgrid-sync-inner">
+                                                                                            <a
+                                                                                                class="fc-col-header-cell-cushion ">ter.</a>
+                                                                                        </div>
+                                                                                    </th>
+                                                                                    <th
+                                                                                        class="fc-col-header-cell fc-day fc-day-wed">
+                                                                                        <div
+                                                                                            class="fc-scrollgrid-sync-inner">
+                                                                                            <a
+                                                                                                class="fc-col-header-cell-cushion ">qua.</a>
+                                                                                        </div>
+                                                                                    </th>
+                                                                                    <th
+                                                                                        class="fc-col-header-cell fc-day fc-day-thu">
+                                                                                        <div
+                                                                                            class="fc-scrollgrid-sync-inner">
+                                                                                            <a
+                                                                                                class="fc-col-header-cell-cushion ">qui.</a>
+                                                                                        </div>
+                                                                                    </th>
+                                                                                    <th
+                                                                                        class="fc-col-header-cell fc-day fc-day-fri">
+                                                                                        <div
+                                                                                            class="fc-scrollgrid-sync-inner">
+                                                                                            <a
+                                                                                                class="fc-col-header-cell-cushion ">sex.</a>
+                                                                                        </div>
+                                                                                    </th>
+                                                                                    <th
+                                                                                        class="fc-col-header-cell fc-day fc-day-sat">
+                                                                                        <div
+                                                                                            class="fc-scrollgrid-sync-inner">
+                                                                                            <a
+                                                                                                class="fc-col-header-cell-cushion ">sáb.</a>
+                                                                                        </div>
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr
+                                                            class="fc-scrollgrid-section fc-scrollgrid-section-body  fc-scrollgrid-section-liquid">
+                                                            <td>
+                                                                <div
+                                                                    class="fc-scroller-harness fc-scroller-harness-liquid">
+                                                                    <div class="fc-scroller fc-scroller-liquid-absolute"
+                                                                        style="overflow: hidden auto;">
+                                                                        <div class="fc-daygrid-body fc-daygrid-body-balanced "
+                                                                            style="width: 891px;">
+                                                                            <table class="fc-scrollgrid-sync-table"
+                                                                                style="width: 891px; height: 391px;">
+                                                                                <colgroup></colgroup>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sun fc-day-past fc-day-other"
+                                                                                            data-date="2022-03-27">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">27</a>
+                                                                                                </div>
+                                                                                                <div class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-mon fc-day-past fc-day-other"
+                                                                                            data-date="2022-03-28">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">28</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-tue fc-day-past fc-day-other"
+                                                                                            data-date="2022-03-29">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">29</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-wed fc-day-past fc-day-other"
+                                                                                            data-date="2022-03-30">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">30</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-thu fc-day-past fc-day-other"
+                                                                                            data-date="2022-03-31">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">31</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-fri fc-day-past"
+                                                                                            data-date="2022-04-01">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">1</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sat fc-day-past"
+                                                                                            data-date="2022-04-02">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">2</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sun fc-day-past"
+                                                                                            data-date="2022-04-03">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">3</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-mon fc-day-past"
+                                                                                            data-date="2022-04-04">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">4</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-tue fc-day-past"
+                                                                                            data-date="2022-04-05">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">5</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-wed fc-day-past"
+                                                                                            data-date="2022-04-06">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">6</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-thu fc-day-past"
+                                                                                            data-date="2022-04-07">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">7</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-fri fc-day-past"
+                                                                                            data-date="2022-04-08">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">8</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                    <div
+                                                                                                        class="fc-daygrid-event-harness">
+                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-past"
+                                                                                                            style="border-color: rgb(0, 205, 0); background-color: rgb(0, 205, 0);">
+                                                                                                            <div
+                                                                                                                class="fc-event-main">
+                                                                                                                <div
+                                                                                                                    class="fc-event-main-frame">
+                                                                                                                    <div
+                                                                                                                        class="fc-event-title-container">
+                                                                                                                        <div
+                                                                                                                            class="fc-event-title fc-sticky">
+                                                                                                                            OS:
+                                                                                                                            10,
+                                                                                                                            Cliente:
+                                                                                                                            Geomar
+                                                                                                                            Rodrigues
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </a></div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sat fc-day-past"
+                                                                                            data-date="2022-04-09">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">9</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sun fc-day-past"
+                                                                                            data-date="2022-04-10">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">10</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-mon fc-day-past"
+                                                                                            data-date="2022-04-11">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">11</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-tue fc-day-past"
+                                                                                            data-date="2022-04-12">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">12</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-wed fc-day-past"
+                                                                                            data-date="2022-04-13">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">13</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                    <div
+                                                                                                        class="fc-daygrid-event-harness">
+                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-past"
+                                                                                                            style="border-color: rgb(205, 179, 128); background-color: rgb(205, 179, 128);">
+                                                                                                            <div
+                                                                                                                class="fc-event-main">
+                                                                                                                <div
+                                                                                                                    class="fc-event-main-frame">
+                                                                                                                    <div
+                                                                                                                        class="fc-event-title-container">
+                                                                                                                        <div
+                                                                                                                            class="fc-event-title fc-sticky">
+                                                                                                                            OS:
+                                                                                                                            12,
+                                                                                                                            Cliente:
+                                                                                                                            Bruno
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </a></div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-thu fc-day-past"
+                                                                                            data-date="2022-04-14">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">14</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                    <div
+                                                                                                        class="fc-daygrid-event-harness">
+                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-past"
+                                                                                                            style="border-color: rgb(178, 102, 255); background-color: rgb(178, 102, 255);">
+                                                                                                            <div
+                                                                                                                class="fc-event-main">
+                                                                                                                <div
+                                                                                                                    class="fc-event-main-frame">
+                                                                                                                    <div
+                                                                                                                        class="fc-event-title-container">
+                                                                                                                        <div
+                                                                                                                            class="fc-event-title fc-sticky">
+                                                                                                                            OS:
+                                                                                                                            13,
+                                                                                                                            Cliente:
+                                                                                                                            xxx-2525
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </a></div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-fri fc-day-past"
+                                                                                            data-date="2022-04-15">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">15</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                    <div class="fc-daygrid-event-harness fc-daygrid-event-harness-abs"
+                                                                                                        style="visibility: hidden;">
+                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-past"
+                                                                                                            style="border-color: rgb(0, 205, 0); background-color: rgb(0, 205, 0);">
+                                                                                                            <div
+                                                                                                                class="fc-event-main">
+                                                                                                                <div
+                                                                                                                    class="fc-event-main-frame">
+                                                                                                                    <div
+                                                                                                                        class="fc-event-title-container">
+                                                                                                                        <div
+                                                                                                                            class="fc-event-title fc-sticky">
+                                                                                                                            OS:
+                                                                                                                            14,
+                                                                                                                            Cliente:
+                                                                                                                            xxx-6541
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </a></div>
+                                                                                                    <div class="fc-daygrid-event-harness fc-daygrid-event-harness-abs"
+                                                                                                        style="visibility: hidden;">
+                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-past"
+                                                                                                            style="border-color: rgb(0, 205, 0); background-color: rgb(0, 205, 0);">
+                                                                                                            <div
+                                                                                                                class="fc-event-main">
+                                                                                                                <div
+                                                                                                                    class="fc-event-main-frame">
+                                                                                                                    <div
+                                                                                                                        class="fc-event-title-container">
+                                                                                                                        <div
+                                                                                                                            class="fc-event-title fc-sticky">
+                                                                                                                            OS:
+                                                                                                                            15,
+                                                                                                                            Cliente:
+                                                                                                                            Grand
+                                                                                                                            Tech
+                                                                                                                            Ltda
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </a></div>
+                                                                                                    <div
+                                                                                                        class="fc-daygrid-day-bottom">
+                                                                                                        <a
+                                                                                                            class="fc-daygrid-more-link">mais
+                                                                                                            +2</a></div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sat fc-day-past"
+                                                                                            data-date="2022-04-16">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">16</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sun fc-day-past"
+                                                                                            data-date="2022-04-17">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">17</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-mon fc-day-past"
+                                                                                            data-date="2022-04-18">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">18</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-tue fc-day-past"
+                                                                                            data-date="2022-04-19">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">19</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-wed fc-day-past"
+                                                                                            data-date="2022-04-20">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">20</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-thu fc-day-past"
+                                                                                            data-date="2022-04-21">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">21</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-fri fc-day-past"
+                                                                                            data-date="2022-04-22">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">22</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sat fc-day-past"
+                                                                                            data-date="2022-04-23">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">23</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sun fc-day-past"
+                                                                                            data-date="2022-04-24">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">24</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-mon fc-day-past"
+                                                                                            data-date="2022-04-25">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">25</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-tue fc-day-today "
+                                                                                            data-date="2022-04-26">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">26</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-wed fc-day-future"
+                                                                                            data-date="2022-04-27">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">27</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                    <div
+                                                                                                        class="fc-daygrid-event-harness">
+                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-future"
+                                                                                                            style="border-color: rgb(205, 179, 128); background-color: rgb(205, 179, 128);">
+                                                                                                            <div
+                                                                                                                class="fc-event-main">
+                                                                                                                <div
+                                                                                                                    class="fc-event-main-frame">
+                                                                                                                    <div
+                                                                                                                        class="fc-event-title-container">
+                                                                                                                        <div
+                                                                                                                            class="fc-event-title fc-sticky">
+                                                                                                                            OS:
+                                                                                                                            16,
+                                                                                                                            Cliente:
+                                                                                                                            Grand
+                                                                                                                            Tech
+                                                                                                                            Ltda
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </a></div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-thu fc-day-future"
+                                                                                            data-date="2022-04-28">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">28</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-fri fc-day-future"
+                                                                                            data-date="2022-04-29">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">29</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sat fc-day-future"
+                                                                                            data-date="2022-04-30">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">30</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                    <div
+                                                                                                        class="fc-daygrid-event-harness">
+                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-future"
+                                                                                                            style="border-color: rgb(205, 179, 128); background-color: rgb(205, 179, 128);">
+                                                                                                            <div
+                                                                                                                class="fc-event-main">
+                                                                                                                <div
+                                                                                                                    class="fc-event-main-frame">
+                                                                                                                    <div
+                                                                                                                        class="fc-event-title-container">
+                                                                                                                        <div
+                                                                                                                            class="fc-event-title fc-sticky">
+                                                                                                                            OS:
+                                                                                                                            11,
+                                                                                                                            Cliente:
+                                                                                                                            Google
+                                                                                                                            Brasil
+                                                                                                                            Internet
+                                                                                                                            Ltda.
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </a></div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sun fc-day-future fc-day-other"
+                                                                                            data-date="2022-05-01">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">1</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-mon fc-day-future fc-day-other"
+                                                                                            data-date="2022-05-02">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">2</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-tue fc-day-future fc-day-other"
+                                                                                            data-date="2022-05-03">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">3</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-wed fc-day-future fc-day-other"
+                                                                                            data-date="2022-05-04">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">4</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-thu fc-day-future fc-day-other"
+                                                                                            data-date="2022-05-05">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">5</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-fri fc-day-future fc-day-other"
+                                                                                            data-date="2022-05-06">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">6</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td class="fc-daygrid-day fc-day fc-day-sat fc-day-future fc-day-other"
+                                                                                            data-date="2022-05-07">
+                                                                                            <div
+                                                                                                class="fc-daygrid-day-frame fc-scrollgrid-sync-inner">
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-top">
+                                                                                                    <a
+                                                                                                        class="fc-daygrid-day-number">7</a>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-events">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="fc-daygrid-day-bg">
+                                                                                                    <div class="fc-daygrid-bg-harness"
+                                                                                                        style="left: 0px; right: 0px;">
+                                                                                                        <div
+                                                                                                            class="fc-non-business">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <table> </table>
+                                </div>
+                            </div> <!-- New widget right -->
+                            <div class="new-statisc">
+                                <div class="widget-box-new" style="height:100%">
+                                    <div>
+                                        <h5 class="cardHeader">Estatísticas do Sistema</h5>
+                                    </div>
+                                    <div class="new-bottons"> 
+                                        <a href="" class="card" title="Adicionar Clientes e Fornecedores">
+                                            <div>
+                                                <i class="bx bxs-group iconBx"></i>
+                                            </div>
+                                            <div>
+                                                <div class="cardName2">13</div>
+                                                <div class="cardName">Disponíveis</div>
+                                            </div>
+                                        </a> 
+                                        <a href="" class="card" title="Adicionar Produtos">
+                                            <div>
+                                                <i class="bx bxs-package iconBx2"></i>
+                                            </div>
+                                            <div>
+                                                <div class="cardName2">3</div>
+                                                <div class="cardName">Locados</div>
+                                            </div>
+                                        </a> 
+                                        <a href="" class="card">
+                                            <div>
+                                                <i class="bx bxs-stopwatch iconBx3"></i></div>
+                                            <div>
+                                                <div class="cardName2">2</div>
+                                                <div class="cardName">Faxina</div>
+                                            </div>
+                                        </a> 
+                                        <a href="" class="card" title="Adicionar Ordens de Serviço">
+                                            <div>
+                                                <i class="bx bxs-spreadsheet iconBx4"></i>
+                                            </div>
+                                            <div>
+                                                <div class="cardName2">7</div>
+                                                <div class="cardName">Aguardando Limpeza</div>
+                                            </div>
+                                        </a> 
+                                        <a href="" class="card">
+                                            <div>
+                                                <i class="bx bxs-receipt iconBx6"></i>
+                                            </div>
+                                            <div>
+                                                <div class="cardName2">2</div>
+                                                <div class="cardName">Limpeza</div>
+                                            </div>
+                                        </a> 
+                                        <a href="" class="card" title="Adicionar Vendas">
+                                            <div>
+                                                <i class="bx bxs-cart-alt iconBx5"></i></div>
+                                            <div>
+                                                <div class="cardName2">10</div>
+                                                <div class="cardName">Manutenção</div>
+                                            </div>
+                                        </a>
+                                        <a href="" title="Cadastrar nova receita" class="card">
+                                            <div>
+                                                <i class="bx bxs-up-arrow-circle iconBx7"></i></div>
+                                            <div>
+                                                <div class="cardName1 cardName2">R$ 0,00</div>
+                                                <div class="cardName">Receita do dia</div>
+                                            </div>
+                                        </a> 
+                                        <a href="" title="Cadastrar nova despesa" class="card">
+                                            <div>
+                                                <i class="bx bxs-down-arrow-circle iconBx8"></i></div>
+                                            <div>
+                                                <div class="cardName1 cardName2">R$ 0,00</div>
+                                                <div class="cardName">Despesa do dia</div>
+                                            </div>
+                                        </a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span12A" style="margin-left: 0">
+                <div class="AAA">
+                    <div class="widget-box0">
+                        <div>
+                            <h5 class="cardHeader">Produtos em Estoque</h5>
+                        </div>
+                        <div class="widget-content">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Cod.</th>
+                                        <th>Descrição</th>
+                                        <th>Valor Unitário</th>
+                                        <th>Estoque</th>
+                                        <th>Categoria</th>
+                                        <th>Data Compra</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-box0">
+                    <div>
+                        <h5 class="cardHeader">Ocupações</h5>
+                    </div>
+                    <div class="widget-content">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Cod.</th>
+                                    <th>Quarto</th>
+                                    <th>Entrada</th>
+                                    <th>Saída</th>
+                                    <th>Tipo</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+]
+    <!--end-Footer-part-->
+    <script src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/matrix.js"></script>
+    <script src="./js/tabela.js"></script>
+    <script src="./js/shortcut.js"></script>
+    <script src="./js/funcoesGlobal.js"></script>
+    <script src="./js/datatables.min.js"></script>
+    <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/addicon.js"></script>
+    <!--<script src="./js/estoque.js"></script>-->
+    <script src="./js/jquery.jqplot.min.js"></script>
+    <script src="./js/jqplot.pieRenderer.min.js"></script>
+    <script src="./js/jqplot.donutRenderer.min.js"></script>
+    <script src="./js/jquery.validate.js"></script>
+    <!--<script src="./js/agenda.js"></script>-->
+</body>
+
+</html>
