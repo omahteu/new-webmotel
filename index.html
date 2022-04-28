@@ -48,11 +48,11 @@
                         data-toggle="dropdown" title="Relatórios"><i class="bx bx-chart iconN"></i><span class="text">
                             Relatórios</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Quartos</a></li>
-                        <li><a href="#">Produtos</a></li>
-                        <li><a href="#">Ocupações</a></li>
-                        <li><a href="#">Saída de Produtos</a></li>
-                        <li><a href="#">Caixa</a></li>
+                        <li><a href="./paginas/relatorios_quartos.html">Quartos</a></li>
+                        <li><a href="./paginas/relatorio_produtos.html">Produtos</a></li>
+                        <li><a href="./paginas/relatorio_ocupacoes.html">Ocupações</a></li>
+                        <li><a href="./paginas/relatorio_saida.html">Saída de Produtos</a></li>
+                        <li><a href="./paginas/relatorio_caixa.html">Caixa</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"> <a href="https://osmaster.scriptphp.ru/index.php/mapos#" class="dropdown-toggle"
@@ -198,65 +198,43 @@
                                                             <td>
                                                                 <div class="fc-scroller-harness">
                                                                     <div class="fc-scroller" style="overflow: hidden;">
-                                                                        <table class="fc-col-header "
-                                                                            style="width: 891px;">
+                                                                        <table class="fc-col-header " style="width: 891px;">
                                                                             <colgroup></colgroup>
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <th
-                                                                                        class="fc-col-header-cell fc-day fc-day-sun">
-                                                                                        <div
-                                                                                            class="fc-scrollgrid-sync-inner">
-                                                                                            <a
-                                                                                                class="fc-col-header-cell-cushion ">dom.</a>
+                                                                                    <th class="fc-col-header-cell fc-day fc-day-sun">
+                                                                                        <div class="fc-scrollgrid-sync-inner">
+                                                                                            <a class="fc-col-header-cell-cushion ">dom.</a>
                                                                                         </div>
                                                                                     </th>
-                                                                                    <th
-                                                                                        class="fc-col-header-cell fc-day fc-day-mon">
-                                                                                        <div
-                                                                                            class="fc-scrollgrid-sync-inner">
-                                                                                            <a
-                                                                                                class="fc-col-header-cell-cushion ">seg.</a>
+                                                                                    <th class="fc-col-header-cell fc-day fc-day-mon">
+                                                                                        <div class="fc-scrollgrid-sync-inner">
+                                                                                            <a class="fc-col-header-cell-cushion ">seg.</a>
                                                                                         </div>
                                                                                     </th>
-                                                                                    <th
-                                                                                        class="fc-col-header-cell fc-day fc-day-tue">
-                                                                                        <div
-                                                                                            class="fc-scrollgrid-sync-inner">
-                                                                                            <a
-                                                                                                class="fc-col-header-cell-cushion ">ter.</a>
+                                                                                    <th class="fc-col-header-cell fc-day fc-day-tue">
+                                                                                        <div class="fc-scrollgrid-sync-inner">
+                                                                                            <a class="fc-col-header-cell-cushion ">ter.</a>
                                                                                         </div>
                                                                                     </th>
-                                                                                    <th
-                                                                                        class="fc-col-header-cell fc-day fc-day-wed">
-                                                                                        <div
-                                                                                            class="fc-scrollgrid-sync-inner">
-                                                                                            <a
-                                                                                                class="fc-col-header-cell-cushion ">qua.</a>
+                                                                                    <th class="fc-col-header-cell fc-day fc-day-wed">
+                                                                                        <div class="fc-scrollgrid-sync-inner">
+                                                                                            <a class="fc-col-header-cell-cushion ">qua.</a>
                                                                                         </div>
                                                                                     </th>
-                                                                                    <th
-                                                                                        class="fc-col-header-cell fc-day fc-day-thu">
-                                                                                        <div
-                                                                                            class="fc-scrollgrid-sync-inner">
-                                                                                            <a
-                                                                                                class="fc-col-header-cell-cushion ">qui.</a>
+                                                                                    <th class="fc-col-header-cell fc-day fc-day-thu">
+                                                                                        <div class="fc-scrollgrid-sync-inner">
+                                                                                            <a class="fc-col-header-cell-cushion ">qui.</a>
                                                                                         </div>
                                                                                     </th>
-                                                                                    <th
-                                                                                        class="fc-col-header-cell fc-day fc-day-fri">
-                                                                                        <div
-                                                                                            class="fc-scrollgrid-sync-inner">
-                                                                                            <a
-                                                                                                class="fc-col-header-cell-cushion ">sex.</a>
+                                                                                    <th class="fc-col-header-cell fc-day fc-day-fri">
+                                                                                        <div class="fc-scrollgrid-sync-inner">
+                                                                                            <a class="fc-col-header-cell-cushion ">sex.</a>
                                                                                         </div>
                                                                                     </th>
-                                                                                    <th
-                                                                                        class="fc-col-header-cell fc-day fc-day-sat">
-                                                                                        <div
-                                                                                            class="fc-scrollgrid-sync-inner">
-                                                                                            <a
-                                                                                                class="fc-col-header-cell-cushion ">sáb.</a>
+                                                                                    <th class="fc-col-header-cell fc-day fc-day-sat">
+                                                                                        <div class="fc-scrollgrid-sync-inner">
+                                                                                            <a class="fc-col-header-cell-cushion ">sáb.</a>
                                                                                         </div>
                                                                                     </th>
                                                                                 </tr>
@@ -268,8 +246,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr
-                                                            class="fc-scrollgrid-section fc-scrollgrid-section-body  fc-scrollgrid-section-liquid">
+                                                        <tr class="fc-scrollgrid-section fc-scrollgrid-section-body  fc-scrollgrid-section-liquid">
                                                             <td>
                                                                 <div
                                                                     class="fc-scroller-harness fc-scroller-harness-liquid">
@@ -1352,7 +1329,7 @@
                                         <th>Data Compra</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tabelaHomeProdutos">
                                 </tbody>
                             </table>
                         </div>
@@ -1375,7 +1352,7 @@
                                     <th>Total</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tabelaHomeOcupacoes">
                             </tbody>
                         </table>
                     </div>
@@ -1401,6 +1378,8 @@
     <script src="./js/jqplot.donutRenderer.min.js"></script>
     <script src="./js/jquery.validate.js"></script>
     <!--<script src="./js/agenda.js"></script>-->
+    <script src="./js/ajaxs/getProdutos.js"></script>
+    <script src="./js/ajaxs/getOcupacoes.js"></script>
 </body>
 
 </html>
