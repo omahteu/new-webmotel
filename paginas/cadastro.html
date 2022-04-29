@@ -63,15 +63,6 @@
             <i class="bx bx-cog iconN"></i>
             <span class="text"> Cadastros</span>
           </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Quartos</a></li>
-            <li><a href="#">Produtos</a></li>
-            <li><a href="#">Informações Gerais</a></li>
-            <li><a href="#">Email</a></li>
-            <li><a href="#">Camareira</a></li>
-            <li><a href="#">Pernoite</a></li>
-            <li><a href="#">Cartões</a></li>
-          </ul>
         </li>
       </ul>
     </div> <!-- New User -->
@@ -113,188 +104,503 @@
               <div class="widget-box">
                 <div class="widget-title" style="margin: -20px 0 0"> <span class="icon"> <i class="fas fa-wrench"></i>
                   </span>
-                  <h5>Configurações do Sistema</h5>
+                  <h5>Cadastros do Sistema</h5>
                 </div>
                 <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab"
-                      href="https://osmaster.scriptphp.ru/index.php/mapos/configurar#home">Gerais</a></li>
-                  <li><a data-toggle="tab"
-                      href="https://osmaster.scriptphp.ru/index.php/mapos/configurar#menu1">Financeiro</a></li>
-                  <li><a data-toggle="tab"
-                      href="https://osmaster.scriptphp.ru/index.php/mapos/configurar#menu2">Produtos</a></li>
-                  <li><a data-toggle="tab"
-                      href="https://osmaster.scriptphp.ru/index.php/mapos/configurar#menu3">Notificações</a></li>
-                  <li><a data-toggle="tab" href="https://osmaster.scriptphp.ru/index.php/mapos/configurar#menu5">OS</a>
+                  <li class="active">
+                    <a data-toggle="tab" href="#quartos">Quartos</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#produtos">Produtos</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#ig">Informações Gerais</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#email">Email</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#camareira">Camareira</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#pernoite">Pernoite</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#cartoes">Cartões</a>
                   </li>
                 </ul>
-                <form action="https://osmaster.scriptphp.ru/index.php/mapos/configurar" id="formConfigurar"
-                  method="post" class="form-horizontal">
+
+                <form action="" id="formConfigurar" method="post" class="form-horizontal">
                   <div class="widget-content nopadding tab-content">
-                    <!-- Menu Gerais -->
-                    <div id="home" class="tab-pane fade in active">
-                      <div class="control-group"> <label for="app_name" class="control-label">Nome do Sistema</label>
-                        <div class="controls"> <input type="text" required="" name="app_name"
-                            value="Sua Ordem de Serviço"> <span class="help-inline">Nome do sistema</span> </div>
-                      </div>
-                      <div class="control-group"> <label for="app_theme" class="control-label">Tema do Sistema</label>
-                        <div class="controls"> <select name="app_theme" id="app_theme">
-                            <option value="default">Escuro</option>
-                            <option value="white">Claro</option>
-                          </select> <span class="help-inline">Selecione o tema que que deseja usar no sistema</span>
+
+                    <!-- Quartos -->
+
+                    <div id="quartos" class="tab-pane fade in active">
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Código do Quarto</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
                         </div>
                       </div>
-                      <div class="control-group"> <label for="per_page" class="control-label">Registros por
-                          Página</label>
-                        <div class="controls"> <select name="per_page" id="theme">
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                            <option value="100" selected="">100</option>
-                          </select> <span class="help-inline">Selecione quantos registros deseja exibir nas
-                            listas</span> </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Número do Quarto</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
                       </div>
-                      <div class="control-group"> <label for="control_datatable" class="control-label">Visualização em
-                          DataTables</label>
-                        <div class="controls"> <select name="control_datatable" id="control_datatable">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
-                          </select> <span class="help-inline">Ativar ou desativar a visualização em tabelas
-                            dinâmicas</span> </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Quantidade Horas Locação</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
                       </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor Locação</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Tempo Especial</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor Especial</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Quantidade Horas Diárias</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor Diária</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Tempo Adicional (minutos)</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor Hora Adicional</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Tolerância (minutos)</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Adicionar em Percentual</label>
+                        <div class="controls"> 
+                          <input type="checkbox" name="app_name" id=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_theme" class="control-label">Tipo Suíte</label>
+                        <div class="controls"> 
+                          <select name="app_theme" id="app_theme">
+
+                          </select> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="per_page" class="control-label">Tabela</label>
+                        <div class="controls"> 
+                          <select name="per_page" id="theme">
+
+                          </select> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor 1° Hora</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor 2° Hora</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor 3° Hora</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor 4° Hora</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor 5° Hora</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor 6° Hora</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
                       <div class="form-actions">
                         <div class="span8">
-                          <div class="span9"> <button type="submit" class="button btn btn-primary"> <span
-                                class="button__icon"><i class="bx bx-save"></i></span><span class="button__text2">Salvar
-                                Alterações</span></button> </div>
+                          <div class="span9"> 
+                            <button type="submit" class="button btn btn-primary"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Salvar Alterações</span>
+                            </button>
+                            <button type="button" class="button btn btn-danger"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Limpar</span>
+                            </button>  
+                          </div>
                         </div>
                       </div>
-                    </div> <!-- Menu Notificações -->
-                    <div id="menu3" class="tab-pane fade">
-                      <div class="control-group"> <label for="os_notification" class="control-label">Notificação de
-                          OS</label>
-                        <div class="controls"> <select name="os_notification" id="os_notification">
-                            <option value="todos">Notificar a Todos</option>
-                            <option value="cliente">Somente o Cliente</option>
-                            <option value="tecnico">Somente o Técnico</option>
-                            <option value="emitente">Somente o Emitente</option>
-                            <option value="nenhum">Não Notificar</option>
-                          </select> <span class="help-inline">Selecione a opção de notificação por e-mail no cadastro de
-                            OS.</span> </div>
+                      
+                    </div>
+
+                    <!-- Produtos -->
+
+                    <div id="produtos" class="tab-pane fade">
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Código</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
                       </div>
-                      <div class="control-group"> <label for="notifica_whats" class="control-label">Notificação do
-                          whatsapp</label>
-                        <div class="controls"> <textarea rows="5" cols="20" name="notifica_whats" id="notifica_whats"
-                            placeholder="Use as tags abaixo para criar seu texto!"
-                            style="margin: 0px; width: 606px; height: 86px;">Prezado(a), {CLIENTE_NOME} a OS de nº {NUMERO_OS} teve o status alterado para :{STATUS_OS} segue a descrição {DESCRI_PRODUTOS} com valor total de {VALOR_OS}!
- Para mais informações entre em contato conosco.
- Atenciosamente, {EMITENTE} {TELEFONE_EMITENTE}.{CLIENTE_NOME}</textarea> </div>
-                        <div class="span3"> <label for="notifica_whats_select">Tags de preenchimento<span
-                              class="required"></span></label> <select class="span12" name="notifica_whats_select"
-                            id="notifica_whats_select" value="">
-                            <option value="0">Selecione...</option>
-                            <option value="{CLIENTE_NOME}">Nome do Cliente</option>
-                            <option value="{NUMERO_OS}">Número da OS</option>
-                            <option value="{STATUS_OS}">Status da OS</option>
-                            <option value="{VALOR_OS}">Valor da OS</option>
-                            <option value="{DESCRI_PRODUTOS}">Descrição produtos</option>
-                            <option value="{EMITENTE}">Nome emitente</option>
-                            <option value="{TELEFONE_EMITENTE}">Telefone emitente</option>
-                            <option value="{OBS_OS}">Observações</option>
-                            <option value="{DEFEITO_OS}">Defeitos</option>
-                            <option value="{LAUDO_OS}">Laudo</option>
-                            <option value="{DATA_FINAL}">Data Final</option>
-                            <option value="{DATA_INICIAL}">Data Inicial</option>
-                            <option value="{DATA_GARANTIA}">Data da Garantia</option>
-                          </select> </div>
-                        <span6 class="span10"> Para negrito use: *palavra* Para itálico use: _palavra_ Para riscado use:
-                          ~palavra~ </span6>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Descrição</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
                       </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Valor Unitário</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Quantidade</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Categoria</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
                       <div class="form-actions">
                         <div class="span8">
-                          <div class="span9"> <button type="submit" class="button btn btn-primary"> <span
-                                class="button__icon"><i class="bx bx-save"></i></span><span class="button__text2">Salvar
-                                Alterações</span></button> </div>
-                        </div>
-                      </div>
-                    </div> <!-- Menu Financeiro -->
-                    <div id="menu1" class="tab-pane fade">
-                      <div class="control-group"> <label for="control_baixa" class="control-label">Controle de baixa
-                          retroativa</label>
-                        <div class="controls"> <select name="control_baixa" id="control_baixa">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
-                          </select> <span class="help-inline">Ativar ou desativar o controle de baixa financeira, com
-                            data retroativa.</span> </div>
-                      </div>
-                      <div class="control-group"> <label for="control_editos" class="control-label">Controle de edição
-                          de OS</label>
-                        <div class="controls"> <select name="control_editos" id="control_editos">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
-                          </select> <span class="help-inline">Ativar ou desativar a permissão para alterar OS faturada
-                            e/ou cancelada.</span> </div>
-                      </div>
-                      <div class="control-group"> <label for="pix_key" class="control-label">Chave Pix para Recebimento
-                          de Pagamentos</label>
-                        <div class="controls"> <input type="text" name="pix_key" value="28846651000116"> <span
-                            class="help-inline">Chave Pix para Recebimento de Pagamentos</span> </div>
-                      </div>
-                      <div class="form-actions">
-                        <div class="span8">
-                          <div class="span9"> <button type="submit" class="button btn btn-primary"> <span
-                                class="button__icon"><i class="bx bx-save"></i></span><span class="button__text2">Salvar
-                                Alterações</span></button> </div>
-                        </div>
-                      </div>
-                    </div> <!-- Menu Produtos -->
-                    <div id="menu2" class="tab-pane fade">
-                      <div class="control-group"> <label for="control_estoque" class="control-label">Controlar
-                          Estoque</label>
-                        <div class="controls"> <select name="control_estoque" id="control_estoque">
-                            <option value="1">Sim</option>
-                            <option value="0" selected="">Não</option>
-                          </select> <span class="help-inline">Ativar ou desativar o controle de estoque.</span> </div>
-                      </div>
-                      <div class="form-actions">
-                        <div class="span8">
-                          <div class="span9"> <button type="submit" class="button btn btn-primary"> <span
-                                class="button__icon"><i class="bx bx-save"></i></span><span class="button__text2">Salvar
-                                Alterações</span></button> </div>
-                        </div>
-                      </div>
-                    </div> <!-- Menu OS -->
-                    <div id="menu5" class="tab-pane fade">
-                      <div class="control-group">
-                        <div class="span8">
-                          <span6 class="span10" style="margin-left: 1em;"> Defina a vizualização padrão, onde o que
-                            ficar checado será exibida na listagem de OS por padrão. </span6>
-                          <div class="span10"> <label> <input checked="" name="os_status_list[]" class="marcar"
-                                type="checkbox" value="Aberto"> <span class="lbl"> Aberto</span> </label> <label> <input
-                                checked="" name="os_status_list[]" class="marcar" type="checkbox" value="Faturado">
-                              <span class="lbl"> Faturado</span> </label> <label> <input checked=""
-                                name="os_status_list[]" class="marcar" type="checkbox" value="Negociação"> <span
-                                class="lbl"> Negociação</span> </label> <label> <input checked=""
-                                name="os_status_list[]" class="marcar" type="checkbox" value="Em Andamento"> <span
-                                class="lbl"> Em Andamento</span> </label> <label> <input checked=""
-                                name="os_status_list[]" class="marcar" type="checkbox" value="Orçamento"> <span
-                                class="lbl"> Orçamento</span> </label> <label> <input checked="" name="os_status_list[]"
-                                class="marcar" type="checkbox" value="Finalizado"> <span class="lbl"> Finalizado</span>
-                            </label> <label> <input checked="" name="os_status_list[]" class="marcar" type="checkbox"
-                                value="Cancelado"> <span class="lbl"> Cancelado</span> </label> <label> <input
-                                checked="" name="os_status_list[]" class="marcar" type="checkbox"
-                                value="Aguardando Peças"> <span class="lbl"> Aguardando Peças </span> </label> <label>
-                              <input checked="" name="os_status_list[]" class="marcar" type="checkbox" value="Aprovado">
-                              <span class="lbl"> Aprovado </span> </label> </div>
-                        </div>
-                      </div>
-                      <div class="form-actions">
-                        <div class="span8">
-                          <div class="span9"> <button type="submit" class="button btn btn-primary"> <span
-                                class="button__icon"><i class="bx bx-save"></i></span><span class="button__text2">Salvar
-                                Alterações</span></button> </div>
+                          <div class="span9"> 
+                            <button type="submit" class="button btn btn-primary"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Salvar Alterações</span>
+                            </button>
+                            <button type="button" class="button btn btn-danger"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Limpar</span>
+                            </button>   
+                          </div>
                         </div>
                       </div>
                     </div>
+                    
+                    <!-- Informações Gerais -->
+                    <div id="ig" class="tab-pane fade">
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Razão Social</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Nome Fantasia</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">CNPJ</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Cidade</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Endereço</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Número</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Bairro</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Telefone</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Telefone 2</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Telefone 3</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="form-actions">
+                        <div class="span8">
+                          <div class="span9"> 
+                            <button type="submit" class="button btn btn-primary"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Salvar Alterações</span>
+                            </button>
+                            <button type="button" class="button btn btn-danger"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Limpar</span>
+                            </button>   
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div id="email" class="tab-pane fade">
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Usuário</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Senha</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">SMTP</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Porta</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Timeout (segundos)</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Email Destino</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Email Contabilidade</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="form-actions">
+                        <div class="span8">
+                          <div class="span9"> 
+                            <button type="submit" class="button btn btn-primary"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Salvar Alterações</span>
+                            </button>
+                            <button type="button" class="button btn btn-danger"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Limpar</span>
+                            </button>   
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Camareira -->
+                    <div id="camareira" class="tab-pane fade">
+
+                      <div class="control-group"> 
+                        <label for="app_name" class="control-label">Camareira</label>
+                        <div class="controls"> 
+                          <input type="text" required="" name="app_name" value=""> 
+                        </div>
+                      </div>
+
+                      <div class="form-actions">
+                        <div class="span8">
+                          <div class="span9"> 
+                            <button type="submit" class="button btn btn-primary"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Salvar Alterações</span>
+                            </button>
+                            <button type="button" class="button btn btn-danger"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Limpar</span>
+                            </button>   
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Pernoite -->
+                    <div id="pernoite" class="tab-pane fade">
+
+                      <div class="form-actions">
+                        <div class="span8">
+                          <div class="span9"> 
+                            <button type="submit" class="button btn btn-primary"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Salvar Alterações</span>
+                            </button>
+                            <button type="button" class="button btn btn-danger"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Limpar</span>
+                            </button>   
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Cartões -->
+                    <div id="cartoes" class="tab-pane fade">
+
+                      <div class="form-actions">
+                        <div class="span8">
+                          <div class="span9"> 
+                            <button type="submit" class="button btn btn-primary"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Salvar Alterações</span>
+                            </button>
+                            <button type="button" class="button btn btn-danger"> 
+                              <span class="button__icon">
+                                <i class="bx bx-save"></i>
+                              </span>
+                              <span class="button__text2">Limpar</span>
+                            </button>  vvvv 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </form>
               </div>
