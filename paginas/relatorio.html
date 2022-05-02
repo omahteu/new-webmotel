@@ -69,18 +69,102 @@
                 </div>
                 <div class="widget-content">
                   <ul style="flex-direction: row;" class="site-stats">
-                    <li>
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos os Quartos - PDF</small>
+                      </a>
+                    </li>
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos os Quartos - EXCEL</small>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul style="flex-direction: row;" class="site-stats">
+                    <li style="width: 200px;">
                       <a href="">
                         <i class="fas fa-users"></i> 
                         <small>Todos os Produtos - PDF</small>
                       </a>
                     </li>
-                    <li>
+                    <li style="width: 200px;">
                       <a href="">
-                      <i class="fas fa-users"></i> 
-                      <small>Todos os Produtos - EXCEL</small>
-                    </a>
-                  </li>
+                        <i class="fas fa-users"></i> 
+                        <small>Todos os Produtos - EXCEL</small>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul style="flex-direction: row;" class="site-stats">
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos os IGS - PDF</small>
+                      </a>
+                    </li>
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos os IGS - EXCEL</small>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul style="flex-direction: row;" class="site-stats">
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos os Emais - PDF</small>
+                      </a>
+                    </li>
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos os Emais - EXCEL</small>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul style="flex-direction: row;" class="site-stats">
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos as Camareiras - PDF</small>
+                      </a>
+                    </li>
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos as Camareiras - EXCEL</small>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul style="flex-direction: row;" class="site-stats">
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos as Pernoites - PDF</small>
+                      </a>
+                    </li>
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos as Pernoites - EXCEL</small>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul style="flex-direction: row;" class="site-stats">
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos as Cartões - PDF</small>
+                      </a>
+                    </li>
+                    <li style="width: 200px;">
+                      <a href="">
+                        <i class="fas fa-users"></i> 
+                        <small>Todos as Cartões - EXCEL</small>
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -97,32 +181,33 @@
 
                 <ul class="nav nav-tabs">
                   <li class="active">
-                    <a data-toggle="tab" href="#produtosteste">Quartos</a>
+                    <a data-toggle="tab" href="#quartos">Quartos</a>
                   </li>
                   <li>
                     <a data-toggle="tab" href="#produtos">Produtos</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="">Informações Gerais</a>
+                    <a data-toggle="tab" href="#ig">Informações Gerais</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="">Email</a>
+                    <a data-toggle="tab" href="#email">Email</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="">Camareira</a>
+                    <a data-toggle="tab" href="#camareira">Camareira</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="">Pernoite</a>
+                    <a data-toggle="tab" href="#ocupacoes">Pernoite</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="">Cartões</a>
+                    <a data-toggle="tab" href="#cartoes">Cartões</a>
                   </li>
                 </ul>
 
                 <form action="" id="formConfigurar" method="post" class="form-horizontal">
                   <div class="widget-content nopadding tab-content">
 
-                    <div id="produtosteste" class="tab-pane fade in active">
+                    <!-- Relatório de Quartos -->
+                    <div id="quartos" class="tab-pane fade in active">
                       <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid" aria-describedby="tabela_info">
                         <thead>
                           <tr role="row">
@@ -146,6 +231,7 @@
                       </table>
                     </div>
 
+                    <!-- Relatório de Produtos -->
                     <div id="produtos" class="tab-pane fade">
                       <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
                         aria-describedby="tabela_info">
@@ -171,15 +257,139 @@
                       </table>
                     </div>
 
-
-
-
-
+                    <!-- Relatório de Informações Gerais -->
+                    <div id="ig" class="tab-pane fade">
+                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
+                        aria-describedby="tabela_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr role="row" class="odd">
+                            <td>6</td>
+                            <td></td>
+                            <td>Iphone 13 pro max</td>
+                            <td>1</td>
+                            <td>200,00</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
 
+                    <!-- Relatório de Emails-->
+                    <div id="email" class="tab-pane fade">
+                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
+                        aria-describedby="tabela_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr role="row" class="odd">
+                            <td>6</td>
+                            <td></td>
+                            <td>Iphone 13 pro max</td>
+                            <td>1</td>
+                            <td>200,00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- Relatório de Camareiras -->
+                    <div id="camareira" class="tab-pane fade">
+                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
+                        aria-describedby="tabela_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr role="row" class="odd">
+                            <td>6</td>
+                            <td></td>
+                            <td>Iphone 13 pro max</td>
+                            <td>1</td>
+                            <td>200,00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- Relatório de Ocupações-->
+                    <div id="ocupacoes" class="tab-pane fade">
+                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
+                        aria-describedby="tabela_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr role="row" class="odd">
+                            <td>6</td>
+                            <td></td>
+                            <td>Iphone 13 pro max</td>
+                            <td>1</td>
+                            <td>200,00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- Relatório de Cartões -->
+                    <div id="cartoes" class="tab-pane fade">
+                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
+                        aria-describedby="tabela_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr role="row" class="odd">
+                            <td>6</td>
+                            <td></td>
+                            <td>Iphone 13 pro max</td>
+                            <td>1</td>
+                            <td>200,00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    </div>
                   </div>
                 </form>
-
               </div>
             </div>
           </div>
