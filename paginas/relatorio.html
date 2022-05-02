@@ -16,8 +16,6 @@
   <link href="../css/css.css" rel="stylesheet" type="text/css">
   <link href="../css/css2.css" rel="stylesheet" type="text/css">
   <link href="../css/boxicons.min.css" rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -25,63 +23,7 @@
   <div class="navebarn">
     <div id="user-nav" class="navbar navbar-inverse">
       <ul class="nav" style="width: auto; margin: 0px;">
-        <li class="dropdown"> 
-          <a href="https://osmaster.scriptphp.ru/index.php/relatorios/clientes#" class="dropdown-toggle" data-toggle="dropdown" title="Meu Perfil">
-            <i class="bx bx-user-circle iconN"></i>
-            <span class="text"> Meu Perfil</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li class="">
-              <a title="Área do Cliente" href=""> 
-                <span class="text">Área do Cliente</span>
-              </a>
-            </li>
-            <li class="">
-              <a title="Meu Perfil" href="">
-                <span class="text">Meu Perfil</span>
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li class="">
-              <a title="Sair do Sistema" href="">
-                <i class="bx bx-log-out-circle"></i> 
-                <span class="text">Sair do Sistema</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown"> 
-          <a href="" class="dropdown-toggle" data-toggle="dropdown" title="Relatórios">
-            <i class="bx bx-chart iconN"></i>
-            <span class="text"> Relatórios</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="">Clientes</a></li>
-            <li><a href="">Produtos</a></li>
-            <li><a href="">Serviços</a></li>
-            <li><a href="">Ordens de Serviço</a></li>
-            <li><a href="">Vendas</a></li>
-            <li><a href="">Financeiro</a></li>
-            <li><a href="">SKU</a></li>
-            <li><a href="">Receitas Brutas - MEI</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown"> 
-          <a href="" class="dropdown-toggle" data-toggle="dropdown" title="Configurações">
-            <i class="bx bx-cog iconN"></i>
-            <span class="text"> Configurações</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="">Sistema</a></li>
-            <li><a href="">Usuários</a></li>
-            <li><a href="">Emitente</a></li>
-            <li><a href="">Permissões</a></li>
-            <li><a href="">Auditoria</a></li>
-            <li><a href="">Emails</a></li>
-            <li><a href="">Backup</a></li>
-          </ul>
-        </li>
+
       </ul>
     </div> <!-- New User -->
     <div id="userr" style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
@@ -97,17 +39,9 @@
         </div>
       </section>
     </div>
-  </div> <!-- End User -->
-  <!--start-top-serch-->
-  <div style="display: none" id="search">
-    <form action="https://osmaster.scriptphp.ru/index.php/mapos/pesquisar"> 
-      <input type="text" name="termo" placeholder="Pesquisar..."> 
-      <button type="submit" class="tip-bottom" title="" data-original-title="Pesquisar">
-        <i class="fas fa-search fa-white"></i>
-      </button> 
-    </form>
-  </div>
-  <!--close-top-serch-->
+  </div> 
+  
+  <!-- End User -->
 
   <div id="content">
     <!--start-top-serch-->
@@ -115,14 +49,16 @@
       <!-- New Bem-vindos -->
       <div class="bemv">Dashboard</div>
       <div id="breadcrumb"> 
-        <a href="" title="" class="tip-bottom" data-original-title="Dashboard"> Início</a> 
-        <a href="" class="current tip-bottom" title="" data-original-title="Clientes"> Relatórios </a> 
+        <a href="../index.html" title="" class="tip-bottom" data-original-title="Dashboard"> Início</a> 
+        <a href="" class="current tip-bottom" title="" data-original-title="Relatórios"> Relatórios </a> 
       </div>
     </div>
     <div class="container-flu">
       <div class="row-fluid">
         <div class="span12">
           <div class="row-fluid" style="margin-top: 0">
+
+            <!-- Caixa de Impressão de Relatórios-->
             <div class="span4">
               <div class="widget-box">
                 <div class="widget-title"> 
@@ -134,21 +70,22 @@
                 <div class="widget-content">
                   <ul style="flex-direction: row;" class="site-stats">
                     <li>
-                      <a href="https://osmaster.scriptphp.ru/index.php/relatorios/clientesRapid" target="_blank">
+                      <a href="">
                         <i class="fas fa-users"></i> 
-                        <small>Todos os Clientes - pdf</small>
+                        <small>Todos os Produtos - PDF</small>
                       </a>
                     </li>
                     <li>
-                      <a href="https://osmaster.scriptphp.ru/index.php/relatorios/clientesRapid?format=xls" target="_blank">
+                      <a href="">
                       <i class="fas fa-users"></i> 
-                      <small>Todos os Clientes - xls</small>
+                      <small>Todos os Produtos - EXCEL</small>
                     </a>
                   </li>
                   </ul>
                 </div>
               </div>
             </div>
+
             <div class="span8">
               <div class="widget-box">
                 <div class="widget-title"> 
@@ -157,38 +94,92 @@
                   </span>
                   <h5>Relatórios Customizáveis</h5>
                 </div>
-                <div class="widget-content">
-                  <div class="span12 well">
-                    <form target="_blank" action="" method="get">
-                      <div class="span4"> 
-                        <label for="">Cadastrado de:</label> 
-                        <input type="date" name="dataInicial" class="span12"> 
-                      </div>
-                      <div class="span4"> 
-                        <label for="">até:</label> 
-                        <input type="date" name="dataFinal" class="span12">
-                      </div>
-                      <div class="span4"> 
-                        <label for="">.</label> 
-                        <button class="button btn btn-inverse">
-                          <span class="button__icon">
-                            <i class="bx bx-printer"></i>
-                          </span> 
-                          <span class="button__text2">Imprimir</span>
-                        </button> 
-                      </div>
-                      <div class="span12 well" style="margin-left: 0">
-                        <div class="span12"> 
-                          <label for="">Tipo de cliente:</label> 
-                          <select name="tipocliente" class="span12">
-                            <option value="0">Cliente</option>
-                            <option value="1">Fornecedor</option>
-                          </select> 
-                        </div>
-                      </div>
-                    </form>
+
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a data-toggle="tab" href="#produtosteste">Quartos</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#produtos">Produtos</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="">Informações Gerais</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="">Email</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="">Camareira</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="">Pernoite</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="">Cartões</a>
+                  </li>
+                </ul>
+
+                <form action="" id="formConfigurar" method="post" class="form-horizontal">
+                  <div class="widget-content nopadding tab-content">
+
+                    <div id="produtosteste" class="tab-pane fade in active">
+                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid" aria-describedby="tabela_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr role="row" class="odd">
+                            <td>6</td>
+                            <td></td>
+                            <td>Samsung A10</td>
+                            <td>1</td>
+                            <td>200,00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div id="produtos" class="tab-pane fade">
+                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
+                        aria-describedby="tabela_info">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr role="row" class="odd">
+                            <td>6</td>
+                            <td></td>
+                            <td>Iphone 13 pro max</td>
+                            <td>1</td>
+                            <td>200,00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+
+
+
+
+                    </div>
+
                   </div>
-                </div>
+                </form>
+
               </div>
             </div>
           </div>
@@ -206,12 +197,13 @@
 </body>
 
     <!--end-Footer-part-->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/matrix.js"></script>
+    <script src="../js/jquery.js"></script>
     <script src="../js/jquery-1.12.4.min.js"></script>
     <script src="../js/shortcut.js"></script>
     <script src="../js/funcoesGlobal.js"></script>
     <script src="../js/datatables.min.js"></script>
     <script src="../js/sweetalert.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/matrix.js"></script>
 
 </html>
