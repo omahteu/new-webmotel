@@ -427,11 +427,11 @@ hr {
 }
 
 .cardBox .card:nth-child(1) {
-  background: linear-gradient(53deg, #38a9f5, #6ec4fb);
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
 }
 
 .cardBox .card:nth-child(2) {
-  background: linear-gradient(53deg, #ffc154, #ffd487);
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
 }
 
 .cardBox .card:nth-child(3) {
@@ -439,7 +439,11 @@ hr {
 }
 
 .cardBox .card:nth-child(4) {
-  background: linear-gradient(53deg, #ff6384, #ff97ab);
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(5) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
 }
 
 .cardBox .card .numbers {
