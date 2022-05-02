@@ -7,73 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="https://osmaster.scriptphp.ru/assets/img/favicon.png">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="../css/matrix-style.css">
     <link rel="stylesheet" href="../css/matrix-media.css">
-    <link rel="stylesheet" href="../css/fullcalendar.css">
+
     <link rel="stylesheet" href="../css/style.css">
-    <link href="../css/css.css" rel="stylesheet" type="text/css">
-    <link href="../css/css2.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../css/css2.css">
     <link rel="stylesheet" href="../css/boxicons.min.css">
-    <link href="../css/fullcalendar.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/jquery.jqplot.min.css">
+    <link rel="stylesheet" href="../css/fullcalendar.min.css">
+    <link rel="stylesheet" href="../css/jquery.jqplot.min.css">
+    <link rel="stylesheet" href="../css/css2(1).css">
+    <link rel="stylesheet" href="../css/css2(2).css">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="../css/css2(1).css" rel="stylesheet">
-    <link href="../css/css2(2).css" rel="stylesheet">
+
+
+
 
 </head>
 
 <body>
     <!--top-Header-menu-->
     <div class="navebarn">
-        <div id="user-nav" class="navbar navbar-inverse">
-            <ul class="nav" style="width: auto; margin: 0px;">
-                <li class="dropdown"> 
-                    <a href="https://osmaster.scriptphp.ru/index.php/mapos#" class="dropdown-toggle" data-toggle="dropdown" title="Meu Perfil">
-                        <i class="bx bx-user-circle iconN"></i>
-                        <span class="text"> Meu Perfil</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="">
-                            <a title="Meu Perfil" href="#">
-                                <span class="text">Meu Perfil</span>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="">
-                            <a title="Sair do Sistema" href="#">
-                                <i class="bx bx-log-out-circle"></i> 
-                                <span class="text">Sair do Sistema</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown"> 
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" title="Relatórios">
-                        <i class="bx bx-chart iconN"></i>
-                        <span class="text">Relatórios</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="./paginas/relatorios_quartos.html">Quartos</a></li>
-                        <li><a href="./paginas/relatorio_produtos.html">Produtos</a></li>
-                        <li><a href="./paginas/relatorio_ocupacoes.html">Ocupações</a></li>
-                        <li><a href="./paginas/relatorio_saida.html">Saída de Produtos</a></li>
-                        <li><a href="./paginas/relatorio_caixa.html">Caixa</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"> 
-                    <a href="../paginas/cadastro.html" class="" data-toggle="" title="Cadastros">
-                        <i class="bx bx-cog iconN"></i>
-                        <span class="text">Cadastros</span>
-                    </a>
-                </li>
-            </ul>
-        </div> <!-- New User -->
-        <div id="userr"
-            style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
+        <div id="user-nav" class="navbar navbar-inverse"></div>
+        <div id="userr" style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
             <div class="user-names userT0"> Bom dia, </div>
             <div class="userT">admin</div>
             <section style="display:block;position:absolute;right:10px">
@@ -86,23 +45,18 @@
                 </div>
             </section>
         </div>
-    </div> <!-- End User -->
-    <!--start-top-serch-->
-    <div style="display: none" id="search">
-        <form action=""> <input type="text" name="termo" placeholder="Pesquisar..."> 
-            <button type="submit" class="tip-bottom" title="" data-original-title="Pesquisar">
-                <i class="fas fa-search fa-white"></i>
-            </button> 
-        </form>
-    </div>
-    <!--close-top-serch-->
+    </div> 
+    <!-- End User -->
 
     <div id="content">
         <!--start-top-serch-->
         <div id="content-header">
             <!-- New Bem-vindos -->
             <div class="bemv">Dashboard</div>
-
+            <div id="breadcrumb"> 
+              <a href="../index.html" class="tip-bottom" data-original-title="Dashboard"> Início</a> 
+              <a href="" class="current tip-bottom" data-original-title="Cadastros"> Quartos </a> 
+            </div>
         </div>
         <div class="container-flu">
             <div class="row-fluid">
@@ -278,12 +232,13 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                 </div>
             </div>
         </div>
     </div>
-]
+</body>
+
     <!--end-Footer-part-->
     <script src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
@@ -308,6 +263,5 @@
     <script src="./js/fullcalendar.min.js"></script>
     <script src="./js/pt-br.js"></script>-->
     <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
-</body>
 
 </html>
