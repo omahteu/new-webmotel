@@ -48,7 +48,7 @@ $(document).ready(function () {
                 };
             },
             failure: function () {
-                alert('Falha ao buscar OS de calendário!');
+                console.log('Falha ao buscar OS de calendário!');
             },
         },
         eventClick: function (info) {
