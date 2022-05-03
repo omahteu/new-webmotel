@@ -6,11 +6,11 @@
     <title>Poco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="https://osmaster.scriptphp.ru/assets/img/favicon.png">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="./css/matrix-style.css">
     <link rel="stylesheet" href="./css/matrix-media.css">
-    <link rel="stylesheet" href="./css/font-awesome.css">
     <link rel="stylesheet" href="./css/fullcalendar.css">
     <link rel="stylesheet" href="./css/style.css">
     <link href="./css/css.css" rel="stylesheet" type="text/css">
@@ -28,49 +28,8 @@
 <body>
     <!--top-Header-menu-->
     <div class="navebarn">
-        <div id="user-nav" class="navbar navbar-inverse">
-            <ul class="nav" style="width: auto; margin: 0px;">
-                <li class="dropdown"> 
-                    <a href="https://osmaster.scriptphp.ru/index.php/mapos#" class="dropdown-toggle" data-toggle="dropdown" title="Meu Perfil">
-                        <i class="bx bx-user-circle iconN"></i>
-                        <span class="text"> Meu Perfil</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="">
-                            <a title="Meu Perfil" href="#">
-                                <span class="text">Meu Perfil</span>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="">
-                            <a title="Sair do Sistema" href="#">
-                                <i class="bx bx-log-out-circle"></i> 
-                                <span class="text">Sair do Sistema</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown"> 
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" title="Relatórios">
-                        <i class="bx bx-chart iconN"></i>
-                        <span class="text">Relatórios</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="./paginas/relatorios_quartos.html">Quartos</a></li>
-                        <li><a href="./paginas/relatorio_produtos.html">Produtos</a></li>
-                        <li><a href="./paginas/relatorio_ocupacoes.html">Ocupações</a></li>
-                        <li><a href="./paginas/relatorio_saida.html">Saída de Produtos</a></li>
-                        <li><a href="./paginas/relatorio_caixa.html">Caixa</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"> 
-                    <a href="../paginas/cadastro.html" class="" data-toggle="" title="Cadastros">
-                        <i class="bx bx-cog iconN"></i>
-                        <span class="text">Cadastros</span>
-                    </a>
-                </li>
-            </ul>
-        </div> <!-- New User -->
+        <div id="user-nav" class="navbar navbar-inverse"></div> 
+        <!-- New User -->
         <div id="userr"
             style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
             <div class="user-names userT0"> Bom dia, </div>
@@ -79,20 +38,15 @@
                 <div class="profile">
                     <div class="profile-img"> 
                         <a href="#">
-                            <img src="./imagens/a2c0e016d91ff61639ec3d6cfea18e02.png" alt="">
+                            <img src="../imagens/a2c0e016d91ff61639ec3d6cfea18e02.png" alt="">
                         </a>
                     </div>
                 </div>
             </section>
         </div>
-    </div> <!-- End User -->
-    <!--start-top-serch-->
-    <div style="display: none" id="search">
-        <form action="https://osmaster.scriptphp.ru/index.php/mapos/pesquisar"> <input type="text" name="termo"
-                placeholder="Pesquisar..."> <button type="submit" class="tip-bottom" title=""
-                data-original-title="Pesquisar"><i class="fas fa-search fa-white"></i></button> </form>
     </div>
-    <!--close-top-serch-->
+    <!-- End User -->
+
 
     <div id="content">
         <!--start-top-serch-->
@@ -105,9 +59,6 @@
             <div class="row-fluid">
                 <div class="span12">
                     
-                    <!--<script src="./js/fullcalendar.min.js"></script>-->
-                    <!--<script src="./js/pt-br.js"></script>-->
-                    
                     <!--Action boxes-->
                     <ul class="cardBox">
 
@@ -119,7 +70,7 @@
                             </div> 
                             <a href="./paginas/quartos.html">
                                 <div class="iconBx"> 
-                                    <i class="bx bx-group bx-border-circle"></i> 
+                                    <i class="fa-solid fa-bed"></i>
                                 </div>
                             </a>
                         </li>
@@ -132,7 +83,7 @@
                             </div> 
                             <a href="./paginas/cadastro.html">
                                 <div class="iconBx"> 
-                                    <i class="bx bx-package bx-border-circle"></i> 
+                                    <i class="fa-solid fa-pen"></i>
                                 </div>
                             </a>
                         </li>
@@ -145,7 +96,7 @@
                             </div> 
                             <a href="./paginas/relatorio.html">
                                 <div class="iconBx"> 
-                                    <i class="bx bx-stopwatch bx-border-circle"></i> 
+                                    <i class="fa-solid fa-list"></i>
                                 </div>
                             </a>
                         </li>
@@ -157,12 +108,12 @@
                                 <div class="cardName">F4</div>
                             </div> <a href="">
                                 <div class="iconBx"> 
-                                    <i class="bx bx-spreadsheet bx-border-circle"></i> 
+                                    <i class="fa-solid fa-gears"></i>
                                 </div>
                             </a>
                         </li>
                         
-                        <script src="./js/clock_time.js"></script>
+
                         <div class="card-cl">
                             <div class="clock-card">
                                 <div class="clock-flex"> 
@@ -188,9 +139,7 @@
                                     <h5 class="cardHeader">Agenda</h5>
                                 </div>
                                 <div class="widget-content">
-                                    <div id="source-calendar"
-                                        class="fc fc-media-screen fc-direction-ltr fc-theme-standard"
-                                        style="height: 500px;">
+                                    <div id="source-calendar" class="fc fc-media-screen fc-direction-ltr fc-theme-standard" style="height: 500px;">
                                         <div class="fc-header-toolbar fc-toolbar ">
                                             <div class="fc-toolbar-chunk">
                                                 <h2 class="fc-toolbar-title">abril de 2022</h2>
@@ -463,28 +412,20 @@
                                                                                                 </div>
                                                                                                 <div
                                                                                                     class="fc-daygrid-day-events">
-                                                                                                    <div
-                                                                                                        class="fc-daygrid-event-harness">
-                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-past"
-                                                                                                            style="border-color: rgb(0, 205, 0); background-color: rgb(0, 205, 0);">
+                                                                                                    <div class="fc-daygrid-event-harness">
+                                                                                                        <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-start fc-event-end fc-event-past" style="border-color: rgb(0, 205, 0); background-color: rgb(0, 205, 0);">
                                                                                                             <div
                                                                                                                 class="fc-event-main">
-                                                                                                                <div
-                                                                                                                    class="fc-event-main-frame">
-                                                                                                                    <div
-                                                                                                                        class="fc-event-title-container">
+                                                                                                                <div class="fc-event-main-frame">
+                                                                                                                    <div class="fc-event-title-container">
                                                                                                                         <div
-                                                                                                                            class="fc-event-title fc-sticky">
-                                                                                                                            OS:
-                                                                                                                            10,
-                                                                                                                            Cliente:
-                                                                                                                            Geomar
-                                                                                                                            Rodrigues
+                                                                                                                            class="fc-event-title fc-sticky"> OS:10, Cliente: Geomar Rodrigues
                                                                                                                         </div>
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>
-                                                                                                        </a></div>
+                                                                                                        </a>
+                                                                                                    </div>
                                                                                                 </div>
                                                                                                 <div
                                                                                                     class="fc-daygrid-day-bg">
@@ -1351,6 +1292,10 @@
     <script src="./js/ajaxs/getProdutos.js"></script>
     <script src="./js/ajaxs/getOcupacoes.js"></script>
     <script src="./js/chart.min.js"></script>
+    <script src="./js/clock_time.js"></script>
+    <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
+    <!--<script src="./js/fullcalendar.min.js"></script>-->
+    <!--<script src="./js/pt-br.js"></script>-->
 </body>
 
 </html>
