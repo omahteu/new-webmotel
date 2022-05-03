@@ -16,7 +16,7 @@ setInterval(() => {
     min = min < 10 ? "0" + min : min;
     // sec = sec < 10 ? "0" + sec : sec;
 
-    console.log(min);
+    // console.log(min);
 
     document.querySelector(".hour_num").innerText = hour;
     document.querySelector(".min_num").innerText = min;
