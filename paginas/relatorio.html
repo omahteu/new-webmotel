@@ -181,10 +181,10 @@
 
                 <ul class="nav nav-tabs">
                   <li class="active">
-                    <a data-toggle="tab" href="#quartos">Quartos</a>
+                    <a data-toggle="tab" href="#produtos">Produtos</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#produtos">Produtos</a>
+                    <a data-toggle="tab" href="#quartos">Quartos</a>
                   </li>
                   <li>
                     <a data-toggle="tab" href="#ig">Informações Gerais</a>
@@ -206,35 +206,9 @@
                 <form action="" id="formConfigurar" method="post" class="form-horizontal">
                   <div class="widget-content nopadding tab-content">
 
-                    <!-- Relatório de Quartos -->
-                    <div id="quartos" class="tab-pane fade in active">
-                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid" aria-describedby="tabela_info">
-                        <thead>
-                          <tr role="row">
-                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr role="row" class="odd">
-                            <td>6</td>
-                            <td></td>
-                            <td>Samsung A10</td>
-                            <td>1</td>
-                            <td>200,00</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-
                     <!-- Relatório de Produtos -->
-                    <div id="produtos" class="tab-pane fade">
-                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
-                        aria-describedby="tabela_info">
+                    <div id="produtos" class="tab-pane fade in active">
+                      <table id="" class="table table-bordered  dataTable no-footer" role="grid">
                         <thead>
                           <tr role="row">
                             <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
@@ -257,10 +231,34 @@
                       </table>
                     </div>
 
+                    <!-- Relatório de Quartos -->
+                    <div id="quartos" class="tab-pane fade">
+                      <table id="relQuartos" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 161px;">Entrada</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 373px;">Usuário</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fundo</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Total</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 90px;">Saída</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr role="row" class="odd">
+                            <td>6</td>
+                            <td></td>
+                            <td>Samsung A10</td>
+                            <td>1</td>
+                            <td>200,00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
                     <!-- Relatório de Informações Gerais -->
                     <div id="ig" class="tab-pane fade">
-                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
-                        aria-describedby="tabela_info">
+                      <table id="relIg" class="table table-bordered  dataTable no-footer" role="grid">
                         <thead>
                           <tr role="row">
                             <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
@@ -285,8 +283,7 @@
 
                     <!-- Relatório de Emails-->
                     <div id="email" class="tab-pane fade">
-                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
-                        aria-describedby="tabela_info">
+                      <table id="relEmail" class="table table-bordered  dataTable no-footer" role="grid">
                         <thead>
                           <tr role="row">
                             <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
@@ -311,8 +308,7 @@
 
                     <!-- Relatório de Camareiras -->
                     <div id="camareira" class="tab-pane fade">
-                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
-                        aria-describedby="tabela_info">
+                      <table id="" class="table table-bordered  dataTable no-footer" role="grid">
                         <thead>
                           <tr role="row">
                             <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
@@ -337,8 +333,7 @@
 
                     <!-- Relatório de Ocupações-->
                     <div id="ocupacoes" class="tab-pane fade">
-                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
-                        aria-describedby="tabela_info">
+                      <table id="relOcupacoes" class="table table-bordered  dataTable no-footer" role="grid">
                         <thead>
                           <tr role="row">
                             <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
@@ -363,8 +358,7 @@
 
                     <!-- Relatório de Cartões -->
                     <div id="cartoes" class="tab-pane fade">
-                      <table id="tabela" class="table table-bordered  dataTable no-footer" role="grid"
-                        aria-describedby="tabela_info">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
                         <thead>
                           <tr role="row">
                             <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 77px;">Data</th>
@@ -408,12 +402,13 @@
 
     <!--end-Footer-part-->
     <script src="../js/jquery.js"></script>
-    <script src="../js/jquery-1.12.4.min.js"></script>
-    <script src="../js/shortcut.js"></script>
-    <script src="../js/funcoesGlobal.js"></script>
-    <script src="../js/datatables.min.js"></script>
-    <script src="../js/sweetalert.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/matrix.js"></script>
+    <script src="../js/style/jquery-1.12.4.min.js"></script>
+    <script src="../js/style/shortcut.js"></script>
+    <script src="../js/style/funcoesGlobal.js"></script>
+    <script src="../js/style/datatables.min.js"></script>
+    <script src="../js/style/sweetalert.min.js"></script>
+    <script src="../js/style/bootstrap.min.js"></script>
+    <script src="../js/style/matrix.js"></script>
+    <script src="../js/setup/blockRelatoriosCaixa.js"></script>
 
 </html>
