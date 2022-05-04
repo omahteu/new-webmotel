@@ -1,6 +1,5 @@
-/*
 async function autenticacao(usuario, senha){
-    const resposta = await fetch("https://defmoteapi.herokuapp.com/usuarios/")
+    const resposta = await fetch("https://demomotelapi.herokuapp.com/usuarios/")
     const data = await resposta.json()
 
     var dados = data.filter(nome => nome.nome == usuario)
@@ -76,11 +75,4 @@ $("#btn-acessar").click(function(){
     }
 
     autenticacao(nome.val(), senha.val())
-})
-*/
-
-
-$("#btn-acessar").click(function(){
-
-    $(location).attr('href', './paginas/home.html')
 })

@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 async function dadosOcupacoes(){
 
-    const resposta = await fetch("https://defmoteapi.herokuapp.com/ocupacoes/")
+    const resposta = await fetch("https://demomotelapi.herokuapp.com/ocupacoes/")
     const dados = await resposta.json()
     
     var tabelaHomeOcupacoes = document.getElementById('tabelaHomeOcupacoes')
