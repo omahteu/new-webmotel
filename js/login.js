@@ -1,5 +1,4 @@
-
-
+/*
 async function autenticacao(usuario, senha){
     const resposta = await fetch("https://defmoteapi.herokuapp.com/usuarios/")
     const data = await resposta.json()
@@ -34,8 +33,6 @@ async function autenticacao(usuario, senha){
     }
 }
 
-
-
 $(document).keypress( (event) => {
 
     var keycode = (event.keyCode ? event.keyCode : event.which)
@@ -61,9 +58,6 @@ $(document).keypress( (event) => {
     }
 }) 
 
-
-
-
 $("#btn-acessar").click(function(){
 
     var nome = $("#usuario")
@@ -83,4 +77,10 @@ $("#btn-acessar").click(function(){
 
     autenticacao(nome.val(), senha.val())
 })
+*/
 
+
+$("#btn-acessar").click(function(){
+
+    $(location).attr('href', './paginas/home.html')
+})
