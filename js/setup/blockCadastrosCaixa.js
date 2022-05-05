@@ -4,8 +4,6 @@ $(document).ready(function(){
 
 })
 
-// verificar o historico da pagina para voltar para o mesmo lugar
-
 function bloqueioCadastros(){
     let info = localStorage.getItem("usuarioLogado")
 
