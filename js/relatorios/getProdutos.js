@@ -1,27 +1,34 @@
-export function dadosProdutos() {
-    $.get("https://defmoteapi.herokuapp.com/produtos/", function(resultado){
+$(document).ready(function(){
+    relatorioProdutos()
+})
 
-        var tabela = document.getElementById('tabelaProdutos')
-        tabela.innerHTML = ''
 
+async function relatorioProdutos() {
+
+    const resposta = await fetch("https://demomotelapi.herokuapp.com/produtos/")
+    const dados = await resposta.json()
+
+    var tabela = document.getElementById('tabelaRelatorioProdutos')
+    tabela.innerHTML = ''
+
+    dados.forEach(elemento => {
         
-        for(var i = 0; i < resultado.length; i++){
-            
-            var codigo = resultado[i].codigo
-            var descricao = resultado[i].descricao
-            var valor = resultado[i].valorunitario
-            var quantidade = resultado[i].quantidade
-            var categoria = resultado[i].categoria
-            var data = resultado[i].data
+        var codigo = elemento.codigo
+        var descricao = elemento.descricao
+        var valor = elemento.valorunitario
+        var quantidade = elemento.quantidade
+        var categoria = elemento.categoria
+        var data = elemento.data
 
-            tabela.innerHTML += '<tr>'+
-                                    '<td>' + codigo + '</td>'+
-                                    '<td>' + descricao + '</td>'+
-                                    '<td>' + valor + '</td>'+
-                                    '<td>' + quantidade + '</td>'+
-                                    '<td>' + categoria + '</td>'+
-                                    '<td>' + data + '</td>'+
-                                '</tr>'
-        }
-    })
+        tabela.innerHTML += '<tr>'+
+                                '<td>' + codigo + '</td>'+
+                                '<td>' + descricao + '</td>'+
+                                '<td>' + valor + '</td>'+
+                                '<td>' + quantidade + '</td>'+
+                                '<td>' + categoria + '</td>'+
+                                '<td>' + data + '</td>'+
+                            '</tr>'
+        
+    });
+        
 }

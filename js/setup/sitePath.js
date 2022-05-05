@@ -17,7 +17,7 @@ function historicoUrls(){
 
     if(info === 'admin'){
 
-        $("#urlRelatoriosCaixa").attr('href', './home.html')
+        $("#home").attr('href', './home.html')
         $("#urlCadastrosCaixa").attr('href', './home.html')
         $("#urlQuartosCaixa").attr('href', './home.html')
         $("#urlConfiguracoesAdmin").attr('href', './home.html')
