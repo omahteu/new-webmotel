@@ -87,57 +87,63 @@
                   </li>
                 </ul>
 
-                <form action="" id="formConfigurar" method="post" class="form-horizontal">
+                <form class="form-horizontal" id="formCadastros">
                   <div class="widget-content nopadding tab-content">
 
                     <!-- Produtos -->
                     <div id="produtos" class="tab-pane fade in active">
 
+                      <!--Campo Código-->
                       <div class="control-group"> 
-                        <label for="app_name" class="control-label">Código</label>
+                        <label for="codigoProduto" class="control-label">Código</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="codigoProduto"> 
                         </div>
                       </div>
 
+                      <!--Campo Descrição-->
                       <div class="control-group"> 
-                        <label for="app_name" class="control-label">Descrição</label>
+                        <label for="descricaoProduto" class="control-label">Descrição</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="descricaoProduto"> 
                         </div>
                       </div>
 
+                      <!--Campo Valor Unitário-->
                       <div class="control-group"> 
-                        <label for="app_name" class="control-label">Valor Unitário</label>
+                        <label for="valorUnitarioProduto" class="control-label">Valor Unitário</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="valorUnitarioProduto"> 
                         </div>
                       </div>
 
+                      <!--Campo Quantidade-->
                       <div class="control-group"> 
-                        <label for="app_name" class="control-label">Quantidade</label>
+                        <label for="quantidadeProduto" class="control-label">Quantidade</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="quantidadeProduto"> 
                         </div>
                       </div>
 
+                      <!--Campo Categoria-->
                       <div class="control-group"> 
-                        <label for="app_name" class="control-label">Categoria</label>
+                        <label for="categoriaProduto" class="control-label">Categoria</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="categoriaProduto"> 
                         </div>
                       </div>
 
+                      <!--Botões-->
                       <div class="form-actions">
                         <div class="span8">
                           <div class="span9"> 
-                            <button type="submit" class="button btn btn-primary"> 
+                            <button type="button" class="button btn btn-primary" id="salvarFormPostProduto"> 
                               <span class="button__icon">
                                 <i class="fa-solid fa-floppy-disk"></i>
                               </span>
                               <span class="button__text2">Cadastrar</span>
                             </button>
-                            <button type="button" class="button btn btn-danger"> 
+                            <button type="button" class="button btn btn-danger" id="limparFormPostProduto"> 
                               <span class="button__icon">
                                 <i class="fa-solid fa-xmark"></i>
                               </span>
@@ -150,152 +156,171 @@
 
                     <!-- Quartos -->
                     <div id="quartos" class="tab-pane fade">
+
+                      <!--Campo Código-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Código do Quarto</label>
+                        <label for="codigoQuarto" class="control-label">Código do Quarto</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="codigoQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Número do Quarto-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Número do Quarto</label>
+                        <label for="numeroQuarto" class="control-label">Número do Quarto</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="numeroQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Quantidade de Horas Locação-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Quantidade Horas Locação</label>
+                        <label for="quantidadeHorasLocacaoQuarto" class="control-label">Quantidade Horas Locação</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="quantidadeHorasLocacaoQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Valor Locação-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor Locação</label>
+                        <label for="valorLocacaoQuarto" class="control-label">Valor Locação</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="valorLocacaoQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Tempo Especial-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Tempo Especial</label>
+                        <label for="tempoEspecialQuarto" class="control-label">Tempo Especial</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="tempoEspecialQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Valor Especial-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor Especial</label>
+                        <label for="valorEspecialQuarto" class="control-label">Valor Especial</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="valorEspecialQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Quantidade Horas Diárias-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Quantidade Horas Diárias</label>
+                        <label for="quantidadeHorasDiariasQuarto" class="control-label">Quantidade Horas Diárias</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="quantidadeHorasDiariasQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Valor Diaria-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor Diária</label>
+                        <label for="valorDiariaQuarto" class="control-label">Valor Diária</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="valorDiariaQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Tempo Adicional-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Tempo Adicional (minutos)</label>
+                        <label for="tempoAdicionalQuarto" class="control-label">Tempo Adicional (minutos)</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="tempoAdicionalQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Valor Hora Adicional-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor Hora Adicional</label>
+                        <label for="valorHoraAdicionalQuarto" class="control-label">Valor Hora Adicional</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="valorHoraAdicionalQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Tolerância-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Tolerância (minutos)</label>
+                        <label for="toleranciaQuarto" class="control-label">Tolerância (minutos)</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="toleranciaQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Adicionar Percentual-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Adicionar em Percentual</label>
+                        <label for="adicionarPercentualQuarto" class="control-label">Adicionar em Percentual</label>
                         <div class="controls"> 
-                          <input type="checkbox" name="app_name" id=""> 
+                          <input type="checkbox" id="adicionarPercentualQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo Tipo Suíte-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_theme" class="control-label">Tipo Suíte</label>
+                        <label for="tipoSuiteQuarto" class="control-label">Tipo Suíte</label>
                         <div class="controls"> 
-                          <select name="app_theme" id="app_theme"></select> 
+                          <select id="tipoSuiteQuarto"></select> 
                         </div>
                       </div>
 
+                      <!--Campo Tabela-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="per_page" class="control-label">Tabela</label>
+                        <label for="tabelaQuarto" class="control-label">Tabela</label>
                         <div class="controls"> 
-                          <select name="per_page" id="theme">
-
-                          </select> 
+                          <select name="per_page" id="tabelaQuarto"></select> 
                         </div>
                       </div>
 
+                      <!--Campo V1H-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor 1° Hora</label>
+                        <label for="v1hQuarto" class="control-label">Valor 1° Hora</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="v1hQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo V2H-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor 2° Hora</label>
+                        <label for="v2hQuarto" class="control-label">Valor 2° Hora</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="v2hQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo V3H-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor 3° Hora</label>
+                        <label for="v3hQuarto" class="control-label">Valor 3° Hora</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="v3hQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo V4H-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor 4° Hora</label>
+                        <label for="v4hQuarto" class="control-label">Valor 4° Hora</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="v4hQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo V5H-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor 5° Hora</label>
+                        <label for="v5hQuarto" class="control-label">Valor 5° Hora</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="v5hQuarto"> 
                         </div>
                       </div>
 
+                      <!--Campo V6H-->
                       <div class="control-group" name="cadQuartos"> 
-                        <label for="app_name" class="control-label">Valor 6° Hora</label>
+                        <label for="v6hQuarto" class="control-label">Valor 6° Hora</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" id="v6hQuarto"> 
                         </div>
                       </div>
 
                       <div class="form-actions" name="cadQuartos">
                         <div class="span8">
                           <div class="span9"> 
-                            <button type="submit" class="button btn btn-primary"> 
+                            <button type="button" class="button btn btn-primary" id="salvarFormPostQuarto"> 
                               <span class="button__icon">
                                 <i class="bx bx-save"></i>
                               </span>
@@ -317,72 +342,72 @@
                     <div id="ig" class="tab-pane fade">
 
                       <div class="control-group" name="cadIgs"> 
-                        <label for="app_name" class="control-label">Razão Social</label>
+                        <label for="" class="control-label">Razão Social</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">Nome Fantasia</label>
+                        <label for="" class="control-label">Nome Fantasia</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">CNPJ</label>
+                        <label for="" class="control-label">CNPJ</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">Cidade</label>
+                        <label for="" class="control-label">Cidade</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">Endereço</label>
+                        <label for="" class="control-label">Endereço</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">Número</label>
+                        <label for="" class="control-label">Número</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">Bairro</label>
+                        <label for="" class="control-label">Bairro</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">Telefone</label>
+                        <label for="" class="control-label">Telefone</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">Telefone 2</label>
+                        <label for="" class="control-label">Telefone 2</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group"name="cadIgs"> 
-                        <label for="app_name" class="control-label">Telefone 3</label>
+                        <label for="" class="control-label">Telefone 3</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
@@ -410,51 +435,51 @@
                     <div id="email" class="tab-pane fade">
 
                       <div class="control-group" name="cadEmail"> 
-                        <label for="app_name" class="control-label">Usuário</label>
+                        <label for="" class="control-label">Usuário</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group" name="cadEmail"> 
-                        <label for="app_name" class="control-label">Senha</label>
+                        <label for="" class="control-label">Senha</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group" name="cadEmail"> 
-                        <label for="app_name" class="control-label">SMTP</label>
+                        <label for="" class="control-label">SMTP</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group" name="cadEmail"> 
-                        <label for="app_name" class="control-label">Porta</label>
+                        <label for="" class="control-label">Porta</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group" name="cadEmail"> 
-                        <label for="app_name" class="control-label">Timeout (segundos)</label>
+                        <label for="" class="control-label">Timeout (segundos)</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group" name="cadEmail"> 
-                        <label for="app_name" class="control-label">Email Destino</label>
+                        <label for="" class="control-label">Email Destino</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
                       <div class="control-group" name="cadEmail"> 
-                        <label for="app_name" class="control-label">Email Contabilidade</label>
+                        <label for="" class="control-label">Email Contabilidade</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
@@ -482,9 +507,9 @@
                     <div id="camareira" class="tab-pane fade">
 
                       <div class="control-group" name="cadCamareiras"> 
-                        <label for="app_name" class="control-label">Camareira</label>
+                        <label for="" class="control-label">Camareira</label>
                         <div class="controls"> 
-                          <input type="text" required="" name="app_name" value=""> 
+                          <input type="text" > 
                         </div>
                       </div>
 
@@ -583,6 +608,8 @@
     <script src="../js/style/matrix.js"></script>
     <script src="../js/setup/blockCadastrosCaixa.js"></script>
     <script src="../js/setup/sitePath.js"></script>
+    <script src="../js/cadastros/postProduto.js"></script>
+    <script src="../js/cadastros/postQuarto.js"></script>
     <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
 
 
