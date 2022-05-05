@@ -9,7 +9,7 @@ function historicoUrls(){
 
     if(info === 'caixa'){
         
-        $("#urlRelatoriosCaixa").attr('href', './homecaixa.html')
+        $("#home").attr('href', './home.html')
         $("#urlCadastrosCaixa").attr('href', './homecaixa.html')
         $("#urlQuartosCaixa").attr('href', './homecaixa.html')
         $("#urlCaixaCaixa").attr('href', './homecaixa.html')
