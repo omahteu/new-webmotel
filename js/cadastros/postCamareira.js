@@ -1,16 +1,16 @@
 $("#salvarFormPostCamareira").click(function(){
     
-    let camareira = $("#camareira").val()
+    let camareira = $("#nomeCamareira").val()
 
     var dados = {
         nome: camareira,
         registro: gera_id()
     }
 
-    $.post("https://defmoteapi.herokuapp.com/camareiras/", dados, function(msg){
+    $.post("https://demomotelapi.herokuapp.com/camareiras/", dados, function(){
         alert("Camareira Registrado!")
 
-        document.getElementById('formPostCamareira').reset()
+        document.getElementById('formCadastros').reset()
     })
 })
 

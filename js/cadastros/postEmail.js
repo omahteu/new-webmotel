@@ -1,15 +1,15 @@
 $("#salvarFormPostEmail").click(function(){
 
-    var usuario = $("#usuario").val()
-    var senha = $("#senha").val()
-    var smtp = $("#smtp").val()
-    var porta = $("#porta").val()
-    var timeout = $("#timeout").val()
-    var destino = $("#destino").val()
-    var contabilidade = $("#contabilidade").val()
-    var gridCheck = $("#gridCheck").val()
+    let usuario = $("#usuarioEmail").val()
+    let senha = $("#senhaEmail").val()
+    let smtp = $("#smtpEmail").val()
+    let porta = $("#portaEmail").val()
+    let timeout = $("#timeoutEmail").val()
+    let destino = $("#emailDestinoEmail").val()
+    let contabilidade = $("#emailContabilidadeEmail").val()
+    let gridCheck = $("#autenticacaoEmail").val()
 
-    var dados = {
+    let dados = {
         usuario: usuario,
         senha: senha,
         smtp: smtp,
@@ -20,9 +20,9 @@ $("#salvarFormPostEmail").click(function(){
         autenticacao: gridCheck
     }
 
-    $.post("https://defmoteapi.herokuapp.com/emails/", dados, function(msg){
+    $.post("https://demomotelapi.herokuapp.com/emails/", dados, function(){
         alert("Email Registrado!")
 
-        document.getElementById('formPostEmail').reset()
+        document.getElementById('formCadastros').reset()
     })
 })

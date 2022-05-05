@@ -1,15 +1,15 @@
 $("#salvarFormPostIg").click(function(){
 
-    let bairro = $("#bairro").val()
-    let cidade = $("#cidade").val()
-    let cnpj = $("#cnpj").val()
-    let endereco = $("#endereco").val()
-    let fantasia = $("#fantasia").val()
-    let numero = $("#numero").val()
-    let social = $("#social").val()
-    let telefone = $("#telefone").val()
-    let telefone2 = $("#telefone2").val()
-    let telefone3 = $("#telefone3").val()
+    let bairro = $("#bairroIg").val()
+    let cidade = $("#cidadeIg").val()
+    let cnpj = $("#cnpjIg").val()
+    let endereco = $("#enderecoIg").val()
+    let fantasia = $("#nomeFantasiaIg").val()
+    let numero = $("#numeroIg").val()
+    let social = $("#razaoSocialIg").val()
+    let telefone = $("#telefoneIg").val()
+    let telefone2 = $("#telefone2Ig").val()
+    let telefone3 = $("#telefone3Ig").val()
 
     var dados = {
         social: social,
@@ -24,9 +24,9 @@ $("#salvarFormPostIg").click(function(){
         telefone3: telefone3
     }
 
-    $.post("https://defmoteapi.herokuapp.com/igs/", dados, function(msg){
+    $.post("https://demomotelapi.herokuapp.com/igs/", dados, function(){
         alert("Informações Registradas!")
 
-        document.getElementById('formPostIG').reset()
+        document.getElementById('formCadastros').reset()
     })
 })
