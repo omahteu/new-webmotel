@@ -1,9 +1,22 @@
 $(document).ready(function(){
-    $.get("https://defmoteapi.herokuapp.com/camareiras/", function(resultado){
-
-        resultado.forEach(function(item){
-            $('#comboCamareiras').append('<option>' + item.nome + '</option>');
-            $('#selecionaCamareira').append('<option>' + item.nome + '</option>');
-        });
-    })
+    relatorioCamareiras()
 })
+
+async function relatorioCamareiras(){
+
+    const resposta = await fetch("https://demomotelapi.herokuapp.com/camareiras/")
+    const dados = await resposta.json()
+
+    var tabela = document.getElementById('tabelaRelatorioCamareira')
+    tabela.innerHTML = ''
+
+    dados.forEach(elemento => {
+        var nome = elemento.nome
+        var codigo = elemento.codigo
+
+        tabela.innerHTML += '<tr>'+
+                                '<td>' + nome + '</td>'+
+                                '<td>' + codigo + '</td>'+
+                            '</tr>'
+    });
+}
