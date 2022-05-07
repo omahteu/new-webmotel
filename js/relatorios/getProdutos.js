@@ -2,7 +2,6 @@ $(document).ready(function(){
     relatorioProdutos()
 })
 
-
 async function relatorioProdutos() {
 
     const resposta = await fetch("https://demomotelapi.herokuapp.com/produtos/")
@@ -29,6 +28,5 @@ async function relatorioProdutos() {
                                 '<td>' + data + '</td>'+
                             '</tr>'
         
-    });
-        
+    });   
 }

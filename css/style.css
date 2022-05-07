@@ -848,3 +848,33 @@
         transform: scale(1)
     }
 }
+
+.locado {
+    background: #FF0000;
+    color: #000;
+    border: 2px solid #FF0000;
+    border-radius: 10%;
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+}
+
+.manutencao {
+    background: #A9A9A9;
+    color: #000;
+    border: 2px solid #A9A9A9;
+    border-radius: 10%;
+    width: 110px;
+    height: 30px;
+    font-weight: bold;
+}
+
+.faxina {
+    background: #FFE4C4;
+    color: #000;
+    border: 2px solid #FFE4C4;
+    border-radius: 10%;
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+}
