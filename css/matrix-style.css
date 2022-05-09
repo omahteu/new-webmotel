@@ -427,7 +427,7 @@ hr {
 }
 
 .cardBox .card:nth-child(1) {
-  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+  background: #4bc0c0;
 }
 
 .cardBox .card:nth-child(2) {

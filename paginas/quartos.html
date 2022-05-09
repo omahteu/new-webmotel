@@ -68,9 +68,11 @@
                             </div>
                             <div class="new-bottons"> 
                                 <div class="card">
-                                    <h4>Entrada: 00:00</h4>
-                                    <h4>Quarto: 0</h4>
+                                    <h4 id="entrada">Entrada: 00:00</h4>
+                                    <h4 id="numquarto">Quarto: 0</h4>
                                     <h4>Valor: R$ 0</h4>
+                                    <span id="tipo">livre</span>
+                                    <span id="intervalo">0</span>
                                 </div>
                                 <div class="card">
                                     <input type="number" name="" id="" placeholder="Pessoas">
@@ -172,10 +174,12 @@
 
                         <li class="card">
                             <div>
-                                <div class="numbers">00:00</div>
+                                <h3 id="contador">
+                                    <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>
+                                  </h3>
                                 <div class="cardName">01</div>
                             </div> 
-                            <a href="">
+                            <a id="botao_hub">
                                 <div class="iconBx"> 
                                     <i class="fa fa-gear"></i> 
                                 </div>
@@ -235,17 +239,22 @@
         </div>
     </div>
 
-    <div id="modau-camareiras" class="modau-container mostrar">
+    <!--Container Inicial-->
+    <div id="modau-camareiras" class="modau-container">
         <div class="modau">
           <button class="fechar">X</button>
           <h3 class="">Ações</h3>
-          <form id="FormSelecionaCamareira">
+          <form id="FormMain">
             <button type="button" name="1" id="botaoq1" class="btn manutencao">Manutenção</button>
             <button type="button" name="1" id="botaoq1" class="btn locado">Locação</button>
             <button type="button" name="1" id="botaoq1" class="btn faxina">Faxina</button>
+            <input type="button" id="botao_inferior_um" class="btn btn-warning" name="acoes" value="">
+            <input type="button" id="botao_inferior_dois" class="btn btn-warning" name="acoes" value="">
+            <input type="button" id="botao_inferior_tres"  class="btn btn-warning" name="acoes" value="">
           </form>
         </div>
     </div>
+
 </body>
 
     <!--end-Footer-part-->
@@ -273,7 +282,9 @@
     <script src="./js/pt-br.js"></script>-->
     <script src="../js/setup/sitePath.js"></script>
     <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
-    <script src="../js/setup/camareiras.js"></script>
+    <script type="module" src="../js/setup/camareiras.js"></script>
+    <script type="module" src="../js/acoes/hub.js"></script>
+    <script type="module" src="../js/botoes/manutencao.js"></script>
 
 
 </html>

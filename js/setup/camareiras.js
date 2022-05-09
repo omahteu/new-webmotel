@@ -11,5 +11,7 @@ export function inicioModal(modalID){
 
 export function fimModal(){
     $('#modau-camareiras').removeClass('modau-container mostrar').addClass('modau-container')
-    document.getElementById('FormSelecionaCamareira').reset()
+    document.getElementById('FormMain').reset()
 }
+
+
