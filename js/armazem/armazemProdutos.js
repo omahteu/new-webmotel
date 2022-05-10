@@ -1,5 +1,14 @@
 $("#registrar_produto").click(function(){
-	registroProduto()
+	//registroProduto()
+	var tipos = ['locado']
+	var tipo = $("#tipo").text()
+
+	// Verificação se o quarto está em Pernoite ou Locação
+	if(tipos.includes(tipo)){
+		registroProduto()
+	} else (
+		alert('Selecione um Quarto!')
+	)
 })
 
 function registroProduto(){
@@ -29,6 +38,8 @@ function registroProduto(){
 		valor_quarto: valor
 	}
 
+	console.log(produto)
+
 	// Requisição POST
 	$.post("https://demomotelapi.herokuapp.com/comanda/", produto, function(){
 
@@ -37,7 +48,7 @@ function registroProduto(){
     })
 
 	// Limpa os Campos
-	document.getElementById('listaProdutosComprados').reset();
+	document.getElementById('form_produtos_comprados').reset();
 }
 
 function removeProduto(operacao){
@@ -88,7 +99,7 @@ function mostraProduto(){
 			var valorTotal = resultado.valor_total
 
 			prateleira.innerHTML += '<tr>'+
-										'<td>'+ quarto + '</td>' +
+										//'<td>'+ quarto + '</td>' +
 										'<td>'+ descricao + '</td>' +
 										'<td>'+ quantidade + '</td>' +
 										'<td>'+ valorUnitario + '</td>' +
