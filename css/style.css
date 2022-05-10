@@ -879,6 +879,6 @@
     font-weight: bold;
 }
 
-#botao_inferior_um, #botao_inferior_dois, #botao_inferior_tres {
-    visibility: hidden;
+#botao_inferior_um, #botao_inferior_dois, #botao_inferior_tres, #selecionar_camareira {
+    display: none;
 }

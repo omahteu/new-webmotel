@@ -1,28 +1,17 @@
 export function limpeza(q, t, x, y, z) {
 
     // CSS
-    $("#quarto" + q).css({
-        "background-color": "#FFFF00",
+    $(".cardBox .card:nth-child(1)").css({
+        "background": "#FFFF00",
         "opacity": 0.5})
-    
-    $("[name=form_main" + q + "]").css({
-        'margin-bottom': '-60px',
-        'padding-top': '50px'
-    })
 
-    $("[id=botaoq" + q + "]").css('visibility', 'hidden')
+    $("[name=1]").css('display', 'none')
 
     // Botões Inferiores
-    $("#" + x).css('visibility', 'visible')
-    $("#" + x).val('Encerrar Limpeza')
+    $(".acoes1").css('display', 'inline-block')
+    $(".acoes1").val('Encerrar Limpeza')
 
-    if(t != 'btn limpeza'){
-        $("#" + y).css('visibility', 'hidden')
-        $("#" + y).val('Alterar P/ Locação')
-
-        $("#" + z).css('visibility', 'hidden')
-        $("#" + z).val('Cancelar Reserva')
-    }
+    if(t != 'btn limpeza'){}
 
     // Hora Atual
     var horaEntrada = new Date();
@@ -34,6 +23,4 @@ export function limpeza(q, t, x, y, z) {
     $("#tipo").text('limpeza')
     $("#intervalo").text(`${x},${y},${z}`)
     $("#entrada").text(`${String(hora)}:${String(minutos)}h`)
-    $("#imagemQuarto" + q).css('border', '2px solid rgb(255,255,0)')
-    $("#imagemQuarto" + q).css('box-shadow', 'inset 0 0 1em rgb(255,255,0), 0 0 1em #000')
 }

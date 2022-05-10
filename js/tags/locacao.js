@@ -5,19 +5,16 @@ export function locado(q, t,  x, y, z) {
         "background": "#FF0000",
         "opacity": 0.5})
     
-    $("[name=1]").css('visibility', 'hidden')
+    $("[name=1]").css('display', 'none')
 
     // Botões Inferiores
-    $(".acoes1").css('visibility', 'visible')
+    $(".acoes1").css('display', 'inline-block')
     $(".acoes1").val('Trocar Suíte')
 
-    $(".acoes2").css('visibility', 'visible')
+    $(".acoes2").css('display', 'inline-block')
     $(".acoes2").val('Encerrar')
 
-    if(t != 'btn locado'){
-        $(".acoes3").css('visibility', 'hidden')
-        $(".acoes3").val('Cancelar Reserva')
-    } 
+    if(t != 'btn locado'){} 
 
     // Preço
     var tipoQuarto = $('#tipo' + q).text()

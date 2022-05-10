@@ -6,17 +6,17 @@ export function faxina(q, t, x, y, z) {
         "opacity": 0.5})
 
 
-    $("[name=1]").css('visibility', 'hidden')
+    $("[name=1]").css('display', 'none')
 
     // Botões Inferiores
-    $(".acoes1").css('visibility', 'visible')
+    $(".acoes1").css('display', 'inline-block')
     $(".acoes1").val('Disponibilizar Quarto')
 
     if(t != 'btn faxina'){
-        $(".acoes2").css('visibility', 'hidden')
+        $(".acoes2").css('display', 'none')
         $(".acoes2").val('Alterar P/ Locação')
 
-        $(".acoes3").css('visibility', 'hidden')
+        $(".acoes3").css('display', 'none')
         $(".acoes3").val('Cancelar Reserva')
     } 
 

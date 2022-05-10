@@ -1,28 +1,17 @@
 export function aguardando(q, t, x, y, z) {
 
     // CSS
-    $("#quarto" + q).css({
-        "background-color": "#FFFFFF",
+    $(".cardBox .card:nth-child(1)").css({
+        "background": "#FFFFFF",
         "opacity": 0.5})
     
-    $("[name=form_main" + q + "]").css({
-        'margin-bottom': '-60px',
-        'padding-top': '50px'
-    })
-
-    $("[id=botaoq" + q + "]").css('visibility', 'hidden')
+    $("[name=1]").css('display', 'none')
 
     // Botões Inferiores
-    $("#" + x).css('visibility', 'visible')
-    $("#" + x).val('Iniciar Limpeza')
+    $(".acoes1").css('display', 'inline-block')
+    $(".acoes1").val('Iniciar Limpeza')
 
-    if(t != 'btn aguardando'){
-        $("#" + y).css('visibility', 'hidden')
-        $("#" + y).val('Alterar P/ Locação')
-
-        // $("#" + z).css('visibility', 'visible')
-        // $("#" + z).val('Cancelar Reserva')
-    }
+    if(t != 'btn aguardando'){}
 
     // Hora Atual
     var horaEntrada = new Date();
@@ -34,6 +23,4 @@ export function aguardando(q, t, x, y, z) {
     $("#tipo").text('aguardando')
     $("#intervalo").text(`${x},${y},${z}`)
     $("#entrada").text(`${String(hora)}:${String(minutos)}h`)
-    $("#imagemQuarto" + q).css('border', '2px solid rgb(240, 230, 165)')
-    $("#imagemQuarto" + q).css('box-shadow', 'inset 0 0 1em rgb(240, 230, 165), 0 0 1em #f0e6a5')
 }

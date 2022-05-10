@@ -2,6 +2,7 @@ import { aguardando } from "../tags/aguardo.js"
 import { desfazer } from "../tags/desfazer.js"
 import { faxina } from "../tags/faxina.js"
 import { limpeza } from "../tags/limpeza.js"
+import { camareiras } from "../tags/camareira.js"
 import { pause, reset, start } from '../contadores/contadorUm.js'
 //import { listaCamareiras } from "../boxes/box.js"
 //import { nomeCamareiras } from "../boxes/box.js"
@@ -39,6 +40,7 @@ export function resposta1(status){
             reset()
             start()
             setTimeout(function() {limpeza(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout(function() {fimModal()}, 1001)
             break
         
         case 'Trocar Suíte':
@@ -51,51 +53,30 @@ export function resposta1(status){
                 sessionStorage.setItem('quarto', quarto)
                 window.open('../paginas/checkout.html', '_blank')
                 setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 2000)
+                setTimeout(function() {fimModal()}, 1001)
             }
             break
         
         case 'Encerrar Limpeza':
             
-
             if(confirm('DESEJA DISPONIBILIZAR O QUARTO ' + quarto + ' ?') == true){
 
-                inicioModal('modau-camareiras')
-
-                /*
-                var camareira = prompt('Nome da Camareira:')
-
-                if(camareira != null){
-
-                    listaCamareiras(camareira)
-
-                    var dad = sessionStorage.getItem(`camareira${camareira}`)
-
-                    
-                    if(dad != null){
-
-                        alert('camareira correta')
-                        pause()
-                        reset()
-                        setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
-                        break
-                    } else {
-                        alert('Camareira Incorreta!')
-                    }
-
-                    
-
- 
-
-                } else {
-                    console.log('cancelado')
-                }
-                */
-
-
+                camareiras()
 
             } else {
                 console.log('cancelado')
             }
+            break
+
+        case 'Selecionar':
+
+            alert('Camareira Selecionada')
+            pause()
+            reset()
+            fimModal()
+            setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
+            break
+
         case 'Apagar Luz':
             break
 

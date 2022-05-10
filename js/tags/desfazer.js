@@ -1,7 +1,7 @@
 export function desfazer(q, x, y, z) {
     $('.cardBox .card:nth-child(1)'). removeAttr('style')
 
-    $("[name=1]").css('visibility', 'visible')
+    $("[name=1]").css('display', 'inline-block')
 
     //$("[name=form_main" + q + "]"). removeAttr('style')
 
