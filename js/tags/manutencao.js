@@ -4,24 +4,19 @@ export function manutencao(q, x, y, z) {
     $(".cardBox .card:nth-child(1)").css({
         "background": "rgb(169, 169, 169)",
         "opacity": 0.5})
-    /*
-    $("[name=form_main" + q + "]").css({
-        'margin-bottom': '-60px',
-        'padding-top': '50px'
-    })*/
     
     $("[name=1]").css('visibility', 'hidden')
 
     // Botões Inferiores
     
-    $("[name=acoes]").css('visibility', 'visible')
-    $("[name=acoes]").val('Iniciar Faxina')
+    $(".acoes1").css('visibility', 'visible')
+    $(".acoes1").val('Iniciar Faxina')
 
-    $("#" + y).css('visibility', 'visible')
-    $("#" + y).val('Disponibilizar Quarto')
+    $(".acoes2").css('visibility', 'visible')
+    $(".acoes2").val('Disponibilizar Quarto')
 
-    $("#" + z).css('visibility', 'visible')
-    $("#" + z).val('Ligar Luz')
+    $(".acoes3").css('visibility', 'visible')
+    $(".acoes3").val('Ligar Luz')
 
     // Hora Atual
     var horaEntrada = new Date();
@@ -32,7 +27,7 @@ export function manutencao(q, x, y, z) {
     $("#numquarto").text(q)
     $("#tipo").text('manutencao')
     $("#intervalo").text(`${x},${y},${z}`)
-    $("#entrada").text(`${String(hora)}:${String(minutos)}h`)
+    $("#entrada").text(`${String(hora)}:${String(minutos)}`)
     //$("#imagemQuarto" + q).css('border', '2px solid rgb(169, 169, 169)')
     //$("#imagemQuarto" + q).css('box-shadow', 'inset 0 0 1em rgb(169, 169, 169), 0 0 1em #000')
 }

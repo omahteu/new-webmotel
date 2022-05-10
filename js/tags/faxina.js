@@ -1,27 +1,23 @@
 export function faxina(q, t, x, y, z) {
 
     // CSS
-    $("#quarto" + q).css({
-        "background-color": "#FFE4C4",
+    $(".cardBox .card:nth-child(1)").css({
+        "background": "#FFE4C4",
         "opacity": 0.5})
-    
-    $("[name=form_main" + q + "]").css({
-        'margin-bottom': '-60px',
-        'padding-top': '50px'
-    })
 
-    $("[id=botaoq" + q + "]").css('visibility', 'hidden')
+
+    $("[name=1]").css('visibility', 'hidden')
 
     // Botões Inferiores
-    $("#" + x).css('visibility', 'visible')
-    $("#" + x).val('Disponibilizar Quarto')
+    $(".acoes1").css('visibility', 'visible')
+    $(".acoes1").val('Disponibilizar Quarto')
 
     if(t != 'btn faxina'){
-        $("#" + y).css('visibility', 'hidden')
-        $("#" + y).val('Alterar P/ Locação')
+        $(".acoes2").css('visibility', 'hidden')
+        $(".acoes2").val('Alterar P/ Locação')
 
-        $("#" + z).css('visibility', 'hidden')
-        $("#" + z).val('Cancelar Reserva')
+        $(".acoes3").css('visibility', 'hidden')
+        $(".acoes3").val('Cancelar Reserva')
     } 
 
     // Hora Atual
@@ -33,7 +29,7 @@ export function faxina(q, t, x, y, z) {
     $("#numquarto").text(q)
     $("#tipo").text('faxina')
     $("#intervalo").text(`${x},${y},${z}`)
-    $("#entrada").text(`${String(hora)}:${String(minutos)}h`)
-    $("#imagemQuarto" + q).css('border', '2px solid rgb(255, 228, 196)')
-    $("#imagemQuarto" + q).css('box-shadow', 'inset 0 0 1em rgb(255, 228, 196), 0 0 1em #000')
+    $("#entrada").text(`${String(hora)}:${String(minutos)}`)
+    //$("#imagemQuarto" + q).css('border', '2px solid rgb(255, 228, 196)')
+    //$("#imagemQuarto" + q).css('box-shadow', 'inset 0 0 1em rgb(255, 228, 196), 0 0 1em #000')
 }
