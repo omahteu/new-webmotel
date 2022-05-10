@@ -1,5 +1,14 @@
 $("#registrar_veiculo").click(function(){
-	registroVeiculo()
+	
+	var tipos = ['locado']
+	var tipo = $("#tipo").text()
+
+	// Verificação se o quarto está em Pernoite ou Locação
+	if(tipos.includes(tipo)){
+		registroVeiculo()
+	} else (
+		alert('Selecione um Quarto!')
+	)
 })
 
 function registroVeiculo(){
@@ -16,6 +25,8 @@ function registroVeiculo(){
 		placa: placa
     }
 
+	console.log(patio)
+
 	// Requisição POST
 	$.post("https://demomotelapi.herokuapp.com/patio/", patio, function(msg){
 
@@ -23,7 +34,7 @@ function registroVeiculo(){
 		mostraVeiculo();
 	})
 
-	document.getElementById('listaveiculosguardados').reset();
+	document.getElementById('form_veiculo_clientes').reset();
 }
 
 function removeVeiculo(operacao){
