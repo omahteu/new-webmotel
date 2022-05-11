@@ -446,6 +446,106 @@ hr {
   background: linear-gradient(53deg, #4bc0c0, #5cede9);
 }
 
+.cardBox .card:nth-child(6) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(7) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(8) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(9) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(10) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(11) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(12) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(13) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(14) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(15) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(16) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(17) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(18) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(19) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(20) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(21) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(22) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(23) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(24) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(25) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(26) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(27) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(28) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(29) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
+.cardBox .card:nth-child(30) {
+  background: linear-gradient(53deg, #4bc0c0, #5cede9);
+}
+
 .cardBox .card .numbers {
   position   : relative;
   font-weight: 500;
@@ -1316,8 +1416,8 @@ section .profile .profile-img {
 .new-bottons {
   position             : relative;
   height               : 100%;
-  padding              : 20px 10px;
-  margin-top           : 7px;
+  padding              : 1px 1px;
+  margin-top           : 0px;
   display              : grid;
   grid-template-columns: repeat(2, 2fr);
   grid-gap             : 7px;
