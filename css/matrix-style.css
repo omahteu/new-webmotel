@@ -1694,6 +1694,7 @@ section .profile .profile-img {
   background: var(--widget-box);
   border    : 1px solid rgb(0 0 0 / 8%);
   box-shadow: 0 0 10px rgb(0 0 0 / 4%);
+  margin-bottom: 5px;
 }
 
 .fc .fc-toolbar-title {
@@ -2978,7 +2979,7 @@ form {
   }
 
   #content {
-    margin-left: 80px;
+    margin-left: 0px;
     padding    : 0 1.2rem 0 1.2rem;
   }
 
