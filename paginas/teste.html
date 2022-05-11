@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Poco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="https://osmaster.scriptphp.ru/assets/img/favicon.png">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="../css/matrix-style.css">
+    <link rel="stylesheet" href="../css/matrix-media.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../css/css2.css">
+    <link rel="stylesheet" href="../css/boxicons.min.css">
+    <link rel="stylesheet" href="../css/fullcalendar.min.css">
+    <link rel="stylesheet" href="../css/jquery.jqplot.min.css">
+    <link rel="stylesheet" href="../css/css2(1).css">
+    <link rel="stylesheet" href="../css/css2(2).css">
+    <link rel="stylesheet" href="../css/camareiras.css">k
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+
+</head>
+
+<body>
+    <!--top-Header-menu-->
+    <div class="navebarn">
+        <div id="user-nav" class="navbar navbar-inverse"></div>
+        <div id="userr" style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
+            <div class="user-names userT0"> Bom dia, </div>
+            <div class="userT">admin</div>
+            <section style="display:block;position:absolute;right:10px">
+                <div class="profile">
+                    <div class="profile-img"> 
+                        <a href="#">
+                            <img src="../imagens/a2c0e016d91ff61639ec3d6cfea18e02.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div> 
+    <!-- End User -->
+
+    <div id="content">
+        <!--start-top-serch-->
+        <div id="content-header">
+            <!-- New Bem-vindos -->
+            <div class="bemv">Dashboard</div>
+            <div id="breadcrumb"> 
+              <a id="home" class="tip-bottom"> Início</a> 
+              <a href="" class="current tip-bottom"> Quartos </a> 
+            </div>
+        </div>
+        <div class="container-flu">
+            <div class="row-fluid">
+                <div class="span12">
+
+                    <!-- Painel -->
+                    <div class="span8">
+                        <div class="widget-box2">
+                            <ul class="cardBox">
+
+                                <li class="card">
+                                    <div>
+                                        <h3 id="contador">
+                                            <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>
+                                          </h3>
+                                        <div class="cardName">01</div>
+                                    </div> 
+                                    <a id="botao_hub">
+                                        <div class="iconBx"> 
+                                            <i class="fa fa-gear"></i> 
+                                        </div>
+                                    </a>
+                                </li>
+        
+                                <li class="card">
+                                    <div>
+                                        <div class="numbers">00:00</div>
+                                        <div class="cardName">02</div>
+                                    </div> 
+                                    <a href="./paginas/cadastro.html">
+                                        <div class="iconBx"> 
+                                            <i class="fa fa-gear"></i>  
+                                        </div>
+                                    </a>
+                                </li>
+        
+                                <li class="card">
+                                    <div>
+                                        <div class="numbers">00:00</div>
+                                        <div class="cardName">03</div>
+                                    </div> 
+                                    <a href="./paginas/relatorio.html">
+                                        <div class="iconBx">
+                                            <i class="fa fa-gear"></i>  
+                                        </div>
+                                    </a>
+                                </li>
+        
+                                <li class="card">
+                                    <div>
+                                        <div class="numbers">00:00</div>
+                                        <div class="cardName">04</div>
+                                    </div> 
+                                    <a href="">
+                                        <div class="iconBx"> 
+                                            <i class="fa fa-gear"></i> 
+                                        </div>
+                                    </a>
+                                </li>
+        
+                                <li class="card">
+                                    <div>
+                                        <div class="numbers">00:00</div>
+                                        <div class="cardName">05</div>
+                                    </div> 
+                                    <a href="">
+                                        <div class="iconBx"> 
+                                            <i class="fa fa-gear"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Patio -->
+                    <div class="span4">
+                        <div class="widget-box2">
+                            <div>
+                                <h5 class="cardHeader">Patio</h5>
+                            </div>
+                            <div class="new-bottons">
+                                <form id="form_veiculo_clientes">
+                                    <div class="card">
+                                        <input type="text" name="" id="veiculo" placeholder="Veículo">
+                                        <input type="text" name="" id="modelo" placeholder="Modelo">
+                                        <input type="text" name="" id="placa" placeholder="Placa">
+                                    </div>
+                                </form>
+
+                                <div class="card">
+                                    <button type="button" class="btn btn-success" id="registrar_veiculo">Salvar</button>
+                                    <button type="button" class="btn btn-danger">Limpar</button>
+                                </div> 
+                            </div> 
+                            <div class="new-bottons"> 
+                                <div >
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Quarto</th>
+                                                <th>Veículo</th>
+                                                <th>Modelo</th>
+                                                <th>Placa</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="listaveiculosguardados"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-box2">
+                            <div>
+                                <h5 class="cardHeader">Painel</h5>
+                            </div>
+                            <div class="new-bottons"> 
+                                <div class="card">
+                                    <h4>Entrada: <span id="entrada">0:0</span>h</h4>
+                                    <h4>Quarto: <span id="numquarto">0</span></h4>
+                                    <h4>Valor: R$ <span id="valor-quarto">0</span></h4>
+                                    <span id="tipo">livre</span>
+                                    <span id="intervalo">0</span>
+                                </div>
+                                <div class="card">
+                                    <form id="form_produtos_comprados">
+                                        <input type="number" min="0" name="" id="" placeholder="Pessoas">
+                                        <input type="text" name="" id="" placeholder="Obsservações">
+                                        <input type="text" name="" id="codigo_produto" placeholder="Código">
+                                        <select name="" id="checkbox_produto">
+                                            <option hidden>Produto</option>
+                                        </select>
+                                        <input type="text" name="" id="quantidade" placeholder="Quantidade">
+                                        <input type="text" name="" id="descricao" placeholder="Descrição" disabled>
+                                        <input type="text" name="" id="valor_unitario" placeholder="Valor Unitário" disabled>
+                                        <input type="text" name="" id="valor_total" placeholder="Valor Total" disabled>
+                                        <div id="comed">
+                                            <button type="button" class="btn btn-success" id="registrar_produto">Salvar</button>
+                                            <button type="button" class="btn btn-danger">limpar</button>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="widget-box2">
+                            <div>
+                                <h5 class="cardHeader">Produtos</h5>
+                            </div>
+                            <div class="new-bottons"> 
+                                <div >
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th hidden>Quarto</th>
+                                                <th>Descrição</th>
+                                                <th>Quantidade</th>
+                                                <th>Valor Unitário</th>
+                                                <th>Total</th>
+                                                <th>Ação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="listaProdutosComprados"></tbody>
+                                    </table>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Container Inicial-->
+    <div id="modau-camareiras" class="modau-container">
+        <div class="modau">
+          <button class="fechar">X</button>
+          <h3 class="">Ações</h3>
+          <form id="FormMain">
+            <button type="button" name="1" id="botaoq1" class="btn manutencao">Manutenção</button>
+            <button type="button" name="1" id="botaoq1" class="btn locado">Locação</button>
+            <button type="button" name="1" id="botaoq1" class="btn faxina">Faxina</button>
+            <input type="button" id="botao_inferior_um" class="btn btn-warning acoes1" name="botao" value="">
+            <input type="button" id="botao_inferior_dois" class="btn btn-warning acoes2" name="botao" value="">
+            <input type="button" id="botao_inferior_tres"  class="btn btn-warning acoes3" name="botao" value="">
+            <select name="" id="selecionar_camareira">
+                <option value="">Camareiras</option>
+            </select>
+          </form>
+        </div>
+    </div>
+</body>
+
+    <!--end-Footer-part-->
+    <script src="../js/jquery.js"></script>
+    
+    <script src="../js/style/bootstrap.min.js"></script>
+    <script src="../js/style/matrix.js"></script>
+    <script src="../js/style/tabela.js"></script>
+    
+    <script src="../js/style/funcoesGlobal.js"></script>
+    <script src="../js/style/datatables.min.js"></script>
+    <script src="../js/style/sweetalert.min.js"></script>
+    
+    <!--<script src="./js/estoque.js"></script>-->
+    <script src="../js/style/jquery.jqplot.min.js"></script>
+    <script src="../js/style/jqplot.pieRenderer.min.js"></script>
+    <script src="../js/style/jqplot.donutRenderer.min.js"></script>
+    <script src="../js/style/jquery.validate.js"></script>
+    <!--<script src="./js/agenda.js"></script>
+    <script src="../js/ajaxs/getProdutos.js"></script>
+    <script src="./js/ajaxs/getOcupacoes.js"></script>-->
+    <script src="../js/style/chart.min.js"></script>
+    <!--<script src="../js/clock_time.js"></script>
+    <script src="./js/fullcalendar.min.js"></script>
+    <script src="./js/pt-br.js"></script>-->
+    <script src="../js/setup/sitePath.js"></script>
+    <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
+    <script type="module" src="../js/setup/camareiras.js"></script>
+    <script type="module" src="../js/acoes/hub.js"></script>
+    <script type="module" src="../js/botoes/manutencao.js"></script>
+    <script type="module" src="../js/botoes/locacao.js"></script>
+    <script type="module" src="../js/botoes/faxina.js"></script>
+    <script type="module" src="../js/acoes/triagem.js"></script>
+    <script src="../js/ajaxs/getProduto.js"></script>
+    <script src="../js/armazem/armazemProdutos.js"></script>
+    <script src="../js/armazem/armazemVeiculos.js"></script>
+    <script type="module" src="../js/style/viewQuartos.js"></script>
+
+
+</html>
