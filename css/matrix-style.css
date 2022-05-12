@@ -1416,7 +1416,7 @@ section .profile .profile-img {
 .new-bottons {
   position             : relative;
   height               : 100%;
-  padding              : 1px 1px;
+  padding              : 1px 11px;
   margin-top           : 0px;
   display              : grid;
   grid-template-columns: repeat(2, 2fr);
@@ -1442,10 +1442,7 @@ section .profile .profile-img {
   display: flex;
 }
 
-.new-bottons .card:hover {
-  text-decoration: none;
-  background     : #f5f6f7;
-}
+
 
 .new-bottons .card .cardName {
   font-size  : 0.9em;

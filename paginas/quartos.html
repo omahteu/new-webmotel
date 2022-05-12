@@ -491,97 +491,182 @@
 
                     <!-- Patio -->
                     <div class="span4">
-                        <div class="widget-box2">
-                            <div>
-                                <h5 class="cardHeader">Patio</h5>
+                        <div class="widget-box">
+                            <div class="widget-title"> 
+                              <h5>Cadastros do Sistema</h5>
                             </div>
-                            <div class="new-bottons">
-                                <form id="form_veiculo_clientes">
-                                    <div class="card">
-                                        <input type="text" name="" id="veiculo" placeholder="Veículo">
-                                        <input type="text" name="" id="modelo" placeholder="Modelo">
-                                        <input type="text" name="" id="placa" placeholder="Placa">
-                                    </div>
-                                </form>
+                            <ul class="nav nav-tabs">
+            
+                              <li class="active">
+                                <a data-toggle="tab" href="#painel">Painel</a>
+                              </li>
+                              <li>
+                                <a data-toggle="tab" href="#produtos">Produtos</a>
+                              </li>
+                              <li>
+                                <a data-toggle="tab" href="#patio">Patio</a>
+                              </li>
+                            </ul>
+            
+                            <form class="form-horizontal" id="formCadastros">
+                              <div class="widget-content nopadding tab-content">
+            
+                                <!-- Painel -->
+                                <div id="painel" class="tab-pane fade in active">
 
-                                <div class="card">
-                                    <button type="button" class="btn btn-success" id="registrar_veiculo">Salvar</button>
-                                    <button type="button" class="btn btn-danger">Limpar</button>
-                                </div> 
-                            </div> 
-                            <div class="new-bottons"> 
-                                <div >
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Quarto</th>
-                                                <th>Veículo</th>
-                                                <th>Modelo</th>
-                                                <th>Placa</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="listaveiculosguardados"></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                                    <div class="control-group"> 
+                                        <div class="controls"> 
+                                            <div>
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Quarto</th>
+                                                            <th>Hora Add</th>
+                                                            <th>Desconto</th>
+                                                            <th>Consumo</th>
+                                                            <th>Parcial</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>0</td>
+                                                            <td>0:0</td>
+                                                            <td>R$ 0</td>
+                                                            <td>R$ 0</td>
+                                                            <td>R$ 0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
 
-                        <div class="widget-box2">
-                            <div>
-                                <h5 class="cardHeader">Painel</h5>
-                            </div>
-                            <div class="new-bottons"> 
-                                <div class="card">
-                                    <h4>Entrada: <span id="entrada">0:0</span>h</h4>
-                                    <h4>Quarto: <span id="numquarto">0</span></h4>
-                                    <h4>Valor: R$ <span id="valor-quarto">0</span></h4>
-                                    <span id="tipo">livre</span>
-                                    <span id="intervalo">0</span>
+                                            <!---->
+                                            <div>
+                                                <h5 class="cardHeader">Produtos</h5>
+                                            </div>
+                                            <div class="new-bottons"> 
+                                                <div >
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th hidden>Quarto</th>
+                                                                <th>Descrição</th>
+                                                                <th>Quantidade</th>
+                                                                <th>Valor Unitário</th>
+                                                                <th>Total</th>
+                                                                <th>Ação</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="listaProdutosComprados"></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <!---->
+                                            <div>
+                                                <h5 class="cardHeader">Patio</h5>
+                                            </div>
+                                            <div class="new-bottons"> 
+                                                <div >
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Quarto</th>
+                                                                <th>Veículo</th>
+                                                                <th>Modelo</th>
+                                                                <th>Placa</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="listaveiculosguardados"></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+            
+ 
+
                                 </div>
-                                <div class="card">
-                                    <form id="form_produtos_comprados">
-                                        <input type="number" min="0" name="" id="" placeholder="Pessoas">
-                                        <input type="text" name="" id="" placeholder="Obsservações">
+
+                                <!-- Produtos -->
+                                <div id="produtos" class="tab-pane fade">
+            
+                                  <!---->
+                                  <div class="control-group"> 
+                                    <div class="controls"> 
                                         <input type="text" name="" id="codigo_produto" placeholder="Código">
+                                    </div>
+                                  </div>
+            
+                                  <!---->
+                                  <div class="control-group"> 
+                                    <div class="controls"> 
                                         <select name="" id="checkbox_produto">
                                             <option hidden>Produto</option>
-                                        </select>
+                                        </select> 
+                                    </div>
+                                  </div>
+            
+                                  <!---->
+                                  <div class="control-group"> 
+                                    <div class="controls"> 
                                         <input type="text" name="" id="quantidade" placeholder="Quantidade">
+                                    </div>
+                                  </div>
+            
+                                  <!---->
+                                  <div class="control-group"> 
+                                    <div class="controls"> 
                                         <input type="text" name="" id="descricao" placeholder="Descrição" disabled>
+                                    </div>
+                                  </div>
+            
+                                  <!---->
+                                  <div class="control-group">
+                                    <div class="controls"> 
                                         <input type="text" name="" id="valor_unitario" placeholder="Valor Unitário" disabled>
+                                    </div>
+                                  </div>
+
+                                  <div class="control-group">
+                                    <div class="controls"> 
                                         <input type="text" name="" id="valor_total" placeholder="Valor Total" disabled>
-                                        <div id="comed">
-                                            <button type="button" class="btn btn-success" id="registrar_produto">Salvar</button>
-                                            <button type="button" class="btn btn-danger">limpar</button>
-                                        </div>
-                                    </form>
+                                    </div>
+                                  </div>
 
-
+                                  <div class="control-group"name="cadIgs"> 
+                                    <div class="controls"> 
+                                        <button type="button" class="btn btn-success" id="registrar_veiculo">Salvar</button>
+                                        <button type="button" class="btn btn-danger">Limpar</button>
+                                    </div>
+                                  </div>
+                                  
                                 </div>
-                            </div> 
-                        </div>
+            
+                                <!-- Patio -->
+                                <div id="patio" class="tab-pane fade">
+            
+                                  <!---->
+                                  <div class="control-group" name="cadIgs"> 
+                                    <div class="controls">
+                                        <input type="text" name="" id="placa" placeholder="Placa">
+                                    </div>
+                                  </div>
+            
+                                  <!---->
+                                  <div class="control-group"name="cadIgs"> 
+                                    <div class="controls"> 
+                                        <input type="text" name="" id="placa" placeholder="Placa">
+                                    </div>
+                                  </div>
 
-                        <div class="widget-box2">
-                            <div>
-                                <h5 class="cardHeader">Produtos</h5>
-                            </div>
-                            <div class="new-bottons"> 
-                                <div >
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th hidden>Quarto</th>
-                                                <th>Descrição</th>
-                                                <th>Quantidade</th>
-                                                <th>Valor Unitário</th>
-                                                <th>Total</th>
-                                                <th>Ação</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="listaProdutosComprados"></tbody>
-                                    </table>
+                                  <div class="control-group"name="cadIgs"> 
+                                    <div class="controls"> 
+                                        <button type="button" class="btn btn-success" id="registrar_veiculo">Salvar</button>
+                                        <button type="button" class="btn btn-danger">Limpar</button>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div> 
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -607,6 +692,21 @@
           </form>
         </div>
     </div>
+
+    <div style="display: none;">
+        <h4>Entrada</h4>
+        <h5><span id="entrada">0:0</span></h5>
+        <h4>Quarto</h4>
+        <h5><span id="numquarto">0</span></h5>
+        <h4>Valor</h4>
+        <h5>R$ <span id="valor-quarto">0</span></h5>
+        <h4>Consumo</h4>
+        <h5>R$ 0</h5>
+        <span id="tipo" hidden>livre</span>
+        <span id="intervalo" hidden>0</span>
+    </div>
+
+
 </body>
 
     <!--end-Footer-part-->
