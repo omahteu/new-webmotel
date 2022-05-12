@@ -882,3 +882,7 @@
 #botao_inferior_um, #botao_inferior_dois, #botao_inferior_tres, #selecionar_camareira {
     display: none;
 }
+
+.livia {
+    margin-left: -190px;
+}
