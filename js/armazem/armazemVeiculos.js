@@ -25,8 +25,6 @@ function registroVeiculo(){
 		placa: placa
     }
 
-	console.log(patio)
-
 	// Requisição POST
 	$.post("https://demomotelapi.herokuapp.com/patio/", patio, function(msg){
 
@@ -34,7 +32,7 @@ function registroVeiculo(){
 		mostraVeiculo();
 	})
 
-	document.getElementById('form_veiculo_clientes').reset();
+	document.getElementById('formCadastros').reset();
 }
 
 function removeVeiculo(operacao){
@@ -67,16 +65,12 @@ function mostraVeiculo(){
 		dados.forEach(function(resultado){
 
 			var id = resultado.id
-			var quarto =  resultado.quarto
-			var veiculo = resultado.veiculo
 			var modelo = resultado.modelo
 			var placa = resultado.placa
 
 			patio.innerHTML += '<tr>'+
-									'<td>'+ quarto + '</td>' +
-									'<td>'+ veiculo + '</td>' +
-									'<td>'+ modelo + '</td>' +
 									'<td>'+ placa + '</td>' +
+									'<td>'+ modelo + '</td>' +
 									'<td><button onclick="removeVeiculo('+ id +')" class="btn btn-danger">Remover</button></td>'+
 								'</tr>';
 		})

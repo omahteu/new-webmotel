@@ -38,8 +38,6 @@ function registroProduto(){
 		valor_quarto: valor
 	}
 
-	console.log(produto)
-
 	// Requisição POST
 	$.post("https://demomotelapi.herokuapp.com/comanda/", produto, function(){
 
@@ -48,7 +46,7 @@ function registroProduto(){
     })
 
 	// Limpa os Campos
-	document.getElementById('form_produtos_comprados').reset();
+	document.getElementById('formCadastros').reset();
 }
 
 function removeProduto(operacao){
@@ -72,8 +70,6 @@ function removeProduto(operacao){
 		})
 	}
 }
-
-// GUARDAR O MOTIVO NUMA VARIÁVEL E ADICIONAR A API
 
 function mostraProduto(){
 
