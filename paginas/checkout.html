@@ -1,12 +1,285 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Pagamento | Suits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="https://osmaster.scriptphp.ru/assets/img/favicon.png">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="../css/matrix-style.css">
+  <link rel="stylesheet" href="../css/matrix-media.css">
+  <link href="../css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
+  <link href="../css/css.css" rel="stylesheet" type="text/css">
+  <link href="../css/css2.css" rel="stylesheet" type="text/css">
+  <link href="../css/boxicons.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Em Breve</h1>
+  <!--top-Header-menu-->
+  <div class="navebarn">
+    <div id="user-nav" class="navbar navbar-inverse">
+      <ul class="nav" style="width: auto; margin: 0px;"></ul>
+    </div> <!-- New User -->
+    <div id="userr" style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
+      <div class="user-names userT0"> Boa noite, </div>
+      <div class="userT">admin</div>
+      <section style="display:block;position:absolute;right:10px">
+        <div class="profile">
+          <div class="profile-img"> 
+            <a href="https://osmaster.scriptphp.ru/index.php/mapos/minhaConta">
+              <img src="../imagens/a2c0e016d91ff61639ec3d6cfea18e02.png" alt="">
+            </a> 
+          </div>
+        </div>
+      </section>
+    </div>
+  </div> 
+  
+  <!-- End User -->
+
+  <div id="content">
+    <!--start-top-serch-->
+    <div id="content-header">
+      <!-- New Bem-vindos -->
+      <div class="bemv">Dashboard</div>
+      <div id="breadcrumb"> 
+        <a id="home" class="tip-bottom"> Início</a> 
+        <a href="" class="current tip-bottom"> Pagamento</a> 
+      </div>
+    </div>
+    <div class="container-flu">
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="row-fluid" style="margin-top: 0">
+
+            <!-- Caixa de Impressão de Relatórios-->
+            <div class="span8">
+              <div class="widget-box">
+                <div class="widget-title"> 
+                  <span class="icon"> 
+                    <i class="fas fa-users"></i> 
+                  </span>
+                  <h5>Encerramento</h5>
+                </div>
+
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a data-toggle="tab" href="#detalhes">Detalhes</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#produtos">Produtos</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#opcoes">Opções de Pagamento</a>
+                  </li>
+                </ul>
+
+                <form action="" id="formConfigurar" method="post" class="form-horizontal">
+                    <div class="widget-content nopadding tab-content">
+
+                      <!---->
+                      <div id="detalhes" class="tab-pane fade in active">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="product">Itens</th>
+                            <th class="quantity">Quantidade</th>
+                            <th class="price">Preço</th>
+                          </tr>
+                        </thead>
+                        <tbody id="itensComprados"></tbody>
+                      </table>
+                      </div>
+
+                      <!---->
+                      <div id="produtos" class="tab-pane fade">
+
+                        <!--Campo Pessoas-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="pessoasProduto" placeholder="Pessoas"> 
+                          </div>
+                        </div>
+
+                        <!--Campo Código-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="codigoProduto" placeholder="Código"> 
+                          </div>
+                        </div>
+
+                        <!--Campo Produto-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <select name="" id="">
+                              <option value="" hidden>Produto</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!--Campo Quantidade-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="quantidadeProduto" placeholder="Quantidade"> 
+                          </div>
+                        </div>
+
+                        <!--Campo Descrição-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="descricaoProduto" placeholder="Descrição" disabled> 
+                          </div>
+                        </div>
+
+                        <!--Campo Valor Unitário-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="valorUnitarioProduto" placeholder="Valor Unitário" disabled> 
+                          </div>
+                        </div>
+
+                        <!--Campo Total-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="totalProduto" placeholder="Total" disabled> 
+                          </div>
+                        </div>
+
+                        <!--Botões-->
+                        <div class="form-actions">
+                          <div class="span8">
+                            <div class="span9"> 
+                              <button type="button" class="button btn btn-primary" id=""> 
+                                <span class="button__icon">
+                                  <i class="fa-solid fa-floppy-disk"></i>
+                                </span>
+                                <span class="button__text2">Cadastrar</span>
+                              </button>
+                              <button type="button" class="button btn btn-danger" id=""> 
+                                <span class="button__icon">
+                                  <i class="fa-solid fa-xmark"></i>
+                                </span>
+                                <span class="button__text2">Limpar</span>
+                              </button>   
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!---->
+                      <div id="opcoes" class="tab-pane fade">
+
+                        <!---->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <select name="" id="">
+                              <option value="">Valor</option>
+                              <option value="">Porcentagem</option>
+                            </select>
+                            <input type="text" id="" placeholder="Valor Desconto"> 
+                          </div>
+                        </div>
+
+                        <!---->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <select name="" id="">
+                              <option value="" hidden>Camareira</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!---->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <select name="" id="">
+                              <option value="" hidden>Método de Pagamento</option>
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="span4">
+                <div class="widget-box">
+                  <div class="widget-title"> 
+                    <span class="icon"> 
+                      <i class="fas fa-users"></i> 
+                    </span>
+                    <h5>Fatura</h5>
+                  </div>
+                  <div class="widget-content">
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                            </tr>
+                            <tr>
+                                <td>Quarto</td>
+                                <td>R$ 0</td>
+                            </tr>
+                            <tr>
+                                <td>Add Permanência</td>
+                                <td>R$ 0</td>
+                            </tr>
+                            <tr>
+                                <td>Itens</td>
+                                <td>R$ 0</td>
+                            </tr>
+                            <tr>
+                                <td>Desconto</td>
+                                <td>R$ 0</td>
+                            </tr>
+                            <tr>
+                                <td>Subtotal</td>
+                                <td>R$ 0</td>
+                            </tr>
+                            <tr>
+                                <td>Parcelas</td>
+                                <td>0x de R$ 0</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>R$ 0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
+
+    <!--end-Footer-part-->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/style/jquery-1.12.4.min.js"></script>
+    <script src="../js/style/shortcut.js"></script>
+    <script src="../js/style/funcoesGlobal.js"></script>
+    <script src="../js/style/datatables.min.js"></script>
+    <script src="../js/style/sweetalert.min.js"></script>
+    <script src="../js/style/bootstrap.min.js"></script>
+    <script src="../js/style/matrix.js"></script>
+    <script src="../js/setup/blockRelatoriosCaixa.js"></script>
+    <script src="../js/setup/sitePath.js"></script>
+    <script src="../js/setup/blockImpressaoRelatoriosCaixa.js"></script>
+
+    <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
+
 </html>
