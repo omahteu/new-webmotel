@@ -86,9 +86,10 @@
                       <table class="table">
                         <thead>
                           <tr>
-                            <th class="product">Itens</th>
-                            <th class="quantity">Quantidade</th>
-                            <th class="price">Preço</th>
+                            <th>Descrição</th>
+                            <th>Quantidade</th>
+                            <th>Valor Unitário</th>
+                            <th>Valor Total</th>
                           </tr>
                         </thead>
                         <tbody id="itensComprados"></tbody>
@@ -225,17 +226,25 @@
                                 <th>Descrição</th>
                                 <th>Valor</th>
                             </tr>
+                            <!--Quarto-->
                             <tr>
                                 <td>Quarto</td>
-                                <td>R$ 0</td>
+                                <td>R$ <span id="valorQuarto">0</span></td>
                             </tr>
+                            <!--Permanência-->
+                            <tr>
+                              <td>Permanência</td>
+                              <td id="tempoPermanencia">0</td>
+                            </tr>
+                            <!--Adicional Permanência-->
                             <tr>
                                 <td>Add Permanência</td>
                                 <td>R$ 0</td>
                             </tr>
+                            <!--Itens-->
                             <tr>
                                 <td>Itens</td>
-                                <td>R$ 0</td>
+                                <td>R$ <span id="valorItens">0</span></td>
                             </tr>
                             <tr>
                                 <td>Desconto</td>
@@ -251,7 +260,7 @@
                             </tr>
                             <tr>
                                 <td>Total</td>
-                                <td>R$ 0</td>
+                                <td>R$ <span id="totalGeral">0</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -279,7 +288,7 @@
     <script src="../js/setup/blockRelatoriosCaixa.js"></script>
     <script src="../js/setup/sitePath.js"></script>
     <script src="../js/setup/blockImpressaoRelatoriosCaixa.js"></script>
-
     <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
+    <script src="../js/setup/checkout.js"></script>
 
 </html>

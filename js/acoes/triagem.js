@@ -4,26 +4,18 @@ import { resposta1 } from './acaorespostaum.js'
 //import { resposta3 } from './acaoRespostaTres.js'
 //import { resposta4 } from './acaoRespostaQuatro.js'
 
-
 $("[name=botao]").click(function(){
-    
-    let chave = this.className
     var status = $(this).val()
-    
     let numeroQuarto = $("#numquarto").text()
 	let valorQuarto = $("#valor-quarto").text()
 	let tempo = $("#entrada").text()
-
     var quarto = {
         numero: numeroQuarto,
         valor: valorQuarto,
         tempo: tempo
     }
-
     var quartos = []
-
-    console.log(status)
-
+    quartos.push(quarto)
     switch (numeroQuarto) {
         case '1':
             // QUARTO 1
