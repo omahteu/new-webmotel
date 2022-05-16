@@ -8,10 +8,10 @@ $(".locado").click(function(){
 
 function bloqueio(quarto, x, y, z){
     
-    $("#" + x).css('visibility', 'visible')
-    $("#" + x).val('Encerrar')
+    $(".acoes1").css('visibility', 'visible')
+    $(".acoes1").val('Encerrar')
 
-    $("#" + y).css('visibility', 'hidden')
-    $("#" + y).val('Encerrar')
+    $(".acoes2").css('visibility', 'hidden')
+    $(".acoes2").val('Encerrar')
 
 }
