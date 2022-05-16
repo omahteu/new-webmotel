@@ -1,25 +1,18 @@
 import { modos } from '../setup/box.js'
 
-function mostraProduto(){
-
+function mostraProduto(identificador){
 	$.get("https://demomotelapi.herokuapp.com/comanda/", function(retorno){
-
-		var nQuarto =  $("#numquarto").text()
 		var prateleira = document.getElementById('listaProdutosComprados');
 		prateleira.innerHTML = '';
-
 		try {
-			var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
-
+			var dados = retorno.filter(quartos => quartos.quarto == identificador)
 			dados.forEach(function(resultado){
-
 				var id = resultado.id
 				var quarto =  resultado.quarto
 				var descricao = resultado.descricao
 				var quantidade = resultado.quantidade
 				var valorUnitario = resultado.valor_unitario
 				var valorTotal = resultado.valor_total
-
 				prateleira.innerHTML += '<tr>'+
 											'<td>'+ descricao + '</td>' +
 											'<td>'+ quantidade + '</td>' +
@@ -34,29 +27,22 @@ function mostraProduto(){
 	})
 }
 
-function mostraVeiculo(){
-
+function mostraVeiculo(identificador){
 	// Requisição GET
 	$.get("https://demomotelapi.herokuapp.com/patio/", function(retorno){
-
 		// Parâmetro e Instância de Tabela
-		var nQuarto =  $("#numquarto").text()
 		var patio = document.getElementById('listaveiculosguardados');
 		patio.innerHTML = '';
-		
 		try {
 			// Filtro
-			var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
-
+			var dados = retorno.filter(quartos => quartos.quarto == identificador)
 			// Percorrendo o Array e Formantando uma Tabela
 			dados.forEach(function(resultado){
-
 				var id = resultado.id
 				var quarto =  resultado.quarto
 				var veiculo = resultado.veiculo
 				var modelo = resultado.modelo
 				var placa = resultado.placa
-
 				patio.innerHTML += '<tr>'+
 											'<td>'+ quarto + '</td>' +
 											'<td>'+ veiculo + '</td>' +
@@ -115,8 +101,8 @@ $("[class=card]").mousedown(function(){
 	let tipos = ['locado']
 	// Filtro para Restauração de Produtos e Veículos
 	if(tipos.includes(tipo)){
-		mostraProduto()
-		mostraVeiculo()
+		mostraProduto(identificador)
+		mostraVeiculo(identificador)
 	}
 });
 
