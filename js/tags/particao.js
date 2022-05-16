@@ -1,29 +1,23 @@
 export function index(){
-
     // Data e Hora
     var horaEntrada = new Date();
     var hora = horaEntrada.getHours()
     var minutos = horaEntrada.getMinutes()
     var datahora = `${String(hora)}:${String(minutos)}`
-
     // Valor do Quarto
     var valor = $("#valor-quarto").text()
-
     // Quarto
     var quarto = $("#numquarto").text()
-
     // Agrupando Dados
     var dados = {
         datahora: datahora,
         valor: valor,
         quarto: quarto
     }
-
-
-    $.get("https://defmoteapi.herokuapp.com/infos/", function(retorno){
+    $.get("https://demomotelapi.herokuapp.com/infos/", function(retorno){
 
         if(retorno.length == 0){
-            $.post("https://defmoteapi.herokuapp.com/infos/", dados, function(){})
+            $.post("https://demomotelapi.herokuapp.com/infos/", dados, function(){})
         }
 
         retorno.forEach(function(item){
@@ -33,7 +27,7 @@ export function index(){
             } 
             
             if(item.quarto != quarto){
-                $.post("https://defmoteapi.herokuapp.com/infos/", dados, function(){})
+                $.post("https://demomotelapi.herokuapp.com/infos/", dados, function(){})
             }
         })
     })

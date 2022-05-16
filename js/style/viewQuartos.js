@@ -8,7 +8,7 @@ function mostraProduto(){
 		var prateleira = document.getElementById('listaProdutosComprados');
 		prateleira.innerHTML = '';
 
-		try{
+		try {
 			var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
 
 			dados.forEach(function(resultado){
@@ -25,7 +25,7 @@ function mostraProduto(){
 											'<td>'+ quantidade + '</td>' +
 											'<td>'+ valorUnitario + '</td>' +
 											'<td>'+ valorTotal + '</td>' +
-											'<td><button onclick="removeProduto('+ id +')" class="btn btn-danger">Remover</button></td>'+
+											'<td><button type="button" onclick="removeProduto('+ id +')" class="btn btn-danger">Remover</button></td>'+
 										'</tr>';
 			})
 		} catch (error) {
@@ -62,7 +62,7 @@ function mostraVeiculo(){
 											'<td>'+ veiculo + '</td>' +
 											'<td>'+ modelo + '</td>' +
 											'<td>'+ placa + '</td>' +
-											'<td><button onclick="removeVeiculo('+ id +')" class="btn btn-danger">Remover</button></td>'+
+											'<td><button type="button" onclick="removeVeiculo('+ id +')" class="btn btn-danger">Remover</button></td>'+
 										'</tr>';
 			})
 		} catch (error) {
@@ -71,13 +71,10 @@ function mostraVeiculo(){
 	})
 }
 
-$("[class=cardBox]").mousedown(function(){
-	
-	var cor = $(".cardBox .card:nth-child(1)").css("background-color")
-	console.log(cor)
-	
+$("[class=card]").mousedown(function(){
+	var identificador = $(this).attr("id")
+	var cor = $(`.cardBox .card:nth-child(${identificador})`).css("background-color")
 	// Filtro para Restaurar as Tags Corretas
-	
 	switch(cor){
 		case 'rgb(169, 169, 169)':
 			$("#tipo").text('manutencao')
@@ -88,62 +85,51 @@ $("[class=cardBox]").mousedown(function(){
 		case 'rgb(255, 228, 196)':
 			$("#tipo").text('faxina')
 			break
-		case 'rgb(245, 245, 245)':
-			$("#tipo").text('0')
+		case 'rgb(75, 192, 192)':
+			$("#tipo").text('livre')
 			break
 	}
-/*
-	var identificador = instance.substr(-1)
-
-	$("#numquarto").text(identificador)
-	
 	switch (identificador) {
 		case '1':
 			$("#intervalo").text(modos.slice(0, 3))
-			backupInfos(instance)
+			backupInfos(identificador)
 			break;
 		
 		case '2':
 			$("#intervalo").text(modos.slice(3, 6))
-			backupInfos(instance)
+			backupInfos(identificador)
 			break
 
 		case '3':
 			$("#intervalo").text(modos.slice(6, 9))
-			backupInfos(instance)
+			backupInfos(identificador)
 			break
 		
 		case '4':
 			$("#intervalo").text(modos.slice(9, 12))
-			backupInfos(instance)
+			backupInfos(identificador)
 			break
 	}
-
 	// Variáveis usadas para Filtro
 	let tipo = $("#tipo").text()
-	let tipos = ['pernoite', 'locado']
-
+	let tipos = ['locado']
 	// Filtro para Restauração de Produtos e Veículos
 	if(tipos.includes(tipo)){
 		mostraProduto()
 		mostraVeiculo()
-	}*/
+	}
 });
 
-function backupInfos(instancia){
-
-	$.get("https://defmoteapi.herokuapp.com/infos/", function(retorno){
-
-		var nQuarto =  $("#numquarto").text()
-
-		try{
-			var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
-
+function backupInfos(instance){
+	$.get("https://demomotelapi.herokuapp.com/infos/", function(retorno){
+		try {
+			var dados = retorno.filter(quartos => quartos.quarto == instance)
 			dados.forEach(function(resultado){
-
-				$("#numquarto").text(resultado.quanrto)
+				$("#numquarto").text(resultado.quarto)
+				$("#quarto_painel").text(resultado.quarto)
 				$("#entrada").text(resultado.datahora)
 				$("#valor-quarto").text(resultado.valor)
+				$("#preco_quarto").text(resultado.valor)
 			})
 		} catch (error) {
 			localStorage.setItem('produtos', JSON.stringify([]))
