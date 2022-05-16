@@ -27,9 +27,8 @@ export function faxina(q, t, x, y, z) {
 
     // Definições
     $("#numquarto").text(q)
+    $("#quarto_painel").text(q)
     $("#tipo").text('faxina')
     $("#intervalo").text(`${x},${y},${z}`)
     $("#entrada").text(`${String(hora)}:${String(minutos)}`)
-    //$("#imagemQuarto" + q).css('border', '2px solid rgb(255, 228, 196)')
-    //$("#imagemQuarto" + q).css('box-shadow', 'inset 0 0 1em rgb(255, 228, 196), 0 0 1em #000')
 }

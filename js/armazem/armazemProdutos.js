@@ -1,5 +1,4 @@
 $("#registrar_produto").click(function(){
-	//registroProduto()
 	var tipos = ['locado']
 	var tipo = $("#tipo").text()
 
@@ -24,7 +23,7 @@ function registroProduto(){
 	var horaEntrada = new Date();
     var hora = horaEntrada.getHours()
     var minutos = horaEntrada.getMinutes()
-    var datahora = String(hora) + ':' + String(minutos)
+	var hora_atual = `${hora}:${minutos}`
 	
     
     // Objetos
@@ -34,12 +33,12 @@ function registroProduto(){
 		quantidade: quantidade,
 		valor_total: valorTotal,
 		valor_unitario: valorUnitario,
-		datahora: datahora,
+		datahora: hora_atual,
 		valor_quarto: valor
 	}
 
 	// Requisição POST
-	$.post("https://demomotelapi.herokuapp.com/comanda/", produto, function(){
+	$.post("https://demomotelapi.herokuapp.com/comanda/", produto, function(msg){
 
 		// Exibe os Produtos
 		mostraProduto();
@@ -100,7 +99,7 @@ function mostraProduto(){
 										'<td>'+ quantidade + '</td>' +
 										'<td>'+ valorUnitario + '</td>' +
 										'<td>'+ valorTotal + '</td>' +
-										'<td><button onclick="removeProduto('+ id +')" class="btn btn-danger">Remover</button></td>'+
+										'<td><button type="button" onclick="removeProduto('+ id +')" class="btn btn-danger">Remover</button></td>'+
 									'</tr>';
 		})
 	})

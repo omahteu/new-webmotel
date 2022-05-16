@@ -20,6 +20,7 @@ export function limpeza(q, t, x, y, z) {
 
     // Definições
     $("#numquarto").text(q)
+    $("#quarto_painel").text(q)
     $("#tipo").text('limpeza')
     $("#intervalo").text(`${x},${y},${z}`)
     $("#entrada").text(`${String(hora)}:${String(minutos)}h`)

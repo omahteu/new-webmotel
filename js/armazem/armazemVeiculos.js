@@ -71,7 +71,7 @@ function mostraVeiculo(){
 			patio.innerHTML += '<tr>'+
 									'<td>'+ placa + '</td>' +
 									'<td>'+ modelo + '</td>' +
-									'<td><button onclick="removeVeiculo('+ id +')" class="btn btn-danger">Remover</button></td>'+
+									'<td><button type="button" onclick="removeVeiculo('+ id +')" class="btn btn-danger">Remover</button></td>'+
 								'</tr>';
 		})
 	})
