@@ -11,7 +11,6 @@ $("#registrar_produto").click(function(){
 })
 
 function registroProduto(){
-	
 	// Parâmetros
 	var descricao = $("#descricao").val()
     var quantidade = $("#quantidade").val()
@@ -19,13 +18,10 @@ function registroProduto(){
     var quarto =  $("#numquarto").text()
     var valorUnitario = $("#valor_unitario").val()
 	var valor = $("#valor-quarto").text()
-
 	var horaEntrada = new Date();
     var hora = horaEntrada.getHours()
     var minutos = horaEntrada.getMinutes()
 	var hora_atual = `${hora}:${minutos}`
-	
-    
     // Objetos
 	var produto = {
 		quarto: quarto,
@@ -36,14 +32,11 @@ function registroProduto(){
 		datahora: hora_atual,
 		valor_quarto: valor
 	}
-
 	// Requisição POST
-	$.post("https://demomotelapi.herokuapp.com/comanda/", produto, function(msg){
-
-		// Exibe os Produtos
+	$.post("https://demomotelapi.herokuapp.com/comanda/", produto, function(){
+		alert('Produto Adicionado!')
 		mostraProduto();
     })
-
 	// Limpa os Campos
 	document.getElementById('formCadastros').reset();
 }

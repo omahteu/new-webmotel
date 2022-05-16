@@ -12,26 +12,21 @@ $("#registrar_veiculo").click(function(){
 })
 
 function registroVeiculo(){
-
 	var quarto =  $("#numquarto").text()
 	var veiculo = $("#veiculo").val()
     var modelo = $("#modelo").val()
     var placa = $("#placa").val()
-
 	var patio = {
 		quarto: quarto,
 		veiculo: veiculo,
 		modelo: modelo,
 		placa: placa
     }
-
 	// Requisição POST
-	$.post("https://demomotelapi.herokuapp.com/patio/", patio, function(msg){
-
-		// Exibe os Produtos
+	$.post("https://demomotelapi.herokuapp.com/patio/", patio, function(){
+		alert('Veículo Registrado!')
 		mostraVeiculo();
 	})
-
 	document.getElementById('formCadastros').reset();
 }
 
