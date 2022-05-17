@@ -68,21 +68,58 @@
 
                 <ul class="nav nav-tabs">
                   <li class="active">
+                    <a data-toggle="tab" href="#opcoes">Opções de Pagamento</a>
+                  </li>
+                  <li>
                     <a data-toggle="tab" href="#detalhes">Detalhes</a>
                   </li>
                   <li>
                     <a data-toggle="tab" href="#produtos">Produtos</a>
                   </li>
-                  <li>
-                    <a data-toggle="tab" href="#opcoes">Opções de Pagamento</a>
-                  </li>
+
                 </ul>
 
                 <form action="" id="formConfigurar" method="post" class="form-horizontal">
                     <div class="widget-content nopadding tab-content">
 
                       <!---->
-                      <div id="detalhes" class="tab-pane fade in active">
+                      <div id="opcoes" class="tab-pane fade in active">
+
+                        <!---->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <select id="modo_desconto">
+                              <option value="" hidden>Modo</option>
+                              <option value="valor">Valor</option>
+                              <option value="porcento">Porcentagem</option>
+                            </select>
+                            <input type="number" min="0" id="valor_desconto" placeholder="Valor Desconto">
+                            <button type="button" class="btn btn-success" id="aplicar_desconto">Aplicar</button>
+                          </div>
+                        </div>
+
+                        <!---->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <select name="" id="">
+                              <option value="" hidden>Camareira</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!---->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <select name="" id="">
+                              <option value="" hidden>Método de Pagamento</option>
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <!---->
+                      <div id="detalhes" class="tab-pane fade">
                       <table class="table">
                         <thead>
                           <tr>
@@ -171,39 +208,7 @@
                         </div>
                       </div>
 
-                      <!---->
-                      <div id="opcoes" class="tab-pane fade">
 
-                        <!---->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <select name="" id="">
-                              <option value="">Valor</option>
-                              <option value="">Porcentagem</option>
-                            </select>
-                            <input type="text" id="" placeholder="Valor Desconto"> 
-                          </div>
-                        </div>
-
-                        <!---->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <select name="" id="">
-                              <option value="" hidden>Camareira</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <!---->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <select name="" id="">
-                              <option value="" hidden>Método de Pagamento</option>
-                            </select>
-                          </div>
-                        </div>
-
-                      </div>
 
                     </div>
                 </form>
@@ -246,9 +251,10 @@
                                 <td>Itens</td>
                                 <td>R$ <span id="valorItens">0</span></td>
                             </tr>
+                            <!--Desconnto-->
                             <tr>
                                 <td>Desconto</td>
-                                <td>R$ 0</td>
+                                <td>R$ <span id="valorDesconto">0</span></td>
                             </tr>
                             <tr>
                                 <td>Subtotal</td>

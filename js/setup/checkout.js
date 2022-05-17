@@ -38,7 +38,6 @@ function informacaoes(){
 		}
 
 		var precoProdutos = $("[id=total]").text()
-		console.log(precoProdutos)
 		var somaPrecoProdutos = precoProdutos.split('R$')
 
 		var totalPrecoProdutos = somaPrecoProdutos.filter(function (i) {
@@ -56,14 +55,40 @@ function informacaoes(){
 		var ttgeral = Number(valor_quarto) + Number(sum)
 
 		$("#totalGeral").text(ttgeral)
-		$("#desconto").click(function(){
+		$("#modo_desconto").change(function(){
+
+			var tipo_desconto = $(this).val()
+
+			switch (tipo_desconto) {
+				case 'valor':
+					$('#aplicar_desconto').clcik(function(){
+						var codigoDeconto = $("#valor_desconto").val()
+						$("#totalGeral").text(ttgeral = ttgeral - parseInt(codigoDeconto, 10))
+						$("#valor_desconto").val('')
+						var descont = document.getElementById('valor_desconto')
+						descont.disabled = true
+						$("#valorDesconto").text(codigoDeconto)
+					});
+					break;
+				
+				case 'porcento':
+					$('#aplicar_desconto').click(function(){
+						var codigoDeconto = $("#valor_desconto").val()
+						let valor_decimal = parseInt(codigoDeconto) / 100
+						let valor_para_descontar = ttgeral * valor_decimal
+						$("#totalGeral").text(ttgeral = ttgeral - valor_para_descontar)
+						//$("#valor_desconto").val('')
+						var descont = document.getElementById('valor_desconto')
+						//descont.disabled = true
+						$("#valorDesconto").text(codigoDeconto)
+					});
+					break
 			
-			var codigoDeconto = $("#codigoDesconto").val()
-			$("#totalGeral").text(ttgeral = ttgeral - codigoDeconto)
-			$("#codigoDesconto").val('')
-			var descont = document.getElementById('codigoDesconto')
-			descont.disabled = true
-			$("#valorDesconto").text(codigoDeconto)
+				default:
+					break;
+			}
+
+
 			
 		})
 	})
