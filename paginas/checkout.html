@@ -14,8 +14,9 @@
   <link rel="stylesheet" href="../css/font-awesome.css">
   <link rel="stylesheet" href="../css/fullcalendar.css">
   <link rel="stylesheet" href="../css/css.css">
-  <link rel="stylesheet"  ref="../css/css2.css">
+  <link rel="stylesheet" href="../css/css2.css">
   <link rel="stylesheet" href="../css/boxicons.min.css">
+  <link rel="stylesheet" href="../css/campo.css">
 </head>
 
 <body>
@@ -85,7 +86,7 @@
                       <!---->
                       <div id="opcoes" class="tab-pane fade in active">
 
-                        <!---->
+                        <!--Porcentagem-->
                         <div class="control-group"> 
                           <div class="controls">
                             <select id="modo_desconto">
@@ -98,10 +99,10 @@
                           </div>
                         </div>
 
-                        <!---->
+                        <!--Camareira-->
                         <div class="control-group"> 
                           <div class="controls">
-                            <select name="" id="">
+                            <select id="selecionaCamareira">
                               <option value="" hidden>Camareira</option>
                             </select>
                           </div>
@@ -110,9 +111,11 @@
                         <!---->
                         <div class="control-group"> 
                           <div class="controls">
-                            <select name="" id="">
+                            <select id="modo_pagamento">
                               <option value="" hidden>Método de Pagamento</option>
                             </select>
+                            <input type="number" min="1"id="numero_parcelas" placeholder="P/">
+                            <button type="button" class="btn btn-success" id="confirma_parcelas">Selecionar</button>
                           </div>
                         </div>
 
@@ -296,5 +299,7 @@
     <script src="../js/setup/blockImpressaoRelatoriosCaixa.js"></script>
     <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
     <script src="../js/setup/checkout.js"></script>
+    <script src="../js/ajaxs/getCamareira.js"></script>
+    <script src="../js/botoes/pagamento.js"></script>
 
 </html>
