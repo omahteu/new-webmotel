@@ -111,11 +111,13 @@
                         <!---->
                         <div class="control-group"> 
                           <div class="controls">
-                            <select id="modo_pagamento">
-                              <option value="" hidden>Método de Pagamento</option>
-                            </select>
-                            <input type="number" min="1"id="numero_parcelas" placeholder="P/">
-                            <button type="button" class="btn btn-success" id="confirma_parcelas">Selecionar</button>
+                            <form id="bandeiras_cartoes">
+                              <select id="modo_pagamento">
+                                <option value="" hidden>Método de Pagamento</option>
+                              </select>
+                              <input type="number" min="1"id="numero_parcelas" placeholder="P/">
+                              <button type="button" class="btn btn-success" id="confirma_parcelas">Selecionar</button>
+                            </form>
                           </div>
                         </div>
 
@@ -210,14 +212,12 @@
                           </div>
                         </div>
                       </div>
-
-
-
                     </div>
                 </form>
               </div>
             </div>
 
+            <!--Painel Lateral-->
             <div class="span4">
                 <div class="widget-box">
                   <div class="widget-title"> 
@@ -259,13 +259,15 @@
                                 <td>Desconto</td>
                                 <td>R$ <span id="valorDesconto">0</span></td>
                             </tr>
+                            <!--SubTotal-->
                             <tr>
                                 <td>Subtotal</td>
                                 <td>R$ 0</td>
                             </tr>
+                            <!--Parcelas-->
                             <tr>
                                 <td>Parcelas</td>
-                                <td>0x de R$ 0</td>
+                                <td><span id="nparcelas">0</span>x de R$ <span id="valor_parcelas">0</span></td>
                             </tr>
                             <tr>
                                 <td>Total</td>

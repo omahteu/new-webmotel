@@ -25,61 +25,35 @@ async function buscaTarifasBandeiras() {
     $("#modo_pagamento").change(function(){
         escolha = $(this).val()
 
+        console.log(escolha)
+
         if(escolha > 2.0){
-            let campo_parcelas = $("#numero_parcelas")
-            campo_parcelas.css('display', 'inline')
-            
-            $("#confirma_parcelas").click(function(){
-                //console.log(campo_parcelas.val())
-                //console.log(escolha)
-                npc(escolha, campo_parcelas.val())
-            })
+            let confirmacao_cartao = confirm(`Crédito com acréscimo de ${escolha}%\nConfirme a opção desejada!`)
+            if(confirmacao_cartao){
+                let campo_parcelas = $("#numero_parcelas")
+                campo_parcelas.css('display', 'inline')
+                
+                $("#confirma_parcelas").click(function(){
+                    npc(escolha, campo_parcelas.val())
+                })
+            } else {
+                console.log('abc')
+            }
         }
     })
 }
 
 
 function npc(tarifa, parcelas) {
-
-    var campo1 = tarifa
     var xParcelas = parcelas
-    var campo2 = $("#totalGeral").text()
-
-    console.log(campo1)
-    console.log(xParcelas)
-    console.log(campo2)
-
-    //var maior = (parseFloat(campo1) > parseFloat(campo2)? campo1 : campo2);
-    //var menor = (parseFloat(campo1) < parseFloat(campo2)? campo1 : campo2);
-
-    
-
-    //var result = (menor/maior)*100;
-    //console.log(result)
-
-    //var option = $('#bandeiraCredito').find(":selected").index()
-    //var db = option - 1
-
-    //var codigoDeconto = $("#valor_desconto").val()
-    let valor_decimal = parseInt(tarifa) / 100
-    let valor_para_descontar = ttgeral * valor_decimal
-    $("#totalGeral").text(ttgeral = ttgeral - valor_para_descontar)
-    //$("#valor_desconto").val('')
-    //var descont = document.getElementById('valor_desconto')
-    //descont.disabled = true
-    $("#valorDesconto").text(codigoDeconto)
-
-
-    //alert(`Deseja escolher a opção ${campo1}?`)
-    //("#parcelas").css('display', 'block')
-
-    //var salario = campo2
-    //var percentual = xParcelas;
-    //var aumento = salario * percentual;
-    //var novo_salario = salario + aumento;
-
-    //alert(novo_salario)
-
+    $("#nparcelas").text(xParcelas)
+    let total_geral = $("#totalGeral").text()
+    let valor_decimal = parseFloat(tarifa) / 100
+    let valor_para_descontar = total_geral * valor_decimal
+    let total_comtarifa = parseFloat(total_geral) + parseFloat(valor_para_descontar)
+    let valor_parcelas = total_comtarifa / xParcelas
+    $("#valor_parcelas").text(valor_parcelas)
+    $("#totalGeral").text(total_geral = parseFloat(total_geral) + parseFloat(valor_para_descontar))
 }
 
 function npd() {
