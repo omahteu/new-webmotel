@@ -30,8 +30,8 @@ async function buscaTarifasBandeiras() {
             campo_parcelas.css('display', 'inline')
             
             $("#confirma_parcelas").click(function(){
-                console.log(campo_parcelas.val())
-                console.log(escolha)
+                //console.log(campo_parcelas.val())
+                //console.log(escolha)
                 npc(escolha, campo_parcelas.val())
             })
         }
@@ -45,26 +45,40 @@ function npc(tarifa, parcelas) {
     var xParcelas = parcelas
     var campo2 = $("#totalGeral").text()
 
+    console.log(campo1)
+    console.log(xParcelas)
+    console.log(campo2)
+
     //var maior = (parseFloat(campo1) > parseFloat(campo2)? campo1 : campo2);
     //var menor = (parseFloat(campo1) < parseFloat(campo2)? campo1 : campo2);
 
     
 
-    var result = (menor/maior)*100;
-    console.log(result)
+    //var result = (menor/maior)*100;
+    //console.log(result)
 
     //var option = $('#bandeiraCredito').find(":selected").index()
     //var db = option - 1
 
-    alert(`Deseja escolher a opção ${campo1}?`)
+    //var codigoDeconto = $("#valor_desconto").val()
+    let valor_decimal = parseInt(tarifa) / 100
+    let valor_para_descontar = ttgeral * valor_decimal
+    $("#totalGeral").text(ttgeral = ttgeral - valor_para_descontar)
+    //$("#valor_desconto").val('')
+    //var descont = document.getElementById('valor_desconto')
+    //descont.disabled = true
+    $("#valorDesconto").text(codigoDeconto)
+
+
+    //alert(`Deseja escolher a opção ${campo1}?`)
     //("#parcelas").css('display', 'block')
 
-    var salario = campo2
-    var percentual = xParcelas;
-    var aumento = salario * percentual;
-    var novo_salario = salario + aumento;
+    //var salario = campo2
+    //var percentual = xParcelas;
+    //var aumento = salario * percentual;
+    //var novo_salario = salario + aumento;
 
-    alert(novo_salario)
+    //alert(novo_salario)
 
 }
 
