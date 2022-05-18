@@ -55,6 +55,7 @@ function informacaoes(){
 		var ttgeral = Number(valor_quarto) + Number(sum)
 
 		$("#totalGeral").text(ttgeral)
+		$("#valor_subtotal").text(ttgeral)
 		$("#modo_desconto").change(function(){
 
 			var tipo_desconto = $(this).val()
