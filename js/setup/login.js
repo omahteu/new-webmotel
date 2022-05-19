@@ -23,7 +23,7 @@ async function autenticacao(usuario, senha){
                     localStorage.setItem('usuarioLogado', 'caixa')
                     sessionStorage.setItem('nome', elemento.nome)
                     sessionStorage.setItem('caixa', 'fechado')
-                    $(location).attr('href', './paginas/home.html')
+                    $(location).attr('href', './paginas/caixa.html')
                 }
             } else {
                 alert('Usuário e/ou Senha Inválidos!')

@@ -4,10 +4,10 @@ $(document).ready(function(){
 
 async function buscaCaixa(){
 
-    const resposta = await fetch("https://defmoteapi.herokuapp.com/caixa/")
+    const resposta = await fetch("https://demomotelapi.herokuapp.com/caixa/")
     const data = await resposta.json()
 
-    var historicoCaixa = document.getElementById('tabelaHistoricoCaixa')
+    var historicoCaixa = document.getElementById('tabrlaRelatorioQuartos')
     historicoCaixa.innerHTML = ''
 
     data.forEach(elemento => {
