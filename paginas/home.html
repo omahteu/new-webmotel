@@ -809,78 +809,66 @@
                                         <h5 class="cardHeader">Estatísticas do Sistema</h5>
                                     </div>
                                     <div class="new-bottons"> 
-                                        <a class="card" title="Adicionar Clientes e Fornecedores">
+                                        <!--Disponível-->
+                                        <a class="card">
                                             <div class="iconBx">
                                                 <i class="fa-solid fa-heart-circle-plus"></i>
                                             </div>
                                             <div>
-                                                <div class="cardName2">13</div>
+                                                <div class="cardName2"><span id="quartos_disponiveis">0</span></div>
                                                 <div class="cardName">Disponíveis</div>
                                             </div>
-                                        </a> 
-                                        <a class="card" title="Adicionar Produtos">
+                                        </a>
+                                        <!--Locado-->
+                                        <a class="card">
                                             <div class="iconBx">
                                                 <i class="fa-solid fa-heart-circle-check"></i>
                                             </div>
                                             <div>
-                                                <div class="cardName2">3</div>
+                                                <div class="cardName2"><span id="quartos_locados">0</span></div>
                                                 <div class="cardName">Locados</div>
                                             </div>
-                                        </a> 
+                                        </a>
+                                        <!--Faxina-->
                                         <a class="card">
                                             <div class="iconBx">
                                                 <i class="fa-solid fa-broom"></i>
                                             </div>
                                             <div>
-                                                <div class="cardName2">2</div>
+                                                <div class="cardName2"><span id="quartos_faxina">0</span></div>
                                                 <div class="cardName">Faxina</div>
                                             </div>
                                         </a> 
-                                        <a class="card" title="Adicionar Ordens de Serviço">
+                                        <!--Aguardadno Limpeza-->
+                                        <a class="card">
                                             <div class="iconBx">
                                                 <i class="fa-solid fa-heart-circle-exclamation"></i>
                                             </div>
                                             <div>
-                                                <div class="cardName2">7</div>
+                                                <div class="cardName2"><span id="quartos_aguardando">0</span></div>
                                                 <div class="cardName">Aguardando Limpeza</div>
                                             </div>
-                                        </a> 
+                                        </a>
+                                        <!--Limpeza-->
                                         <a class="card">
                                             <div class="iconBx">
                                                 <i class="fa-solid fa-spray-can-sparkles"></i>
                                             </div>
                                             <div>
-                                                <div class="cardName2">2</div>
+                                                <div class="cardName2"><span id="quartos_limpeza">0</span></div>
                                                 <div class="cardName">Limpeza</div>
                                             </div>
-                                        </a> 
-                                        <a class="card" title="Adicionar Vendas">
+                                        </a>
+                                        <!--Manutenção-->
+                                        <a class="card">
                                             <div class="iconBx">
                                                 <i class="fa-solid fa-screwdriver-wrench"></i>
                                             </div>
                                             <div>
-                                                <div class="cardName2">10</div>
+                                                <div class="cardName2"><span id="quartos_manutencao">0</span></div>
                                                 <div class="cardName">Manutenção</div>
                                             </div>
                                         </a>
-                                        <a title="Cadastrar nova receita" class="card">
-                                            <div class="iconBx">
-                                                <i class="fa-solid fa-coins"></i>
-                                            </div>
-                                            <div>
-                                                <div class="cardName1 cardName2">R$ 0,00</div>
-                                                <div class="cardName">Receita do dia</div>
-                                            </div>
-                                        </a> 
-                                        <a title="Cadastrar nova despesa" class="card">
-                                            <div class="iconBx">
-                                                <i class="fa-solid fa-tags"></i>
-                                            </div>
-                                            <div>
-                                                <div class="cardName1 cardName2">R$ 0,00</div>
-                                                <div class="cardName">Despesa do dia</div>
-                                            </div>
-                                        </a> 
                                     </div>
                                 </div>
                             </div>
@@ -962,6 +950,7 @@
     <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
     <script src="../js/style/fullcalendar.min.js"></script>
     <!--<script src="./js/pt-br.js"></script>-->
+    <script src="../js/estatisticas/disponiveis.js"></script>
 </body>
 
 </html>

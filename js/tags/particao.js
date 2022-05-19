@@ -4,15 +4,14 @@ export function index(){
     var hora = horaEntrada.getHours()
     var minutos = horaEntrada.getMinutes()
     var datahora = `${String(hora)}:${String(minutos)}`
-    // Valor do Quarto
     var valor = $("#valor-quarto").text()
-    // Quarto
     var quarto = $("#numquarto").text()
-    // Agrupando Dados
+    var tipo = $("#tipo").text()
     var dados = {
         datahora: datahora,
         valor: valor,
-        quarto: quarto
+        quarto: quarto,
+        tipo: tipo
     }
     $.get("https://demomotelapi.herokuapp.com/infos/", function(retorno){
 
