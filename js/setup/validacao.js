@@ -8,9 +8,7 @@ $(document).ready(function(){
 
 })
 
-$("#logout").click(function(){
-
-    localStorage.removeItem('usuarioLogado') 
-
+$("#fecharCaixa").click(function(){
+    localStorage.removeItem('usuarioLogado')
     document.location.reload(true)
 })

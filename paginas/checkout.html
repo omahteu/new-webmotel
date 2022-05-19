@@ -95,7 +95,7 @@
                               <option value="porcento">Porcentagem</option>
                             </select>
                             <input type="number" min="0" id="valor_desconto" placeholder="Valor Desconto">
-                            <button type="button" class="btn btn-success" id="aplicar_desconto">Aplicar</button>
+                            <button type="button" class="btn btn-primary" id="aplicar_desconto">Aplicar</button>
                           </div>
                         </div>
 
@@ -108,7 +108,7 @@
                           </div>
                         </div>
 
-                        <!---->
+                        <!--Pagamento-->
                         <div class="control-group"> 
                           <div class="controls">
                             <form id="bandeiras_cartoes">
@@ -116,7 +116,7 @@
                                 <option value="" hidden>Método de Pagamento</option>
                               </select>
                               <input type="number" min="1"id="numero_parcelas" placeholder="P/">
-                              <button type="button" class="btn btn-success" id="confirma_parcelas">Selecionar</button>
+                              <button type="button" class="btn btn-primary" id="confirma_parcelas">Selecionar</button>
                             </form>
                           </div>
                         </div>
@@ -275,7 +275,14 @@
                             </tr>
                             <tr>
                               <td></td>
-                              <td><button type="button" class="btn btn-success">Finalizar</button></td>
+                              <td>
+                                <button type="button" class="button btn btn-primary" id="salvarFormPostProduto"> 
+                                  <span class="button__icon">
+                                    <i class="fa-solid fa-check"></i>
+                                  </span>
+                                  <span class="button__text2">Finalizar</span>
+                                </button>
+                              </td>
                             </tr>
                         </tbody>
                     </table>
@@ -307,5 +314,6 @@
     <script src="../js/setup/checkout.js"></script>
     <script src="../js/ajaxs/getCamareira.js"></script>
     <script src="../js/botoes/pagamento.js"></script>
+    <script src="../js/setup/validacao.js"></script>
 
 </html>
