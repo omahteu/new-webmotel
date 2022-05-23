@@ -1,15 +1,14 @@
 $("#salvarFormPostQuarto").click(function(){
-
     var codigoQuarto = $("#codigoQuarto").val()
     var numeroQuarto = $("#numeroQuarto").val()
     var horasLocacao = $("#quantidadeHorasLocacaoQuarto").val()
     var valorLocacao = $("#valorLocacaoQuarto").val()
     var tempoEspecial = $("#tempoEspecialQuarto").val()
     var valorEspecial = $("#valorEspecialQuarto").val()
-    var horasDiarias = $("#horasquantidadeHorasDiariasQuartoDiarias").val()
+    var horasDiarias = $("#quantidadeHorasDiariasQuarto").val()
     var valorDiaria = $("#valorDiariaQuarto").val()
-    var tempoAdicional = $("#tempoAdictempoAdicionalQuartoional").val()
-    var percemtual = $("#valorHoraAdicionalQuarto").val()
+    var tempoAdicional = $("#tempoAdicionalQuarto").val()
+    var percentual = $("#adicionarPercentualQuarto").val()
     var valorHoraAdicional = $("#valorHoraAdicionalQuarto").val()
     var tolerancia = $("#toleranciaQuarto").val()
     var suite = $("#tipoSuiteQuarto").val()
@@ -20,7 +19,6 @@ $("#salvarFormPostQuarto").click(function(){
     var valor4hora = $("#v4hQuarto").val()
     var valor5hora = $("#v5hQuarto").val()
     var valor6hora = $("#v6hQuarto").val()
-
     var dados = {
         codigo: codigoQuarto,
         numero: numeroQuarto,
@@ -35,7 +33,7 @@ $("#salvarFormPostQuarto").click(function(){
         tolerancia: tolerancia,
         tipo_quarto: suite,
         tipo_tabela: tabela,
-        percentual: percemtual,
+        percentual: percentual,
         vh1: valor1hora,
         vh2: valor2hora,
         vh3: valor3hora,
@@ -43,13 +41,8 @@ $("#salvarFormPostQuarto").click(function(){
         vh5: valor5hora,
         vh6: valor6hora
     }
-
-    console.log(dados)
-/*
     $.post("https://demomotelapi.herokuapp.com/quartos/", dados, function(){
         alert("Quarto Registrado!")
-
         document.getElementById('formCadastros').reset()
     })
-*/
 })

@@ -426,125 +426,405 @@ hr {
   align-items    : center;
 }
 
-.cardBox .card:nth-child(1) {
+.cardBox .card:nth-child(01) {
   background: #4bc0c0;
 }
 
-.cardBox .card:nth-child(2) {
-  background: #4bc0c0;
+.cardBox .card:nth-child(02) {
+background: #4bc0c0;
 }
 
-.cardBox .card:nth-child(3) {
-  background: #4bc0c0;
+.cardBox .card:nth-child(03) {
+background: #4bc0c0;
 }
 
-.cardBox .card:nth-child(4) {
-  background: #4bc0c0;
+.cardBox .card:nth-child(04) {
+background: #4bc0c0;
 }
 
-.cardBox .card:nth-child(5) {
+.cardBox .card:nth-child(05) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(6) {
+  }
+  
+  .cardBox .card:nth-child(06) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(7) {
+  }
+  
+  .cardBox .card:nth-child(07) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(8) {
+  }
+  
+  .cardBox .card:nth-child(08) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(9) {
+  }
+  
+  .cardBox .card:nth-child(09) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(10) {
+  }
+  
+  .cardBox .card:nth-child(10) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(11) {
+  }
+  
+  .cardBox .card:nth-child(11) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(12) {
+  }
+  
+  .cardBox .card:nth-child(12) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(13) {
+  }
+  
+  .cardBox .card:nth-child(13) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(14) {
+  }
+  
+  .cardBox .card:nth-child(14) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(15) {
+  }
+  
+  .cardBox .card:nth-child(15) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(16) {
+  }
+  
+  .cardBox .card:nth-child(16) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(17) {
+  }
+  
+  .cardBox .card:nth-child(17) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(18) {
+  }
+  
+  .cardBox .card:nth-child(18) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(19) {
+  }
+  
+  .cardBox .card:nth-child(19) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(20) {
+  }
+  
+  .cardBox .card:nth-child(20) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(21) {
+  }
+  
+  .cardBox .card:nth-child(21) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(22) {
+  }
+  
+  .cardBox .card:nth-child(22) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(23) {
+  }
+  
+  .cardBox .card:nth-child(23) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(24) {
+  }
+  
+  .cardBox .card:nth-child(24) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(25) {
+  }
+  
+  .cardBox .card:nth-child(25) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(26) {
+  }
+  
+  .cardBox .card:nth-child(26) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(27) {
+  }
+  
+  .cardBox .card:nth-child(27) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(28) {
+  }
+  
+  .cardBox .card:nth-child(28) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(29) {
+  }
+  
+  .cardBox .card:nth-child(29) {
   background: #4bc0c0;
-}
-
-.cardBox .card:nth-child(30) {
+  }
+  
+  .cardBox .card:nth-child(30) {
   background: #4bc0c0;
-}
+  }
+  
+  .cardBox .card:nth-child(31) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(32) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(33) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(34) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(35) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(36) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(37) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(38) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(39) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(40) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(41) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(42) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(43) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(44) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(45) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(46) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(47) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(48) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(49) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(50) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(51) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(52) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(53) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(54) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(55) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(56) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(57) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(58) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(59) {
+  background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(60) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(61) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(62) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(63) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(64) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(65) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(66) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(67) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(68) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(69) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(70) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(71) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(72) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(73) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(74) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(75) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(76) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(77) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(78) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(79) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(80) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(81) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(82) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(83) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(84) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(85) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(86) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(87) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(88) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(89) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(90) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(91) {
+      background: #4bc0c0;
+  }
+                                                                                                                              
+  .cardBox .card:nth-child(92) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(93) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(94) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(95) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(96) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(97) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(98) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(99) {
+      background: #4bc0c0;
+  }
+  
+  .cardBox .card:nth-child(100) {
+      background: #4bc0c0;
+  }
 
 .cardBox .card .numbers {
   position   : relative;
