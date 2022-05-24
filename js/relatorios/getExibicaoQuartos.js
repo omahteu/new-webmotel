@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
 
     busca_e_exibe_quartos()
@@ -23,7 +25,15 @@ $(document).ready(function(){
         var ind = $(this)
         var ind2 = $(ind[0].children[0])
         var ind3 = $(ind2[0].children[1])
-        console.log(ind3.text())
+        var ind4 = ind3.text()
+
+        $("#quarto_painel").text(ind4)
+
+        var fm = document.forms['botoes']
+        var el = fm.elements
+        el[0].setAttribute("name", ind4)
+        el[1].setAttribute("name", ind4)
+        el[2].setAttribute("name", ind4)
     })
 })
 
@@ -35,7 +45,7 @@ async function busca_e_exibe_quartos(){
         $(".cardBox").append(`<li class="card">`+
                                 '<div>'+
                                     '<h3 id="contador">'+
-                                        '<span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>'+
+                                        `<span id="hour${indice}">00</span>:<span id="minute${indice}">00</span>:<span id="second${indice}">00</span>`+
                                     '</h3>'+
                                     `<div class="cardName" name="asd">${indice}</div>`+
                                 '</div>'+
@@ -46,7 +56,5 @@ async function busca_e_exibe_quartos(){
                                 '</a>'+
                             '</li>')
     }
-
-    
 }
 

@@ -2,14 +2,16 @@ import { locado } from "../tags/locacao.js"
 import { modos } from "../setup/box.js"
 import { index } from "../tags/particao.js"
 import { start } from "../contadores/contadorUm.js"
-//import { start2 } from "../contadores/contadorDois.js"
+import { start2 } from "../contadores/contadorDois.js"
 //import { start3 } from "../contadores/contadorTres.js"
 //import { start4 } from "../contadores/contadorQuatro.js"
 import { fimModal } from "../setup/camareiras.js"
 
 $(".locado").click(function(){
-    var quarto = $(this).attr('name')
+    var quarto = $('#quarto_painel').text()
+
     var rota = $(this).attr('class')
+
 
     if(confirm(`DESEJA INICIAR O QUARTO ${quarto}?`) == true){
 
@@ -25,6 +27,7 @@ $(".locado").click(function(){
             case '2':
                 var flags = modos.slice(3, 6)
                 locado(quarto, rota, flags[0], flags[1], flags[2])
+                setTimeout(function() {fimModal()}, 1000)
                 start2()
                 setTimeout(function() {index()}, 2000);
                 break

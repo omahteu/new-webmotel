@@ -5,7 +5,7 @@ let minute = 0;
 let second = 0;
 let millisecond = 0;
 
-let cron;
+let cron
 
 export function start2() {
     pause2();

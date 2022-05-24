@@ -1,10 +1,11 @@
 export function locado(q, t,  x, y, z) {
     // CSS
-    $(".cardBox .card:nth-child(1)").css({
+    $(`.cardBox .card:nth-child(${q})`).css({
         "background": "#FF0000",
-        "opacity": 0.5})
+        "opacity": 0.5
+    })
     
-    $("[name=1]").css('display', 'none')
+    $(`[name=${q}]`).css('display', 'none')
     // Botões Inferiores
     $(".acoes1").css('display', 'inline-block')
     $(".acoes1").val('Trocar Suíte')

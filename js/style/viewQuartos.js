@@ -57,65 +57,128 @@ function mostraVeiculo(identificador){
 	})
 }
 
-$("[class=card]").mousedown(function(){
-	var identificador = $(this).attr("id")
-	var cor = $(`.cardBox .card:nth-child(${identificador})`).css("background-color")
-	// Filtro para Restaurar as Tags Corretas
-	switch(cor){
-		case 'rgb(169, 169, 169)':
-			$("#tipo").text('manutencao')
-			break
-		case 'rgb(255, 0, 0)':
-			$("#tipo").text('locado')
-			break
-		case 'rgb(255, 228, 196)':
-			$("#tipo").text('faxina')
-			break
-		case 'rgb(75, 192, 192)':
-			$("#tipo").text('livre')
-			break
-	}
-	switch (identificador) {
-		case '1':
-			$("#intervalo").text(modos.slice(0, 3))
-			backupInfos(identificador)
-			break;
-		
-		case '2':
-			$("#intervalo").text(modos.slice(3, 6))
-			backupInfos(identificador)
-			break
+$(document).on('click', '[class="card"]', function(){
+	var ind = $(this)
+	var ind2 = $(ind[0].children[0])
+	var ind3 = $(ind2[0].children[1])
+	var identificador = ind3.text()
+	setTimeout(function() {
+		var cor = $(`.cardBox .card:nth-child(${identificador})`).css("background-color")
+		// Filtro para Restaurar as Tags Corretas
+		switch(cor){
+			case 'rgb(169, 169, 169)':
+				$("#tipo").text('manutencao')
+				break
+			case 'rgb(255, 0, 0)':
+				$("#tipo").text('locado')
+				break
+			case 'rgb(255, 228, 196)':
+				$("#tipo").text('faxina')
+				break
+			case 'rgb(75, 192, 192)':
+				$("#tipo").text('livre')
+				break
+		}
+		switch (identificador) {
+			case '1':
+				$("#intervalo").text(modos.slice(0, 3))
+				backupInfos(identificador)
+				break;
+			
+			case '2':
+				$("#intervalo").text(modos.slice(3, 6))
+				backupInfos(identificador)
+				break
+	
+			case '3':
+				$("#intervalo").text(modos.slice(6, 9))
+				backupInfos(identificador)
+				break
+			
+			case '4':
+				$("#intervalo").text(modos.slice(9, 12))
+				backupInfos(identificador)
+				break
+		}
+		// Variáveis usadas para Filtro
+		let tipo = $("#tipo").text()
+		let tipos = ['locado']
+		// Filtro para Restauração de Produtos e Veículos
+		if(tipos.includes(tipo)){
+			mostraProduto(identificador)
+			mostraVeiculo(identificador)
+		}
+	}, 500);
+})
 
-		case '3':
-			$("#intervalo").text(modos.slice(6, 9))
-			backupInfos(identificador)
-			break
-		
-		case '4':
-			$("#intervalo").text(modos.slice(9, 12))
-			backupInfos(identificador)
-			break
-	}
-	// Variáveis usadas para Filtro
-	let tipo = $("#tipo").text()
-	let tipos = ['locado']
-	// Filtro para Restauração de Produtos e Veículos
-	if(tipos.includes(tipo)){
-		mostraProduto(identificador)
-		mostraVeiculo(identificador)
-	}
-});
 
 function backupInfos(instance){
 	$.get("https://demomotelapi.herokuapp.com/infos/", function(retorno){
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == instance)
+
+			if(dados.length == 0){
+				console.log(instance)
+				$(`[name=${instance}]`).css('display', 'inline-block')
+				$(".acoes1"). removeAttr('style')
+				$(".acoes2"). removeAttr('style')
+				$(".acoes3"). removeAttr('style')
+			} else {
+				switch (dados[0].tipo) {
+					case 'locado':
+						$(`[name=${instance}]`).css('display', 'none')
+						$(".acoes1").css('display', 'inline-block')
+						$(".acoes1").val('Trocar Suíte')
+						$(".acoes2").css('display', 'inline-block')
+						$(".acoes2").val('Encerrar')
+						$(".acoes3").css('display', 'none')
+						$(".acoes3").val('Cancelar Reserva')
+						break;
+
+					case 'manutencao':
+						$(`[name=${instance}]`).css('display', 'none')
+						$(".acoes1").css('display', 'inline-block')
+						$(".acoes1").val('Iniciar Faxina')		
+						$(".acoes2").css('display', 'inline-block')
+						$(".acoes2").val('Disponibilizar Quarto')		
+						$(".acoes3").css('display', 'inline-block')
+						$(".acoes3").val('Ligar Luz')
+						break
+
+					case 'faxina':
+						$(`[name=${instance}]`).css('display', 'none')
+						$(".acoes1").css('display', 'inline-block')
+						$(".acoes1").val('Disponibilizar Quarto')
+						$(".acoes2").css('display', 'none')
+						$(".acoes2").val('Alterar P/ Locação')
+						$(".acoes3").css('display', 'none')
+						$(".acoes3").val('Cancelar Reserva')
+						break
+				
+					default:
+						break;
+				}
+				console.log(dados[0].tipo)
+			}
+
+/*
+			console.log(dados.length)
+			
+
+			if(dados.includes(instance) == true){
+				console.log('existe')
+			} else {
+				console.log('não existe')
+			}*/
+
+
+
 			dados.forEach(function(resultado){
 				$("#numquarto").text(resultado.quarto)
 				$("#quarto_painel").text(resultado.quarto)
 				$("#entrada").text(resultado.datahora)
 				$("#valor-quarto").text(resultado.valor)
-				$("#preco_quarto").text(resultado.valor)
+				$("#preco_quarto").text(resultado.valor)	
 			})
 		} catch (error) {
 			localStorage.setItem('produtos', JSON.stringify([]))
