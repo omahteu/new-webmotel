@@ -73,6 +73,9 @@
                   <li>
                     <a data-toggle="tab" href="#cartoes">Cartões</a>
                   </li>
+                  <li>
+                    <a data-toggle="tab" href="#quartos">Quartos</a>
+                  </li>
                 </ul>
 
                 <form class="form-horizontal" id="formCadastros">
@@ -185,6 +188,44 @@
                             </button>
                           </div>
                         </div>
+                      </div>
+                    </div>
+
+                    <!--Quarto-->
+                    <div id="quartos" class="tab-pane fade">
+
+                      <!--Tabela-->
+                      <div class="control-group"> 
+                          <label for="codigoProduto" class="control-label">Código</label>
+                          <div class="controls"> 
+                          <select name="" id="">
+                            <option hidden>Tabela de Preço</option>
+                            <option value="locacao">Locação</option>
+                            <option value="diaria">Diaria</option>
+                            <option value="pernoite">Pernoite</option>
+                            <option value="vh">Valores à Hora</option>
+                          </select>
+                          </div>
+                      </div>
+
+                      <!--Botões-->
+                      <div class="form-actions">
+                          <div class="span8">
+                          <div class="span9"> 
+                              <button type="button" class="button btn btn-primary" id="salvarFormPostProduto"> 
+                              <span class="button__icon">
+                                  <i class="fa-solid fa-floppy-disk"></i>
+                              </span>
+                              <span class="button__text2">Cadastrar</span>
+                              </button>
+                              <button type="button" class="button btn btn-danger" id="limparFormPostProduto"> 
+                              <span class="button__icon">
+                                  <i class="fa-solid fa-xmark"></i>
+                              </span>
+                              <span class="button__text2">Limpar</span>
+                              </button>   
+                          </div>
+                          </div>
                       </div>
                     </div>
 
