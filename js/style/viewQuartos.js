@@ -116,9 +116,7 @@ function backupInfos(instance){
 	$.get("https://demomotelapi.herokuapp.com/infos/", function(retorno){
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == instance)
-
 			if(dados.length == 0){
-				console.log(instance)
 				$(`[name=${instance}]`).css('display', 'inline-block')
 				$(".acoes1"). removeAttr('style')
 				$(".acoes2"). removeAttr('style')
@@ -158,21 +156,7 @@ function backupInfos(instance){
 					default:
 						break;
 				}
-				console.log(dados[0].tipo)
 			}
-
-/*
-			console.log(dados.length)
-			
-
-			if(dados.includes(instance) == true){
-				console.log('existe')
-			} else {
-				console.log('não existe')
-			}*/
-
-
-
 			dados.forEach(function(resultado){
 				$("#numquarto").text(resultado.quarto)
 				$("#quarto_painel").text(resultado.quarto)

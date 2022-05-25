@@ -9,9 +9,7 @@ import { fimModal } from "../setup/camareiras.js"
 
 $(".locado").click(function(){
     var quarto = $('#quarto_painel').text()
-
     var rota = $(this).attr('class')
-
 
     if(confirm(`DESEJA INICIAR O QUARTO ${quarto}?`) == true){
 
