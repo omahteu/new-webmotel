@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Suits | Configurações</title>
@@ -16,30 +14,25 @@
   <link rel="stylesheet" href="../css/css.css">
   <link rel="stylesheet" href="../css/css2.css">
   <link rel="stylesheet" href="../css/boxicons.min.css">
-
 </head>
-
 <body>
   <!--top-Header-menu-->
   <div class="navebarn">
     <div id="user-nav" class="navbar navbar-inverse"></div>
     <!-- New User -->
     <div id="userr" style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
-      <div class="user-names userT0"> Boa tarde, </div>
-      <div class="userT">admin</div>
+      <div class="user-names userT0" id="saudacao_usuario"> Boa tarde, </div>
+      <div class="userT" id="usuario_sistema">admin</div>
       <section style="display:block;position:absolute;right:10px">
         <div class="profile">
           <div class="profile-img"> 
-            <a href="">
-              <img src="" alt=""></a> 
+            <a>
+              <img src="../imagens/a2c0e016d91ff61639ec3d6cfea18e02.png" alt=""></a> 
             </div>
         </div>
       </section>
     </div>
   </div> 
-  <!-- End User -->
-
-
   <div id="content">
     <!--start-top-serch-->
     <div id="content-header">
@@ -63,7 +56,6 @@
                   <h5>Configurações do Sistema</h5>
                 </div>
                 <ul class="nav nav-tabs">
-
                   <li class="active">
                     <a data-toggle="tab" href="#tempo">Tempo</a>
                   </li>
@@ -77,72 +69,72 @@
                     <a data-toggle="tab" href="#quartos">Quartos</a>
                   </li>
                 </ul>
-
                 <form class="form-horizontal" id="formCadastros">
                   <div class="widget-content nopadding tab-content">
-
                     <!-- Tempo -->
                     <div id="tempo" class="tab-pane fade in active">
 
-                        <!--Troca de Quarto-->
-                        <div class="control-group"> 
-                            <label for="codigoProduto" class="control-label">Código</label>
-                            <div class="controls"> 
-                            <input type="text" id="codigoProduto" placeholder="Tempo para troca de quarto"> 
-                            </div>
+                      <div class="control-group"> 
+                        <div class="controls"> 
+                          <select name="" id="escolhe_tempo">
+                            <option value="" hidden>Escolha</option>
+                            <option value="">Troca de Quarto</option>
+                            <option value="">Desistência</option>
+                            <option value="">Limpeza</option>
+                            <option value="">Faxina</option>
+                            <option value="">Manutenção</option>
+                          </select> 
                         </div>
+                      </div>
 
-                        <!--Desistência-->
-                        <div class="control-group"> 
-                            <label for="codigoProduto" class="control-label">Código</label>
-                            <div class="controls"> 
-                                <input type="text" id="codigoProduto" placeholder="Tempo para Desistência"> 
-                            </div>
-                        </div>
+                      <!--Troca de Quarto-->
+                      <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="tempo_troca_quarto" placeholder="Tempo para troca de quarto"> 
+                          </div>
+                      </div>
 
-                        <!--Limpeza-->
-                        <div class="control-group"> 
-                            <label for="codigoProduto" class="control-label">Código</label>
-                            <div class="controls"> 
-                                <input type="text" id="codigoProduto" placeholder="Tempo para Limpeza"> 
-                            </div>
-                        </div>
+                      <!--Desistência-->
+                      <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="tempo_desistencia" placeholder="Tempo para Desistência"> 
+                          </div>
+                      </div>
 
-                        <!--Faxina-->
-                        <div class="control-group"> 
-                            <label for="codigoProduto" class="control-label">Código</label>
-                            <div class="controls"> 
-                                <input type="text" id="codigoProduto" placeholder="Tempo para Faxina"> 
-                            </div>
-                        </div>
+                      <!--Limpeza-->
+                      <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="tempo_limpeza" placeholder="Tempo para Limpeza"> 
+                          </div>
+                      </div>
 
-                        <!--Manutenção-->
-                        <div class="control-group"> 
-                            <label for="codigoProduto" class="control-label">Código</label>
-                            <div class="controls"> 
-                                <input type="text" id="codigoProduto" placeholder="Tempo para Manutenção"> 
-                            </div>
-                        </div>
+                      <!--Faxina-->
+                      <div class="control-group"> 
+                          <div class="controls"> 
+                              <input type="text" id="tempo_faxina" placeholder="Tempo para Faxina"> 
+                          </div>
+                      </div>
 
-                        <!--Botões-->
-                        <div class="form-actions">
-                            <div class="span8">
-                            <div class="span9"> 
-                                <button type="button" class="button btn btn-primary" id="salvarFormPostProduto"> 
-                                <span class="button__icon">
-                                    <i class="fa-solid fa-floppy-disk"></i>
-                                </span>
-                                <span class="button__text2">Cadastrar</span>
-                                </button>
-                                <button type="button" class="button btn btn-danger" id="limparFormPostProduto"> 
-                                <span class="button__icon">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </span>
-                                <span class="button__text2">Limpar</span>
-                                </button>   
-                            </div>
-                            </div>
+                      <!--Manutenção-->
+                      <div class="control-group"> 
+                          <div class="controls"> 
+                              <input type="text" id="tempo_manutencao" placeholder="Tempo para Manutenção"> 
+                          </div>
+                      </div>
+
+                      <!--Botões-->
+                      <div class="form-actions">
+                        <div class="span8">
+                          <div class="span9"> 
+                            <button type="button" class="button btn btn-primary" id="SalvarConfigEscohaTempos">
+                              <span class="button__icon">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                              </span>
+                              <span class="button__text2">Atualizar</span>
+                            </button> 
+                          </div>
                         </div>
+                      </div>
                     </div>
 
                     <!-- Pernoite -->
@@ -198,37 +190,30 @@
                       <div class="control-group"> 
                           <label for="codigoProduto" class="control-label">Código</label>
                           <div class="controls"> 
-                          <select name="" id="">
+                          <select id="escolha_tabela_precos">
                             <option hidden>Tabela de Preço</option>
-                            <option value="locacao">Locação</option>
-                            <option value="diaria">Diaria</option>
-                            <option value="pernoite">Pernoite</option>
-                            <option value="vh">Valores à Hora</option>
+                            <option value="0">Locação</option>
+                            <option value="1">Diaria</option>
+                            <option value="2">Pernoite</option>
+                            <option value="3">Valores à Hora</option>
                           </select>
                           </div>
                       </div>
 
                       <!--Botões-->
                       <div class="form-actions">
-                          <div class="span8">
+                        <div class="span8">
                           <div class="span9"> 
-                              <button type="button" class="button btn btn-primary" id="salvarFormPostProduto"> 
-                              <span class="button__icon">
-                                  <i class="fa-solid fa-floppy-disk"></i>
-                              </span>
-                              <span class="button__text2">Cadastrar</span>
+                              <button type="button" class="button btn btn-primary" id="SalvarConfigEscolhaTabelaPreco"> 
+                                <span class="button__icon">
+                                    <i class="fa-solid fa-floppy-disk"></i>
+                                </span>
+                                <span class="button__text2" id="botao_tabela">Atualizar</span>
                               </button>
-                              <button type="button" class="button btn btn-danger" id="limparFormPostProduto"> 
-                              <span class="button__icon">
-                                  <i class="fa-solid fa-xmark"></i>
-                              </span>
-                              <span class="button__text2">Limpar</span>
-                              </button>   
                           </div>
-                          </div>
+                        </div>
                       </div>
                     </div>
-
                   </div>
                 </form>
               </div>
@@ -238,30 +223,21 @@
       </div>
     </div>
   </div>
-
-  <div class="row-fluid">
-    <div id="footer" class="span12"> 
-      <a class="pecolor" href="">2022 © Ordem de Serviço</a>
-    </div>
-  </div>
-
 </body>
-
-    <!--end-Footer-part-->
-    <script src="../js/jquery.js"></script>
-    <script src="../js/style/jquery-1.12.4.min.js"></script>
-    <script src="../js/style/shortcut.js"></script>
-    <script src="../js/style/funcoesGlobal.js"></script>
-    <script src="../js/style/datatables.min.js"></script>
-    <script src="../js/style/sweetalert.min.js"></script>
-    <script src="../js/style/bootstrap.min.js"></script>
-    <script src="../js/style/matrix.js"></script>
-    <script src="../js/setup/blockCadastrosCaixa.js"></script>
-    <script src="../js/setup/sitePath.js"></script>
-    <script src="../js/cadastros/postProduto.js"></script>
-    <script src="../js/cadastros/postQuarto.js"></script>
-    <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
-    <script src="../js/setup/validacao.js"></script>
-
-
+  <script src="../js/jquery.js"></script>
+  <script src="../js/style/shortcut.js"></script>
+  <script src="../js/style/funcoesGlobal.js"></script>
+  <script src="../js/style/datatables.min.js"></script>
+  <script src="../js/style/sweetalert.min.js"></script>
+  <script src="../js/style/bootstrap.min.js"></script>
+  <script src="../js/style/matrix.js"></script>
+  <script src="../js/setup/blockCadastrosCaixa.js"></script>
+  <script src="../js/setup/sitePath.js"></script>
+  <script src="../js/cadastros/postProduto.js"></script>
+  <script src="../js/cadastros/postQuarto.js"></script>
+  <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
+  <script src="../js/setup/validacao.js"></script>
+  <script src="../js/configuracoes/tabela_precos.js"></script>
+  <script src="../js/configuracoes/tempo.js"></script>
+  <script src="../js/style/nomes.js"></script>
 </html>

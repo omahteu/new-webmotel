@@ -4369,3 +4369,8 @@ fieldset[disabled] .btn-info.active {
 .table th, .table td{
   border-left: 0px solid #ddd;
 }
+
+#timer_quartos, #tempo_troca_quarto, #tempo_desistencia,
+#tempo_limpeza, #tempo_faxina, #tempo_manutencao {
+  display: none;
+}
