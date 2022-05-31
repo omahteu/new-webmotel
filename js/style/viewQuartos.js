@@ -113,6 +113,7 @@ $(document).on('click', '[class="card"]', function(){
 
 
 function backupInfos(instance){
+	mostraProduto()
 	$.get("https://demomotelapi.herokuapp.com/infos/", function(retorno){
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == instance)
@@ -168,4 +169,22 @@ function backupInfos(instance){
 			localStorage.setItem('produtos', JSON.stringify([]))
 		}
 	})
+    setTimeout(function(){
+		$.get("https://demomotelapi.herokuapp.com/comanda/", (e) => {
+			var dados = e.filter(quartos => quartos.quarto == instance)
+			var sum = 0;
+			for(var a = 0; a < dados.length; a++){
+				sum += parseFloat(dados[a].valor_total.slice(2).trim())
+			}
+			$("#consumo_painel").text(sum)
+		})
+        
+    }, 500)
+	setTimeout(function(){
+		var valor_quarto = $("#valor-quarto").text()
+		var valor_consumo = $("#consumo_painel").text()
+		console.log(valor_consumo)
+		var resultado = parseFloat(valor_quarto) + parseFloat(valor_consumo)
+		$("#parcial_painel").text(resultado)
+	}, 670)
 }

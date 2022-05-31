@@ -48,9 +48,11 @@ function informacaoes(){
 			sum += parseFloat(totalPrecoProdutos[a])
 		}
 
+		var permanencia = localStorage.getItem(numero_quarto)
 		$("#valorItens").text(sum)
 		$("#valorQuarto").text(valor_quarto)
-		$("#tempoPermanencia").text(tempo)
+		$("#tempoPermanencia").text(permanencia)
+
 		
 		var ttgeral = Number(valor_quarto) + Number(sum)
 

@@ -14,6 +14,11 @@ export function locado(q, t,  x, y, z) {
     if(t != 'btn locado'){} 
     // Preço
     var tipoQuarto = $('#tipo' + q).text()
+
+    // LER QUAAL TABELA ESTÁ EM USO
+    // SELECIONAR PELO IF QUAAL ESTÁ EM VIGOR E APLICAR
+
+
     switch (tipoQuarto){
         case 'AR':
             if(t === 'btn locado'){

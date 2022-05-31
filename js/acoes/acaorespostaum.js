@@ -9,6 +9,7 @@ import { pause, reset, start } from '../contadores/contadorUm.js'
 //import { espera } from "../boxes/box.js"
 import { inicioModal } from "../setup/camareiras.js"
 import { fimModal } from "../setup/camareiras.js"
+import { busca_permanencia } from "../setup/permanencia.js"
 
 var rota = 'rota'
 
@@ -49,11 +50,13 @@ export function resposta1(status){
         case 'Encerrar':
             if(confirm(`DESEJA ENCERRAR O QUARTO ${quarto}?`)){
                 pause()
+                busca_permanencia()
                 setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
                 sessionStorage.setItem('quarto', quarto)
                 window.open('../paginas/checkout.html', '_blank')
                 setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 2000)
                 setTimeout(function() {fimModal()}, 1001)
+                //setTimeout(function() {busca_permanencia()}, 1100)
             }
             break
         
