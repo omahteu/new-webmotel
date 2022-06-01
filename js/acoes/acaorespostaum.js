@@ -56,7 +56,6 @@ export function resposta1(status){
                 window.open('../paginas/checkout.html', '_blank')
                 setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 2000)
                 setTimeout(function() {fimModal()}, 1001)
-                //setTimeout(function() {busca_permanencia()}, 1100)
             }
             break
         

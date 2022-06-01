@@ -42,12 +42,14 @@ async function busca_e_exibe_quartos(){
     const dados = await resposta.json()
     for(var i = 0; i < dados.length; i++){
         var indice = parseInt(i) + 1
+        var tipo_quarto = dados[i].tipo_quarto
         $(".cardBox").append(`<li class="card">`+
                                 '<div>'+
                                     '<h3 id="contador">'+
                                         `<span id="hour${indice}">00</span>:<span id="minute${indice}">00</span>:<span id="second${indice}">00</span>`+
                                     '</h3>'+
                                     `<div class="cardName" name="asd">${indice}</div>`+
+                                    `<h4 id="tipo_suite${indice}">${tipo_quarto}</h4>`+
                                 '</div>'+
                                 `<a id="botao_hub">`+
                                     '<div class="iconBx">'+

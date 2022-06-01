@@ -1,4 +1,4 @@
-export function locado(q, t,  x, y, z) {
+export function locado(q, t,  x, y, z) {   
     // CSS
     $(`.cardBox .card:nth-child(${q})`).css({
         "background": "#FF0000",
@@ -13,32 +13,68 @@ export function locado(q, t,  x, y, z) {
     $(".acoes2").val('Encerrar')
     if(t != 'btn locado'){} 
     // Preço
-    var tipoQuarto = $('#tipo' + q).text()
+    var tipoQuarto = $("#tipo_suite" + q).text()
 
     // LER QUAAL TABELA ESTÁ EM USO
     // SELECIONAR PELO IF QUAAL ESTÁ EM VIGOR E APLICAR
 
+    var tabela_emvigor = $("#tabela_emvigor").text()
+
+    //console.log(tipoQuarto)
+
 
     switch (tipoQuarto){
-        case 'AR':
-            if(t === 'btn locado'){
+        case 'Ar':
+            if(t == 'btn locado' && tabela_emvigor == 'Locação'){
                 $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
-                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'AR')
+                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ar')
                     dados.forEach(function(resultado){
                         $("#valor-quarto").text(resultado.valor_locacao)
                         $("#preco_quarto").text(resultado.valor_locacao)
                     })
                 })
+            } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
+                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
+                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ar')
+                    dados.forEach(function(resultado){
+                        $("#valor-quarto").text(resultado.valor_diaria)
+                        $("#preco_quarto").text(resultado.valor_diaria)
+                    })
+                })
+            } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
+                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
+                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ar')
+                    dados.forEach(function(resultado){
+                        $("#valor-quarto").text(resultado.valor_especial)
+                        $("#preco_quarto").text(resultado.valor_especial)
+                    })
+                })
             }
             break
 
-        case 'VENTILADOR':
-            if(t === 'btn locado'){
+        case 'Ventilador':
+            if(t == 'btn locado' && tabela_emvigor == 'Locação'){
                 $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
-                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'VENTILADOR')
+                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ventilador')
                     dados.forEach(function(resultado){
                         $("#valor-quarto").text(resultado.valor_locacao)
                         $("#preco_quarto").text(resultado.valor_locacao)
+                    })
+                })
+            } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
+                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
+                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ventilador')
+                    dados.forEach(function(resultado){
+                        $("#valor-quarto").text(resultado.valor_diaria)
+                        $("#preco_quarto").text(resultado.valor_diaria)
+                    })
+                })
+            } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
+                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
+                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ventilador')
+                    dados.forEach(function(resultado){
+                        $("#valor-quarto").text(resultado.valor_especial)
+                        $("#preco_quarto").text(resultado.valor_especial)
                     })
                 })
             }
@@ -50,8 +86,8 @@ export function locado(q, t,  x, y, z) {
     var minutos = horaEntrada.getMinutes()
     // Definições
     $("#numquarto").text(q)
-    $("#quarto_painel").text(q)
     $("#tipo").text('locado')
+    $("#quarto_painel").text(q)
     $("#intervalo").text(`${x},${y},${z}`)
     $("#entrada").text(`${String(hora)}:${String(minutos)}`)
 }
