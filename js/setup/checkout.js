@@ -8,7 +8,8 @@ function informacaoes(){
 		var sum = 0
 		var valor_quarto
 		var adicionalQuarto = JSON.parse(localStorage.getItem('dadosQuarto'))
-		let tempo = adicionalQuarto[0].tempo
+		//console.log(adicionalQuarto)
+		//let tempo = adicionalQuarto[0].tempo
 	    var prateleira = document.getElementById('itensComprados');
 		prateleira.innerHTML = '';
 		try {
@@ -47,14 +48,14 @@ function informacaoes(){
 		for(var a = 0; a < totalPrecoProdutos.length; a++){
 			sum += parseFloat(totalPrecoProdutos[a])
 		}
-
+		var preco_quarto = adicionalQuarto[0].valor
 		var permanencia = localStorage.getItem(numero_quarto)
 		$("#valorItens").text(sum)
-		$("#valorQuarto").text(valor_quarto)
+		$("#valorQuarto").text(preco_quarto)
 		$("#tempoPermanencia").text(permanencia)
 
 		
-		var ttgeral = Number(valor_quarto) + Number(sum)
+		var ttgeral = Number(preco_quarto) + Number(sum)
 
 		$("#totalGeral").text(ttgeral)
 		$("#valor_subtotal").text(ttgeral)
