@@ -37,7 +37,14 @@ async function buscaTarifasBandeiras() {
                     npc(escolha, campo_parcelas.val())
                 })
             } else {
-                console.log('abc')
+                console.log('Cancelado!')
+            }
+        } else if(escolha < 2.0){
+            let confirmacao_cartao = confirm(`Crédito com acréscimo de ${escolha}%\nConfirme a opção desejada!`)
+            if(confirmacao_cartao){
+                npd(escolha)
+            } else {
+                console.log('Cancelado!')
             }
         }
     })
@@ -56,10 +63,14 @@ function npc(tarifa, parcelas) {
     $("#totalGeral").text(total_geral = parseFloat(total_geral) + parseFloat(valor_para_descontar))
 }
 
-function npd() {
-    var option = $('#bandeiraDebito').find(":selected").index()
-    var db = option - 1
-
-    alert(`Deseja escolher a opção ${debito[db].bandeira}?`)
-    $("#parcelas").css('display', 'block')
+function npd(tarifa) {
+    var xParcelas = 1
+    $("#nparcelas").text(xParcelas)
+    let total_geral = $("#totalGeral").text()
+    let valor_decimal = parseFloat(tarifa) / 100
+    let valor_para_descontar = total_geral * valor_decimal
+    let total_comtarifa = parseFloat(total_geral) + parseFloat(valor_para_descontar)
+    let valor_parcelas = total_comtarifa / xParcelas
+    $("#valor_parcelas").text(valor_parcelas)
+    $("#totalGeral").text(total_geral = parseFloat(total_geral) + parseFloat(valor_para_descontar))
 }

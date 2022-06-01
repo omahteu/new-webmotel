@@ -53,48 +53,39 @@ function informacaoes(){
 		$("#valorItens").text(sum)
 		$("#valorQuarto").text(preco_quarto)
 		$("#tempoPermanencia").text(permanencia)
-
-		
 		var ttgeral = Number(preco_quarto) + Number(sum)
-
 		$("#totalGeral").text(ttgeral)
 		$("#valor_subtotal").text(ttgeral)
-		$("#modo_desconto").change(function(){
-
-			var tipo_desconto = $(this).val()
-
-			switch (tipo_desconto) {
-				case 'valor':
-					$('#aplicar_desconto').clcik(function(){
-						var codigoDeconto = $("#valor_desconto").val()
-						$("#totalGeral").text(ttgeral = ttgeral - parseInt(codigoDeconto, 10))
-						$("#valor_desconto").val('')
-						var descont = document.getElementById('valor_desconto')
-						descont.disabled = true
-						$("#valorDesconto").text(codigoDeconto)
-					});
-					break;
-				
-				case 'porcento':
-					$('#aplicar_desconto').click(function(){
-						var codigoDeconto = $("#valor_desconto").val()
-						let valor_decimal = parseInt(codigoDeconto) / 100
-						let valor_para_descontar = ttgeral * valor_decimal
-						$("#totalGeral").text(ttgeral = ttgeral - valor_para_descontar)
-						//$("#valor_desconto").val('')
-						var descont = document.getElementById('valor_desconto')
-						//descont.disabled = true
-						$("#valorDesconto").text(codigoDeconto)
-					});
-					break
-			
-				default:
-					break;
+	
+		$(document).one('change', '#modo_desconto', function(){
+			var tipo_desconto = $('#modo_desconto').find(":selected").index()
+			if(tipo_desconto == "1"){
+				$(document).one("click", "#aplicar_desconto", function(){
+					var codigoDeconto = $("#valor_desconto").val()
+					$("#totalGeral").text(ttgeral = ttgeral - parseInt(codigoDeconto))
+					$("#valor_desconto").val('')
+					var descont = document.getElementById('valor_desconto')
+					descont.disabled = true
+					$("#valor_desconto").attr("placeholder", codigoDeconto)
+					$("#valorDesconto").text(codigoDeconto)
+					$("#aplicar_desconto").attr("disabled", true)
+				})
+			} else if(tipo_desconto == "2"){
+				$(document).one("click", "#aplicar_desconto", function(){
+					var codigoDeconto = $("#valor_desconto").val()
+					let valor_decimal = parseInt(codigoDeconto) / 100
+					let valor_para_descontar = ttgeral * valor_decimal
+					$("#totalGeral").text(ttgeral = ttgeral - valor_para_descontar)
+					$("#valor_desconto").val('')
+					var descont = document.getElementById('valor_desconto')
+					descont.disabled = true
+					$("#valor_desconto").attr("placeholder", codigoDeconto+"%")
+					$("#valorDesconto").text(codigoDeconto+"%")
+					$("#aplicar_desconto").attr("disabled", true)
+				})
 			}
-
-
-			
 		})
+	
 	})
 }
 

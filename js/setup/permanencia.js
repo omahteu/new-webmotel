@@ -7,5 +7,3 @@ export function busca_permanencia(){
     var permanencia = hora + ":" + minutos + ":" + segundos
     localStorage.setItem(quarto, String(permanencia))
 }
-
-// PEGAR O VALOR E SALVAR EM SESSIONSTORAGE PARA SER MANIPULADO

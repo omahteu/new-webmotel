@@ -149,9 +149,29 @@ function backupInfos(instance){
 						$(".acoes1").css('display', 'inline-block')
 						$(".acoes1").val('Disponibilizar Quarto')
 						$(".acoes2").css('display', 'none')
-						$(".acoes2").val('Alterar P/ Locação')
+						$(".acoes2").val('')
 						$(".acoes3").css('display', 'none')
-						$(".acoes3").val('Cancelar Reserva')
+						$(".acoes3").val('')
+						break
+					
+					case 'aguardando':
+						$(`[name=${instance}]`).css('display', 'none')
+						$(".acoes1").css('display', 'inline-block')
+						$(".acoes1").val('Iniciar Limpeza')
+						$(".acoes2").css('display', 'none')
+						$(".acoes2").val('')
+						$(".acoes3").css('display', 'none')
+						$(".acoes3").val('')
+						break
+
+					case 'limpeza':
+						$(`[name=${instance}]`).css('display', 'none')
+						$(".acoes1").css('display', 'inline-block')
+						$(".acoes1").val('Encerrar Limpeza')
+						$(".acoes2").css('display', 'none')
+						$(".acoes2").val('')
+						$(".acoes3").css('display', 'none')
+						$(".acoes3").val('')
 						break
 				
 					default:

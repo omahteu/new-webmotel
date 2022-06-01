@@ -10,6 +10,7 @@ import { pause, reset, start } from '../contadores/contadorUm.js'
 import { inicioModal } from "../setup/camareiras.js"
 import { fimModal } from "../setup/camareiras.js"
 import { busca_permanencia } from "../setup/permanencia.js"
+import { atualiza_status } from "../setup/atualiza.js"
 
 var rota = 'rota'
 
@@ -41,6 +42,7 @@ export function resposta1(status){
             reset()
             start()
             setTimeout(function() {limpeza(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout(function() {atualiza_status(quarto, "limpeza"), 1500})
             setTimeout(function() {fimModal()}, 1001)
             break
         
@@ -54,7 +56,8 @@ export function resposta1(status){
                 setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
                 sessionStorage.setItem('quarto', quarto)
                 window.open('../paginas/checkout.html', '_blank')
-                setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 2000)
+                setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 1500)
+                setTimeout(function() {atualiza_status(quarto, "aguardando"), 1500})
                 setTimeout(function() {fimModal()}, 1001)
             }
             break
