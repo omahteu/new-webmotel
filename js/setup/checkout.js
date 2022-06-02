@@ -53,8 +53,8 @@ function informacaoes(){
 		$("#valorItens").text(sum)
 		$("#valorQuarto").text(preco_quarto)
 		$("#tempoPermanencia").text(permanencia)
-		var ttgeral = Number(preco_quarto) + Number(sum)
-		$("#totalGeral").text(ttgeral)
+		var ttgeral = parseFloat(preco_quarto) + parseFloat(sum)
+		$("#totalGeral").text(ttgeral.toFixed(2))
 		$("#valor_subtotal").text(ttgeral)
 	
 		$(document).one('change', '#modo_desconto', function(){
@@ -62,7 +62,8 @@ function informacaoes(){
 			if(tipo_desconto == "1"){
 				$(document).one("click", "#aplicar_desconto", function(){
 					var codigoDeconto = $("#valor_desconto").val()
-					$("#totalGeral").text(ttgeral = ttgeral - parseInt(codigoDeconto))
+					var total_ausar = ttgeral = ttgeral - parseFloat(codigoDeconto)
+					$("#totalGeral").text(total_ausar.toFixed(2))
 					$("#valor_desconto").val('')
 					var descont = document.getElementById('valor_desconto')
 					descont.disabled = true
@@ -73,9 +74,10 @@ function informacaoes(){
 			} else if(tipo_desconto == "2"){
 				$(document).one("click", "#aplicar_desconto", function(){
 					var codigoDeconto = $("#valor_desconto").val()
-					let valor_decimal = parseInt(codigoDeconto) / 100
+					let valor_decimal = parseFloat(codigoDeconto) / 100
 					let valor_para_descontar = ttgeral * valor_decimal
-					$("#totalGeral").text(ttgeral = ttgeral - valor_para_descontar)
+					var total_ausar2 = ttgeral = ttgeral - valor_para_descontar
+					$("#totalGeral").text(total_ausar2.toFixed(2))
 					$("#valor_desconto").val('')
 					var descont = document.getElementById('valor_desconto')
 					descont.disabled = true
@@ -142,7 +144,7 @@ async function InfosPrimario(){
 	$("#valorQuarto").text(valor_quarto)
 	$("#valorItens").text(sum)
 	
-	var ttgeral = Number(valor_quarto) + Number(sum)
+	var ttgeral = parseFloat(valor_quarto) + parseFloat(sum)
 
-	$("#totalGeral").text(ttgeral)
+	$("#totalGeral").text(ttgeral.toFixed(2))
 }

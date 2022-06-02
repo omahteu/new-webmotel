@@ -20,7 +20,7 @@ $(document).ready(function(){
     
         $('#qtd').keyup(function(){
             var qtd = $(this).val()
-            var total = Number(resultado[db]['valorunitario']) * Number(qtd)
+            var total = parseFloat(resultado[db]['valorunitario']) * Number(qtd)
             $("#tot").val('R$ ' + total)
         });
     });
@@ -43,7 +43,7 @@ function produtoCodigo(){
             
                 $('#qtd').keyup(function(){
                     var qtd = $(this).val()
-                    var total = Number(resultado[db]['valorunitario']) * Number(qtd)
+                    var total = parseFloat(resultado[db]['valorunitario']) * Number(qtd)
                     $("#tot").val('R$ ' + total)
                 });
             })

@@ -59,8 +59,9 @@ function npc(tarifa, parcelas) {
     let valor_para_descontar = total_geral * valor_decimal
     let total_comtarifa = parseFloat(total_geral) + parseFloat(valor_para_descontar)
     let valor_parcelas = total_comtarifa / xParcelas
-    $("#valor_parcelas").text(valor_parcelas)
-    $("#totalGeral").text(total_geral = parseFloat(total_geral) + parseFloat(valor_para_descontar))
+    $("#valor_parcelas").text(valor_parcelas.toFixed(2))
+    var valor_ausar = total_geral = parseFloat(total_geral) + parseFloat(valor_para_descontar)
+    $("#totalGeral").text(valor_ausar.toFixed(2))
 }
 
 function npd(tarifa) {
@@ -71,6 +72,7 @@ function npd(tarifa) {
     let valor_para_descontar = total_geral * valor_decimal
     let total_comtarifa = parseFloat(total_geral) + parseFloat(valor_para_descontar)
     let valor_parcelas = total_comtarifa / xParcelas
-    $("#valor_parcelas").text(valor_parcelas)
-    $("#totalGeral").text(total_geral = parseFloat(total_geral) + parseFloat(valor_para_descontar))
+    $("#valor_parcelas").text(valor_parcelas.toFixed(2))
+    var valor_ausar2 = total_geral = parseFloat(total_geral) + parseFloat(valor_para_descontar)
+    $("#totalGeral").text(valor_ausar2.toFixed(2))
 }

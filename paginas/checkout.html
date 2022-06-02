@@ -92,9 +92,9 @@
                             <select id="modo_desconto">
                               <option value="a" hidden>Modo</option>
                               <option value="valor">Valor</option>
-                              <option value="porcento">Porcentagem</option>
+                              <option value="porcento">Porcento</option>
                             </select>
-                            <input type="number" min="0" id="valor_desconto" placeholder="Valor Desconto">
+                            <input type="text" id="valor_desconto" placeholder="Valor Desconto">
                             <button type="button" class="btn btn-primary" id="aplicar_desconto">Aplicar</button>
                           </div>
                         </div>
@@ -280,7 +280,7 @@
                                   <span class="button__icon">
                                     <i class="fa-solid fa-check"></i>
                                   </span>
-                                  <span class="button__text2">Finalizar</span>
+                                  <span class="button__text2" id="encerrar">Finalizar</span>
                                 </button>
                               </td>
                             </tr>
@@ -294,10 +294,7 @@
       </div>
     </div>
   </div>
-
 </body>
-
-    <!--end-Footer-part-->
     <script src="../js/jquery.js"></script>
     <script src="../js/style/jquery-1.12.4.min.js"></script>
     <script src="../js/style/shortcut.js"></script>
@@ -313,6 +310,5 @@
     <script src="../js/setup/checkout.js"></script>
     <script src="../js/ajaxs/getCamareira.js"></script>
     <script src="../js/botoes/pagamento.js"></script>
-
-
+    <script src="../js/botoes/encerrar.js"></script>
 </html>

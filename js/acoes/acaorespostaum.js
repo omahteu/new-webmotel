@@ -78,8 +78,8 @@ export function resposta1(status){
             alert('Camareira Selecionada')
             pause()
             reset()
-            fimModal()
-            setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout(function() {fimModal()}, 500)
+            setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 600)
             break
 
         case 'Apagar Luz':
