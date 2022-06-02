@@ -1,7 +1,10 @@
 $("#encerrar").click(function(){
-    setTimeout(function(){limpando()}, 300)
+    setTimeout(function(){registrando()}, 300)
     setTimeout(function() {ocupacao()}, 500)
     setTimeout(function(){limpando()}, 800)
+    setTimeout(function() {
+        window.close()
+    }, 1000)
 
 })
 
