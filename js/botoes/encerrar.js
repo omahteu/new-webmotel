@@ -8,34 +8,8 @@ $("#encerrar").click(function(){
 
 })
 
-/*
-
-=> LISTA DO QUE DEVE SER LIMPO
-
-1. LOCALSTORAGE | X
-2. SESSIONSTOREAGE | X
-3. INFOS | X
-4. COMANDA | X
-5. PÁTIO | X
-6. SUBTRAIDO OS PRODUTOS | X
-7. GERAR O RELATÓRIO DE OCUPAÇÃO | X
-8. RELATÓRIO DE LIMPEZAS |
-
-*/
-
 function limpando(){
     var quartx = sessionStorage.getItem("quarto")
-
-    $.get("https://demomotelapi.herokuapp.com/infos/", (e) =>{
-        var dados = e.filter(quartos => quartos.quarto == quartx)
-        var id = dados[0].id
-        console.log(id)
-        $.ajax({
-            url: "https://demomotelapi.herokuapp.com/infos/" + id + "/",
-            type: 'DELETE'
-        });
-    })
-
     $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         var id = dados[0].id
@@ -45,7 +19,6 @@ function limpando(){
             type: 'DELETE'
         });
     })
-
     $.get("https://demomotelapi.herokuapp.com/patio/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         if(dados.length == 0){
@@ -58,10 +31,10 @@ function limpando(){
             });
         }
     })
-
     localStorage.removeItem(quartx)
     localStorage.removeItem("dadosQuarto")
     sessionStorage.removeItem(quartx)
+    sessionStorage.removeItem("quarto")
 }
 
 function registrando(){
@@ -118,11 +91,12 @@ function ocupacao(){
     var minutos = base.getMinutes()
     let quarto = sessionStorage.getItem("quarto")
     var box = JSON.parse(localStorage.getItem("dadosQuarto"))
-    let dataAtual = `${String(dia)}:${String(mes)}:${String(ano)}`
+    let dataAtual = `${String(dia)}/${String(mes)}/${String(ano)}`
     let codigo_ocupacao = gera_codigo()
     let entrada = box[0].tempo
     let saida = `${hora}:${minutos}`
     let total = $("#totalGeral").text()
+    localStorage.setItem(`codigo${quarto}`, codigo_ocupacao)
     dados = {
         data: dataAtual,
         codigo: codigo_ocupacao,

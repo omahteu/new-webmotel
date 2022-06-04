@@ -1,6 +1,6 @@
 //import { modos } from '../setup/box.js'
 import { resposta1 } from './acaorespostaum.js'
-//import { resposta2 } from './acaoRespostaDois.js'
+import { resposta2 } from './acaoRespostaDois.js'
 //import { resposta3 } from './acaoRespostaTres.js'
 //import { resposta4 } from './acaoRespostaQuatro.js'
 
@@ -18,13 +18,12 @@ $("[name=botao]").click(function(){
     quartos.push(quarto)
     switch (numeroQuarto) {
         case '1':
-            // QUARTO 1
             resposta1(status)
             localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
             break;
 
         case '2':
-            //resposta2(status)
+            resposta2(status)
             localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
             break
 

@@ -19,7 +19,7 @@ $(".locado").click(function(){
                 locado(quarto, rota,  flags[0], flags[1], flags[2])
                 setTimeout(function() {fimModal()}, 1000)
                 start()
-                setTimeout(function() {index()}, 2000);
+                setTimeout(function() {index()}, 1500);
                 break
 
             case '2':
@@ -27,7 +27,7 @@ $(".locado").click(function(){
                 locado(quarto, rota, flags[0], flags[1], flags[2])
                 setTimeout(function() {fimModal()}, 1000)
                 start2()
-                setTimeout(function() {index()}, 2000);
+                setTimeout(function() {index()}, 1500);
                 break
 
             case '3':

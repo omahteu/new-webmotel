@@ -11,6 +11,7 @@ import { inicioModal } from "../setup/camareiras.js"
 import { fimModal } from "../setup/camareiras.js"
 import { busca_permanencia } from "../setup/permanencia.js"
 import { atualiza_status } from "../setup/atualiza.js"
+import { ultima_limpeza } from "../botoes/limpar.js"
 
 var rota = 'rota'
 
@@ -74,12 +75,12 @@ export function resposta1(status){
             break
 
         case 'Selecionar':
-
             alert('Camareira Selecionada')
             pause()
             reset()
             setTimeout(function() {fimModal()}, 500)
             setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 600)
+            setTimeout(function() {ultima_limpeza(quarto)}, 800)
             break
 
         case 'Apagar Luz':

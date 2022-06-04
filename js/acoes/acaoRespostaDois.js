@@ -5,6 +5,7 @@ import { limpeza } from "../tags/limpeza.js"
 import { pause2, reset2, start2 } from '../contadores/contadorDois.js'
 import { fimModal } from "../setup/camareiras.js"
 import { atualiza_status } from "../setup/atualiza.js"
+import { busca_permanencia } from "../setup/permanencia.js"
 
 var rota = 'rota'
 
@@ -44,13 +45,13 @@ export function resposta2(status){
             break
 
         case 'Encerrar':
-            if(confirm(`DESEJA ENCERRAR O QUARTO ${quarto}?`)){
+            if(confirm(`DESEJA ENCERRAR x QUARTO ${quarto}?`)){
                 pause2()
                 busca_permanencia()
                 setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
                 sessionStorage.setItem('quarto', quarto)
                 window.open('../paginas/checkout.html', '_blank')
-                setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 2000)
+                setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 1500)
                 setTimeout(function() {atualiza_status(quarto, "aguardando"), 1500})
                 setTimeout(function() {fimModal()}, 1001)
             }

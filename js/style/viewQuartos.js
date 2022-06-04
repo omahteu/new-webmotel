@@ -203,7 +203,6 @@ function backupInfos(instance){
 	setTimeout(function(){
 		var valor_quarto = $("#valor-quarto").text()
 		var valor_consumo = $("#consumo_painel").text()
-		console.log(valor_consumo)
 		var resultado = parseFloat(valor_quarto) + parseFloat(valor_consumo)
 		$("#parcial_painel").text(resultado)
 	}, 670)
