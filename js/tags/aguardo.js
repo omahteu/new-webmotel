@@ -1,9 +1,8 @@
 export function aguardando(q, t, x, y, z) {
-
     // CSS
-    $(".cardBox .card:nth-child(1)").css({
-        "background": "#FFFFFF",
-        "opacity": 0.5})
+    $(`.cardBox .card:nth-child(${q})`).css({
+        "background": "#FFFFFF"
+    })
     
     $("[name=1]").css('display', 'none')
 

@@ -65,7 +65,7 @@ export function resposta2(status){
             }
             break
         
-        case "Selecionar":
+        case "OK":
             alert('Camareira Selecionada')
             pause2()
             reset2()

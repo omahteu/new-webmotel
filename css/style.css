@@ -879,7 +879,11 @@
     font-weight: bold;
 }
 
-#botao_inferior_um, #botao_inferior_dois, #botao_inferior_tres, #selecionar_camareira {
+#botao_inferior_um, 
+#botao_inferior_dois, 
+#botao_inferior_tres, 
+#selecionar_camareira,
+#camareira_limpeza {
     display: none;
 }
 

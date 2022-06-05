@@ -1,8 +1,7 @@
 export function locado(q, t,  x, y, z) {   
     // CSS
     $(`.cardBox .card:nth-child(${q})`).css({
-        "background": "#FF0000",
-        "opacity": 0.5
+        "background": "#FF0000"
     })
     
     $(`[name=${q}]`).css('display', 'none')

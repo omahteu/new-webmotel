@@ -66,15 +66,13 @@ export function resposta1(status){
         case 'Encerrar Limpeza':
             
             if(confirm('DESEJA DISPONIBILIZAR O QUARTO ' + quarto + ' ?') == true){
-
                 camareiras()
-
             } else {
                 console.log('cancelado')
             }
             break
 
-        case 'Selecionar':
+        case 'OK':
             alert('Camareira Selecionada')
             pause()
             reset()

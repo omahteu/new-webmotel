@@ -32,8 +32,8 @@
     <div class="navebarn">
         <div id="user-nav" class="navbar navbar-inverse"></div>
         <div id="userr" style="padding-right:45px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;">
-            <div class="user-names userT0"> Bom dia, </div>
-            <div class="userT">admin</div>
+            <div class="user-names userT0" id="saudacao_usuario"> Bom dia, </div>
+            <div class="userT" id="usuario_sistema">admin</div>
             <section style="display:block;position:absolute;right:10px">
                 <div class="profile">
                     <div class="profile-img"> 
@@ -293,7 +293,7 @@
             <select name="" id="selecionar_camareira">
                 <option value="">Camareiras</option>
             </select>
-            <button type="button" class="btn btn-warning" id="camareira_limpeza">Selecionar</button>
+            <button type="button" name="botao" class="btn btn-warning" id="camareira_limpeza" value="">OK</button>
           </form>
         </div>
     </div>
@@ -361,5 +361,5 @@
     <script type="module" src="../js/setup/atualiza.js"></script>
     <script src="../js/ajaxs/getCamareira.js"></script>
     <script src="../js/cadastros/postCamareira.js"></script>
-
+    <script src="../js/style/nomes.js"></script>
 </html>

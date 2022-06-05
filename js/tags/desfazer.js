@@ -1,5 +1,5 @@
 export function desfazer(q, x, y, z) {
-    $('.cardBox .card:nth-child(1)'). removeAttr('style')
+    $(`.cardBox .card:nth-child(${q})`). removeAttr('style')
 
     $(`[name=${q}]`).css('display', 'inline-block')
 

@@ -1,9 +1,9 @@
 export function faxina(q, t, x, y, z) {
 
     // CSS
-    $(".cardBox .card:nth-child(1)").css({
-        "background": "#FFE4C4",
-        "opacity": 0.5})
+    $(`.cardBox .card:nth-child(${q})`).css({
+        "background": "#FFE4C4"
+    })
 
 
     $("[name=1]").css('display', 'none')

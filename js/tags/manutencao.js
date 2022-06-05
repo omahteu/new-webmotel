@@ -1,9 +1,9 @@
 export function manutencao(q, x, y, z) {
 
     // CSS
-    $(".cardBox .card:nth-child(1)").css({
-        "background": "rgb(169, 169, 169)",
-        "opacity": 0.5})
+    $(`.cardBox .card:nth-child(${q})`).css({
+        "background": "rgb(169, 169, 169)"
+    })
     
     $("[name=1]").css('display', 'none')
 
