@@ -5,7 +5,6 @@ $("#encerrar").click(function(){
     setTimeout(function() {
         window.close()
     }, 1000)
-
 })
 
 function limpando(){

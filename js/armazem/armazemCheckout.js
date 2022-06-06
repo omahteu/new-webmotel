@@ -74,7 +74,6 @@ function mostraProduto(){
 			var valorTotal = resultado.valor_total
 
 			prateleira.innerHTML += '<tr>'+
-										//'<td>'+ quarto + '</td>' +
 										'<td>'+ descricao + '</td>' +
 										'<td>'+ quantidade + '</td>' +
 										'<td>'+ valorUnitario + '</td>' +
