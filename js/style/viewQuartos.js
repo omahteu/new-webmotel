@@ -39,17 +39,13 @@ function mostraVeiculo(identificador){
 			// Percorrendo o Array e Formantando uma Tabela
 			dados.forEach(function(resultado){
 				var id = resultado.id
-				var quarto =  resultado.quarto
-				var veiculo = resultado.veiculo
 				var modelo = resultado.modelo
 				var placa = resultado.placa
 				patio.innerHTML += '<tr>'+
-											'<td>'+ quarto + '</td>' +
-											'<td>'+ veiculo + '</td>' +
-											'<td>'+ modelo + '</td>' +
-											'<td>'+ placa + '</td>' +
-											'<td><button type="button" onclick="removeVeiculo('+ id +')" class="btn btn-danger">Remover</button></td>'+
-										'</tr>';
+										'<td>'+ placa + '</td>' +
+										'<td>'+ modelo + '</td>' +
+										'<td><button type="button" onclick="removeVeiculo('+ id +')" class="btn btn-danger">Remover</button></td>'+
+									'</tr>';
 			})
 		} catch (error) {
 			localStorage.setItem('produtos', JSON.stringify([]))

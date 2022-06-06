@@ -59,20 +59,15 @@ function mostraProduto(){
 
 	// Requisição GET
 	$.get("https://demomotelapi.herokuapp.com/comanda/", function(retorno){
-
 		// Parâmetro e Instância de Tabela
-		var nQuarto =  $("#numquarto").text()
+		var nQuarto =  sessionStorage.getItem("quarto")
 		var prateleira = document.getElementById('itensComprados');
 		prateleira.innerHTML = '';
-
 		// Filtro
 		var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
-
 		// Percorrendo o Array e Formantando uma Tabela
 		dados.forEach(function(resultado){
-
 			var id = resultado.id
-			var quarto = resultado.quarto
 			var descricao = resultado.descricao
 			var quantidade = resultado.quantidade
 			var valorUnitario = resultado.valor_unitario
