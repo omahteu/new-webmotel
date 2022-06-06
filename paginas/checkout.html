@@ -126,92 +126,94 @@
 
                       <!---->
                       <div id="detalhes" class="tab-pane fade">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>Descrição</th>
-                            <th>Quantidade</th>
-                            <th>Valor Unitário</th>
-                            <th>Valor Total</th>
-                          </tr>
-                        </thead>
-                        <tbody id="itensComprados"></tbody>
-                      </table>
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Descrição</th>
+                              <th>Quantidade</th>
+                              <th>Valor Unitário</th>
+                              <th>Valor Total</th>
+                            </tr>
+                          </thead>
+                          <tbody id="itensComprados"></tbody>
+                        </table>
                       </div>
 
                       <!---->
                       <div id="produtos" class="tab-pane fade">
 
-                        <!--Campo Pessoas-->
+                        <!--Campo Pessoas
                         <div class="control-group"> 
                           <div class="controls"> 
                             <input type="text" id="pessoasProduto" placeholder="Pessoas"> 
                           </div>
-                        </div>
-
-                        <!--Campo Código-->
-                        <div class="control-group"> 
-                          <div class="controls"> 
-                            <input type="text" id="codigoProduto" placeholder="Código"> 
-                          </div>
-                        </div>
-
-                        <!--Campo Produto-->
-                        <div class="control-group"> 
-                          <div class="controls"> 
-                            <select name="" id="">
-                              <option value="" hidden>Produto</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <!--Campo Quantidade-->
-                        <div class="control-group"> 
-                          <div class="controls"> 
-                            <input type="text" id="quantidadeProduto" placeholder="Quantidade"> 
-                          </div>
-                        </div>
-
-                        <!--Campo Descrição-->
-                        <div class="control-group"> 
-                          <div class="controls"> 
-                            <input type="text" id="descricaoProduto" placeholder="Descrição" disabled> 
-                          </div>
-                        </div>
-
-                        <!--Campo Valor Unitário-->
-                        <div class="control-group"> 
-                          <div class="controls"> 
-                            <input type="text" id="valorUnitarioProduto" placeholder="Valor Unitário" disabled> 
-                          </div>
-                        </div>
-
-                        <!--Campo Total-->
-                        <div class="control-group"> 
-                          <div class="controls"> 
-                            <input type="text" id="totalProduto" placeholder="Total" disabled> 
-                          </div>
-                        </div>
-
-                        <!--Botões-->
-                        <div class="form-actions">
-                          <div class="span8">
-                            <div class="span9"> 
-                              <button type="button" class="button btn btn-primary" id=""> 
-                                <span class="button__icon">
-                                  <i class="fa-solid fa-floppy-disk"></i>
-                                </span>
-                                <span class="button__text2">Cadastrar</span>
-                              </button>
-                              <button type="button" class="button btn btn-danger" id=""> 
-                                <span class="button__icon">
-                                  <i class="fa-solid fa-xmark"></i>
-                                </span>
-                                <span class="button__text2">Limpar</span>
-                              </button>   
+                        </div>-->
+                        <form id="produtos_checkout">
+                          <!--Campo Código-->
+                          <div class="control-group"> 
+                            <div class="controls"> 
+                              <input type="text" id="codigo_produto" placeholder="Código"> 
                             </div>
                           </div>
-                        </div>
+
+                          <!--Campo Produto-->
+                          <div class="control-group"> 
+                            <div class="controls"> 
+                              <select name="" id="lista_produto">
+                                <option value="" hidden>Produto</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <!--Campo Quantidade-->
+                          <div class="control-group"> 
+                            <div class="controls"> 
+                              <input type="text" id="quantidade_produto" placeholder="Quantidade"> 
+                            </div>
+                          </div>
+
+                          <!--Campo Descrição-->
+                          <div class="control-group"> 
+                            <div class="controls"> 
+                              <input type="text" id="descricao_produto" placeholder="Descrição" disabled> 
+                            </div>
+                          </div>
+
+                          <!--Campo Valor Unitário-->
+                          <div class="control-group"> 
+                            <div class="controls"> 
+                              <input type="text" id="valor_unitario_produto" placeholder="Valor Unitário" disabled> 
+                            </div>
+                          </div>
+
+                          <!--Campo Total-->
+                          <div class="control-group"> 
+                            <div class="controls"> 
+                              <input type="text" id="total_produto" placeholder="Total" disabled> 
+                            </div>
+                          </div>
+
+                          <!--Botões-->
+                          <div class="form-actions">
+                            <div class="span8">
+                              <div class="span9"> 
+                                <button type="button" class="button btn btn-primary" id="adicionar_produto"> 
+                                  <span class="button__icon">
+                                    <i class="fa-solid fa-floppy-disk"></i>
+                                  </span>
+                                  <span class="button__text2">Cadastrar</span>
+                                </button>
+                                <button type="button" class="button btn btn-danger" id=""> 
+                                  <span class="button__icon">
+                                    <i class="fa-solid fa-xmark"></i>
+                                  </span>
+                                  <span class="button__text2">Limpar</span>
+                                </button>   
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+
                       </div>
                     </div>
                 </form>
@@ -312,4 +314,6 @@
     <script src="../js/ajaxs/getCamareira.js"></script>
     <script src="../js/botoes/pagamento.js"></script>
     <script src="../js/botoes/encerrar.js"></script>
+    <script src="../js/armazem/armazemCheckout.js"></script>
+    <script src="../js/setup/carrega_produtos.js"></script>
 </html>
