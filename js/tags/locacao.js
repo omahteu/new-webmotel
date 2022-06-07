@@ -13,39 +13,28 @@ export function locado(q, t,  x, y, z) {
     if(t != 'btn locado'){} 
     // Preço
     var tipoQuarto = $("#tipo_suite" + q).text()
-
-    // LER QUAAL TABELA ESTÁ EM USO
-    // SELECIONAR PELO IF QUAAL ESTÁ EM VIGOR E APLICAR
-
     var tabela_emvigor = $("#tabela_emvigor").text()
-
-    //console.log(tipoQuarto)
-
-
     switch (tipoQuarto){
         case 'Ar':
             if(t == 'btn locado' && tabela_emvigor == 'Locação'){
-                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
-                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ar')
-                    dados.forEach(function(resultado){
-                        $("#valor-quarto").text(resultado.valor_locacao)
-                        $("#preco_quarto").text(resultado.valor_locacao)
+                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
+                    e.forEach(function(info){
+                        $("#valor-quarto").text(info.valor_locacao)
+                        $("#preco_quarto").text(info.valor_locacao)
                     })
                 })
             } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
-                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
-                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ar')
-                    dados.forEach(function(resultado){
-                        $("#valor-quarto").text(resultado.valor_diaria)
-                        $("#preco_quarto").text(resultado.valor_diaria)
+                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
+                    e.forEach(function(info){
+                        $("#valor-quarto").text(info.valor_diaria)
+                        $("#preco_quarto").text(info.valor_diaria)
                     })
                 })
             } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
-                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
-                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ar')
-                    dados.forEach(function(resultado){
-                        $("#valor-quarto").text(resultado.valor_especial)
-                        $("#preco_quarto").text(resultado.valor_especial)
+                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
+                    e.forEach(function(info){
+                        $("#valor-quarto").text(info.valor_especial)
+                        $("#preco_quarto").text(info.valor_especial)
                     })
                 })
             }
@@ -53,27 +42,24 @@ export function locado(q, t,  x, y, z) {
 
         case 'Ventilador':
             if(t == 'btn locado' && tabela_emvigor == 'Locação'){
-                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
-                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ventilador')
-                    dados.forEach(function(resultado){
-                        $("#valor-quarto").text(resultado.valor_locacao)
-                        $("#preco_quarto").text(resultado.valor_locacao)
+                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
+                    e.forEach(function(info){
+                        $("#valor-quarto").text(info.valor_locacao)
+                        $("#preco_quarto").text(info.valor_locacao)
                     })
                 })
             } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
-                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
-                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ventilador')
-                    dados.forEach(function(resultado){
-                        $("#valor-quarto").text(resultado.valor_diaria)
-                        $("#preco_quarto").text(resultado.valor_diaria)
+                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
+                    e.forEach(function(info){
+                        $("#valor-quarto").text(info.valor_diaria)
+                        $("#preco_quarto").text(info.valor_diaria)
                     })
                 })
             } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
-                $.get("https://demomotelapi.herokuapp.com/quartos/", function(retorno){
-                    var dados = retorno.filter(quartos => quartos.tipo_quarto == 'Ventilador')
-                    dados.forEach(function(resultado){
-                        $("#valor-quarto").text(resultado.valor_especial)
-                        $("#preco_quarto").text(resultado.valor_especial)
+                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
+                    e.forEach(function(info){
+                        $("#valor-quarto").text(info.valor_especial)
+                        $("#preco_quarto").text(info.valor_especial)
                     })
                 })
             }

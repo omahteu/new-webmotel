@@ -2,21 +2,36 @@ $("#encerrar").click(function(){
     setTimeout(function(){registrando()}, 300)
     setTimeout(function() {ocupacao()}, 500)
     setTimeout(function(){limpando()}, 800)
-    setTimeout(function() {
+    /*setTimeout(function() {
         window.close()
-    }, 1000)
+    }, 1000)*/
+
+})
+
+$(document).ready(function(){
+    var quartx = sessionStorage.getItem("quarto")
+    $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
+        var dados = e.filter(quartos => quartos.quarto == quartx)
+
+        for(var i=0; i < dados.length; i++){
+            var id = dados[i].id
+            console.log(id)
+        }
+    })
 })
 
 function limpando(){
     var quartx = sessionStorage.getItem("quarto")
     $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
-        var id = dados[0].id
 
-        $.ajax({
-            url: "https://demomotelapi.herokuapp.com/comanda/" + id + "/",
-            type: 'DELETE'
-        });
+        for(var i=0; i < dados.length; i++){
+            var id = dados[i].id
+            $.ajax({
+                url: "https://demomotelapi.herokuapp.com/comanda/" + id + "/",
+                type: 'DELETE'
+            })
+        }
     })
     $.get("https://demomotelapi.herokuapp.com/patio/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
