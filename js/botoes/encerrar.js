@@ -23,8 +23,6 @@ function clean(id){
 
 }
 
-
-
 function limpando(){
     var quartx = sessionStorage.getItem("quarto")
     $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
@@ -72,14 +70,32 @@ function registrando(){
     let quarto = sessionStorage.getItem("quarto")
     var box = []
     $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
-        var dados = e.filter(quartos => quartos.quarto == quarto)
-        let descricao = dados[0].descricao
-        let quantidade = dados[0].quantidade
-        box.push(descricao, quantidade)
+        var dados_comanda = e.filter(quartos => quartos.quarto == quarto)
+        dados_comanda.forEach(elemento => {
+            let descricao = elemento.descricao
+            let quantidade = elemento.quantidade
+            box.push(descricao, quantidade)
+        });
     })
     $.get("https://demomotelapi.herokuapp.com/produtos/", (e) =>{
-        var produto = box[0]
-        var produto_quantidade = box[1]
+        
+
+        var resultado_produtos = box.filter( estadosComS  => (estadosComS.length > 2));
+        //console.log(resultado_produtos)
+
+        var resultado_quantidade = box.filter( estadosComS  => (estadosComS.length < 3));
+        //console.log(resultado_quantidade)
+
+          
+        const juncao = resultado_produtos.map((resultado_produtos, indice) => ({ ...resultado_produtos, ...resultado_quantidade[indice] } ));
+          
+        console.log(juncao);
+
+
+
+
+        //var produto = box[0]
+        //var produto_quantidade = box[1]
         var dados = e.filter(quartos => quartos.descricao == produto)
         var estoque = dados[0].quantidade
         var id_estoque = dados[0].id
@@ -89,7 +105,7 @@ function registrando(){
         var categoria_estoque = dados[0].categoria
         var novo_estoque = parseInt(estoque) - parseInt(produto_quantidade)
         var data_estoque = dados[0].data
-        console.log(novo_estoque)
+        
         $.ajax({
             url: "https://demomotelapi.herokuapp.com/produtos/" + id_estoque + "/",
             type: "PUT",
