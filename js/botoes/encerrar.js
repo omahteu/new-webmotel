@@ -1,8 +1,7 @@
-var qwe = []
 $("#encerrar").click(function(){
-    registrando()
-    setTimeout(function(){ocupacao()}, 500)
-    setTimeout(function(){limpando()}, 800)
+    setTimeout(function() {registrando()}, 300)
+    setTimeout(function() {ocupacao()}, 500)
+    setTimeout(function() {limpando()}, 800)
     /*setTimeout(function() {
         window.close()
     }, 1000)*/
@@ -13,47 +12,20 @@ $("#encerrar").click(function(){
 
 
 function clean(id){
-    /*$.ajax({
+    $.ajax({
         url: "https://demomotelapi.herokuapp.com/comanda/" + id + "/",
         type: 'DELETE',
         success: function(){
             console.log("apagado")
         },
         async: true
-    })*/
-
-    $http.delete("https://demomotelapi.herokuapp.com/comanda/"  + id + "/").success(function (data) {
-        console.log(data); // Retorno seu Data
-    });
-
+    })
 
 }
 
 
 
 function limpando(){
-
-    var url = "https://demomotelapi.herokuapp.com/comanda/"
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", url, true);
-    
-    xhttp.onreadystatechange = function(){
-        if (xhttp.status == 200 ) {
-            console.log(xhttp.responseText);
-        }
-    }
-    
-    xhttp.send()
-
-
-
-
-
-
-
-
-/*
     var quartx = sessionStorage.getItem("quarto")
     $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
@@ -61,26 +33,24 @@ function limpando(){
 
         dados.forEach(element => {
             var id = element.id
-            console.log(id)
-            qwe.push(id)
             clean(id)
-        });*/
+        });
 
         
-
-        /*do {
+/*
+        do {
             var id = dados[i].id
             clean(id)
             i++
-        } while(i <= dados.length)*/
+        } while(i <= dados.length)
 
-        /*for(var i=0; i <= dados.length; i++){
+        for(var i=0; i <= dados.length; i++){
             var id = dados[i].id
             clean(id)
-        }
-    })*/
-    
-    /*$.get("https://demomotelapi.herokuapp.com/patio/", (e) =>{
+        }*/
+    })
+
+    $.get("https://demomotelapi.herokuapp.com/patio/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         if(dados.length == 0){
             console.log("Pátio Vázio!")
@@ -95,7 +65,7 @@ function limpando(){
     localStorage.removeItem(quartx)
     localStorage.removeItem("dadosQuarto")
     sessionStorage.removeItem(quartx)
-    sessionStorage.removeItem("quarto")*/
+    sessionStorage.removeItem("quarto")
 }
 
 function registrando(){

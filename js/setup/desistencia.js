@@ -1,7 +1,7 @@
 $("#desistencia").click(function(){
     setTimeout(function(){desistir()}, 300)
-    setTimeout(function() {registrando()}, 500)
-    setTimeout(function(){limpando()}, 800)
+    setTimeout(function() {registrando_desistencia()}, 500)
+    setTimeout(function(){limpando_desistencia()}, 800)
     setTimeout(function() {
         window.close()
     }, 1000)
@@ -43,7 +43,7 @@ function desistir(){
     }
 }
 
-function limpando(){
+function limpando_desistencia(){
     var quartx = sessionStorage.getItem("quarto")
     $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
@@ -72,7 +72,7 @@ function limpando(){
     sessionStorage.removeItem("quarto")
 }
 
-function registrando(){
+function registrando_desistencia(){
     var quarto = sessionStorage.getItem("quarto")
     var codigo = sessionStorage.getItem(`codigo${quarto}`)
     var caixa = localStorage.getItem("caixa")
@@ -85,6 +85,7 @@ function registrando(){
         motivo: motiv
     }
 
-    $.post("https://demomotelapi.herokuapp.com/desistencia/", dados, function(){})
-
+    $.post("https://demomotelapi.herokuapp.com/desistencia/", dados, function(){
+        console.log("Registrado...")
+    })
 }
