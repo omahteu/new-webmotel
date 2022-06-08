@@ -23,15 +23,37 @@ function clean(id){
     })*/
 
     $http.delete("https://demomotelapi.herokuapp.com/comanda/"  + id + "/").success(function (data) {
-                console.log(data); // Retorno seu Data
-            });
+        console.log(data); // Retorno seu Data
+    });
+
+
 }
 
 
 
 function limpando(){
-    var asd = VerFileRepetidoBancoAjax()
-    console.log(asd)
+
+    var url = "https://demomotelapi.herokuapp.com/comanda/"
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", url, true);
+    
+    xhttp.onreadystatechange = function(){
+        if (xhttp.status == 200 ) {
+            console.log(xhttp.responseText);
+        }
+    }
+    
+    xhttp.send()
+
+
+
+
+
+
+
+
+/*
     var quartx = sessionStorage.getItem("quarto")
     $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
@@ -42,7 +64,7 @@ function limpando(){
             console.log(id)
             qwe.push(id)
             clean(id)
-        });
+        });*/
 
         
 
@@ -55,9 +77,9 @@ function limpando(){
         /*for(var i=0; i <= dados.length; i++){
             var id = dados[i].id
             clean(id)
-        }*/
-    })
-    console.log(qwe)
+        }
+    })*/
+    
     /*$.get("https://demomotelapi.herokuapp.com/patio/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         if(dados.length == 0){
