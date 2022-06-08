@@ -3,6 +3,10 @@ import { desfazer } from "../tags/desfazer.js"
 import { faxina } from "../tags/faxina.js"
 import { limpeza } from "../tags/limpeza.js"
 import { pause4, reset4, start4} from '../contadores/contadorQuatro.js'
+import { fimModal } from "../setup/camareiras.js"
+import { busca_permanencia } from "../setup/permanencia.js"
+import { atualiza_status } from "../setup/atualiza.js"
+import { ultima_limpeza } from "../botoes/limpar.js"
 
 var rota = 'rota'
 
@@ -13,35 +17,62 @@ export function resposta4(status){
 
     switch (status) {
         case 'Disponibilizar Quarto':
+            alert(`DESEJA DISPONIBILIZAR O QUARTO ${quarto}?`)
             pause4()
             reset4()
             setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout(function() {fimModal()}, 1001)
             break
 
         case 'Iniciar Faxina':
+            alert(`DESEJA INICIAR FAXINA NO QUARTO ${quarto}?`)
             pause4()
             reset4()
             start4()
             setTimeout(function() {faxina(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout(function() {fimModal()}, 1001)
             break
 
         case 'Iniciar Limpeza':
+            alert(`DESEJA INICIAR LIMPEZA NO QUARTO ${quarto}?`)
             reset4()
             start4()
             setTimeout(function() {limpeza(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout(function() {atualiza_status(quarto, "limpeza"), 1500})
+            setTimeout(function() {fimModal()}, 1001)
             break
         
         case 'Trocar Suíte':
             break
 
         case 'Encerrar':
-            if(confirm(`Deseja Encerrar o Quarto ${quarto}?`)){
+            if(confirm(`DESEJA ENCERRAR O QUARTO ${quarto}?`)){
                 pause4()
+                busca_permanencia()
                 setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
                 sessionStorage.setItem('quarto', quarto)
                 window.open('../paginas/checkout.html', '_blank')
-                setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 2000)
+                setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 1500)
+                setTimeout(function() {atualiza_status(quarto, "aguardando"), 1500})
+                setTimeout(function() {fimModal()}, 1001)
             }
+            break
+
+        case 'Encerrar Limpeza':
+            if(confirm('DESEJA DISPONIBILIZAR O QUARTO ' + quarto + ' ?') == true){
+                camareiras()
+            } else {
+                console.log('cancelado')
+            }
+            break
+
+        case 'OK':
+            alert('Camareira Selecionada')
+            pause4()
+            reset4()
+            setTimeout(function() {fimModal()}, 500)
+            setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 600)
+            setTimeout(function() {ultima_limpeza(quarto)}, 800)
             break
 
         case 'Apagar Luz':

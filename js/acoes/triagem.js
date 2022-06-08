@@ -1,8 +1,7 @@
-//import { modos } from '../setup/box.js'
 import { resposta1 } from './acaorespostaum.js'
 import { resposta2 } from './acaoRespostaDois.js'
-//import { resposta3 } from './acaoRespostaTres.js'
-//import { resposta4 } from './acaoRespostaQuatro.js'
+import { resposta3 } from './acaoRespostaTres.js'
+import { resposta4 } from './acaoRespostaQuatro.js'
 
 $("[name=botao]").click(function(){
     var status = $(this).val()
@@ -28,12 +27,12 @@ $("[name=botao]").click(function(){
             break
 
         case '3':
-            //resposta3(status)
+            resposta3(status)
             localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
             break
         
         case '4':
-            //resposta4(status)
+            resposta4(status)
             localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
             break
     
