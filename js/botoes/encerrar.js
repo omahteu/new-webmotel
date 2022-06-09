@@ -2,14 +2,10 @@ $("#encerrar").click(function(){
     setTimeout(function() {registrando()}, 300)
     setTimeout(function() {ocupacao()}, 500)
     setTimeout(function() {limpando()}, 800)
-    /*setTimeout(function() {
+    setTimeout(function() {
         window.close()
-    }, 1000)*/
-
-
+    }, 1000)
 })
-
-
 
 function clean(id){
     $.ajax({
@@ -78,48 +74,37 @@ function registrando(){
         });
     })
     $.get("https://demomotelapi.herokuapp.com/produtos/", (e) =>{
-        
-
         var resultado_produtos = box.filter( estadosComS  => (estadosComS.length > 2));
-        //console.log(resultado_produtos)
-
         var resultado_quantidade = box.filter( estadosComS  => (estadosComS.length < 3));
-        //console.log(resultado_quantidade)
-
-          
-        const juncao = resultado_produtos.map((resultado_produtos, indice) => ({ ...resultado_produtos, ...resultado_quantidade[indice] } ));
-          
-        console.log(juncao);
-
-
-
-
-        //var produto = box[0]
-        //var produto_quantidade = box[1]
-        var dados = e.filter(quartos => quartos.descricao == produto)
-        var estoque = dados[0].quantidade
-        var id_estoque = dados[0].id
-        var codigo_estoque = dados[0].codigo
-        var descricao_estoque = dados[0].descricao
-        var valorunitario_estoque = dados[0].valorunitario
-        var categoria_estoque = dados[0].categoria
-        var novo_estoque = parseInt(estoque) - parseInt(produto_quantidade)
-        var data_estoque = dados[0].data
-        
-        $.ajax({
-            url: "https://demomotelapi.herokuapp.com/produtos/" + id_estoque + "/",
-            type: "PUT",
-            dataType: "json",
-            data: {
-                codigo: codigo_estoque,
-                descricao: descricao_estoque,
-                valorunitario: valorunitario_estoque,
-                quantidade: novo_estoque,
-                categoria: categoria_estoque,
-                data: data_estoque
-            }
-        })
-
+        for(var i = 0; i <= resultado_produtos.length; i++){
+            var conjunto = [resultado_produtos[i], resultado_quantidade[i]]
+            var produto = conjunto[0]
+            var produto_quantidade = conjunto[1]
+            var dados = e.filter(quartos => quartos.descricao == produto)
+            dados.forEach(el => {
+                var estoque = el.quantidade
+                var id_estoque = el.id
+                var codigo_estoque = el.codigo
+                var descricao_estoque = el.descricao
+                var valorunitario_estoque = el.valorunitario
+                var categoria_estoque = el.categoria
+                var novo_estoque = parseInt(estoque) - parseInt(produto_quantidade)
+                var data_estoque = el.data
+                $.ajax({
+                    url: "https://demomotelapi.herokuapp.com/produtos/" + id_estoque + "/",
+                    type: "PUT",
+                    dataType: "json",
+                    data: {
+                        codigo: codigo_estoque,
+                        descricao: descricao_estoque,
+                        valorunitario: valorunitario_estoque,
+                        quantidade: novo_estoque,
+                        categoria: categoria_estoque,
+                        data: data_estoque
+                    }
+                })
+            });
+        }
     })
 }
 
