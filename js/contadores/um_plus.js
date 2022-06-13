@@ -27,12 +27,29 @@ export function times_plus(){
         minute = 0;
         hour++;
     }
-    document.getElementById('hour1').innerText = hour        //returnData(hour);
-    document.getElementById('minute1').innerText = minute     //returnData(minute);
-    document.getElementById('second1').innerText = second     //returnData(second);
+    console.log(second)
+    //document.getElementById('hour1').innerText = 
+    $("#hour1").text("")
+    $("#hour1").text(returnData(hour))
+    $("#minute").text("")
+    $("#minute1").text(returnData(minute))
+    $("#minute").text("")
+    $("#second1").text(returnData(second))
+    
+    //document.getElementById('minute1').innerText = returnData(minute)
+    //document.getElementById('second1').innerText = returnData(second)
 }
   
   
 export function returnData(input) {
-    return input > 10 ? input : `0${input}`
+    //console.log(input)
+    if(input >= 10){
+        return input
+    } else if(input >= 1 && input <= 9){
+        return `0${input}`
+    } else if(input == 0 || String(input) == "00"){
+        return `${input}`
+    } else {
+        return `0${input}`
+    }
 }

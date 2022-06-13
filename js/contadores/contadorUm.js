@@ -45,5 +45,15 @@ export function timer() {
 }
 
 export function returnData(input) {
-  return input > 10 ? input : `0${input}`
+  if(input >= 10){
+    return input
+  } else if(input >= 1 && input <= 9){
+      return `0${input}`
+  } else if(input == 0 || String(input) == "00"){
+      return `0${input}`
+  } else {
+      return `0${input}`
+  }
+
+  //return input > 10 ? input : `0${input}`
 }
