@@ -25,5 +25,4 @@ async function asd (){
         var permanencia = hora + ":" + minutos + ":" + segundos
         localStorage.setItem(ver[i], permanencia)
     }
-    console.log(ver)
  }
