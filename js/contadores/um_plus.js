@@ -1,4 +1,5 @@
 "use strict";
+var bases = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"]
 
 let hour
 let minute
@@ -8,9 +9,9 @@ let cron;
 
 
 export function start_plus(a, b, c){
-    hour = a
-    minute = b
-    second = c
+    hour = Number(a)
+    minute = Number(b)
+    second = Number(c)
     cron = setInterval(() => { times_plus() }, 10);
 }
   
@@ -27,7 +28,9 @@ export function times_plus(){
         minute = 0;
         hour++;
     }
-    console.log(second)
+    //console.log(minute)
+    //console.log(second)
+    //bases.includes("03" == true)
     //document.getElementById('hour1').innerText = 
     $("#hour1").text("")
     $("#hour1").text(returnData(hour))
@@ -35,6 +38,7 @@ export function times_plus(){
     $("#minute1").text(returnData(minute))
     $("#minute").text("")
     $("#second1").text(returnData(second))
+
     
     //document.getElementById('minute1').innerText = returnData(minute)
     //document.getElementById('second1').innerText = returnData(second)
@@ -47,9 +51,7 @@ export function returnData(input) {
         return input
     } else if(input >= 1 && input <= 9){
         return `0${input}`
-    } else if(input == 0 || String(input) == "00"){
-        return `${input}`
-    } else {
+    } else if(input == 0){
         return `0${input}`
     }
 }
