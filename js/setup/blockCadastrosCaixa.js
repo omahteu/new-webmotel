@@ -1,14 +1,10 @@
 $(document).ready(function(){
-
     bloqueioCadastros()
-
 })
 
 function bloqueioCadastros(){
     let info = localStorage.getItem("usuarioLogado")
-
     if(info === 'caixa'){
-        
         $("[name='cadQuartos']").css('display', 'none')
         $("[name='cadIgs']").css('display', 'none')
         $("[name='cadEmail']").css('display', 'none')
