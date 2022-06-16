@@ -4,7 +4,7 @@ $(document).ready(function(){
 })
 
 function usuario(){
-    let nome = sessionStorage.getItem('nome')
+    let nome = localStorage.getItem('nome')
     $("#usuario_sistema").text(nome)
 }
 

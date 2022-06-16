@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var nomeUsuario = sessionStorage.getItem('nome')
+    var nomeUsuario = localStorage.getItem('nome')
     $("#usuario").val(nomeUsuario)
     bloqueiaAbertura()
     bloqueiaFundo()
@@ -11,7 +11,7 @@ $("#abrirCaixa").click(function(){
     if(utilizar_fundo_caixa == 'Usar Fundo de Caixa?'){
         alert('Escolha se ultilizará o fundo de caixa!')
     } else {
-        sessionStorage.removeItem('caixa')
+        localStorage.removeItem('caixa')
         var usuario = $("#usuario").val()
         var dataEntrada = new Date();
         var dia = dataEntrada.getDate()
@@ -39,14 +39,14 @@ $("#abrirCaixa").click(function(){
 })
 
 function bloqueiaAbertura(){
-    var status = sessionStorage.getItem('caixa')
+    var status = localStorage.getItem('caixa')
     if(status === 'fechado'){
         $("#abrirCaixa").prop('disabled', false)
     }
 }
 
 function bloqueiaFundo(){
-    var status = sessionStorage.getItem('caixa')
+    var status = localStorage.getItem('caixa')
     if(status === 'fechado'){
         $("#usarFundoCaixa").prop('disabled', false)
     }
@@ -64,6 +64,78 @@ function validarUsoFundoCaixa(){
 }
 
 $("#fecharCaixa").click(function(){
-    console.log('fechando...')
-    // FAZER O ENCERRAMENTO PRIMEIRO
+    setTimeout(function(){busca_de_valores_de_caixa()}, 100)
+    setTimeout(function(){limpando_registros()}, 400)
 })
+
+async function busca_de_valores_de_caixa(){
+    var soma = 0
+    const query_dois = await fetch("https://demomotelapi.herokuapp.com/ocupacoes/")
+    const resposta_query_dois = await query_dois.json()
+    resposta_query_dois.forEach(e => {
+        var totalPrecoProdutos = []
+        if(e.data == "9/5/2022"){
+            totalPrecoProdutos.push(e.total)
+            for(var a = 0; a < totalPrecoProdutos.length; a++){
+                soma += parseFloat(totalPrecoProdutos[a])
+            }
+        }
+    });
+    $.get("https://demomotelapi.herokuapp.com/caixa/", function(el){
+        var id = el[el.length -1].id
+        var data = el[el.length -1].data
+        var entrada = el[el.length -1].entrada
+        var usuario = el[el.length -1].usuario
+        localStorage.setItem("id", id)
+        localStorage.setItem("data", data)
+        localStorage.setItem("entrada", entrada)
+        localStorage.setItem("usuario", usuario)
+        var soma_fundo = el[el.length - 1].fundo
+        if(soma_fundo == ""){
+            localStorage.setItem("fundo", "0")
+        } else {
+            localStorage.setItem("fundo", soma_fundo)
+        }   
+    })
+    
+    setTimeout(function(){
+        var valor_fundo = localStorage.getItem("fundo")
+        var id_caixa = localStorage.getItem("id")
+        var total = parseFloat(soma) + parseFloat(valor_fundo)
+        var rdata = localStorage.getItem("data")
+        var rentrada = localStorage.getItem("entrada")
+        var rusuario = localStorage.getItem("usuario")
+        var base = new Date();
+        var dia = base.getDate()
+        var mes = base.getMonth()
+        var ano = base.getFullYear()
+        let saida = `${String(dia)}/${String(mes)}}/${String(ano)}`
+        var dados = {
+            data: rdata,
+            entrada: rentrada,
+            usuario: rusuario,
+            fundo: valor_fundo,
+            total: total,
+            saida: saida
+        }
+        console.log(id_caixa)
+        $.ajax({
+            url: "https://demomotelapi.herokuapp.com/caixa/" + id_caixa + "/",
+            type: "PUT",
+            dataType: "json",
+            data: dados,
+            success: function(){
+                console.log("Atualizado.")
+            }
+        })
+        localStorage.removeItem("nome")
+    }, 200)
+}
+
+function limpando_registros(){
+    localStorage.removeItem("id")
+    localStorage.removeItem("data")
+    localStorage.removeItem("entrada")
+    localStorage.removeItem("usuario")
+    localStorage.removeItem("fundo")
+}

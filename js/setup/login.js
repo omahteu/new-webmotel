@@ -15,13 +15,13 @@ async function autenticacao(usuario, senha){
                 if(elemento.status === 'Admin'){
                     alert('Login com Sucesso!')
                     localStorage.setItem('usuarioLogado', 'admin')
-                    sessionStorage.setItem('nome', elemento.nome)
+                    localStorage.setItem('nome', elemento.nome)
                     sessionStorage.setItem('caixa', 'fechado')
                     $(location).attr('href', './paginas/home.html')
                 } else {
                     alert('Login com Sucesso!')
                     localStorage.setItem('usuarioLogado', 'caixa')
-                    sessionStorage.setItem('nome', elemento.nome)
+                    localStorage.setItem('nome', elemento.nome)
                     sessionStorage.setItem('caixa', 'fechado')
                     $(location).attr('href', './paginas/caixa.html')
                 }
