@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).one("ready", function(){
     estar_logado()
 })
 

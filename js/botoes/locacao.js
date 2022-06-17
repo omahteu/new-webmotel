@@ -3,8 +3,8 @@ import { modos } from "../setup/box.js"
 import { index } from "../tags/particao.js"
 import { start } from "../contadores/contadorUm.js"
 import { start2 } from "../contadores/contadorDois.js"
-//import { start3 } from "../contadores/contadorTres.js"
-//import { start4 } from "../contadores/contadorQuatro.js"
+import { start3 } from "../contadores/contadorTres.js"
+import { start4 } from "../contadores/contadorQuatro.js"
 import { fimModal } from "../setup/camareiras.js"
 
 $(".locado").click(function(){
@@ -33,6 +33,7 @@ $(".locado").click(function(){
             case '3':
                 var flags = modos.slice(6, 9)
                 locado(quarto, rota,  flags[0], flags[1], flags[2])
+                setTimeout(function() {fimModal()}, 1000)
                 start3()
                 setTimeout(function() {index()}, 2000);
                 break
@@ -40,6 +41,7 @@ $(".locado").click(function(){
             case '4':
                 var flags = modos.slice(9, 12)
                 locado(quarto, rota,  flags[0], flags[1], flags[2])
+                setTimeout(function() {fimModal()}, 1000)
                 start4()
                 setTimeout(function() {index()}, 2000);
                 break

@@ -3,7 +3,8 @@ export function index(){
     var horaEntrada = new Date();
     var hora = horaEntrada.getHours()
     var minutos = horaEntrada.getMinutes()
-    var datahora = `${String(hora)}:${String(minutos)}`
+    var segundos = horaEntrada.getSeconds()
+    var datahora = `${String(hora)}:${String(minutos)}:${String(segundos)}`
     var valor = $("#valor-quarto").text()
     var quarto = $("#numquarto").text()
     var tipo = $("#tipo").text()
