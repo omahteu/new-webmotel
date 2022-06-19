@@ -1,3 +1,5 @@
+import { data_atual } from "../setup/gera_data.js"
+
 $(document).ready(function(){
     var nomeUsuario = localStorage.getItem('nome')
     $("#usuario").val(nomeUsuario)
@@ -13,14 +15,13 @@ $("#abrirCaixa").click(function(){
     } else {
         localStorage.removeItem('caixa')
         var usuario = $("#usuario").val()
-        var dataEntrada = new Date();
-        var dia = dataEntrada.getDate()
-        var mes = dataEntrada.getMonth()
-        var ano = dataEntrada.getFullYear()
+        var base = new Date();
+        var dia = base.getDate()
+        var mes = base.getMonth()
+        var ano = base.getFullYear()
         let dataAtual = `${String(dia)}/${String(mes)}/${String(ano)}`
-        var horaEntrada = new Date();
-        var hora = horaEntrada.getHours()
-        var minutos = horaEntrada.getMinutes()
+        var hora = base.getHours()
+        var minutos = base.getMinutes()
         let horaAtual = `${String(hora)}:${String(minutos)}`
         var fundoCaixa = $("#valorFundoCaixa").val()
         var dados = {
@@ -69,12 +70,13 @@ $("#fecharCaixa").click(function(){
 })
 
 async function busca_de_valores_de_caixa(){
+    var hoje = data_atual()
     var soma = 0
     const query_dois = await fetch("https://demomotelapi.herokuapp.com/ocupacoes/")
     const resposta_query_dois = await query_dois.json()
     resposta_query_dois.forEach(e => {
         var totalPrecoProdutos = []
-        if(e.data == "9/5/2022"){
+        if(e.data == hoje){
             totalPrecoProdutos.push(e.total)
             for(var a = 0; a < totalPrecoProdutos.length; a++){
                 soma += parseFloat(totalPrecoProdutos[a])

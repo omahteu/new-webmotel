@@ -9,10 +9,11 @@ function historicoUrls(){
         $("#urlCadastrosCaixa").attr('href', './homecaixa.html')
         $("#urlQuartosCaixa").attr('href', './homecaixa.html')
         $("#urlCaixaCaixa").attr('href', './homecaixa.html')
-        $("#abrirCaixa").css('display', 'none')
-        $("#usarFundoCaixa").css('display', 'none')
-        let status = sessionStorage.getItem('caixa')
+
+        let status = localStorage.getItem('caixa')
         if(status == 'fechado'){
+            $("#abrirCaixa").removeAttr()
+            $("#usarFundoCaixa").removeAttr()
             $("#fecharCaixa").css('display', 'none')
         }
     }

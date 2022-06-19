@@ -37,17 +37,62 @@ data.setDate(data.getDate() + 0);
 data.setMonth(data.getMonth() + 0);
 data.setFullYear(data.getFullYear() + 0);
 
-render(formatDate(data));
+//render(formatDate(data));
   
+function minutes(f0) {
+  //let f0 = data.value.split(":");
+  //value.innerHTML = ((Number(f0[0])*60)+Number(f0[1])) + " Minutes";
+  
+  return ((Number(f0[0])*60)+Number(f0[1]))
+}
 
 const base = new Date()
 const h = base.getHours()
 const mi = base.getMinutes()
 const s = base.getSeconds()
 
+const converter = (minutos) => {
+  const horas = Math.floor(minutos/ 60);          
+  const min = minutos % 60;
+  const textoHoras = (`00${horas}`).slice(-2);
+  const textoMinutos = (`00${min}`).slice(-2);
+  
+  return `${textoHoras }:${textoMinutos}`;
+};
+
 $.get("https://demomotelapi.herokuapp.com/infos/", e =>{
   e.forEach(el => {
-    console.log(`${el.quarto}: ${el.datahora}`)
-    console.log(`${h}:${mi}`)
+
+    var ohra = el.datahora
+    var ohra_formatada = ohra.split(":")
+    
+    var atual = [h, mi]
+
+    var hora_um = minutes(ohra_formatada)
+    var hora_dois = minutes(atual)
+    var diferenca = parseInt(hora_dois) - parseInt(hora_um)
+    var acrescimo = parseInt(hora_dois) + parseInt(diferenca)
+    var hora_acrescida = converter(acrescimo)
+
+    var id = el.id
+    var valor = el.valor
+    var quarto = el.quarto
+    var tipo = el.tipo
+
+    $.ajax({
+      url: "https://demomotelapi.herokuapp.com/infos/" + id + "/",
+      type: "PUT",
+      dataType: "json",
+      data:  {
+        datahora: hora_acrescida,
+        valor: valor,
+        quarto: quarto,
+        tipo: tipo
+      },
+      success: function(){
+        console.log("Sucesso")
+      }
+    })
+
   });
 })

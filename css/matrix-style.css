@@ -4374,3 +4374,7 @@ fieldset[disabled] .btn-info.active {
 #tempo_limpeza, #tempo_faxina, #tempo_manutencao {
   display: none;
 }
+
+.iconBx {
+  cursor: pointer;
+}
