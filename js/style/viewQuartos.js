@@ -1,6 +1,6 @@
 import { modos } from '../setup/box.js'
 import { locado } from "../tags/locacao.js"
-import { start_plus } from "../contadores/um_plus.js"
+//import { start_plus } from "../contadores/um_plus.js"
 
 function mostraProduto(identificador){
 	$.get("https://demomotelapi.herokuapp.com/comanda/", function(retorno){
@@ -82,29 +82,32 @@ $(document).on('click', '[class="card"]', function(){
 				var flags = modos.slice(0, 3)
 				$("#intervalo").text(modos.slice(0, 3))
 				backupInfos(identificador, flags[0], flags[1], flags[2])
-				var tr = localStorage.getItem("1")
-				$("#hour"+identificador).text(tr.slice(0, 2))
-				$("#minute"+identificador).text(tr.slice(3, 5))
-				$("#second"+identificador).text(tr.slice(6, 8))
-				start_plus(tr.slice(0, 2), tr.slice(3, 5), tr.slice(6, 8))
+				//var tr = localStorage.getItem("1")
+				//var aaaa = tr.slice(0, 2)
+				//console.log(`view: cont: ${aaaa}`)
+				//console.log(`view: tipo: ${typeof(aaaa)}`)
+				//$("#hour"+identificador).text(tr.slice(0, 2))
+				//$("#minute"+identificador).text(tr.slice(3, 5))
+				//$("#second"+identificador).text(tr.slice(6, 8))
+				//start_plus(tr.slice(0, 2), tr.slice(3, 5), tr.slice(6, 8))
 				break;		
 			case '2':
 				var flags = modos.slice(3, 6)
 				$("#intervalo").text(modos.slice(3, 6))
 				backupInfos(identificador, flags[0], flags[1], flags[2])
-				var tr = localStorage.getItem("1")
+				//var tr = localStorage.getItem("1")
 				break
 			case '3':
 				var flags = modos.slice(6, 9)
 				$("#intervalo").text(modos.slice(6, 9))
 				backupInfos(identificador, flags[0], flags[1], flags[2])
-				var tr = localStorage.getItem("1")
+				//var tr = localStorage.getItem("1")
 				break	
 			case '4':
 				var flags = modos.slice(9, 12)
 				$("#intervalo").text(modos.slice(9, 12))
 				backupInfos(identificador, flags[0], flags[1], flags[2])
-				var tr = localStorage.getItem("1")
+				//var tr = localStorage.getItem("1")
 				break
 		}
 		// Variáveis usadas para Filtro

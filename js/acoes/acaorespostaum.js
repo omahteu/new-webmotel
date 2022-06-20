@@ -8,6 +8,8 @@ import { fimModal } from "../setup/camareiras.js"
 import { busca_permanencia } from "../setup/permanencia.js"
 import { atualiza_status } from "../setup/atualiza.js"
 import { ultima_limpeza } from "../botoes/limpar.js"
+import { pause_plus } from "../contadores/um_plus.js"
+import { reset_plus } from "../contadores/um_plus.js"
 
 var rota = 'rota'
 
@@ -37,6 +39,7 @@ export function resposta1(status){
         case 'Iniciar Limpeza':
             alert(`DESEJA INICIAR LIMPEZA NO QUARTO ${quarto}?`)
             reset()
+            reset_plus()
             start()
             setTimeout(function() {limpeza(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
             setTimeout(function() {atualiza_status(quarto, "limpeza"), 1500})
@@ -49,6 +52,7 @@ export function resposta1(status){
         case 'Encerrar':
             if(confirm(`DESEJA ENCERRAR O QUARTO ${quarto}?`)){
                 pause()
+                pause_plus()
                 busca_permanencia()
                 setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
                 sessionStorage.setItem('quarto', quarto)

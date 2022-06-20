@@ -13,6 +13,20 @@ export function start_plus(a, b, c){
     second = Number(c)
     cron = setInterval(() => { times_plus() }, 10);
 }
+
+export function pause_plus() {
+    clearInterval(cron);
+}
+
+export function reset_plus() {
+    hour = 0;
+    minute = 0;
+    second = 0;
+    millisecond = 0;
+    document.getElementById('hour1').innerText = '00';
+    document.getElementById('minute1').innerText = '00';
+    document.getElementById('second1').innerText = '00';
+}
   
 export function times_plus(){
     if ((millisecond += 10) == 1000) {
@@ -34,7 +48,6 @@ export function times_plus(){
     $("#minute").text("")
     $("#second1").text(returnData(second))
 }
-  
   
 export function returnData(input) {
     if(input >= 10){
