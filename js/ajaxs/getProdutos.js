@@ -3,25 +3,17 @@ $(document).ready(function(){
 })
 
 async function dadosProdutos(){
-    
     const resposta = await fetch("https://demomotelapi.herokuapp.com/produtos/")
     const dado = await resposta.json()
-
     var tabelaHomeProdutos = document.getElementById('tabelaHomeProdutos')
     tabelaHomeProdutos.innerHTML = ''
-
-    console.log(dado)
-
     dado.forEach(elemento => {
-
         var codigo = elemento.codigo
         var descricao = elemento.descricao
         var valor = elemento.valorunitario
         var quantidade = elemento.quantidade
         var categoria = elemento.categoria
         var data = elemento.data
-
-
         tabelaHomeProdutos.innerHTML += '<tr>'+
                                             '<td>' + codigo + '</td>'+
                                             '<td>' + descricao + '</td>'+

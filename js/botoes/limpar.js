@@ -1,7 +1,7 @@
 export function ultima_limpeza(quartx){
     localStorage.removeItem("dadosQuarto")
     localStorage.removeItem(`codigo${quartx}`)
-    sessionStorage.removeItem("quarto")
+    localStorage.removeItem("quarto")
     $.get("https://demomotelapi.herokuapp.com/infos/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         var id = dados[0].id

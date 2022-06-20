@@ -14,10 +14,8 @@ import { reset_plus } from "../contadores/um_plus.js"
 var rota = 'rota'
 
 export function resposta1(status){
-
     var quarto = $("#numquarto").text()
     var flags = $("#intervalo").text().split(",")
-
     switch (status) {
         case 'Disponibilizar Quarto':
             alert(`DESEJA DISPONIBILIZAR O QUARTO ${quarto}?`)
