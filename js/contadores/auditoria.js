@@ -1,5 +1,6 @@
 import { hora_atual } from "../setup/gera_hora.js"
 import { horas_para_minutos } from "../setup/gera_minutos.js"
+import { data_atual } from "../setup/gera_data.js"
 
 var horas = []
 
@@ -30,5 +31,12 @@ function calc(){
     var inicial_minutos = horas_para_minutos(hora_inicial_formatada)
     var final_minutos = horas_para_minutos(hora_final_formatada)
     var permanencia = parseInt(final_minutos) - parseInt(inicial_minutos)
-    localStorage.setItem('permanencia', permanencia)
+    var usuario = localStorage.getItem("nome")
+    var hoje = data_atual()
+    var dados = {
+        permanencia: permanencia,
+        usuario: usuario,
+        hoje: hoje
+    }
+    localStorage.setItem('permanencia', JSON.stringify(dados))
 }
