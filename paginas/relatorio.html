@@ -209,6 +209,9 @@
                   <li>
                     <a data-toggle="tab" href="#cartoes">Cartões</a>
                   </li>
+                  <li>
+                    <a data-toggle="tab" href="#auditoria">Auditoria</a>
+                  </li>
                 </ul>
 
                 <form action="" id="formConfigurar" method="post" class="form-horizontal">
@@ -342,6 +345,19 @@
                         <tbody id="tabelaRelatorioCartoes"></tbody>
                       </table>
                     </div>
+
+                    <!--Auditoria-->
+                    <div id="auditoria" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+
+                          </tr>
+                        </thead>
+                        <tbody id=""></tbody>
+                      </table>
+                    </div>
+
                    </div>
                 </form>
               </div>
@@ -373,4 +389,7 @@
     <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
     <script src="../js/setup/validacao.js"></script>
     <script src="../js/style/nomes.js"></script>
+
+    <script type="module" src="../js/contadores/auditoria.js"></script>
+    <script src="../js/cadastros/postAuditoria.js"></script>
 </html>

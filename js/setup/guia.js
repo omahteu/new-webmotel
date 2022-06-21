@@ -1,12 +1,6 @@
 window.onbeforeunload = function() {
-
     asd()
-
-    
     return 'Tem a certeza que quer fechar a janela?';
-
-
-
  };
 
 async function asd (){
