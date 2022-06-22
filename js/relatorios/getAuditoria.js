@@ -8,8 +8,12 @@ $(document).ready( () => {
 })
 
 $("#mostrarRelatorio").click( () => {
-    var option = $('#selectUsuarios').find(":selected").text();
-    filtro(option)
+    var option = $('#selectUsuarios').find(":selected").text()
+    var data_rel = $("#data_relatorio").val()
+    elo = new Date(data_rel)
+    dataFormatada = elo.toLocaleDateString('pt-BR', {timeZone: 'UTC'})
+
+    filtro(option, dataFormatada)
 })
 
 async function busca_datas(){
@@ -21,7 +25,7 @@ async function busca_datas(){
     })
 }
 
-async function busca_usuarios(procurado){
+async function busca_usuarios(){
     const query = await fetch("https://demomotelapi.herokuapp.com/auditoria/")
     const dados = await query.json()
     dados.forEach(el => {
@@ -30,32 +34,17 @@ async function busca_usuarios(procurado){
     })
 }
 
-async function filtro(nome){
-    var datx = datas.filter((este, i) => datas.indexOf(este) === i)
-    var datx2 = nomes.filter((este, i) => nomes.indexOf(este) === i)
-
-    var dados = datx2.filter(quartos => quartos.nome == nome)
-    console.log(dados)
-    console.log(datx2)
-
+async function filtro(nome, data){
+    //var datx = datas.filter((este, i) => datas.indexOf(este) === i)
+    //var datx2 = nomes.filter((este, i) => nomes.indexOf(este) === i)
     const query = await fetch("https://demomotelapi.herokuapp.com/auditoria/")
     const resposta = await query.json()
     resposta.forEach(element => {
-        if(element.nome == datx2[0]){
-            //console.log(element)
+        if(element.nome == nome && element.data == data){
+            soma += parseInt(element.tempo)
         }
-    });
-
-
-    //var ultimo = nomes;
-    //console.log(nomes)
-    /*
-    for(const dia in datas){
-        console.log(datas[dia])
-        var user = nomes
-        
-    }
-    */
+    })
+    alert(soma)
 }
 
 function exibe_auditoria(nome){
@@ -128,33 +117,4 @@ function exibe_auditoria(nome){
         });
     })
     */
-}
-
-function poew(){
-    var datx = datas.filter((este, i) => datas.indexOf(este) === i)
-
-    
-    
-    for(const index in datx){
-        var dia = datx[index]
-        $.get("https://demomotelapi.herokuapp.com/auditoria/", e => {
-            var dados = e.filter(quartos => quartos.data == dia)
-            dados.forEach(el => {
-                console.log(el)
-            });
-        })
-
-
-
-        /*
-        var dados = e.filter(quartos => quartos.data == dia)
-        console.log(dados[0].data)
-        prateleira.innerHTML += '<tr>'+
-                                '<td>'+ dados[0].data + '</td>' +
-                                '<td>'+ dados[0].nome + '</td>' +
-                                '<td>'+ 'tempo' + '</td>' +        
-                            '</tr>'
-                            */
-
-    }
 }
