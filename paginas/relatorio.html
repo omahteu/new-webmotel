@@ -348,16 +348,25 @@
 
                     <!--Auditoria-->
                     <div id="auditoria" class="tab-pane fade">
+                      <div class="control-group"> 
+                        <div class="controls"> 
+                          <select id="selectUsuarios">
+                            <option value="" hidden>Usuário</option>
+                          </select>
+                          <button type="button" class="btn btn-primary" id="mostrarRelatorio">Mostrar</button>
+                        </div>
+                      </div>
                       <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
                         <thead>
                           <tr role="row">
-
+                            <th>Data</th>
+                            <th>Usuário</th>
+                            <th>Ativo</th>
                           </tr>
                         </thead>
-                        <tbody id=""></tbody>
+                        <tbody id="tabelaRelatorioAuditoria"></tbody>
                       </table>
                     </div>
-
                    </div>
                 </form>
               </div>
@@ -393,4 +402,5 @@
     <script type="module" src="../js/contadores/auditoria.js"></script>
     <script src="../js/cadastros/postAuditoria.js"></script>
     <script src="../js/relatorios/getAuditoria.js"></script>
+    <script src="../js/relatorios/getUsuarios.js"></script>
 </html>
