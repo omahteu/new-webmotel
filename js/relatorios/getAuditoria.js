@@ -11,3 +11,4 @@ async function gera_auditoria(){
     })
     console.log(soma)
 }
+
