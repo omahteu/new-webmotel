@@ -44,7 +44,12 @@ async function filtro(nome, data){
             soma += parseInt(element.tempo)
         }
     })
-    alert(soma)
+
+    if(soma > 1){
+        alert(`${nome} em ${data} permaneceu ativo por ${soma} minutos!`)
+    } else {
+        alert("Dados Indisponíveis!")
+    }
 }
 
 function exibe_auditoria(nome){
