@@ -1,5 +1,7 @@
 import { data_atual } from "../setup/gera_data.js"
 
+var soma = 0
+
 $(document).ready(function(){
     var nomeUsuario = localStorage.getItem('nome')
     $("#usuario").val(nomeUsuario)
@@ -63,8 +65,11 @@ function validarUsoFundoCaixa(){
 }
 
 $("#fecharCaixa").click(function(){
-    limpando_registros()
-    setTimeout(function(){busca_de_valores_de_caixa()}, 100)
+    enviando_relatorio()    
+    //  limpando_registros()
+    setTimeout(function(){limpando_registros()}, 100)
+    setTimeout(function(){busca_de_valores_de_caixa()}, 200)
+    setTimeout(function(){console.log(fechando)}, 500)  
 })
 
 async function busca_de_valores_de_caixa(){
@@ -138,28 +143,25 @@ function limpando_registros(){
     localStorage.removeItem("permanencia")
 }
 
-function enviando_relatorio(){
+async function enviando_relatorio(){
     var hoje = data_atual()
     var nome = localStorage.getItem("nome")
 
-    $.get("https://demomotelapi.herokuapp.com/auditoria/", e =>{
-        console.log(e)
-    })
-
-    resposta.forEach(element => {
-        if(element.nome == nome && element.data == data){
-            soma += parseInt(element.tempo)
+    const query = await fetch("https://demomotelapi.herokuapp.com/auditoria/")
+    const dados = await query.json()
+    dados.forEach(element => {
+        if(element.nome == nome && element.data == hoje){
+            soma += Number(element.tempo)
         }
     })
-    if(soma > 1){
-        var prateleira = document.getElementById("tabelaRelatorioAuditoria")
-        prateleira.innerHTML = ''
-        prateleira.innerHTML += '<tr>'+
-                                    '<td>'+ data + '</td>' +
-                                    '<td>'+ nome + '</td>' +
-                                    '<td>'+ soma + ' minutos' + '</td>' +        
-                                '</tr>'
-    } else {
-        alert("Dados Indisponíveis!")
+
+    var nota = {
+        tempo: soma,
+        nome: nome,
+        data: data
     }
+
+    $.post("https://demomotelapi.herokuapp.com/atividade/", nota, () => {
+        console.log("Registrado!")
+    })
 }
