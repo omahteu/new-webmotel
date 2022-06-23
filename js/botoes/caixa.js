@@ -13,7 +13,7 @@ $("#abrirCaixa").click(function(){
     if(utilizar_fundo_caixa == 'Usar Fundo de Caixa?'){
         alert('Escolha se ultilizará o fundo de caixa!')
     } else {
-        localStorage.removeItem('caixa')
+        localStorage.setItem('caixa', 'aberto')
         var base = new Date()
         var usuario = $("#usuario").val()
         let dataAtual = data_atual()
@@ -63,8 +63,8 @@ function validarUsoFundoCaixa(){
 }
 
 $("#fecharCaixa").click(function(){
+    limpando_registros()
     setTimeout(function(){busca_de_valores_de_caixa()}, 100)
-    setTimeout(function(){limpando_registros()}, 400)
 })
 
 async function busca_de_valores_de_caixa(){
@@ -134,4 +134,7 @@ function limpando_registros(){
     localStorage.removeItem("entrada")
     localStorage.removeItem("usuario")
     localStorage.removeItem("fundo")
+    localStorage.removeItem("caixa")
+    localStorage.removeItem("nome")
+    localStorage.removeItem("permanencia")
 }
