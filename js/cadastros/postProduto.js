@@ -5,18 +5,18 @@ $("#salvarFormPostProduto").click(function(){
     let codigo = $("#codigoProduto").val()
     let descricao = $("#descricaoProduto").val()
     let valor = $("#valorUnitarioProduto").val()
+    var valor_formatadao = String(valor).replace(",", ".")
     let quantidade = $("#quantidadeProduto").val()
     let categoria = $("#categoriaProduto").val()
     let dataAtual = data_atual()
     var dados = {
             codigo: codigo,
             descricao: descricao,
-            valorunitario: valor,
+            valorunitario: valor_formatadao,
             quantidade: quantidade,
             categoria: categoria,
             data: dataAtual
     }
-    
     $.post("https://demomotelapi.herokuapp.com/produtos/", dados, function(){
         alert("Produto Registrado!")
     

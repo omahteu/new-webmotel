@@ -1,10 +1,5 @@
 var soma = 0
 
-$(document).ready( () => {
-    busca_datas()
-    busca_usuarios()
-})
-
 $("#mostrarRelatorio").click( () => {
     var option = $('#selectUsuarios').find(":selected").text()
     var data_rel = $("#data_relatorio").val()

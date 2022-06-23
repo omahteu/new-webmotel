@@ -14,17 +14,19 @@ $("#abrirCaixa").click(function(){
         alert('Escolha se ultilizará o fundo de caixa!')
     } else {
         localStorage.removeItem('caixa')
+        var base = new Date()
         var usuario = $("#usuario").val()
         let dataAtual = data_atual()
         var hora = base.getHours()
         var minutos = base.getMinutes()
         let horaAtual = `${String(hora)}:${String(minutos)}`
         var fundoCaixa = $("#valorFundoCaixa").val()
+        var fundoCaixa_formatado = String(fundoCaixa).replace(",", ".")
         var dados = {
             data: dataAtual,
             entrada: horaAtual,
             usuario: usuario,
-            fundo: fundoCaixa,
+            fundo: fundoCaixa_formatado,
             total: "",
             saida: ""
         }
