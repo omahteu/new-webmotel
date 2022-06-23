@@ -15,11 +15,7 @@ $("#abrirCaixa").click(function(){
     } else {
         localStorage.removeItem('caixa')
         var usuario = $("#usuario").val()
-        var base = new Date();
-        var dia = base.getDate()
-        var mes = base.getMonth()
-        var ano = base.getFullYear()
-        let dataAtual = `${String(dia)}/${String(mes)}/${String(ano)}`
+        let dataAtual = data_atual()
         var hora = base.getHours()
         var minutos = base.getMinutes()
         let horaAtual = `${String(hora)}:${String(minutos)}`
@@ -107,11 +103,7 @@ async function busca_de_valores_de_caixa(){
         var rdata = localStorage.getItem("data")
         var rentrada = localStorage.getItem("entrada")
         var rusuario = localStorage.getItem("usuario")
-        var base = new Date();
-        var dia = base.getDate()
-        var mes = base.getMonth()
-        var ano = base.getFullYear()
-        let saida = `${String(dia)}/${String(mes)}}/${String(ano)}`
+        let saida = data_atual()
         var dados = {
             data: rdata,
             entrada: rentrada,

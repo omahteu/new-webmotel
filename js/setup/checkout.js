@@ -128,7 +128,7 @@ function getValores(){
 
 async function InfosPrimario(){
 
-	const resposta = await fetch('https://defmoteapi.herokuapp.com/infos/')
+	const resposta = await fetch('https://demomotelapi.herokuapp.com/infos/')
 	const data = await resposta.json()
 
 	var prateleira = document.getElementById('itensComprados');

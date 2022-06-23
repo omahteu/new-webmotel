@@ -1,3 +1,5 @@
+import { data_atual } from "../setup/gera_data.js"
+
 $("#salvarFormPostProduto").click(function(){
     
     let codigo = $("#codigoProduto").val()
@@ -5,16 +7,7 @@ $("#salvarFormPostProduto").click(function(){
     let valor = $("#valorUnitarioProduto").val()
     let quantidade = $("#quantidadeProduto").val()
     let categoria = $("#categoriaProduto").val()
-
-    var horaEntrada = new Date();
-
-    var dia = horaEntrada.getDate()
-    var mes = horaEntrada.getMonth()
-    var ano = horaEntrada.getFullYear()
-
-    //let dataAtual = String(dia) + '/' + String(mes) + '/' + String(ano)
-    let dataAtual = `${String(dia)}/${String(mes)}}/${String(ano)}`
-
+    let dataAtual = data_atual()
     var dados = {
             codigo: codigo,
             descricao: descricao,

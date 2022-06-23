@@ -1,3 +1,5 @@
+import { data_atual } from "../setup/gera_data.js"
+
 $("#encerrar").click(function(){
     setTimeout(function() {registrando()}, 300)
     setTimeout(function() {ocupacao()}, 500)
@@ -116,14 +118,11 @@ function gera_codigo(){
 
 function ocupacao(){
     var base = new Date();
-    var dia = base.getDate()
-    var mes = base.getMonth()
-    var ano = base.getFullYear()
     var hora = base.getHours()
     var minutos = base.getMinutes()
     let quarto = sessionStorage.getItem("quarto")
     var box = JSON.parse(localStorage.getItem("dadosQuarto"))
-    let dataAtual = `${String(dia)}/${String(mes)}/${String(ano)}`
+    let dataAtual = data_atual()
     let codigo_ocupacao = gera_codigo()
     let entrada = box[0].tempo
     let saida = `${hora}:${minutos}`

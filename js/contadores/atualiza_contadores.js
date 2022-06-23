@@ -13,23 +13,6 @@ function formatDate(date) {
   return `${d}/${mo}/${y} ${h}:${mi}:${s}`;
 }
 
-
-/*
-const start = new Date(stringDate);
-const end = new Date('2019-04-21T10:30:00-03:00');
-const result = end - start;
-//             ms       s     m   h    d
-const time = result / 1000 / 60 / 60 / 24;
-
-const data = new Date(stringDate);
-data.setSeconds(data.getSeconds() + 0);
-data.setMinutes(data.getMinutes() + 0);
-data.setHours(data.getHours() + 0);
-data.setDate(data.getDate() + 0);
-data.setMonth(data.getMonth() + 0);
-data.setFullYear(data.getFullYear() + 0);
-*/
-
 function minutes(f0) {
   return ((Number(f0[0]) * 60) + Number(f0[1]))
 }

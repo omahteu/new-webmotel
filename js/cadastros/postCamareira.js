@@ -1,3 +1,5 @@
+import { data_atual } from "../setup/gera_data.js"
+
 $("#salvarFormPostCamareira").click(function(){
     let camareira = $("#nomeCamareira").val()
     var dados = {
@@ -19,11 +21,7 @@ $("#camareira_limpeza").click(function(){
     var nome = $('#selecionar_camareira').find(":selected").val()
     var quarto = $("#numquarto").text()
     var codigo = localStorage.getItem(`codigo${quarto}`)
-    var base = new Date();
-    var dia = base.getDate()
-    var mes = base.getMonth()
-    var ano = base.getFullYear()
-    let dataAtual = `${String(dia)}/${String(mes)}/${String(ano)}`
+    let dataAtual = data_atual()
     var dados = {
         codigo: codigo,
         quarto: quarto,

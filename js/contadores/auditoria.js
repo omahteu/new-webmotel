@@ -6,6 +6,7 @@ var horas = []
 
 $(document).ready(() => {
     auditando()
+    console.log(data_atual())
 })
 
 window.onbeforeunload = function() {
