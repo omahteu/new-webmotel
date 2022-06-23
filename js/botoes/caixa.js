@@ -114,7 +114,6 @@ async function busca_de_valores_de_caixa(){
             total: total,
             saida: saida
         }
-        console.log(id_caixa)
         $.ajax({
             url: "https://demomotelapi.herokuapp.com/caixa/" + id_caixa + "/",
             type: "PUT",
@@ -137,4 +136,30 @@ function limpando_registros(){
     localStorage.removeItem("caixa")
     localStorage.removeItem("nome")
     localStorage.removeItem("permanencia")
+}
+
+function enviando_relatorio(){
+    var hoje = data_atual()
+    var nome = localStorage.getItem("nome")
+
+    $.get("https://demomotelapi.herokuapp.com/auditoria/", e =>{
+        console.log(e)
+    })
+
+    resposta.forEach(element => {
+        if(element.nome == nome && element.data == data){
+            soma += parseInt(element.tempo)
+        }
+    })
+    if(soma > 1){
+        var prateleira = document.getElementById("tabelaRelatorioAuditoria")
+        prateleira.innerHTML = ''
+        prateleira.innerHTML += '<tr>'+
+                                    '<td>'+ data + '</td>' +
+                                    '<td>'+ nome + '</td>' +
+                                    '<td>'+ soma + ' minutos' + '</td>' +        
+                                '</tr>'
+    } else {
+        alert("Dados Indisponíveis!")
+    }
 }
