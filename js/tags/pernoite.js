@@ -1,3 +1,5 @@
+import { hora_atual } from "../setup/gera_hora.js"
+
 export function pernoite(q, t, x, y, z) {
     $("#quarto" + q).css({
         "background-color": "#8B008B",
@@ -7,10 +9,8 @@ export function pernoite(q, t, x, y, z) {
 
     $("[id=botaoq" + q + "]").css('visibility', 'hidden')
 
-    var horaEntrada = new Date();
-    var hora = horaEntrada.getHours()
-    var minutos = horaEntrada.getMinutes()
-    $("[id=tempo]").text(String(hora) + ':' + String(minutos))
+    var hora = hora_atual()
+    $("[id=tempo]").text(hora)
 
     $("#" + x).css('visibility', 'visible')
     $("#" + x).val('Alterar P/ Locação')

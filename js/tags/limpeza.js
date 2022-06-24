@@ -1,3 +1,5 @@
+import { hora_atual } from "../setup/gera_hora.js"
+
 export function limpeza(q, t, x, y, z) {
 
     // CSS
@@ -13,15 +15,12 @@ export function limpeza(q, t, x, y, z) {
 
     if(t != 'btn limpeza'){}
 
-    // Hora Atual
-    var horaEntrada = new Date();
-    var hora = horaEntrada.getHours()
-    var minutos = horaEntrada.getMinutes()
+    var hora = hora_atual()
 
     // Definições
     $("#numquarto").text(q)
     $("#quarto_painel").text(q)
     $("#tipo").text('limpeza')
     $("#intervalo").text(`${x},${y},${z}`)
-    $("#entrada").text(`${String(hora)}:${String(minutos)}h`)
+    $("#entrada").text(hora)
 }

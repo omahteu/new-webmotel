@@ -1,4 +1,5 @@
 import { data_atual } from "../setup/gera_data.js"
+import { hora_atual } from "../setup/gera_hora.js"
 
 var soma = 0
 
@@ -16,12 +17,9 @@ $("#abrirCaixa").click(function(){
         alert('Escolha se ultilizará o fundo de caixa!')
     } else {
         localStorage.setItem('caixa', 'aberto')
-        var base = new Date()
         var usuario = $("#usuario").val()
         let dataAtual = data_atual()
-        var hora = base.getHours()
-        var minutos = base.getMinutes()
-        let horaAtual = `${String(hora)}:${String(minutos)}`
+        let horaAtual = hora_atual()
         var fundoCaixa = $("#valorFundoCaixa").val()
         var fundoCaixa_formatado = String(fundoCaixa).replace(",", ".")
         var dados = {

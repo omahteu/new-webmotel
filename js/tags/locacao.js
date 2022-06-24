@@ -1,3 +1,5 @@
+import { hora_atual } from "../setup/gera_hora.js"
+
 export function locado(q, t,  x, y, z) {   
     // CSS
     $(`.cardBox .card:nth-child(${q})`).css({
@@ -65,14 +67,11 @@ export function locado(q, t,  x, y, z) {
             }
             break
     }
-    // Hora Atual
-    var horaEntrada = new Date();
-    var hora = horaEntrada.getHours()
-    var minutos = horaEntrada.getMinutes()
+    var hora = hora_atual()
     // Definições
     $("#numquarto").text(q)
     $("#tipo").text('locado')
     $("#quarto_painel").text(q)
     $("#intervalo").text(`${x},${y},${z}`)
-    $("#entrada").text(`${String(hora)}:${String(minutos)}`)
+    $("#entrada").text(hora)
 }

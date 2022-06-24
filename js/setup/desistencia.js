@@ -1,4 +1,5 @@
 import { data_atual } from "../setup/gera_data.js"
+import { hora_atual } from "../setup/gera_hora.js"
 
 $("#desistencia").click(function(){
     setTimeout(function(){desistir()}, 300)
@@ -17,15 +18,12 @@ function desistir(){
         alert("campo vazio")
     } else {
         texto.push(motivo)
-        var base = new Date();
-        var hora = base.getHours()
-        var minutos = base.getMinutes()
         let quarto = sessionStorage.getItem("quarto")
         var box = JSON.parse(localStorage.getItem("dadosQuarto"))
         let dataAtual = data_atual()
         let codigo_ocupacao = gera_codigo()
         let entrada = box[0].tempo
-        let saida = `${hora}:${minutos}`
+        let saida = hora_atual()
         localStorage.setItem(`codigo${quarto}`, codigo_ocupacao)
         dados = {
             data: dataAtual,

@@ -1,4 +1,5 @@
 import { data_atual } from "../setup/gera_data.js"
+import { hora_atual } from "../setup/gera_hora.js"
 
 $("#encerrar").click(function(){
     setTimeout(function() {registrando()}, 300)
@@ -25,27 +26,11 @@ function limpando(){
     var quartx = sessionStorage.getItem("quarto")
     $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
-        
-
         dados.forEach(element => {
             var id = element.id
             clean(id)
         });
-
-        
-/*
-        do {
-            var id = dados[i].id
-            clean(id)
-            i++
-        } while(i <= dados.length)
-
-        for(var i=0; i <= dados.length; i++){
-            var id = dados[i].id
-            clean(id)
-        }*/
     })
-
     $.get("https://demomotelapi.herokuapp.com/patio/", (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         if(dados.length == 0){
@@ -117,15 +102,12 @@ function gera_codigo(){
 }
 
 function ocupacao(){
-    var base = new Date();
-    var hora = base.getHours()
-    var minutos = base.getMinutes()
     let quarto = sessionStorage.getItem("quarto")
     var box = JSON.parse(localStorage.getItem("dadosQuarto"))
     let dataAtual = data_atual()
     let codigo_ocupacao = gera_codigo()
     let entrada = box[0].tempo
-    let saida = `${hora}:${minutos}`
+    let saida = hora_atual()
     let total = $("#totalGeral").text()
     localStorage.setItem(`codigo${quarto}`, codigo_ocupacao)
     dados = {

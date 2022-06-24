@@ -1,3 +1,5 @@
+import { hora_atual } from "../setup/gera_hora.js"
+
 export function manutencao(q, x, y, z) {
 
     // CSS
@@ -17,15 +19,12 @@ export function manutencao(q, x, y, z) {
     $(".acoes3").css('display', 'inline-block')
     $(".acoes3").val('Ligar Luz')
 
-    // Hora Atual
-    var horaEntrada = new Date();
-    var hora = horaEntrada.getHours()
-    var minutos = horaEntrada.getMinutes()
+    var hora = hora_atual()
 
     // Definições
     $("#numquarto").text(q)
     $("#quarto_painel").text(q)
     $("#tipo").text('manutencao')
     $("#intervalo").text(`${x},${y},${z}`)
-    $("#entrada").text(`${String(hora)}:${String(minutos)}`)
+    $("#entrada").text(hora)
 }

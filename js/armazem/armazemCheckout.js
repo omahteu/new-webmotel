@@ -1,3 +1,5 @@
+import { hora_atual } from "../setup/gera_hora.js"
+
 $("#adicionar_produto").click(function(){
     registroProduto()
 })
@@ -9,11 +11,7 @@ function registroProduto(){
 	var valorTotal = $("#total_produto").val()
     var quarto =  sessionStorage.getItem("quarto")
     var valorUnitario = $("#valor_unitario_produto").val()
-	//var valor = $("#valor-quarto").text()
-	var horaEntrada = new Date();
-    var hora = horaEntrada.getHours()
-    var minutos = horaEntrada.getMinutes()
-	var hora_atual = `${hora}:${minutos}`
+	var hora = hora_atual()
     // Objetos
 	var produto = {
 		quarto: quarto,
@@ -21,7 +19,7 @@ function registroProduto(){
 		quantidade: quantidade,
 		valor_total: valorTotal,
 		valor_unitario: valorUnitario,
-		datahora: hora_atual,
+		datahora: hora,
 		valor_quarto: "0"
 	}
 	// Requisição POST

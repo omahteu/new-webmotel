@@ -1,14 +1,11 @@
+import { hora_atual } from "../setup/gera_hora.js"
 
 function zeroFill(n) {
     return n < 9 ? `0${n}` : `${n}`;
 }
 
 export function index(){
-    // Data e Hora
-    var horaEntrada = new Date();
-    var hora = zeroFill(horaEntrada.getHours())
-    var minutos = zeroFill(horaEntrada.getMinutes())
-    var datahora = `${String(hora)}:${String(minutos)}`
+    var datahora = hora_atual()
     var valor = $("#valor-quarto").text()
     var quarto = $("#numquarto").text()
     var tipo = $("#tipo").text()
