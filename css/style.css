@@ -890,3 +890,8 @@
 .livia {
     margin-left: -190px;
 }
+
+div#container {
+    height: 150px;
+    overflow-y: auto;
+}
