@@ -1,17 +1,15 @@
-$(document).ready(function(){
+const url = "https://demomotelapi.herokuapp.com/caixa/"
+
+$(document).ready( () => {
     buscaCaixa()
 })
 
 async function buscaCaixa(){
-
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/caixa/")
+    const resposta = await fetch(url)
     const data = await resposta.json()
-
     var historicoCaixa = document.getElementById('tabrlaRelatorioQuartos')
     historicoCaixa.innerHTML = ''
-
     data.forEach(elemento => {
-
         historicoCaixa.innerHTML += '<tr>'+
                                         '<td>' + elemento.data + '</td>'+
                                         '<td>' + elemento.entrada + '</td>'+
@@ -20,6 +18,5 @@ async function buscaCaixa(){
                                         '<td>' + elemento.total + '</td>'+
                                         '<td>' + elemento.saida + '</td>'+
                                     '</tr>'
-
     });
 }

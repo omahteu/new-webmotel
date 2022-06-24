@@ -1,3 +1,4 @@
+const url = "https://demomotelapi.herokuapp.com/infos/"
 
 function zeroFill(n) {
   return n < 9 ? `0${n}` : `${n}`;
@@ -30,7 +31,7 @@ const converter = (minutos) => {
   return `${textoHoras}:${textoMinutos}`;
 };
 
-$.get("https://demomotelapi.herokuapp.com/infos/", e => {
+$.get(url, e => {
   e.forEach(el => {
     var ohra = el.datahora
     var ohra_formatada = ohra.split(":")
@@ -45,7 +46,7 @@ $.get("https://demomotelapi.herokuapp.com/infos/", e => {
     var quarto = el.quarto
     var tipo = el.tipo
     $.ajax({
-      url: "https://demomotelapi.herokuapp.com/infos/" + id + "/",
+      url: url + id + "/",
       type: "PUT",
       dataType: "json",
       data: {
@@ -58,5 +59,5 @@ $.get("https://demomotelapi.herokuapp.com/infos/", e => {
         console.log("Sucesso")
       }
     })
-  });
+  })
 })

@@ -1,5 +1,7 @@
 import { start_plus } from "../contadores/um_plus.js"
 
+const url = "https://demomotelapi.herokuapp.com/infos/"
+
 $(document).one("click", '[class="card"]', () => {
     definindo_tempo()
 })
@@ -27,7 +29,7 @@ const s = zeroFill(base.getSeconds())
 const hmi = `${h}:${mi}`
 
 async function definindo_tempo(){
-    const search = await fetch("https://demomotelapi.herokuapp.com/infos/")
+    const search = await fetch(url)
     const retorno = await search.json()
     retorno.forEach(e => {
         var quarto = e.quarto

@@ -1,3 +1,5 @@
+const url = "https://demomotelapi.herokuapp.com/emails/"
+
 $("#salvarFormPostEmail").click(function(){
 
     let usuario = $("#usuarioEmail").val()
@@ -20,7 +22,7 @@ $("#salvarFormPostEmail").click(function(){
         autenticacao: gridCheck
     }
 
-    $.post("https://demomotelapi.herokuapp.com/emails/", dados, function(){
+    $.post(url, dados, function(){
         alert("Email Registrado!")
 
         document.getElementById('formCadastros').reset()

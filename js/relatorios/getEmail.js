@@ -1,15 +1,14 @@
-$(document).ready(function(){
+const url = "https://demomotelapi.herokuapp.com/emails/"
+
+$(document).ready( () => {
     relatorioEmais()
 })
 
 async function relatorioEmais(){
-
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/emails/")
+    const resposta = await fetch(url)
     const dados = await resposta.json()
-
     var tabela = document.getElementById('relatorioTabelaEmails')
     tabela.innerHTML = ''
-
     dados.forEach(elemento => {
         var usuario = elemento.usuario
         var senha = elemento.senha
@@ -19,8 +18,6 @@ async function relatorioEmais(){
         var email_destino = elemento.email_destino
         var email_contabilidade = elemento.email_contabilidade
         var autenticacao = elemento.autenticacao
-
-
         tabela.innerHTML += '<tr>'+
                                 '<td>' + usuario + '</td>'+
                                 '<td>' + senha + '</td>'+

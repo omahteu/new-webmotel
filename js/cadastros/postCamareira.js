@@ -1,18 +1,22 @@
 import { data_atual } from "../setup/gera_data.js"
 
-$("#salvarFormPostCamareira").click(function(){
+const url_camareira = "https://demomotelapi.herokuapp.com/camareiras/"
+const url_dados = "https://demomotelapi.herokuapp.com/dados/"
+const url_limpeza = "https://demomotelapi.herokuapp.com/limpeza/"
+
+$("#salvarFormPostCamareira").click( () => {
     let camareira = $("#nomeCamareira").val()
     var dados = {
         nome: camareira,
         registro: gera_id()
     }
-    $.post("https://demomotelapi.herokuapp.com/camareiras/", dados, function(){
+    $.post(url_camareira, dados, () => {
         alert("Camareira Registrado!")
         document.getElementById('formCadastros').reset()
     })
 })
 
-$("#camareira_limpeza").click(function(){
+$("#camareira_limpeza").click( () => {
     var quarto = $("#quarto_painel").text()
     var hora = $("#hour1").text()
     var minutos = $("#minute1").text()
@@ -33,15 +37,12 @@ $("#camareira_limpeza").click(function(){
         quarto: quarto,
         tempo: permanencia
     }
-    $.post("https://demomotelapi.herokuapp.com/dados/", dados, function(){})
-    $.post("https://demomotelapi.herokuapp.com/limpeza/", dados2, function(){})
+    $.post(url_dados, dados, function(){})
+    $.post(url_limpeza, dados2, function(){})
 })
-
-
 
 function gera_id(){
 	var size = 3
 	var randomized = Math.ceil(Math.random() * Math.pow(10,size))
 	return randomized
 }
-

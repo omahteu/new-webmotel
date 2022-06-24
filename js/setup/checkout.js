@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready( () => {
 	informacaoes()
 })
 
@@ -8,10 +8,8 @@ function informacaoes(){
 		var sum = 0
 		var valor_quarto
 		var adicionalQuarto = JSON.parse(localStorage.getItem('dadosQuarto'))
-		//console.log(adicionalQuarto)
-		//let tempo = adicionalQuarto[0].tempo
-	    var prateleira = document.getElementById('itensComprados');
-		prateleira.innerHTML = '';
+	    var prateleira = document.getElementById('itensComprados')
+		prateleira.innerHTML = ''
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == numero_quarto)
 			var existe = dados.length
@@ -41,26 +39,30 @@ function informacaoes(){
 		var precoProdutos = $("[id=total]").text()
 		var somaPrecoProdutos = precoProdutos.split('R$')
 
-		var totalPrecoProdutos = somaPrecoProdutos.filter(function (i) {
+		var totalPrecoProdutos = somaPrecoProdutos.filter( (i) => {
 			return i;
-		});
+		})
 
 		for(var a = 0; a < totalPrecoProdutos.length; a++){
 			sum += parseFloat(totalPrecoProdutos[a])
 		}
+
 		var preco_quarto = adicionalQuarto[0].valor
 		var permanencia = localStorage.getItem(numero_quarto)
+
 		$("#valorItens").text(sum)
 		$("#valorQuarto").text(preco_quarto)
 		$("#tempoPermanencia").text(permanencia)
+
 		var ttgeral = parseFloat(preco_quarto) + parseFloat(sum)
+
 		$("#totalGeral").text(ttgeral.toFixed(2))
 		$("#valor_subtotal").text(ttgeral)
 	
-		$(document).one('change', '#modo_desconto', function(){
+		$(document).one('change', '#modo_desconto', () => {
 			var tipo_desconto = $('#modo_desconto').find(":selected").index()
 			if(tipo_desconto == "1"){
-				$(document).one("click", "#aplicar_desconto", function(){
+				$(document).one("click", "#aplicar_desconto", () => {
 					var codigoDeconto = $("#valor_desconto").val()
 					var total_ausar = ttgeral = ttgeral - parseFloat(codigoDeconto)
 					$("#totalGeral").text(total_ausar.toFixed(2))
@@ -98,12 +100,11 @@ function removeItens(operacao){
 	} else if (motivo.length == 0){
 		alert('Produto não excluido!\nÉ necessário o motivo da exclusão do produto!')
 	} else {
-		// Requisição DELETE
 		$.ajax({
 			url: "https://defmoteapi.herokuapp.com/comanda/" + operacao,
 			method: 'DELETE',
 			dataType: 'json',
-			success: function(data){
+			success: () => {
 				alert('Produto Excluído!')
 				informacaoes();
 			}
@@ -112,7 +113,6 @@ function removeItens(operacao){
 }
 
 function getValores(){
-
 	let numeroQuarto = $("#numquarto").text()
 	let valorQuarto = $("#valor-quarto").text()
 	let hora = $("#hour").text()
@@ -127,24 +127,17 @@ function getValores(){
 }	
 
 async function InfosPrimario(){
-
 	const resposta = await fetch('https://demomotelapi.herokuapp.com/infos/')
 	const data = await resposta.json()
-
 	var prateleira = document.getElementById('itensComprados');
 	prateleira.innerHTML = '';
-
 	var valor_quarto
 	var sum = 0
-
 	data.forEach(elemento => {
 		valor_quarto = elemento.valor
 	});
-
 	$("#valorQuarto").text(valor_quarto)
 	$("#valorItens").text(sum)
-	
 	var ttgeral = parseFloat(valor_quarto) + parseFloat(sum)
-
 	$("#totalGeral").text(ttgeral.toFixed(2))
 }

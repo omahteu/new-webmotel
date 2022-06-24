@@ -1,7 +1,8 @@
 import { data_atual } from "../setup/gera_data.js"
 
-$("#salvarFormPostProduto").click(function(){
-    
+const url = "https://demomotelapi.herokuapp.com/produtos/"
+
+$("#salvarFormPostProduto").click( () => {
     let codigo = $("#codigoProduto").val()
     let descricao = $("#descricaoProduto").val()
     let valor = $("#valorUnitarioProduto").val()
@@ -17,13 +18,12 @@ $("#salvarFormPostProduto").click(function(){
             categoria: categoria,
             data: dataAtual
     }
-    $.post("https://demomotelapi.herokuapp.com/produtos/", dados, function(){
+    $.post(url, dados, () => {
         alert("Produto Registrado!")
-    
         document.getElementById('formCadastros').reset()
     })
 })
 
-$("#limparFormPostProduto").click(function(){
+$("#limparFormPostProduto").click( () => {
     document.getElementById('formCadastros').reset()
 })

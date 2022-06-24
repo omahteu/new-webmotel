@@ -1,9 +1,14 @@
 import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
 
+const url_caixa = "https://demomotelapi.herokuapp.com/caixa/"
+const url_ocupacoes = "https://demomotelapi.herokuapp.com/ocupacoes/"
+const url_auditoria = "https://demomotelapi.herokuapp.com/auditoria/"
+const url_atividade = "https://demomotelapi.herokuapp.com/atividade/"
+
 var soma = 0
 
-$(document).ready(function(){
+$(document).ready( () => {
     var nomeUsuario = localStorage.getItem('nome')
     $("#usuario").val(nomeUsuario)
     bloqueiaAbertura()
@@ -11,11 +16,11 @@ $(document).ready(function(){
     validarUsoFundoCaixa()
 })
 
-$("#abrirCaixa").click(function(){
+$("#abrirCaixa").click( () => {
     var utilizar_fundo_caixa = $("#usarFundoCaixa").val()
     if(utilizar_fundo_caixa == 'Usar Fundo de Caixa?'){
         alert('Escolha se ultilizará o fundo de caixa!')
-    } else {
+    } else if(utilizar_fundo_caixa == "sim") {
         localStorage.setItem('caixa', 'aberto')
         var usuario = $("#usuario").val()
         let dataAtual = data_atual()
@@ -30,7 +35,26 @@ $("#abrirCaixa").click(function(){
             total: "",
             saida: ""
         }
-        $.post("https://demomotelapi.herokuapp.com/caixa/", dados, function(){
+        $.post(url_caixa, dados, () => {
+            alert('Caixa Aberto!')
+            $(location).attr('href', '../paginas/home.html')
+        })
+    } else {
+        localStorage.setItem('caixa', 'aberto')
+        var usuario = $("#usuario").val()
+        let dataAtual = data_atual()
+        let horaAtual = hora_atual()
+        var fundoCaixa = "0"
+        var fundoCaixa_formatado = String(fundoCaixa).replace(",", ".")
+        var dados = {
+            data: dataAtual,
+            entrada: horaAtual,
+            usuario: usuario,
+            fundo: fundoCaixa_formatado,
+            total: "",
+            saida: ""
+        }
+        $.post(url_caixa, dados, () => {
             alert('Caixa Aberto!')
             $(location).attr('href', '../paginas/home.html')
         })
@@ -52,7 +76,7 @@ function bloqueiaFundo(){
 }
 
 function validarUsoFundoCaixa(){
-    $("#usarFundoCaixa").change( function(){
+    $("#usarFundoCaixa").change( () => {
         var escolha = $(this).val()
         if(escolha == 'sim'){
             $("#valorFundoCaixa").css('display', 'inline')              
@@ -62,15 +86,15 @@ function validarUsoFundoCaixa(){
     })
 }
 
-$("#fecharCaixa").click(function(){
+$("#fecharCaixa").click( () => {
     enviando_relatorio()
-    setTimeout(function(){busca_de_valores_de_caixa()}, 200)
+    setTimeout( () => {busca_de_valores_de_caixa()}, 200)
 })
 
 async function busca_de_valores_de_caixa(){
     var hoje = data_atual()
     var soma = 0
-    const query_dois = await fetch("https://demomotelapi.herokuapp.com/ocupacoes/")
+    const query_dois = await fetch(url_ocupacoes)
     const resposta_query_dois = await query_dois.json()
     resposta_query_dois.forEach(e => {
         var totalPrecoProdutos = []
@@ -81,7 +105,7 @@ async function busca_de_valores_de_caixa(){
             }
         }
     });
-    $.get("https://demomotelapi.herokuapp.com/caixa/", function(el){
+    $.get(url_caixa, (el) => {
         var id = el[el.length -1].id
         var data = el[el.length -1].data
         var entrada = el[el.length -1].entrada
@@ -115,7 +139,7 @@ async function busca_de_valores_de_caixa(){
             saida: saida
         }
         $.ajax({
-            url: "https://demomotelapi.herokuapp.com/caixa/" + id_caixa + "/",
+            url: url_caixa + id_caixa + "/",
             type: "PUT",
             dataType: "json",
             data: dados,
@@ -130,22 +154,19 @@ async function busca_de_valores_de_caixa(){
 async function enviando_relatorio(){
     var hoje = data_atual()
     var nome = localStorage.getItem("nome")
-
-    const query = await fetch("https://demomotelapi.herokuapp.com/auditoria/")
+    const query = await fetch(url_auditoria)
     const dados = await query.json()
     dados.forEach(element => {
         if(element.nome == nome && element.data == hoje){
             soma += Number(element.tempo)
         }
     })
-
     var nota = {
         tempo: soma,
         nome: nome,
         data: hoje
     }
-
-    $.post("https://demomotelapi.herokuapp.com/atividade/", nota, () => {
+    $.post(url_atividade, nota, () => {
         console.log("Registrado!")
     })
 }

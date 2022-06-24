@@ -1,8 +1,11 @@
+const url_produtos = "https://defmoteapi.herokuapp.com/produtos/"
+const url_comanda = "https://defmoteapi.herokuapp.com/comanda/"
+
 $(document).ready(function(){
 
     produtoCodigo()
 
-    $.get("https://defmoteapi.herokuapp.com/produtos/", (resultado) => {
+    $.get(url_produtos, (resultado) => {
 
     resultado.forEach(function(item){
         $('#listaCheckout').append('<option>' + item.descricao + '</option>');
@@ -32,7 +35,7 @@ function produtoCodigo(){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
 
-            $.get("https://defmoteapi.herokuapp.com/produtos/", (resultado) => {
+            $.get(url_produtos, (resultado) => {
 
                 var db = 0
     
@@ -70,7 +73,7 @@ $("#addLista").click(function(){
 	if(produto.valor_quarto === ''){
 		alert('Não é possível adicionar produto vázio!')
 	} else {
-		$.post("https://defmoteapi.herokuapp.com/comanda/", produto, function(msg){
+		$.post(url_comanda, produto, () => {
 			calcular()
 			document.getElementById('FormPostProdutosCheckout').reset()
 		})
@@ -80,7 +83,7 @@ $("#addLista").click(function(){
 function exibirProduto(){
 
 	// Requisição GET
-	$.get("https://defmoteapi.herokuapp.com/comanda/", function(retorno){
+	$.get(url_comanda, (retorno) => {
 
 		// Parâmetro e Instância de Tabela
 		//var nQuarto =  $("#numquarto").text()
@@ -128,7 +131,7 @@ function calcular(){
     var nql = []
     var numero_quarto = JSON.parse(sessionStorage.getItem('quarto'))
 
-	$.get("https://defmoteapi.herokuapp.com/comanda/", function(retorno){
+	$.get(url_comanda, (retorno) => {
 
 		var sum = 0
 		var valor_quarto

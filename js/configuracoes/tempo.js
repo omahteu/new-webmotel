@@ -1,5 +1,7 @@
+const url = "https://demomotelapi.herokuapp.com/tempos/"
+
 export async function ver_tabela_tempos(){
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/tempos/")
+    const resposta = await fetch(url)
     const dados = await resposta.json()
     dados.forEach(e => {
         $("#tempo_faxina").attr("placeholder", e.faxina)

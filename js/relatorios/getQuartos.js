@@ -1,17 +1,15 @@
-$(document).ready(function(){
+const url = "https://demomotelapi.herokuapp.com/quartos/"
+
+$(document).ready( () => {
     relatorioQuartos()
 })
 
 async function relatorioQuartos(){
-
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/quartos/")
+    const resposta = await fetch(url)
     const dados = await resposta.json()
-
     var tabela = document.getElementById('tabrlaRelatorioQuartos')
     tabela.innerHTML = ''
-
     dados.forEach(elemento => {
-        
         var codigo = elemento.codigo
         var numero = elemento.numero
         var horas_locacao = elemento.horas_locacao
@@ -32,7 +30,6 @@ async function relatorioQuartos(){
         var vh4 = elemento.vh4
         var vh5 = elemento.vh5
         var vh6 = elemento.vh6
-
         tabela.innerHTML += '<tr>'+
                                 '<td>' + codigo + '</td>'+
                                 '<td>' + numero + '</td>'+

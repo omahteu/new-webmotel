@@ -1,5 +1,6 @@
-$("#salvarFormPostIg").click(function(){
+const url = "https://demomotelapi.herokuapp.com/igs/"
 
+$("#salvarFormPostIg").click( () => {
     let bairro = $("#bairroIg").val()
     let cidade = $("#cidadeIg").val()
     let cnpj = $("#cnpjIg").val()
@@ -10,7 +11,6 @@ $("#salvarFormPostIg").click(function(){
     let telefone = $("#telefoneIg").val()
     let telefone2 = $("#telefone2Ig").val()
     let telefone3 = $("#telefone3Ig").val()
-
     var dados = {
         social: social,
         fantasia: fantasia,
@@ -24,9 +24,8 @@ $("#salvarFormPostIg").click(function(){
         telefone3: telefone3
     }
 
-    $.post("https://demomotelapi.herokuapp.com/igs/", dados, function(){
+    $.post(url, dados, () => {
         alert("Informações Registradas!")
-
         document.getElementById('formCadastros').reset()
     })
 })

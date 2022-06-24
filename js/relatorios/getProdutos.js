@@ -1,24 +1,21 @@
-$(document).ready(function(){
+const url = "https://demomotelapi.herokuapp.com/produtos/"
+
+$(document).ready( () => {
     relatorioProdutos()
 })
 
 async function relatorioProdutos() {
-
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/produtos/")
+    const resposta = await fetch(url)
     const dados = await resposta.json()
-
     var tabela = document.getElementById('tabelaRelatorioProdutos')
     tabela.innerHTML = ''
-
     dados.forEach(elemento => {
-        
         var codigo = elemento.codigo
         var descricao = elemento.descricao
         var valor = elemento.valorunitario
         var quantidade = elemento.quantidade
         var categoria = elemento.categoria
         var data = elemento.data
-
         tabela.innerHTML += '<tr>'+
                                 '<td>' + codigo + '</td>'+
                                 '<td>' + descricao + '</td>'+
@@ -27,6 +24,5 @@ async function relatorioProdutos() {
                                 '<td>' + categoria + '</td>'+
                                 '<td>' + data + '</td>'+
                             '</tr>'
-        
     });   
 }

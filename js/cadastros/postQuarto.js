@@ -1,3 +1,5 @@
+const url = "https://demomotelapi.herokuapp.com/quartos/"
+
 $(document).ready( () => {
     busca_ultimo_quarto()
 })
@@ -5,15 +7,14 @@ $(document).ready( () => {
 var nu
 
 async function busca_ultimo_quarto(){
-    const query = await fetch("https://demomotelapi.herokuapp.com/quartos/")
+    const query = await fetch(url)
     const dados = await query.json()
     dados.forEach(e => {
         nu = Number(e.numero)
     });
-
 }
 
-$("#salvarFormPostQuarto").click(function(){
+$("#salvarFormPostQuarto").click( () => {
     var codigoQuarto = $("#codigoQuarto").val()
     var numeroQuarto = nu + 1
     var percentual = $("#adicionarPercentualQuarto").val()
@@ -26,7 +27,7 @@ $("#salvarFormPostQuarto").click(function(){
         tipo_tabela: tabela,
         percentual: percentual,
     }
-    $.post("https://demomotelapi.herokuapp.com/quartos/", dados, () => {
+    $.post(url, dados, () => {
         alert("Quarto Registrado!")
         document.getElementById('formCadastros').reset()
     })

@@ -1,9 +1,13 @@
+const url_tabela = "https://demomotelapi.herokuapp.com/tabela/3/"
+const url_tempo = "https://demomotelapi.herokuapp.com/tempos/1/"
+const url_valores = "https://demomotelapi.herokuapp.com/valores/"
+
 $("#SalvarConfigEscolhaTabelaPreco").click( () => {
     var tabela_preco_selecionada = $('#escolha_tabela_precos').find(":selected").text()
     var confirmacao = confirm(`Confirme para usar a tabeça ${tabela_preco_selecionada}`)
     if(confirmacao == true){
         $.ajax({
-            url: "https://demomotelapi.herokuapp.com/tabela/3/",
+            url: url_tabela,
             type: 'PUT',
             dataType: 'json',
             data: {
@@ -19,7 +23,7 @@ $("#SalvarConfigEscolhaTabelaPreco").click( () => {
     }
 })
 
-$("#SalvarConfigEscohaTempos").click(function(){
+$("#SalvarConfigEscohaTempos").click( () => {
     var option = $("#escolhe_tempo").find(":selected").text()
     if(option == "Troca de Quarto"){
         let tempo_troca_quarto = $("#tempo_troca_quarto").val()
@@ -72,7 +76,7 @@ $("#SalvarConfigEscohaTempos").click(function(){
     var confirmacao = confirm(`Confirme para atualizar a tabela de tempo!`)
     if(confirmacao == true){
         $.ajax({
-            url: "https://demomotelapi.herokuapp.com/tempos/1/",
+            url: url_tempo,
             type: 'PUT',
             dataType: 'json',
             data: tempo,
@@ -86,7 +90,7 @@ $("#SalvarConfigEscohaTempos").click(function(){
     }
 })
 
-$("#SalvarConfigValores").click(function(){
+$("#SalvarConfigValores").click( () => {
     var horasLocacao = $("#quantidadeHorasLocacaoQuarto").val()
     var valorLocacao = $("#valorLocacaoQuarto").val()
     var tempoEspecial = $("#tempoEspecialQuarto").val()
@@ -119,7 +123,7 @@ $("#SalvarConfigValores").click(function(){
         vh5: valor5hora,
         vh6: valor6hora
     }
-    $.post("https://demomotelapi.herokuapp.com/valores/", dados, () => {
+    $.post(url_valores, dados, () => {
         alert("Quarto Registrado!")
         document.getElementById('formCadastros').reset()
     })

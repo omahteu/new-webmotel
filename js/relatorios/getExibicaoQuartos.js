@@ -1,34 +1,13 @@
+const url = "https://demomotelapi.herokuapp.com/quartos/"
 
-
-$(document).ready(function(){
-
+$(document).ready( () => {
     busca_e_exibe_quartos()
-
-/*
-    $.get("https://demomotelapi.herokuapp.com/quartos/", function(resultado){
-
-        resultado.forEach(elemento => {
-            
-            var num = elemento.numero
-            var suite = elemento.tipo_quarto
-            var di = i + 1
-   
-            document.getElementById('imagemQuarto').id = 'imagemQuarto' + num 
-
-            document.getElementById('quarto').id = "quarto" + num
-
-            $("#tipo" + di).text(suite)
-        });
-    })*/
-
-    $(document).on('click', '[class="card"]', function(){
+    $(document).on('click', '[class="card"]', () => {
         var ind = $(this)
         var ind2 = $(ind[0].children[0])
         var ind3 = $(ind2[0].children[1])
         var ind4 = ind3.text()
-
         $("#quarto_painel").text(ind4)
-
         var fm = document.forms['botoes']
         var el = fm.elements
         el[0].setAttribute("name", ind4)
@@ -38,7 +17,7 @@ $(document).ready(function(){
 })
 
 async function busca_e_exibe_quartos(){
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/quartos/")
+    const resposta = await fetch(url)
     const dados = await resposta.json()
     for(var i = 0; i < dados.length; i++){
         var indice = parseInt(i) + 1
@@ -59,4 +38,3 @@ async function busca_e_exibe_quartos(){
                             '</li>')
     }
 }
-

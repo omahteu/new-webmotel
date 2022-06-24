@@ -1,5 +1,7 @@
+const url = "https://demomotelapi.herokuapp.com/usuarios/"
+
 $(document).ready(function(){
-    $.get("https://demomotelapi.herokuapp.com/usuarios/", function(resultado){
+    $.get(url, (resultado) => {
         resultado.forEach(function(item){
             $('#selectUsuarios').append('<option>' + item.nome + '</option>');
         });

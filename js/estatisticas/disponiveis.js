@@ -1,10 +1,13 @@
-$(document).ready(function(){
+const url_quartos = "https://demomotelapi.herokuapp.com/quartos/"
+const url_infos = "https://demomotelapi.herokuapp.com/infos/"
+
+$(document).ready( () => {
     quartos_disponiveis()
 })
 
 async function quartos_disponiveis(){
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/quartos/")
-    const resposta2 = await fetch("https://demomotelapi.herokuapp.com/infos/")
+    const resposta = await fetch(url_quartos)
+    const resposta2 = await fetch(url_infos)
     const dados = await resposta.json()
     const dados2 = await resposta2.json()
     

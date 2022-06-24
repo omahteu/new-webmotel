@@ -1,38 +1,29 @@
-$("#registrar").click(function(){
-    
+const url = "https://defmoteapi.herokuapp.com/painel/"
 
+$("#registrar").click(function(){
     registroObs()
 })
 
 function registroObs(){
-
     var quarto =  $("#numquarto").text()
     var pessoas = $("#pes").val()
     var observacao = $("#obs").val()
-
     dados = {
         quarto: quarto,
         pessoas: pessoas,
         texto: observacao
     }
-    
-    $.post("https://defmoteapi.herokuapp.com/painel/", dados, () => {
+    $.post(url, dados, () => {
         alert('OBS')
         exibirObs()
-        
     })
-
     document.getElementById('painel').reset()
 }
 
 function exibirObs(){
-
-    $.get("https://defmoteapi.herokuapp.com/painel/", (retorno) => {
-
+    $.get(url, (retorno) => {
         var nQuarto =  $("#numquarto").text()
-        
         var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
-
         dados.forEach(elemento => {
             $("#numquarto").text(elemento.quarto)
             $("#pes").val(elemento.pessoas)

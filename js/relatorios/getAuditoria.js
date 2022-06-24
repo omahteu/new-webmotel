@@ -1,3 +1,4 @@
+const url = "https://demomotelapi.herokuapp.com/auditoria/"
 var soma = 0
 
 $("#mostrarRelatorio").click( () => {
@@ -9,7 +10,7 @@ $("#mostrarRelatorio").click( () => {
 })
 
 async function filtro(nome, data){
-    const query = await fetch("https://demomotelapi.herokuapp.com/auditoria/")
+    const query = await fetch(url)
     const resposta = await query.json()
     resposta.forEach(element => {
         if(element.nome == nome && element.data == data){

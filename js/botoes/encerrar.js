@@ -1,44 +1,48 @@
 import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
 
-$("#encerrar").click(function(){
-    setTimeout(function() {registrando()}, 300)
-    setTimeout(function() {ocupacao()}, 500)
-    setTimeout(function() {limpando()}, 800)
-    setTimeout(function() {
+const url_comanda = "https://demomotelapi.herokuapp.com/comanda/"
+const url_patio = "https://demomotelapi.herokuapp.com/patio/"
+const url_produtos = "https://demomotelapi.herokuapp.com/produtos/"
+const url_ocupacoes = "https://demomotelapi.herokuapp.com/ocupacoes/"
+
+$("#encerrar").click( () => {
+    setTimeout( () => {registrando()}, 300)
+    setTimeout( () => {ocupacao()}, 500)
+    setTimeout( () => {limpando()}, 800)
+    setTimeout( () => {
         window.close()
     }, 1000)
 })
 
 function clean(id){
     $.ajax({
-        url: "https://demomotelapi.herokuapp.com/comanda/" + id + "/",
+        url: url_comanda + id + "/",
         type: 'DELETE',
-        success: function(){
+        success: () => {
             console.log("apagado")
         },
         async: true
     })
-
 }
 
 function limpando(){
     var quartx = sessionStorage.getItem("quarto")
-    $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
+    $.get(url_comanda, (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         dados.forEach(element => {
             var id = element.id
             clean(id)
         });
     })
-    $.get("https://demomotelapi.herokuapp.com/patio/", (e) =>{
+    $.get(url_patio, (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         if(dados.length == 0){
             console.log("Pátio Vázio!")
         } else {
             var id = dados[0].id
             $.ajax({
-                url: "https://demomotelapi.herokuapp.com/patio/" + id + "/",
+                url: url_patio + id + "/",
                 type: 'DELETE'
             });
         }
@@ -52,7 +56,7 @@ function limpando(){
 function registrando(){
     let quarto = sessionStorage.getItem("quarto")
     var box = []
-    $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
+    $.get(url_comanda, (e) =>{
         var dados_comanda = e.filter(quartos => quartos.quarto == quarto)
         dados_comanda.forEach(elemento => {
             let descricao = elemento.descricao
@@ -60,7 +64,7 @@ function registrando(){
             box.push(descricao, quantidade)
         });
     })
-    $.get("https://demomotelapi.herokuapp.com/produtos/", (e) =>{
+    $.get(url_produtos, (e) =>{
         var resultado_produtos = box.filter( estadosComS  => (estadosComS.length > 2));
         var resultado_quantidade = box.filter( estadosComS  => (estadosComS.length < 3));
         for(var i = 0; i <= resultado_produtos.length; i++){
@@ -78,7 +82,7 @@ function registrando(){
                 var novo_estoque = parseInt(estoque) - parseInt(produto_quantidade)
                 var data_estoque = el.data
                 $.ajax({
-                    url: "https://demomotelapi.herokuapp.com/produtos/" + id_estoque + "/",
+                    url: url_produtos + id_estoque + "/",
                     type: "PUT",
                     dataType: "json",
                     data: {
@@ -118,7 +122,7 @@ function ocupacao(){
         saida: saida,
         total: total
     }
-    $.post("https://demomotelapi.herokuapp.com/ocupacoes/", dados, function(){
+    $.post(url_ocupacoes, dados, () => {
         console.log("Relatório Criado")
     })
 }

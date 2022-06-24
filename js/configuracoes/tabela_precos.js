@@ -1,5 +1,7 @@
+const url = "https://demomotelapi.herokuapp.com/tabela/"
+
 export async function ver_tabela_emuso(){
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/tabela/")
+    const resposta = await fetch(url)
     const dados = await resposta.json()
     dados.forEach(element => {
         let tabela_emuso = element.tabela

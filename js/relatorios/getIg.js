@@ -1,17 +1,15 @@
-$(document).ready(function(){
+const url = "https://demomotelapi.herokuapp.com/igs/"
+
+$(document).ready( () => {
     relatorioIg()
 })
 
 async function relatorioIg(){
-
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/igs/")
+    const resposta = await fetch(url)
     const dados = await resposta.json()
-
     var tabela = document.getElementById('relatorioTabelaIgs')
     tabela.innerHTML = ''
-
     dados.forEach(elemento => {
-
         var social = elemento.social
         var fantasia = elemento.fantasia
         var cnpj = elemento.cnpj
@@ -22,7 +20,6 @@ async function relatorioIg(){
         var telefone = elemento.telefone
         var telefone2 = elemento.telefone2
         var telefone3 = elemento.telefone3
-
         tabela.innerHTML += '<tr>'+
                                 '<td>' + social + '</td>'+
                                 '<td>' + fantasia + '</td>'+
@@ -35,6 +32,5 @@ async function relatorioIg(){
                                 '<td>' + telefone2 + '</td>'+
                                 '<td>' + telefone3 + '</td>'+
                             '</tr>'
-        
     });
 }

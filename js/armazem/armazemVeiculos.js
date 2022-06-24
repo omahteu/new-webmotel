@@ -1,8 +1,8 @@
+const url = "https://demomotelapi.herokuapp.com/patio/"
+
 $("#registrar_veiculo").click(function(){
-	
 	var tipos = ['locado']
 	var tipo = $("#tipo").text()
-
 	// Verificação se o quarto está em Pernoite ou Locação
 	if(tipos.includes(tipo)){
 		registroVeiculo()
@@ -23,7 +23,7 @@ function registroVeiculo(){
 		placa: placa
     }
 	// Requisição POST
-	$.post("https://demomotelapi.herokuapp.com/patio/", patio, function(){
+	$.post(url, patio, function(){
 		alert('Veículo Registrado!')
 		mostraVeiculo();
 	})
@@ -33,7 +33,7 @@ function registroVeiculo(){
 function removeVeiculo(operacao){
 
 	$.ajax({
-		url: "https://demomotelapi.herokuapp.com/patio/" + operacao,
+		url: url + operacao,
 		method: 'DELETE',
 		dataType: 'json',
 		success: function(data){
@@ -46,7 +46,7 @@ function removeVeiculo(operacao){
 function mostraVeiculo(){
 
 	// Requisição GET
-	$.get("https://demomotelapi.herokuapp.com/patio/", function(retorno){
+	$.get(url, function(retorno){
 
 		// Parâmetro e Instância de Tabela
 		var nQuarto =  $("#numquarto").text()

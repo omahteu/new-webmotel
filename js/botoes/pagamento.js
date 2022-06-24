@@ -1,10 +1,13 @@
-$(document).ready(function () {
+const url_credito = "https://demomotelapi.herokuapp.com/credito/"
+const url_debito = "https://demomotelapi.herokuapp.com/debito/"
+
+$(document).ready( () => {
     buscaTarifasBandeiras()
 })
 
 async function buscaTarifasBandeiras() {
-    const respostaCredito = await fetch("https://demomotelapi.herokuapp.com/credito/")
-    const respostaDebito = await fetch("https://demomotelapi.herokuapp.com/debito/")
+    const respostaCredito = await fetch(url_credito)
+    const respostaDebito = await fetch(url_debito)
     const dadosCredito = await respostaCredito.json()
     const dadosDebito = await respostaDebito.json()
 
@@ -22,18 +25,14 @@ async function buscaTarifasBandeiras() {
         $('#modo_pagamento').append(`<option value="${resultado}" >Crédito ${elemento.bandeira} - ${resultado}%</option>`)
     });
 
-    $("#modo_pagamento").change(function(){
+    $("#modo_pagamento").change( () => {
         escolha = $(this).val()
-
-        console.log(escolha)
-
         if(escolha > 2.0){
             let confirmacao_cartao = confirm(`Crédito com acréscimo de ${escolha}%\nConfirme a opção desejada!`)
             if(confirmacao_cartao){
                 let campo_parcelas = $("#numero_parcelas")
                 campo_parcelas.css('display', 'inline')
-                
-                $("#confirma_parcelas").click(function(){
+                $("#confirma_parcelas").click( () => {
                     npc(escolha, campo_parcelas.val())
                 })
             } else {
@@ -49,7 +48,6 @@ async function buscaTarifasBandeiras() {
         }
     })
 }
-
 
 function npc(tarifa, parcelas) {
     var xParcelas = parcelas
