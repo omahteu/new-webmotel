@@ -7,5 +7,14 @@ $(document).ready(function(){
 
 $("#fecharCaixa").click(function(){
     localStorage.removeItem('usuarioLogado')
-    document.location.reload(true)
+    setTimeout(function(){
+        document.location.reload(true)
+        localStorage.removeItem("id")
+        localStorage.removeItem("data")
+        localStorage.removeItem("entrada")
+        localStorage.removeItem("usuario")
+        localStorage.removeItem("fundo")
+        localStorage.removeItem("caixa")
+        localStorage.removeItem("nome")             
+    }, 4000)
 })

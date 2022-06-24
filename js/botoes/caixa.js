@@ -65,11 +65,8 @@ function validarUsoFundoCaixa(){
 }
 
 $("#fecharCaixa").click(function(){
-    enviando_relatorio()    
-    //  limpando_registros()
-    setTimeout(function(){limpando_registros()}, 100)
+    enviando_relatorio()
     setTimeout(function(){busca_de_valores_de_caixa()}, 200)
-    setTimeout(function(){console.log(fechando)}, 500)  
 })
 
 async function busca_de_valores_de_caixa(){
@@ -132,17 +129,6 @@ async function busca_de_valores_de_caixa(){
     }, 200)
 }
 
-function limpando_registros(){
-    localStorage.removeItem("id")
-    localStorage.removeItem("data")
-    localStorage.removeItem("entrada")
-    localStorage.removeItem("usuario")
-    localStorage.removeItem("fundo")
-    localStorage.removeItem("caixa")
-    localStorage.removeItem("nome")
-    localStorage.removeItem("permanencia")
-}
-
 async function enviando_relatorio(){
     var hoje = data_atual()
     var nome = localStorage.getItem("nome")
@@ -158,7 +144,7 @@ async function enviando_relatorio(){
     var nota = {
         tempo: soma,
         nome: nome,
-        data: data
+        data: hoje
     }
 
     $.post("https://demomotelapi.herokuapp.com/atividade/", nota, () => {
