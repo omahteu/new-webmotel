@@ -15,28 +15,17 @@ $("[name=botao]").click( () => {
     }
     var quartos = []
     quartos.push(quarto)
-    switch (numeroQuarto) {
-        case '1':
-            resposta1(status)
-            localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
-            break;
-
-        case '2':
-            resposta2(status)
-            localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
-            break
-
-        case '3':
-            resposta3(status)
-            localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
-            break
-        
-        case '4':
-            resposta4(status)
-            localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
-            break
-    
-        default:
-            break;
+    if(numeroQuarto == "1"){
+        resposta1(status)
+        localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
+    } else if(numeroQuarto == "2"){
+        resposta2(status)
+        localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
+    } else if(numeroQuarto == "3"){
+        resposta3(status)
+        localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
+    } else if(numeroQuarto == "4"){
+        resposta4(status)
+        localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
     }
 })

@@ -25,15 +25,11 @@ export function pernoite(q, t, x, y, z) {
 
     var tipoQuarto = $('#tipo' + q).text()
 
-    switch (tipoQuarto){
-        case 'AR':
-            $("#valor-quarto").text('')
-            break
-        case 'VENTILADOR':
-            $("#valor-quarto").text('')
-            break
+    if(tipoQuarto == "Ar"){
+        $("#valor-quarto").text('')
+    } else if(tipoQuarto == "Ventilador"){
+        $("#valor-quarto").text('')
     }
-
     $("#numquarto").text(q)
     $("#tipo").text('pernoite')
     $("#intervalo").text(x + "," + y + "," + z)

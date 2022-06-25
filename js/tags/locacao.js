@@ -18,56 +18,53 @@ export function locado(q, t,  x, y, z) {
     // Preço
     var tipoQuarto = $("#tipo_suite" + q).text()
     var tabela_emvigor = $("#tabela_emvigor").text()
-    switch (tipoQuarto){
-        case 'Ar':
-            if(t == 'btn locado' && tabela_emvigor == 'Locação'){
-                $.get(url, (e) => {
-                    e.forEach( (info) => {
-                        $("#valor-quarto").text(info.valor_locacao)
-                        $("#preco_quarto").text(info.valor_locacao)
-                    })
-                })
-            } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
-                $.get(url, (e) => {
-                    e.forEach( (info) => {
-                        $("#valor-quarto").text(info.valor_diaria)
-                        $("#preco_quarto").text(info.valor_diaria)
-                    })
-                })
-            } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
-                $.get(url,  (e) => {
-                    e.forEach( (info) => {
-                        $("#valor-quarto").text(info.valor_especial)
-                        $("#preco_quarto").text(info.valor_especial)
-                    })
-                })
-            }
-            break
 
-        case 'Ventilador':
-            if(t == 'btn locado' && tabela_emvigor == 'Locação'){
-                $.get(url,  (e) => {
-                    e.forEach( (info) => {
-                        $("#valor-quarto").text(info.valor_locacao)
-                        $("#preco_quarto").text(info.valor_locacao)
-                    })
+    if(tipoQuarto == "Ar"){
+        if(t == 'btn locado' && tabela_emvigor == 'Locação'){
+            $.get(url, (e) => {
+                e.forEach( (info) => {
+                    $("#valor-quarto").text(info.valor_locacao)
+                    $("#preco_quarto").text(info.valor_locacao)
                 })
-            } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
-                $.get(url,  (e) => {
-                    e.forEach( (info) => {
-                        $("#valor-quarto").text(info.valor_diaria)
-                        $("#preco_quarto").text(info.valor_diaria)
-                    })
+            })
+        } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
+            $.get(url, (e) => {
+                e.forEach( (info) => {
+                    $("#valor-quarto").text(info.valor_diaria)
+                    $("#preco_quarto").text(info.valor_diaria)
                 })
-            } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
-                $.get(url,  (e) => {
-                    e.forEach( (info) => {
-                        $("#valor-quarto").text(info.valor_especial)
-                        $("#preco_quarto").text(info.valor_especial)
-                    })
+            })
+        } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
+            $.get(url,  (e) => {
+                e.forEach( (info) => {
+                    $("#valor-quarto").text(info.valor_especial)
+                    $("#preco_quarto").text(info.valor_especial)
                 })
-            }
-            break
+            })
+        }
+    } else if(tipoQuarto == "Ventilador"){
+        if(t == 'btn locado' && tabela_emvigor == 'Locação'){
+            $.get(url,  (e) => {
+                e.forEach( (info) => {
+                    $("#valor-quarto").text(info.valor_locacao)
+                    $("#preco_quarto").text(info.valor_locacao)
+                })
+            })
+        } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
+            $.get(url,  (e) => {
+                e.forEach( (info) => {
+                    $("#valor-quarto").text(info.valor_diaria)
+                    $("#preco_quarto").text(info.valor_diaria)
+                })
+            })
+        } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
+            $.get(url,  (e) => {
+                e.forEach( (info) => {
+                    $("#valor-quarto").text(info.valor_especial)
+                    $("#preco_quarto").text(info.valor_especial)
+                })
+            })
+        }
     }
     var hora = hora_atual()
     $("#numquarto").text(q)
