@@ -3,6 +3,8 @@ export var quartoum = ['a1', 'a2', 'a3']
 export var quartodois = ['a4', 'a5', 'a6']
 export var nomeCamareiras = []
 
+const url = "https://defmoteapi.herokuapp.com/camareiras/"
+
 export function rg(){
 	var size = 3
 	var randomized = Math.ceil(Math.random() * Math.pow(10,size))
@@ -14,24 +16,19 @@ export function liviaExclui(url, identificador){
 		url: url + identificador,
 		method: 'DELETE',
 		dataType: 'json',
-		success: function(data){
+		success: () => {
 			console.log('excluídos!')
 		}
 	})
 }
 
 export function listaCamareiras(camareira){
-
-    $.get("https://defmoteapi.herokuapp.com/camareiras/", function(resultado){
-
+    $.get(url, (resultado) => {
         var dados = resultado.filter(nomes => nomes.nome == camareira)
-
         dados.forEach(element => {
             sessionStorage.setItem('camareira'+element.nome, element.nome)
         });
-
     })
-
 }
 
 export function espera(){
@@ -40,26 +37,25 @@ export function espera(){
 
 export function ret(){
     var nome_camareira = $("#camareira").text()
-
     return nome_camareira
 }
 
-$("#limparFormPostQuarto").click(function(){
+$("#limparFormPostQuarto").click( () => {
     document.getElementById('formPostQuarto').reset()
 })
 
-$("#limparFormPostProduto").click(function(){
+$("#limparFormPostProduto").click( () => {
     document.getElementById('formPostProduto').reset()
 })
 
-$("#limparFormPostIg").click(function(){
+$("#limparFormPostIg").click( () => {
     document.getElementById('formPostIG').reset()
 })
 
-$("#limparFormPostEmail").click(function(){
+$("#limparFormPostEmail").click( () => {
     document.getElementById('formPostEmail').reset()
 })
 
-$("#limparFormPostCamareira").click(function(){
+$("#limparFormPostCamareira").click( () => {
     document.getElementById('formPostCamareira').reset()
 })

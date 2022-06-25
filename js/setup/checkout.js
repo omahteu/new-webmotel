@@ -1,10 +1,13 @@
+const url_comanda = "https://demomotelapi.herokuapp.com/comanda/"
+const url_infos = "https://demomotelapi.herokuapp.com/infos/"
+
 $(document).ready( () => {
 	informacaoes()
 })
 
 function informacaoes(){
 	var numero_quarto = JSON.parse(sessionStorage.getItem('quarto'))
-	$.get("https://demomotelapi.herokuapp.com/comanda/", function(retorno){
+	$.get(url_comanda, (retorno) => {
 		var sum = 0
 		var valor_quarto
 		var adicionalQuarto = JSON.parse(localStorage.getItem('dadosQuarto'))
@@ -101,7 +104,7 @@ function removeItens(operacao){
 		alert('Produto não excluido!\nÉ necessário o motivo da exclusão do produto!')
 	} else {
 		$.ajax({
-			url: "https://defmoteapi.herokuapp.com/comanda/" + operacao,
+			url: url_comanda + operacao,
 			method: 'DELETE',
 			dataType: 'json',
 			success: () => {
@@ -127,7 +130,7 @@ function getValores(){
 }	
 
 async function InfosPrimario(){
-	const resposta = await fetch('https://demomotelapi.herokuapp.com/infos/')
+	const resposta = await fetch(url_infos)
 	const data = await resposta.json()
 	var prateleira = document.getElementById('itensComprados');
 	prateleira.innerHTML = '';

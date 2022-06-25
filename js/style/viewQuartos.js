@@ -2,15 +2,18 @@ import { modos } from '../setup/box.js'
 import { locado } from "../tags/locacao.js"
 //import { start_plus } from "../contadores/um_plus.js"
 
+const url_comanda = "https://demomotelapi.herokuapp.com/comanda/"
+const url_patio = "https://demomotelapi.herokuapp.com/patio/"
+const url_infos = "https://demomotelapi.herokuapp.com/infos/"
+
 function mostraProduto(identificador){
-	$.get("https://demomotelapi.herokuapp.com/comanda/", function(retorno){
+	$.get(url_comanda, (retorno) => {
 		var prateleira = document.getElementById('listaProdutosComprados');
 		prateleira.innerHTML = '';
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == identificador)
 			dados.forEach(function(resultado){
 				var id = resultado.id
-				var quarto =  resultado.quarto
 				var descricao = resultado.descricao
 				var quantidade = resultado.quantidade
 				var valorUnitario = resultado.valor_unitario
@@ -30,16 +33,12 @@ function mostraProduto(identificador){
 }
 
 function mostraVeiculo(identificador){
-	// Requisição GET
-	$.get("https://demomotelapi.herokuapp.com/patio/", function(retorno){
-		// Parâmetro e Instância de Tabela
+	$.get(url_patio, (retorno) => {
 		var patio = document.getElementById('listaveiculosguardados');
 		patio.innerHTML = '';
 		try {
-			// Filtro
 			var dados = retorno.filter(quartos => quartos.quarto == identificador)
-			// Percorrendo o Array e Formantando uma Tabela
-			dados.forEach(function(resultado){
+			dados.forEach( (resultado) => {
 				var id = resultado.id
 				var modelo = resultado.modelo
 				var placa = resultado.placa
@@ -55,28 +54,48 @@ function mostraVeiculo(identificador){
 	})
 }
 
-$(document).on('click', '[class="card"]', function(){
+$(document).on('click', '[class="card"]', () => {
 	var ind = $(this)
 	var ind2 = $(ind[0].children[0])
 	var ind3 = $(ind2[0].children[1])
 	var identificador = ind3.text()
-	setTimeout(function() {
+	setTimeout( () => {
 		var cor = $(`.cardBox .card:nth-child(${identificador})`).css("background-color")
-		// Filtro para Restaurar as Tags Corretas
-		switch(cor){
-			case 'rgb(169, 169, 169)':
-				$("#tipo").text('manutencao')
-				break
-			case 'rgb(255, 0, 0)':
-				$("#tipo").text('locado')
-				break
-			case 'rgb(255, 228, 196)':
-				$("#tipo").text('faxina')
-				break
-			case 'rgb(75, 192, 192)':
-				$("#tipo").text('livre')
-				break
+
+		if(cor == 'rgb(169, 169, 169)'){
+			$("#tipo").text('manutencao')
+		} else if(cor == 'rgb(255, 0, 0)'){
+			$("#tipo").text('locado')
+		} else if(cor == 'rgb(255, 228, 196)'){
+			$("#tipo").text('faxina')
+		} else if(cor == 'rgb(75, 192, 192)'){
+			$("#tipo").text('livre')
 		}
+
+		if(identificador == '1'){
+			var flags = modos.slice(0, 3)
+			$("#intervalo").text(modos.slice(0, 3))
+			backupInfos(identificador, flags[0], flags[1], flags[2])
+		} else if(identificador == '2'){
+			var flags = modos.slice(3, 6)
+			$("#intervalo").text(modos.slice(3, 6))
+			backupInfos(identificador, flags[0], flags[1], flags[2])
+		} else if(identificador == '3'){
+			var flags = modos.slice(6, 9)
+			$("#intervalo").text(modos.slice(6, 9))
+			backupInfos(identificador, flags[0], flags[1], flags[2])
+		} else if(identificador == 4){
+			var flags = modos.slice(9, 12)
+			$("#intervalo").text(modos.slice(9, 12))
+			backupInfos(identificador, flags[0], flags[1], flags[2])
+		}
+
+
+
+
+
+
+/*
 		switch (identificador) {
 			case '1':
 				var flags = modos.slice(0, 3)
@@ -92,9 +111,7 @@ $(document).on('click', '[class="card"]', function(){
 				//start_plus(tr.slice(0, 2), tr.slice(3, 5), tr.slice(6, 8))
 				break;		
 			case '2':
-				var flags = modos.slice(3, 6)
-				$("#intervalo").text(modos.slice(3, 6))
-				backupInfos(identificador, flags[0], flags[1], flags[2])
+
 				//var tr = localStorage.getItem("1")
 				break
 			case '3':
@@ -110,10 +127,10 @@ $(document).on('click', '[class="card"]', function(){
 				//var tr = localStorage.getItem("1")
 				break
 		}
-		// Variáveis usadas para Filtro
+*/
+
 		let tipo = $("#tipo").text()
 		let tipos = ['locado']
-		// Filtro para Restauração de Produtos e Veículos
 		if(tipos.includes(tipo)){
 			mostraProduto(identificador)
 			mostraVeiculo(identificador)
@@ -124,7 +141,7 @@ $(document).on('click', '[class="card"]', function(){
 
 function backupInfos(instance, x, y, z){
 	mostraProduto()
-	$.get("https://demomotelapi.herokuapp.com/infos/", function(retorno){
+	$.get(url_infos, (retorno) => {
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == instance)
 			if(dados.length == 0){
@@ -132,8 +149,7 @@ function backupInfos(instance, x, y, z){
 				$(".acoes1"). removeAttr('style')
 				$(".acoes2"). removeAttr('style')
 				$(".acoes3"). removeAttr('style')
-			} else {
-				
+			} else {	
 				switch (dados[0].tipo) {
 					case 'locado':
 						$(`[name=${instance}]`).css('display', 'none')
@@ -204,7 +220,7 @@ function backupInfos(instance, x, y, z){
 		}
 	})
     setTimeout(function(){
-		$.get("https://demomotelapi.herokuapp.com/comanda/", (e) => {
+		$.get(url_comanda, (e) => {
 			var dados = e.filter(quartos => quartos.quarto == instance)
 			var sum = 0;
 			for(var a = 0; a < dados.length; a++){

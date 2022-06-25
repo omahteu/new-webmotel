@@ -6,7 +6,6 @@ var timeout = setTimeout(inativo, tempoDeEspera);
 function actividade(e) {
   clearInterval(timeout);
   timeout = setTimeout(inativo, tempoDeEspera);
-  // só para o exemplo
   console.log('Houve actividade de ' + (e.type == 'keyup' ? 'teclado' : 'ponteiro'));
 }
 

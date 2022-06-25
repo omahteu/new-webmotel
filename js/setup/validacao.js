@@ -1,13 +1,13 @@
-$(document).ready(function(){
+$(document).ready( () => {
     var usuarioLogado = localStorage.getItem('usuarioLogado');
     if (!usuarioLogado) {
         window.location = "../index.html"
     }
 })
 
-$("#fecharCaixa").click(function(){
+$("#fecharCaixa").click( () => {
     localStorage.removeItem('usuarioLogado')
-    setTimeout(function(){
+    setTimeout( () => {
         document.location.reload(true)
         localStorage.removeItem("id")
         localStorage.removeItem("data")

@@ -1,11 +1,16 @@
 import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
 
-$("#desistencia").click(function(){
-    setTimeout(function(){desistir()}, 300)
-    setTimeout(function() {registrando_desistencia()}, 500)
-    setTimeout(function(){limpando_desistencia()}, 800)
-    setTimeout(function() {
+const url_ocupacoes = "https://demomotelapi.herokuapp.com/ocupacoes/"
+const url_comanda = "https://demomotelapi.herokuapp.com/comanda/"
+const url_patio = "https://demomotelapi.herokuapp.com/patio/"
+const url_desistencia = "https://demomotelapi.herokuapp.com/desistencia/"
+
+$("#desistencia").click( () => {
+    setTimeout( () => {desistir()}, 300)
+    setTimeout( () => {registrando_desistencia()}, 500)
+    setTimeout( () => {limpando_desistencia()}, 800)
+    setTimeout( () => {
         window.close()
     }, 1000)
 })
@@ -33,7 +38,7 @@ function desistir(){
             saida: saida,
             total: "0"
         }
-        $.post("https://demomotelapi.herokuapp.com/ocupacoes/", dados, function(){
+        $.post(url_ocupacoes, dados, () => {
             console.log("Relatório Criado")
         })
     }
@@ -41,23 +46,22 @@ function desistir(){
 
 function limpando_desistencia(){
     var quartx = sessionStorage.getItem("quarto")
-    $.get("https://demomotelapi.herokuapp.com/comanda/", (e) =>{
+    $.get(url_comanda, (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         var id = dados[0].id
-
         $.ajax({
-            url: "https://demomotelapi.herokuapp.com/comanda/" + id + "/",
+            url: url_comanda + id + "/",
             type: 'DELETE'
         });
     })
-    $.get("https://demomotelapi.herokuapp.com/patio/", (e) =>{
+    $.get(url_patio, (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         if(dados.length == 0){
             console.log("Pátio Vázio!")
         } else {
             var id = dados[0].id
             $.ajax({
-                url: "https://demomotelapi.herokuapp.com/patio/" + id + "/",
+                url: url_patio + id + "/",
                 type: 'DELETE'
             });
         }
@@ -73,15 +77,13 @@ function registrando_desistencia(){
     var codigo = sessionStorage.getItem(`codigo${quarto}`)
     var caixa = localStorage.getItem("caixa")
     var motiv = texto[texto.length - 1]
-    
     dados = {
         codigo: codigo,
         quarto: quarto,
         caixa: caixa,
         motivo: motiv
     }
-
-    $.post("https://demomotelapi.herokuapp.com/desistencia/", dados, function(){
+    $.post(url_desistencia, dados, () => {
         console.log("Registrado...")
     })
 }

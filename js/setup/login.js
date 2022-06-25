@@ -1,5 +1,7 @@
+const url = "https://demomotelapi.herokuapp.com/usuarios/"
+
 async function autenticacao(usuario, senha){
-    const resposta = await fetch("https://demomotelapi.herokuapp.com/usuarios/")
+    const resposta = await fetch(url)
     const data = await resposta.json()
     var dados = data.filter(nome => nome.nome == usuario)
     if(dados.length == 0){
@@ -28,7 +30,6 @@ async function autenticacao(usuario, senha){
 }
 
 $(document).keypress( (event) => {
-
     var keycode = (event.keyCode ? event.keyCode : event.which)
     if(keycode == '13'){
         var nome = $("#usuario")
@@ -47,7 +48,7 @@ $(document).keypress( (event) => {
     }
 }) 
 
-$("#btn-acessar").click(function(){
+$("#btn-acessar").click( () => {
     var nome = $("#usuario")
     var senha = $("#senha")
     if(nome.val() == ''){
