@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready( () => {
 
     bloqueioRelatorios()
 
@@ -8,9 +8,7 @@ $(document).ready(function(){
 
 function bloqueioRelatorios(){
     let info = localStorage.getItem("usuarioLogado")
-
     if(info === 'caixa'){
-        
         $("#relQuartos").css('display', 'none')
         $("#relIg").css('display', 'none')
         $("#relEmail").css('display', 'none')

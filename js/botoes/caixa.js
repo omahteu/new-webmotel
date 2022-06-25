@@ -122,7 +122,7 @@ async function busca_de_valores_de_caixa(){
         }   
     })
     
-    setTimeout(function(){
+    setTimeout( () => {
         var valor_fundo = localStorage.getItem("fundo")
         var id_caixa = localStorage.getItem("id")
         var total = parseFloat(soma) + parseFloat(valor_fundo)
@@ -143,7 +143,7 @@ async function busca_de_valores_de_caixa(){
             type: "PUT",
             dataType: "json",
             data: dados,
-            success: function(){
+            success:  () => {
                 console.log("Atualizado.")
             }
         })

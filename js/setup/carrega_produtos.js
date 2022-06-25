@@ -3,7 +3,7 @@ const url = "https://demomotelapi.herokuapp.com/produtos/"
 $(document).ready( () => {
     produtoCodigo()
     $.get(url, (resultado) => {
-    resultado.forEach(function(item){
+    resultado.forEach( (item) => {
         $('#lista_produto').append('<option>' + item.descricao + '</option>');
     });
     $('#lista_produto').change( () => {

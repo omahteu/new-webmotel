@@ -3,7 +3,7 @@ const url = "https://defmoteapi.herokuapp.com/produtos/"
 $(document).ready( () => {
     produtoCodigo()
     $.get(url, (resultado) => {
-    resultado.forEach(function(item){
+    resultado.forEach( (item) => {
         $('#cod').append('<option>' + item.descricao + '</option>');
     });
     codProduto
@@ -12,7 +12,7 @@ $(document).ready( () => {
         var db = option - 1
         $("#des").val(resultado[db].descricao)
         $("#vun").val('R$ ' + resultado[db].valorunitario)
-        $('#qtd').keyup(function(){
+        $('#qtd').keyup( () => {
             var qtd = $(this).val()
             var total = parseFloat(resultado[db]['valorunitario']) * Number(qtd)
             $("#tot").val('R$ ' + total)

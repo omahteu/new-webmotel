@@ -19,8 +19,8 @@ export function resposta2(status){
             alert(`DESEJA DISPONIBILIZAR O QUARTO ${quarto}?`)
             pause2()
             reset2()
-            setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
-            setTimeout(function() {fimModal()}, 1001)
+            setTimeout( () => {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout( () => {fimModal()}, 1001)
             break
 
         case 'Iniciar Faxina':
@@ -28,17 +28,17 @@ export function resposta2(status){
             pause2()
             reset2()
             start2()
-            setTimeout(function() {faxina(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
-            setTimeout(function() {fimModal()}, 1001)
+            setTimeout( () => {faxina(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout( () => {fimModal()}, 1001)
             break
 
         case 'Iniciar Limpeza':
             alert(`DESEJA INICIAR LIMPEZA NO QUARTO ${quarto}?`)
             reset2()
             start2()
-            setTimeout(function() {limpeza(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
-            setTimeout(function() {atualiza_status(quarto, "limpeza"), 1500})
-            setTimeout(function() {fimModal()}, 1001)
+            setTimeout( () => {limpeza(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
+            setTimeout( () => {atualiza_status(quarto, "limpeza"), 1500})
+            setTimeout( () => {fimModal()}, 1001)
             break
         
         case 'Trocar Suíte':
@@ -48,12 +48,12 @@ export function resposta2(status){
             if(confirm(`DESEJA ENCERRAR x QUARTO ${quarto}?`)){
                 pause2()
                 busca_permanencia()
-                setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
+                setTimeout( () => {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
                 sessionStorage.setItem('quarto', quarto)
                 window.open('../paginas/checkout.html', '_blank')
-                setTimeout(function() {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 1500)
-                setTimeout(function() {atualiza_status(quarto, "aguardando"), 1500})
-                setTimeout(function() {fimModal()}, 1001)
+                setTimeout( () => {aguardando(quarto, rota, flags[0], flags[1], flags[2])}, 1500)
+                setTimeout( () => {atualiza_status(quarto, "aguardando"), 1500})
+                setTimeout( () => {fimModal()}, 1001)
             }
             break
 
@@ -69,8 +69,8 @@ export function resposta2(status){
             alert('Camareira Selecionada')
             pause2()
             reset2()
-            setTimeout(function() {fimModal()}, 500)
-            setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 600)
+            setTimeout( () => {fimModal()}, 500)
+            setTimeout( () => {desfazer(quarto, flags[0], flags[1], flags[2])}, 600)
             break
 
         case 'Apagar Luz':

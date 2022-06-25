@@ -2,7 +2,7 @@ import { hora_atual } from "../setup/gera_hora.js"
 
 const url = "https://demomotelapi.herokuapp.com/comanda/"
 
-$("#adicionar_produto").click(function(){
+$("#adicionar_produto").click( () => {
     registroProduto()
 })
 
@@ -25,7 +25,7 @@ function registroProduto(){
 		valor_quarto: "0"
 	}
 	// Requisição POST
-	$.post(url, produto, function(){
+	$.post(url, produto,  () => {
 		alert('Produto Adicionado!')
 		mostraProduto();
     })
@@ -47,7 +47,7 @@ function removeProduto(operacao){
 			url: url + operacao,
 			method: 'DELETE',
 			dataType: 'json',
-			success: function(data){
+			success:  () => {
 				alert('Produto Excluído!')
 				mostraProduto();
 			}
@@ -58,7 +58,7 @@ function removeProduto(operacao){
 function mostraProduto(){
 
 	// Requisição GET
-	$.get(url, function(retorno){
+	$.get(url, (retorno) => {
 		// Parâmetro e Instância de Tabela
 		var nQuarto =  sessionStorage.getItem("quarto")
 		var prateleira = document.getElementById('itensComprados');
@@ -66,7 +66,7 @@ function mostraProduto(){
 		// Filtro
 		var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
 		// Percorrendo o Array e Formantando uma Tabela
-		dados.forEach(function(resultado){
+		dados.forEach( (resultado) => {
 			var id = resultado.id
 			var descricao = resultado.descricao
 			var quantidade = resultado.quantidade

@@ -13,7 +13,7 @@ export async function ver_tabela_tempos(){
 }
 
 export function seleciona_tempo(){
-    $("#escolhe_tempo").change(function(){
+    $("#escolhe_tempo").change( () => {
         var option = $(this).find(":selected").text()
         if(option == "Troca de Quarto"){
             $("#tempo_troca_quarto").css("display", "inline-block")

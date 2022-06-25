@@ -7,7 +7,7 @@ import { start3 } from '../contadores/contadorTres.js'
 import { start4 } from '../contadores/contadorQuatro.js'
 import { fimModal } from "../setup/camareiras.js"
 
-$(".manutencao").click(function(){
+$(".manutencao").click( () => {
     var quarto = $('#quarto_painel').text()
     var obs = prompt('INFORME O MOTIVO DA MANUTENÇÃO!')
     let hatexto = ''
@@ -21,33 +21,33 @@ $(".manutencao").click(function(){
             case '1':
                 var flags = modos.slice(0, 3)
                 manutencao(quarto, flags[0], flags[1], flags[2])
-                setTimeout(function() {fimModal()}, 1000)
+                setTimeout( () => {fimModal()}, 1000)
                 start()
-                setTimeout(function() {index()}, 2000);
+                setTimeout( () => {index()}, 2000);
                 break
     
             case '2':
                 var flags = modos.slice(3, 6)
                 manutencao(quarto, flags[0], flags[1], flags[2])
-                setTimeout(function() {fimModal()}, 1000)
+                setTimeout( () => {fimModal()}, 1000)
                 start2()
-                setTimeout(function() {index()}, 2000);
+                setTimeout( () => {index()}, 2000);
                 break
             
             case '3':
                 var flags = modos.slice(6, 9)
                 manutencao(quarto, flags[0], flags[1], flags[2])
-                setTimeout(function() {fimModal()}, 1001)
+                setTimeout( () => {fimModal()}, 1001)
                 start3()
-                setTimeout(function() {index()}, 2000);
+                setTimeout( () => {index()}, 2000);
                 break
     
             case '4':
                 var flags = modos.slice(9, 12)
                 manutencao(quarto, flags[0], flags[1], flags[2])
-                setTimeout(function() {fimModal()}, 1001)
+                setTimeout( () => {fimModal()}, 1001)
                 start4()
-                setTimeout(function() {index()}, 2000);
+                setTimeout( () =>  {index()}, 2000);
                 break
         }
     } else {

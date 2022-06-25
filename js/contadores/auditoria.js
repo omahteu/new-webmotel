@@ -8,7 +8,7 @@ $(document).ready(() => {
     auditando()
 })
 
-window.onbeforeunload = function() {
+window.onbeforeunload = () => {
     saindo()
     calc()
 }

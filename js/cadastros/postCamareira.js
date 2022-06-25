@@ -37,8 +37,8 @@ $("#camareira_limpeza").click( () => {
         quarto: quarto,
         tempo: permanencia
     }
-    $.post(url_dados, dados, function(){})
-    $.post(url_limpeza, dados2, function(){})
+    $.post(url_dados, dados,  () => {})
+    $.post(url_limpeza, dados2, () => {})
 })
 
 function gera_id(){

@@ -2,7 +2,7 @@ import { desfazer } from "../tags/desfazer.js"
 import { pause, reset } from '../contadores/contadorUm.js'
 import { fimModal } from "../js/camareiras.js"
 
-$("#selecionaCamareiraLimpeza").click(function(){
+$("#selecionaCamareiraLimpeza").click( () => {
 
     // DECIDIR PRA ONDE VAI ESSE REGISTRO
     
@@ -13,7 +13,7 @@ $("#selecionaCamareiraLimpeza").click(function(){
     fimModal()
     pause()
     reset()
-    setTimeout(function() {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
+    setTimeout( () => {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
 
     /*
     var dados = {

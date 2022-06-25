@@ -77,7 +77,7 @@ function informacaoes(){
 					$("#aplicar_desconto").attr("disabled", true)
 				})
 			} else if(tipo_desconto == "2"){
-				$(document).one("click", "#aplicar_desconto", function(){
+				$(document).one("click", "#aplicar_desconto",  () => {
 					var codigoDeconto = $("#valor_desconto").val()
 					let valor_decimal = parseFloat(codigoDeconto) / 100
 					let valor_para_descontar = ttgeral * valor_decimal

@@ -1,6 +1,6 @@
 const url = "https://defmoteapi.herokuapp.com/painel/"
 
-$("#registrar").click(function(){
+$("#registrar").click( () => {
     registroObs()
 })
 

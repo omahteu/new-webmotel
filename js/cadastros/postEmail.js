@@ -1,6 +1,6 @@
 const url = "https://demomotelapi.herokuapp.com/emails/"
 
-$("#salvarFormPostEmail").click(function(){
+$("#salvarFormPostEmail").click( () => {
 
     let usuario = $("#usuarioEmail").val()
     let senha = $("#senhaEmail").val()
@@ -22,7 +22,7 @@ $("#salvarFormPostEmail").click(function(){
         autenticacao: gridCheck
     }
 
-    $.post(url, dados, function(){
+    $.post(url, dados,  () => {
         alert("Email Registrado!")
 
         document.getElementById('formCadastros').reset()

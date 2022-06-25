@@ -1,5 +1,7 @@
 import { hora_atual } from "../setup/gera_hora.js"
 
+const url = "https://demomotelapi.herokuapp.com/infos/"
+
 function zeroFill(n) {
     return n < 9 ? `0${n}` : `${n}`;
 }
@@ -15,20 +17,20 @@ export function index(){
         quarto: quarto,
         tipo: tipo
     }
-    $.get("https://demomotelapi.herokuapp.com/infos/", function(retorno){
+    $.get(url, (retorno) => {
 
         if(retorno.length == 0){
-            $.post("https://demomotelapi.herokuapp.com/infos/", dados, function(){})
+            $.post(url, dados,  () => {})
         }
 
-        retorno.forEach(function(item){
+        retorno.forEach( (item) => {
 
             if(item.quarto == quarto){
                 console.log('')
             } 
             
             if(item.quarto != quarto){
-                $.post("https://demomotelapi.herokuapp.com/infos/", dados, function(){})
+                $.post(url, dados,  () => {})
             }
         })
     })

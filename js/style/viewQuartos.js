@@ -12,7 +12,7 @@ function mostraProduto(identificador){
 		prateleira.innerHTML = '';
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == identificador)
-			dados.forEach(function(resultado){
+			dados.forEach( (resultado) => {
 				var id = resultado.id
 				var descricao = resultado.descricao
 				var quantidade = resultado.quantidade
@@ -61,7 +61,6 @@ $(document).on('click', '[class="card"]', () => {
 	var identificador = ind3.text()
 	setTimeout( () => {
 		var cor = $(`.cardBox .card:nth-child(${identificador})`).css("background-color")
-
 		if(cor == 'rgb(169, 169, 169)'){
 			$("#tipo").text('manutencao')
 		} else if(cor == 'rgb(255, 0, 0)'){
@@ -71,7 +70,6 @@ $(document).on('click', '[class="card"]', () => {
 		} else if(cor == 'rgb(75, 192, 192)'){
 			$("#tipo").text('livre')
 		}
-
 		if(identificador == '1'){
 			var flags = modos.slice(0, 3)
 			$("#intervalo").text(modos.slice(0, 3))
@@ -89,46 +87,6 @@ $(document).on('click', '[class="card"]', () => {
 			$("#intervalo").text(modos.slice(9, 12))
 			backupInfos(identificador, flags[0], flags[1], flags[2])
 		}
-
-
-
-
-
-
-/*
-		switch (identificador) {
-			case '1':
-				var flags = modos.slice(0, 3)
-				$("#intervalo").text(modos.slice(0, 3))
-				backupInfos(identificador, flags[0], flags[1], flags[2])
-				//var tr = localStorage.getItem("1")
-				//var aaaa = tr.slice(0, 2)
-				//console.log(`view: cont: ${aaaa}`)
-				//console.log(`view: tipo: ${typeof(aaaa)}`)
-				//$("#hour"+identificador).text(tr.slice(0, 2))
-				//$("#minute"+identificador).text(tr.slice(3, 5))
-				//$("#second"+identificador).text(tr.slice(6, 8))
-				//start_plus(tr.slice(0, 2), tr.slice(3, 5), tr.slice(6, 8))
-				break;		
-			case '2':
-
-				//var tr = localStorage.getItem("1")
-				break
-			case '3':
-				var flags = modos.slice(6, 9)
-				$("#intervalo").text(modos.slice(6, 9))
-				backupInfos(identificador, flags[0], flags[1], flags[2])
-				//var tr = localStorage.getItem("1")
-				break	
-			case '4':
-				var flags = modos.slice(9, 12)
-				$("#intervalo").text(modos.slice(9, 12))
-				backupInfos(identificador, flags[0], flags[1], flags[2])
-				//var tr = localStorage.getItem("1")
-				break
-		}
-*/
-
 		let tipo = $("#tipo").text()
 		let tipos = ['locado']
 		if(tipos.includes(tipo)){
@@ -144,71 +102,58 @@ function backupInfos(instance, x, y, z){
 	$.get(url_infos, (retorno) => {
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == instance)
+			var modo = dados[0].tipo
 			if(dados.length == 0){
 				$(`[name=${instance}]`).css('display', 'inline-block')
 				$(".acoes1"). removeAttr('style')
 				$(".acoes2"). removeAttr('style')
 				$(".acoes3"). removeAttr('style')
-			} else {	
-				switch (dados[0].tipo) {
-					case 'locado':
-						$(`[name=${instance}]`).css('display', 'none')
-						$(".acoes1").css('display', 'inline-block')
-						$(".acoes1").val('Trocar Suíte')
-						$(".acoes2").css('display', 'inline-block')
-						$(".acoes2").val('Encerrar')
-						$(".acoes3").css('display', 'none')
-						$(".acoes3").val('Cancelar Reserva')
-						
-						var rota = $(".locado").attr("class")
-						locado(instance, rota, x, y, z)
-						break;
-
-					case 'manutencao':
-						$(`[name=${instance}]`).css('display', 'none')
-						$(".acoes1").css('display', 'inline-block')
-						$(".acoes1").val('Iniciar Faxina')		
-						$(".acoes2").css('display', 'inline-block')
-						$(".acoes2").val('Disponibilizar Quarto')		
-						$(".acoes3").css('display', 'inline-block')
-						$(".acoes3").val('Ligar Luz')
-						break
-
-					case 'faxina':
-						$(`[name=${instance}]`).css('display', 'none')
-						$(".acoes1").css('display', 'inline-block')
-						$(".acoes1").val('Disponibilizar Quarto')
-						$(".acoes2").css('display', 'none')
-						$(".acoes2").val('')
-						$(".acoes3").css('display', 'none')
-						$(".acoes3").val('')
-						break
-					
-					case 'aguardando':
-						$(`[name=${instance}]`).css('display', 'none')
-						$(".acoes1").css('display', 'inline-block')
-						$(".acoes1").val('Iniciar Limpeza')
-						$(".acoes2").css('display', 'none')
-						$(".acoes2").val('')
-						$(".acoes3").css('display', 'none')
-						$(".acoes3").val('')
-						break
-
-					case 'limpeza':
-						$(`[name=${instance}]`).css('display', 'none')
-						$(".acoes1").css('display', 'inline-block')
-						$(".acoes1").val('Encerrar Limpeza')
-						$(".acoes2").css('display', 'none')
-						$(".acoes2").val('')
-						$(".acoes3").css('display', 'none')
-						$(".acoes3").val('')
-						break
-				
-					default:
-						break;
+			} else {
+				if(modo == "locado"){
+					$(`[name=${instance}]`).css('display', 'none')
+					$(".acoes1").css('display', 'inline-block')
+					$(".acoes1").val('Trocar Suíte')
+					$(".acoes2").css('display', 'inline-block')
+					$(".acoes2").val('Encerrar')
+					$(".acoes3").css('display', 'none')
+					$(".acoes3").val('Cancelar Reserva')
+					var rota = $(".locado").attr("class")
+					locado(instance, rota, x, y, z)
+				} else if(modo == "manutencao"){
+					$(`[name=${instance}]`).css('display', 'none')
+					$(".acoes1").css('display', 'inline-block')
+					$(".acoes1").val('Iniciar Faxina')		
+					$(".acoes2").css('display', 'inline-block')
+					$(".acoes2").val('Disponibilizar Quarto')		
+					$(".acoes3").css('display', 'inline-block')
+					$(".acoes3").val('Ligar Luz')
+				} else if(modo == "faxina"){
+					$(`[name=${instance}]`).css('display', 'none')
+					$(".acoes1").css('display', 'inline-block')
+					$(".acoes1").val('Disponibilizar Quarto')
+					$(".acoes2").css('display', 'none')
+					$(".acoes2").val('')
+					$(".acoes3").css('display', 'none')
+					$(".acoes3").val('')
+				} else if(modo == "aguardando"){
+					$(`[name=${instance}]`).css('display', 'none')
+					$(".acoes1").css('display', 'inline-block')
+					$(".acoes1").val('Iniciar Limpeza')
+					$(".acoes2").css('display', 'none')
+					$(".acoes2").val('')
+					$(".acoes3").css('display', 'none')
+					$(".acoes3").val('')
+				} else if(modo == "limpeza"){
+					$(`[name=${instance}]`).css('display', 'none')
+					$(".acoes1").css('display', 'inline-block')
+					$(".acoes1").val('Encerrar Limpeza')
+					$(".acoes2").css('display', 'none')
+					$(".acoes2").val('')
+					$(".acoes3").css('display', 'none')
+					$(".acoes3").val('')
 				}
 			}
-			dados.forEach(function(resultado){
+			dados.forEach( (resultado) => {
 				$("#numquarto").text(resultado.quarto)
 				$("#quarto_painel").text(resultado.quarto)
 				$("#entrada").text(resultado.datahora)
@@ -219,7 +164,7 @@ function backupInfos(instance, x, y, z){
 			localStorage.setItem('produtos', JSON.stringify([]))
 		}
 	})
-    setTimeout(function(){
+    setTimeout( () => {
 		$.get(url_comanda, (e) => {
 			var dados = e.filter(quartos => quartos.quarto == instance)
 			var sum = 0;
@@ -230,7 +175,7 @@ function backupInfos(instance, x, y, z){
 		})
         
     }, 500)
-	setTimeout(function(){
+	setTimeout( () => {
 		var valor_quarto = $("#valor-quarto").text()
 		var valor_consumo = $("#consumo_painel").text()
 		var resultado = parseFloat(valor_quarto) + parseFloat(valor_consumo)

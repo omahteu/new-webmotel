@@ -55,7 +55,7 @@ $.get(url, e => {
         quarto: quarto,
         tipo: tipo
       },
-      success: function () {
+      success: () => {
         console.log("Sucesso")
       }
     })

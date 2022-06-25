@@ -1,17 +1,17 @@
 const url_produtos = "https://defmoteapi.herokuapp.com/produtos/"
 const url_comanda = "https://defmoteapi.herokuapp.com/comanda/"
 
-$(document).ready(function(){
+$(document).ready( () => {
 
     produtoCodigo()
 
     $.get(url_produtos, (resultado) => {
 
-    resultado.forEach(function(item){
+    resultado.forEach( (item) => {
         $('#listaCheckout').append('<option>' + item.descricao + '</option>');
     });
 
-    $('#listaCheckout').change(function() {
+    $('#listaCheckout').change( () => {
         var option = $('#listaCheckout').find(":selected").index()
 
         var db = option - 1
@@ -19,7 +19,7 @@ $(document).ready(function(){
         $(".descricaoCheckout").val(resultado[db].descricao)
         $(".unitarioCheckout").val('R$ ' + resultado[db].valorunitario)
     
-        $('.quantidadeCheckout').keyup(function(){
+        $('.quantidadeCheckout').keyup( () => {
             var qtd = $(this).val()
             var total = Number(resultado[db]['valorunitario']) * Number(qtd)
             $(".totalCheckout").val('R$ ' + total)
@@ -42,7 +42,7 @@ function produtoCodigo(){
                 $(".descricaoCheckout").val(resultado[db].descricao)
                 $(".unitarioCheckout").val('R$ ' + resultado[db].valorunitario)
             
-                $('.quantidadeCheckout').keyup(function(){
+                $('.quantidadeCheckout').keyup( () => {
                     var qtd = $(this).val()
                     var total = Number(resultado[db]['valorunitario']) * Number(qtd)
                     $(".totalCheckout").val('R$ ' + total)
@@ -52,7 +52,7 @@ function produtoCodigo(){
     });
 }
 
-$("#addLista").click(function(){
+$("#addLista").click( () => {
 
     var quarto = sessionStorage.getItem('quarto')
 	var descricao = $(".descricaoCheckout").val()
@@ -97,7 +97,7 @@ function exibirProduto(){
         console.log(dados)
 
 		// Percorrendo o Array e Formantando uma Tabela
-		dados.forEach(function(resultado){
+		dados.forEach( (resultado) => {
 
 			var id = resultado.id
 			var descricao = resultado.descricao
@@ -180,7 +180,7 @@ function calcular(){
 		var precoProdutos = $("[id=total]").text()
 		var somaPrecoProdutos = precoProdutos.split('R$')
 
-		var totalPrecoProdutos = somaPrecoProdutos.filter(function (i) {
+		var totalPrecoProdutos = somaPrecoProdutos.filter( (i) => {
 			return i;
 		});
 
@@ -195,7 +195,7 @@ function calcular(){
 		var ttgeral = Number(valor_quarto) + Number(sum)
 
 		$("#totalGeral").text(ttgeral)
-		$("#desconto").click(function(){
+		$("#desconto").click( () => {
 			
 			var codigoDeconto = $("#codigoDesconto").val()
 			$("#totalGeral").text(ttgeral = ttgeral - codigoDeconto)

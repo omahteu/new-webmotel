@@ -1,5 +1,7 @@
 import { hora_atual } from "../setup/gera_hora.js"
 
+const url = "https://demomotelapi.herokuapp.com/valores/"
+
 export function locado(q, t,  x, y, z) {   
     // CSS
     $(`.cardBox .card:nth-child(${q})`).css({
@@ -19,22 +21,22 @@ export function locado(q, t,  x, y, z) {
     switch (tipoQuarto){
         case 'Ar':
             if(t == 'btn locado' && tabela_emvigor == 'Locação'){
-                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
-                    e.forEach(function(info){
+                $.get(url, (e) => {
+                    e.forEach( (info) => {
                         $("#valor-quarto").text(info.valor_locacao)
                         $("#preco_quarto").text(info.valor_locacao)
                     })
                 })
             } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
-                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
-                    e.forEach(function(info){
+                $.get(url, (e) => {
+                    e.forEach( (info) => {
                         $("#valor-quarto").text(info.valor_diaria)
                         $("#preco_quarto").text(info.valor_diaria)
                     })
                 })
             } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
-                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
-                    e.forEach(function(info){
+                $.get(url,  (e) => {
+                    e.forEach( (info) => {
                         $("#valor-quarto").text(info.valor_especial)
                         $("#preco_quarto").text(info.valor_especial)
                     })
@@ -44,22 +46,22 @@ export function locado(q, t,  x, y, z) {
 
         case 'Ventilador':
             if(t == 'btn locado' && tabela_emvigor == 'Locação'){
-                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
-                    e.forEach(function(info){
+                $.get(url,  (e) => {
+                    e.forEach( (info) => {
                         $("#valor-quarto").text(info.valor_locacao)
                         $("#preco_quarto").text(info.valor_locacao)
                     })
                 })
             } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
-                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
-                    e.forEach(function(info){
+                $.get(url,  (e) => {
+                    e.forEach( (info) => {
                         $("#valor-quarto").text(info.valor_diaria)
                         $("#preco_quarto").text(info.valor_diaria)
                     })
                 })
             } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
-                $.get("https://demomotelapi.herokuapp.com/valores/", function(e){
-                    e.forEach(function(info){
+                $.get(url,  (e) => {
+                    e.forEach( (info) => {
                         $("#valor-quarto").text(info.valor_especial)
                         $("#preco_quarto").text(info.valor_especial)
                     })
@@ -68,7 +70,6 @@ export function locado(q, t,  x, y, z) {
             break
     }
     var hora = hora_atual()
-    // Definições
     $("#numquarto").text(q)
     $("#tipo").text('locado')
     $("#quarto_painel").text(q)
