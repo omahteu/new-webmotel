@@ -1,5 +1,5 @@
 import { data_atual } from "../setup/gera_data.js"
-import { link } from "../relatorios/index.js"
+import { link } from "../setup/index.js"
 
 $("#salvarFormPostProduto").click( () => {
     let codigo = $("#codigoProduto").val()

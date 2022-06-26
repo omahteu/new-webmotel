@@ -1,4 +1,4 @@
-import { link } from "./index.js"
+import { link } from "../setup/index.js"
 
 var soma = 0
 

@@ -1,4 +1,4 @@
-const url = "https://demomotelapi.herokuapp.com/patio/"
+import { link } from "../setup/index.js"
 
 $("#registrar_veiculo").click( () => {
 	var tipos = ['locado']
@@ -23,7 +23,7 @@ function registroVeiculo(){
 		placa: placa
     }
 	// Requisição POST
-	$.post(url, patio,  () => {
+	$.post(link[15], patio,  () => {
 		alert('Veículo Registrado!')
 		mostraVeiculo();
 	})
@@ -33,7 +33,7 @@ function registroVeiculo(){
 function removeVeiculo(operacao){
 
 	$.ajax({
-		url: url + operacao,
+		url: link[15] + operacao,
 		method: 'DELETE',
 		dataType: 'json',
 		success:  () => {
@@ -46,7 +46,7 @@ function removeVeiculo(operacao){
 function mostraVeiculo(){
 
 	// Requisição GET
-	$.get(url, (retorno) => {
+	$.get(link[15], (retorno) => {
 
 		// Parâmetro e Instância de Tabela
 		var nQuarto =  $("#numquarto").text()

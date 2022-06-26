@@ -1,7 +1,7 @@
-const url = "https://demomotelapi.herokuapp.com/tabela/"
+import { link } from "../setup/index.js"
 
 export async function ver_tabela_emuso(){
-    const resposta = await fetch(url)
+    const resposta = await fetch(link[18])
     const dados = await resposta.json()
     dados.forEach(element => {
         let tabela_emuso = element.tabela

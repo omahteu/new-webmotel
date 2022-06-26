@@ -1,13 +1,10 @@
 import { modos } from '../setup/box.js'
 import { locado } from "../tags/locacao.js"
 //import { start_plus } from "../contadores/um_plus.js"
-
-const url_comanda = "https://demomotelapi.herokuapp.com/comanda/"
-const url_patio = "https://demomotelapi.herokuapp.com/patio/"
-const url_infos = "https://demomotelapi.herokuapp.com/infos/"
+import { link } from "../setup/index.js"
 
 function mostraProduto(identificador){
-	$.get(url_comanda, (retorno) => {
+	$.get(link[5], (retorno) => {
 		var prateleira = document.getElementById('listaProdutosComprados');
 		prateleira.innerHTML = '';
 		try {
@@ -33,7 +30,7 @@ function mostraProduto(identificador){
 }
 
 function mostraVeiculo(identificador){
-	$.get(url_patio, (retorno) => {
+	$.get(link[15], (retorno) => {
 		var patio = document.getElementById('listaveiculosguardados');
 		patio.innerHTML = '';
 		try {
@@ -56,6 +53,7 @@ function mostraVeiculo(identificador){
 
 $(document).on('click', '[class="card"]', () => {
 	var ind = $(this)
+	console.log(ind)
 	var ind2 = $(ind[0].children[0])
 	var ind3 = $(ind2[0].children[1])
 	var identificador = ind3.text()
@@ -99,7 +97,7 @@ $(document).on('click', '[class="card"]', () => {
 
 function backupInfos(instance, x, y, z){
 	mostraProduto()
-	$.get(url_infos, (retorno) => {
+	$.get(link[11], (retorno) => {
 		try {
 			var dados = retorno.filter(quartos => quartos.quarto == instance)
 			var modo = dados[0].tipo
@@ -165,7 +163,7 @@ function backupInfos(instance, x, y, z){
 		}
 	})
     setTimeout( () => {
-		$.get(url_comanda, (e) => {
+		$.get(link[5], (e) => {
 			var dados = e.filter(quartos => quartos.quarto == instance)
 			var sum = 0;
 			for(var a = 0; a < dados.length; a++){

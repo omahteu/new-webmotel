@@ -1,10 +1,6 @@
 import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
-
-const url_caixa = "https://demomotelapi.herokuapp.com/caixa/"
-const url_ocupacoes = "https://demomotelapi.herokuapp.com/ocupacoes/"
-const url_auditoria = "https://demomotelapi.herokuapp.com/auditoria/"
-const url_atividade = "https://demomotelapi.herokuapp.com/atividade/"
+import { link } from "../setup/index.js"
 
 var soma = 0
 
@@ -35,7 +31,7 @@ $("#abrirCaixa").click( () => {
             total: "",
             saida: ""
         }
-        $.post(url_caixa, dados, () => {
+        $.post(link[2], dados, () => {
             alert('Caixa Aberto!')
             $(location).attr('href', '../paginas/home.html')
         })
@@ -54,7 +50,7 @@ $("#abrirCaixa").click( () => {
             total: "",
             saida: ""
         }
-        $.post(url_caixa, dados, () => {
+        $.post(link[2], dados, () => {
             alert('Caixa Aberto!')
             $(location).attr('href', '../paginas/home.html')
         })
@@ -94,7 +90,7 @@ $("#fecharCaixa").click( () => {
 async function busca_de_valores_de_caixa(){
     var hoje = data_atual()
     var soma = 0
-    const query_dois = await fetch(url_ocupacoes)
+    const query_dois = await fetch(link[13])
     const resposta_query_dois = await query_dois.json()
     resposta_query_dois.forEach(e => {
         var totalPrecoProdutos = []
@@ -105,7 +101,7 @@ async function busca_de_valores_de_caixa(){
             }
         }
     });
-    $.get(url_caixa, (el) => {
+    $.get(link[2], (el) => {
         var id = el[el.length -1].id
         var data = el[el.length -1].data
         var entrada = el[el.length -1].entrada
@@ -139,7 +135,7 @@ async function busca_de_valores_de_caixa(){
             saida: saida
         }
         $.ajax({
-            url: url_caixa + id_caixa + "/",
+            url: link[2] + id_caixa + "/",
             type: "PUT",
             dataType: "json",
             data: dados,
@@ -154,7 +150,7 @@ async function busca_de_valores_de_caixa(){
 async function enviando_relatorio(){
     var hoje = data_atual()
     var nome = localStorage.getItem("nome")
-    const query = await fetch(url_auditoria)
+    const query = await fetch(link[1])
     const dados = await query.json()
     dados.forEach(element => {
         if(element.nome == nome && element.data == hoje){
@@ -166,7 +162,7 @@ async function enviando_relatorio(){
         nome: nome,
         data: hoje
     }
-    $.post(url_atividade, nota, () => {
+    $.post(link[0], nota, () => {
         console.log("Registrado!")
     })
 }

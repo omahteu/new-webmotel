@@ -1,4 +1,4 @@
-const url = "https://defmoteapi.herokuapp.com/painel/"
+import { link } from "../setup/index.js"
 
 $("#registrar").click( () => {
     registroObs()
@@ -13,7 +13,7 @@ function registroObs(){
         pessoas: pessoas,
         texto: observacao
     }
-    $.post(url, dados, () => {
+    $.post(link[14], dados, () => {
         alert('OBS')
         exibirObs()
     })
@@ -21,7 +21,7 @@ function registroObs(){
 }
 
 function exibirObs(){
-    $.get(url, (retorno) => {
+    $.get(link[14], (retorno) => {
         var nQuarto =  $("#numquarto").text()
         var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
         dados.forEach(elemento => {

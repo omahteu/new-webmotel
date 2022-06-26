@@ -1,7 +1,7 @@
-const url = "https://demomotelapi.herokuapp.com/usuarios/"
+import { link } from "./index.js"
 
 async function autenticacao(usuario, senha){
-    const resposta = await fetch(url)
+    const resposta = await fetch(link[20])
     const data = await resposta.json()
     var dados = data.filter(nome => nome.nome == usuario)
     if(dados.length == 0){

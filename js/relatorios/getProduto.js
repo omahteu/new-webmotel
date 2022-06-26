@@ -1,8 +1,8 @@
-const url = "https://defmoteapi.herokuapp.com/produtos/"
+import { link } from "../setup/index.js"
 
 $(document).ready( () => {
     produtoCodigo()
-    $.get(url, (resultado) => {
+    $.get(link[16], (resultado) => {
     resultado.forEach( (item) => {
         $('#cod').append('<option>' + item.descricao + '</option>');
     });
@@ -25,7 +25,7 @@ function produtoCodigo(){
     $('#codProduto').keypress( (event) => {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
-            $.get(url, (resultado) => {
+            $.get(link[16], (resultado) => {
                 var db = 0
                 $("#des").val(resultado[db].descricao)
                 $("#vun").val('R$ ' + resultado[db].valorunitario)

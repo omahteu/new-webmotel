@@ -1,13 +1,12 @@
-const url_quartos = "https://demomotelapi.herokuapp.com/quartos/"
-const url_infos = "https://demomotelapi.herokuapp.com/infos/"
+import { link } from "../setup/index.js"
 
 $(document).ready( () => {
     quartos_disponiveis()
 })
 
 async function quartos_disponiveis(){
-    const resposta = await fetch(url_quartos)
-    const resposta2 = await fetch(url_infos)
+    const resposta = await fetch(link[17])
+    const resposta2 = await fetch(link[11])
     const dados = await resposta.json()
     const dados2 = await resposta2.json()
     

@@ -1,8 +1,8 @@
-const url = "https://defmoteapi.herokuapp.com/igs/"
+import { link } from "../setup/index.js"
 
 
 $(document).ready( () => {
-    $.get(url, (resultado) => {
+    $.get(link[10], (resultado) => {
         if(resultado.length != 0){
             $("#salvarFormPostIg").css('display', 'none')
         }
@@ -10,7 +10,7 @@ $(document).ready( () => {
 })
 
 $("#alteraFormPostIg").click( () => {
-    $.get(url, (resultado) => {
+    $.get(link[10], (resultado) => {
         if(resultado.length != 0){
             atualizaIg()
         } else {
@@ -20,7 +20,7 @@ $("#alteraFormPostIg").click( () => {
 })
 
 async function atualizaIg(){
-    const response = await fetch(url)
+    const response = await fetch(link10)
     const data = await response.json()
     data.forEach(elemento => {
         $("#social").val(elemento.social)

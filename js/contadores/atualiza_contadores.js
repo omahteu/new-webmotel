@@ -1,6 +1,4 @@
-import { link } from "../relatorios";
-
-// const url = "https://demomotelapi.herokuapp.com/infos/"
+import { link } from "../setup/index.js"
 
 function zeroFill(n) {
   return n < 9 ? `0${n}` : `${n}`;

@@ -1,6 +1,5 @@
 import { hora_atual } from "../setup/gera_hora.js"
-
-const url = "https://demomotelapi.herokuapp.com/valores/"
+import { link } from "../setup/index.js"
 
 export function locado(q, t,  x, y, z) {   
     // CSS
@@ -21,21 +20,21 @@ export function locado(q, t,  x, y, z) {
 
     if(tipoQuarto == "Ar"){
         if(t == 'btn locado' && tabela_emvigor == 'Locação'){
-            $.get(url, (e) => {
+            $.get(link[21], (e) => {
                 e.forEach( (info) => {
                     $("#valor-quarto").text(info.valor_locacao)
                     $("#preco_quarto").text(info.valor_locacao)
                 })
             })
         } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
-            $.get(url, (e) => {
+            $.get(link[21], (e) => {
                 e.forEach( (info) => {
                     $("#valor-quarto").text(info.valor_diaria)
                     $("#preco_quarto").text(info.valor_diaria)
                 })
             })
         } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
-            $.get(url,  (e) => {
+            $.get(link[21],  (e) => {
                 e.forEach( (info) => {
                     $("#valor-quarto").text(info.valor_especial)
                     $("#preco_quarto").text(info.valor_especial)
@@ -44,21 +43,21 @@ export function locado(q, t,  x, y, z) {
         }
     } else if(tipoQuarto == "Ventilador"){
         if(t == 'btn locado' && tabela_emvigor == 'Locação'){
-            $.get(url,  (e) => {
+            $.get(link[21],  (e) => {
                 e.forEach( (info) => {
                     $("#valor-quarto").text(info.valor_locacao)
                     $("#preco_quarto").text(info.valor_locacao)
                 })
             })
         } else if(t == 'btn locado' && tabela_emvigor == 'Diaria'){
-            $.get(url,  (e) => {
+            $.get(link[21],  (e) => {
                 e.forEach( (info) => {
                     $("#valor-quarto").text(info.valor_diaria)
                     $("#preco_quarto").text(info.valor_diaria)
                 })
             })
         } else if(t == 'btn locado' && tabela_emvigor == 'Especial'){
-            $.get(url,  (e) => {
+            $.get(link[21],  (e) => {
                 e.forEach( (info) => {
                     $("#valor-quarto").text(info.valor_especial)
                     $("#preco_quarto").text(info.valor_especial)

@@ -1,10 +1,6 @@
 import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
-
-const url_ocupacoes = "https://demomotelapi.herokuapp.com/ocupacoes/"
-const url_comanda = "https://demomotelapi.herokuapp.com/comanda/"
-const url_patio = "https://demomotelapi.herokuapp.com/patio/"
-const url_desistencia = "https://demomotelapi.herokuapp.com/desistencia/"
+import { link } from "./index.js"
 
 $("#desistencia").click( () => {
     setTimeout( () => {desistir()}, 300)
@@ -38,7 +34,7 @@ function desistir(){
             saida: saida,
             total: "0"
         }
-        $.post(url_ocupacoes, dados, () => {
+        $.post(link[13], dados, () => {
             console.log("Relatório Criado")
         })
     }
@@ -46,22 +42,22 @@ function desistir(){
 
 function limpando_desistencia(){
     var quartx = sessionStorage.getItem("quarto")
-    $.get(url_comanda, (e) =>{
+    $.get(link[5], (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         var id = dados[0].id
         $.ajax({
-            url: url_comanda + id + "/",
+            url: link[5] + id + "/",
             type: 'DELETE'
         });
     })
-    $.get(url_patio, (e) =>{
+    $.get(link[15], (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         if(dados.length == 0){
             console.log("Pátio Vázio!")
         } else {
             var id = dados[0].id
             $.ajax({
-                url: url_patio + id + "/",
+                url: link[15] + id + "/",
                 type: 'DELETE'
             });
         }
@@ -83,7 +79,7 @@ function registrando_desistencia(){
         caixa: caixa,
         motivo: motiv
     }
-    $.post(url_desistencia, dados, () => {
+    $.post(link[7], dados, () => {
         console.log("Registrado...")
     })
 }

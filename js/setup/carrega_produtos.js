@@ -1,8 +1,8 @@
-const url = "https://demomotelapi.herokuapp.com/produtos/"
+import { link } from "./index.js"
 
 $(document).ready( () => {
     produtoCodigo()
-    $.get(url, (resultado) => {
+    $.get(link[16], (resultado) => {
     resultado.forEach( (item) => {
         $('#lista_produto').append('<option>' + item.descricao + '</option>');
     });
@@ -24,7 +24,7 @@ function produtoCodigo(){
     $('#codigo_produto').keypress( (event) => {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
-            $.get(url, (resultado) => {
+            $.get(link[16], (resultado) => {
                 var db = 0
                 $("#descricao_produto").val(resultado[db].descricao)
                 $("#valor_unitario_produto").val('R$ ' + resultado[db].valorunitario)

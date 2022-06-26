@@ -1,4 +1,4 @@
-const url = "https://demomotelapi.herokuapp.com/infos/"
+import { link } from "./index.js"
 
 window.onbeforeunload = () => {
     asd()
@@ -6,7 +6,7 @@ window.onbeforeunload = () => {
  };
 
 async function asd (){
-    const resposta = await fetch(url)
+    const resposta = await fetch(link[11])
     const dados = await resposta.json()
     var ver = []
     dados.forEach(e => {

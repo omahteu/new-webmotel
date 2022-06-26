@@ -1,13 +1,12 @@
-const url_credito = "https://demomotelapi.herokuapp.com/credito/"
-const url_debito = "https://demomotelapi.herokuapp.com/debito/"
+import { link } from "../setup/index.js"
 
 $(document).ready( () => {
     buscaTarifasBandeiras()
 })
 
 async function buscaTarifasBandeiras() {
-    const respostaCredito = await fetch(url_credito)
-    const respostaDebito = await fetch(url_debito)
+    const respostaCredito = await fetch(link[4])
+    const respostaDebito = await fetch(link[8])
     const dadosCredito = await respostaCredito.json()
     const dadosDebito = await respostaDebito.json()
 

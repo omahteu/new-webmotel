@@ -1,10 +1,6 @@
 import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
-
-const url_comanda = "https://demomotelapi.herokuapp.com/comanda/"
-const url_patio = "https://demomotelapi.herokuapp.com/patio/"
-const url_produtos = "https://demomotelapi.herokuapp.com/produtos/"
-const url_ocupacoes = "https://demomotelapi.herokuapp.com/ocupacoes/"
+import { link } from "../setup/index.js"
 
 $("#encerrar").click( () => {
     setTimeout( () => {registrando()}, 300)
@@ -17,7 +13,7 @@ $("#encerrar").click( () => {
 
 function clean(id){
     $.ajax({
-        url: url_comanda + id + "/",
+        url: link[5] + id + "/",
         type: 'DELETE',
         success: () => {
             console.log("apagado")
@@ -28,21 +24,21 @@ function clean(id){
 
 function limpando(){
     var quartx = sessionStorage.getItem("quarto")
-    $.get(url_comanda, (e) =>{
+    $.get(link[5], (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         dados.forEach(element => {
             var id = element.id
             clean(id)
         });
     })
-    $.get(url_patio, (e) =>{
+    $.get(link[15], (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         if(dados.length == 0){
             console.log("Pátio Vázio!")
         } else {
             var id = dados[0].id
             $.ajax({
-                url: url_patio + id + "/",
+                url: link[15] + id + "/",
                 type: 'DELETE'
             });
         }
@@ -56,7 +52,7 @@ function limpando(){
 function registrando(){
     let quarto = sessionStorage.getItem("quarto")
     var box = []
-    $.get(url_comanda, (e) =>{
+    $.get(link[5], (e) =>{
         var dados_comanda = e.filter(quartos => quartos.quarto == quarto)
         dados_comanda.forEach(elemento => {
             let descricao = elemento.descricao
@@ -64,7 +60,7 @@ function registrando(){
             box.push(descricao, quantidade)
         });
     })
-    $.get(url_produtos, (e) =>{
+    $.get(link[16], (e) =>{
         var resultado_produtos = box.filter( estadosComS  => (estadosComS.length > 2));
         var resultado_quantidade = box.filter( estadosComS  => (estadosComS.length < 3));
         for(var i = 0; i <= resultado_produtos.length; i++){
@@ -82,7 +78,7 @@ function registrando(){
                 var novo_estoque = parseInt(estoque) - parseInt(produto_quantidade)
                 var data_estoque = el.data
                 $.ajax({
-                    url: url_produtos + id_estoque + "/",
+                    url: link[16] + id_estoque + "/",
                     type: "PUT",
                     dataType: "json",
                     data: {
@@ -122,7 +118,7 @@ function ocupacao(){
         saida: saida,
         total: total
     }
-    $.post(url_ocupacoes, dados, () => {
+    $.post(link[13], dados, () => {
         console.log("Relatório Criado")
     })
 }

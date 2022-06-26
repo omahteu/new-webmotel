@@ -1,7 +1,7 @@
-const url = "https://demomotelapi.herokuapp.com/tabela/"
+import { link } from "./index.js"
 
 $(document).ready( () => {
-    $.get(url, (e) =>{
+    $.get(link[18], (e) =>{
         $("#tabela_emvigor").text(e[0].tabela)
     })
 })

@@ -1,4 +1,4 @@
-const url = "https://demomotelapi.herokuapp.com/quartos/"
+import { link } from "../setup/index.js"
 
 $(document).ready( () => {
     busca_e_exibe_quartos()
@@ -17,7 +17,7 @@ $(document).ready( () => {
 })
 
 async function busca_e_exibe_quartos(){
-    const resposta = await fetch(url)
+    const resposta = await fetch(link[17])
     const dados = await resposta.json()
     for(var i = 0; i < dados.length; i++){
         var indice = parseInt(i) + 1

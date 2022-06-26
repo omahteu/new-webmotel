@@ -1,4 +1,4 @@
-import { link } from "../relatorios/index.js"
+import { link } from "../setup/index.js"
 
 $("#SalvarConfigEscolhaTabelaPreco").click( () => {
     var tabela_preco_selecionada = $('#escolha_tabela_precos').find(":selected").text()

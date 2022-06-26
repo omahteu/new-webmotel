@@ -1,11 +1,11 @@
-const url = "https://demomotelapi.herokuapp.com/caixa/"
+import { link } from "../setup/index.js"
 
 $(document).ready( () => {
     buscaCaixa()
 })
 
 async function buscaCaixa(){
-    const resposta = await fetch(url)
+    const resposta = await fetch(link[2])
     const data = await resposta.json()
     var historicoCaixa = document.getElementById('tabrlaRelatorioQuartos')
     historicoCaixa.innerHTML = ''
