@@ -1,4 +1,4 @@
-const url = "https://demomotelapi.herokuapp.com/quartos/"
+import { link } from "../relatorios/index.js"
 
 $(document).ready( () => {
     busca_ultimo_quarto()
@@ -7,7 +7,7 @@ $(document).ready( () => {
 var nu
 
 async function busca_ultimo_quarto(){
-    const query = await fetch(url)
+    const query = await fetch(link[17])
     const dados = await query.json()
     dados.forEach(e => {
         nu = Number(e.numero)
@@ -27,7 +27,7 @@ $("#salvarFormPostQuarto").click( () => {
         tipo_tabela: tabela,
         percentual: percentual,
     }
-    $.post(url, dados, () => {
+    $.post(link[17], dados, () => {
         alert("Quarto Registrado!")
         document.getElementById('formCadastros').reset()
     })

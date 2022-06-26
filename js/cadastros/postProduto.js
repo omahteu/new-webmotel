@@ -1,6 +1,5 @@
 import { data_atual } from "../setup/gera_data.js"
-
-const url = "https://demomotelapi.herokuapp.com/produtos/"
+import { link } from "../relatorios/index.js"
 
 $("#salvarFormPostProduto").click( () => {
     let codigo = $("#codigoProduto").val()
@@ -18,7 +17,7 @@ $("#salvarFormPostProduto").click( () => {
             categoria: categoria,
             data: dataAtual
     }
-    $.post(url, dados, () => {
+    $.post(link[16], dados, () => {
         alert("Produto Registrado!")
         document.getElementById('formCadastros').reset()
     })

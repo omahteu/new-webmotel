@@ -1,4 +1,4 @@
-const url = "https://demomotelapi.herokuapp.com/auditoria/"
+import { link } from "../relatorios/index.js"
 
 $(document).ready(() => {
     var permanencia = JSON.parse(localStorage.getItem("permanencia"))
@@ -7,7 +7,7 @@ $(document).ready(() => {
         nome: permanencia.usuario,
         data: permanencia.hoje
     }
-    $.post(url, dados, () => {
+    $.post(link[1], dados, () => {
         console.log("Salvo")
     })
 })

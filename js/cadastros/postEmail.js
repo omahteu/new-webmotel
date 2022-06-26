@@ -1,4 +1,4 @@
-const url = "https://demomotelapi.herokuapp.com/emails/"
+import { link } from "../relatorios/index.js"
 
 $("#salvarFormPostEmail").click( () => {
 
@@ -22,7 +22,7 @@ $("#salvarFormPostEmail").click( () => {
         autenticacao: gridCheck
     }
 
-    $.post(url, dados,  () => {
+    $.post(link[9], dados,  () => {
         alert("Email Registrado!")
 
         document.getElementById('formCadastros').reset()

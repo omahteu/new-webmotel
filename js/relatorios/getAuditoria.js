@@ -1,4 +1,5 @@
-const url = "https://demomotelapi.herokuapp.com/auditoria/"
+import { link } from "./index.js"
+
 var soma = 0
 
 $("#mostrarRelatorio").click( () => {
@@ -9,8 +10,8 @@ $("#mostrarRelatorio").click( () => {
     filtro(option, dataFormatada)
 })
 
-async function filtro(nome, data){
-    const query = await fetch(url)
+export async function filtro(nome, data){
+    const query = await fetch(link[1])
     const resposta = await query.json()
     resposta.forEach(element => {
         if(element.nome == nome && element.data == data){

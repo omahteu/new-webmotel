@@ -1,8 +1,5 @@
 import { data_atual } from "../setup/gera_data.js"
-
-const url_camareira = "https://demomotelapi.herokuapp.com/camareiras/"
-const url_dados = "https://demomotelapi.herokuapp.com/dados/"
-const url_limpeza = "https://demomotelapi.herokuapp.com/limpeza/"
+import { link } from "../relatorios/index.js"
 
 $("#salvarFormPostCamareira").click( () => {
     let camareira = $("#nomeCamareira").val()
@@ -10,7 +7,7 @@ $("#salvarFormPostCamareira").click( () => {
         nome: camareira,
         registro: gera_id()
     }
-    $.post(url_camareira, dados, () => {
+    $.post(link[3], dados, () => {
         alert("Camareira Registrado!")
         document.getElementById('formCadastros').reset()
     })
@@ -37,8 +34,8 @@ $("#camareira_limpeza").click( () => {
         quarto: quarto,
         tempo: permanencia
     }
-    $.post(url_dados, dados,  () => {})
-    $.post(url_limpeza, dados2, () => {})
+    $.post(link[6], dados,  () => {})
+    $.post(link[12], dados2, () => {})
 })
 
 function gera_id(){

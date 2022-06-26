@@ -1,11 +1,11 @@
-const url = "https://demomotelapi.herokuapp.com/camareiras/"
+import { link } from "./index.js"
 
 $(document).ready( () => {
     relatorioCamareiras()
 })
 
 async function relatorioCamareiras(){
-    const resposta = await fetch(url)
+    const resposta = await fetch(link[3])
     const dados = await resposta.json()
     var tabela = document.getElementById('tabelaRelatorioCamareira')
     tabela.innerHTML = ''

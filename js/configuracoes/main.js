@@ -1,13 +1,11 @@
-const url_tabela = "https://demomotelapi.herokuapp.com/tabela/3/"
-const url_tempo = "https://demomotelapi.herokuapp.com/tempos/1/"
-const url_valores = "https://demomotelapi.herokuapp.com/valores/"
+import { link } from "../relatorios/index.js"
 
 $("#SalvarConfigEscolhaTabelaPreco").click( () => {
     var tabela_preco_selecionada = $('#escolha_tabela_precos').find(":selected").text()
     var confirmacao = confirm(`Confirme para usar a tabeça ${tabela_preco_selecionada}`)
     if(confirmacao == true){
         $.ajax({
-            url: url_tabela,
+            url: link[18],
             type: 'PUT',
             dataType: 'json',
             data: {
@@ -76,7 +74,7 @@ $("#SalvarConfigEscohaTempos").click( () => {
     var confirmacao = confirm(`Confirme para atualizar a tabela de tempo!`)
     if(confirmacao == true){
         $.ajax({
-            url: url_tempo,
+            url: link[19],
             type: 'PUT',
             dataType: 'json',
             data: tempo,
@@ -123,7 +121,7 @@ $("#SalvarConfigValores").click( () => {
         vh5: valor5hora,
         vh6: valor6hora
     }
-    $.post(url_valores, dados, () => {
+    $.post(link[21], dados, () => {
         alert("Quarto Registrado!")
         document.getElementById('formCadastros').reset()
     })

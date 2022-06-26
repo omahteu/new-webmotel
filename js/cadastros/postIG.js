@@ -1,4 +1,4 @@
-const url = "https://demomotelapi.herokuapp.com/igs/"
+import { link } from "../relatorios/index.js"
 
 $("#salvarFormPostIg").click( () => {
     let bairro = $("#bairroIg").val()
@@ -24,7 +24,7 @@ $("#salvarFormPostIg").click( () => {
         telefone3: telefone3
     }
 
-    $.post(url, dados, () => {
+    $.post(link[10], dados, () => {
         alert("Informações Registradas!")
         document.getElementById('formCadastros').reset()
     })

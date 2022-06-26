@@ -241,24 +241,9 @@
                           <tr role="row">
                             <th class="sorting_disabled" rowspan="1" colspan="1">Código</th>
                             <th class="sorting_disabled" rowspan="1" colspan="1">Número</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Horas Locacao</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Valor Locacao</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Tempo Especial</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Valor Especial</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Horas Diaria</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Valor Diaria</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Tempo Adicional</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Valor Adicional</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Tolerancia</th>
                             <th class="sorting_disabled" rowspan="1" colspan="1">Tipo Quarto</th>
                             <th class="sorting_disabled" rowspan="1" colspan="1">Tipo Tabela</th>
                             <th class="sorting_disabled" rowspan="1" colspan="1">Percentual</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Vh1</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Vh2</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Vh3</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Vh4</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Vh5</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Vh6</th>
                         </thead>
                         <tbody id="tabrlaRelatorioQuartos"></tbody>
                       </table>
@@ -378,8 +363,8 @@
     </div>
   </div>
 </body>
-    <!--Javascript-->
     <script src="../js/jquery.js"></script>
+
     <script src="../js/style/jquery-1.12.4.min.js"></script>
     <script src="../js/style/shortcut.js"></script>
     <script src="../js/style/funcoesGlobal.js"></script>
@@ -387,21 +372,29 @@
     <script src="../js/style/sweetalert.min.js"></script>
     <script src="../js/style/bootstrap.min.js"></script>
     <script src="../js/style/matrix.js"></script>
+    <script src="../js/style/nomes.js"></script>
+
     <script src="../js/setup/blockRelatoriosCaixa.js"></script>
     <script src="../js/setup/sitePath.js"></script>
     <script src="../js/setup/blockImpressaoRelatoriosCaixa.js"></script>
-    <script src="../js/relatorios/getProdutos.js"></script>
-    <script src="../js/relatorios/getQuartos.js"></script>
-    <script src="../js/relatorios/getIg.js"></script>
-    <script src="../js/relatorios/getEmail.js"></script>
-    <script src="../js/relatorios/getCamareira.js"></script>
-    <script src="../js/relatorios//getOcupacoes.js"></script>
-    <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
     <script src="../js/setup/validacao.js"></script>
-    <script src="../js/style/nomes.js"></script>
+    
+    <script type="module" src="../js/relatorios/getProdutos.js"></script>
+    <script type="module" src="../js/relatorios/getQuartos.js"></script>
+    <script type="module" src="../js/relatorios/getIg.js"></script>
+    <script type="module" src="../js/relatorios/getEmail.js"></script>
+    <script type="module" src="../js/relatorios/getCamareira.js"></script>
+    <script type="module" src="../js/relatorios/getOcupacoes.js"></script>
+    <script src=""></script>
+    <script type="module" src="../js/relatorios/getUsuarios.js"></script>
+    <script type="module" src="../js/relatorios/getAuditoria.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
 
     <script type="module" src="../js/contadores/auditoria.js"></script>
-    <script src="../js/cadastros/postAuditoria.js"></script>
-    <script src="../js/relatorios/getAuditoria.js"></script>
-    <script src="../js/relatorios/getUsuarios.js"></script>
+
+    <script type="module" src="../js/cadastros/postAuditoria.js"></script>
+    
+    
 </html>
