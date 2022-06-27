@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$("#SalvarConfigEscolhaTabelaPreco").click( () => {
+$("#SalvarConfigEscolhaTabelaPreco").click(function() {
     var tabela_preco_selecionada = $('#escolha_tabela_precos').find(":selected").text()
     var confirmacao = confirm(`Confirme para usar a tabeça ${tabela_preco_selecionada}`)
     if(confirmacao == true){
@@ -21,7 +21,7 @@ $("#SalvarConfigEscolhaTabelaPreco").click( () => {
     }
 })
 
-$("#SalvarConfigEscohaTempos").click( () => {
+$("#SalvarConfigEscohaTempos").click(function() {
     var option = $("#escolhe_tempo").find(":selected").text()
     if(option == "Troca de Quarto"){
         let tempo_troca_quarto = $("#tempo_troca_quarto").val()
@@ -88,7 +88,7 @@ $("#SalvarConfigEscohaTempos").click( () => {
     }
 })
 
-$("#SalvarConfigValores").click( () => {
+$("#SalvarConfigValores").click(function() {
     var horasLocacao = $("#quantidadeHorasLocacaoQuarto").val()
     var valorLocacao = $("#valorLocacaoQuarto").val()
     var tempoEspecial = $("#tempoEspecialQuarto").val()

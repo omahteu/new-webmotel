@@ -1,6 +1,6 @@
 import { link } from "./index.js"
 
-$(document).ready( () => {
+$(document).ready(function() {
     reseta_tabela_auditoria()
 })
 

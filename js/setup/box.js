@@ -40,22 +40,22 @@ export function ret(){
     return nome_camareira
 }
 
-$("#limparFormPostQuarto").click( () => {
+$("#limparFormPostQuarto").click(function() {
     document.getElementById('formPostQuarto').reset()
 })
 
-$("#limparFormPostProduto").click( () => {
+$("#limparFormPostProduto").click(function() {
     document.getElementById('formPostProduto').reset()
 })
 
-$("#limparFormPostIg").click( () => {
+$("#limparFormPostIg").click(function() {
     document.getElementById('formPostIG').reset()
 })
 
-$("#limparFormPostEmail").click( () => {
+$("#limparFormPostEmail").click(function() {
     document.getElementById('formPostEmail').reset()
 })
 
-$("#limparFormPostCamareira").click( () => {
+$("#limparFormPostCamareira").click(function() {
     document.getElementById('formPostCamareira').reset()
 })

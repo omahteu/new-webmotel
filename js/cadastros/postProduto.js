@@ -1,7 +1,7 @@
 import { data_atual } from "../setup/gera_data.js"
 import { link } from "../setup/index.js"
 
-$("#salvarFormPostProduto").click( () => {
+$("#salvarFormPostProduto").click(function() {
     let codigo = $("#codigoProduto").val()
     let descricao = $("#descricaoProduto").val()
     let valor = $("#valorUnitarioProduto").val()
@@ -23,6 +23,6 @@ $("#salvarFormPostProduto").click( () => {
     })
 })
 
-$("#limparFormPostProduto").click( () => {
+$("#limparFormPostProduto").click(function() {
     document.getElementById('formCadastros').reset()
 })

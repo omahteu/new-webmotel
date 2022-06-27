@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$(document).ready( () => {
+$(document).ready(function() {
 
     produtoCodigo()
 
@@ -51,7 +51,7 @@ function produtoCodigo(){
     });
 }
 
-$("#addLista").click( () => {
+$("#addLista").click(function() {
 
     var quarto = sessionStorage.getItem('quarto')
 	var descricao = $(".descricaoCheckout").val()

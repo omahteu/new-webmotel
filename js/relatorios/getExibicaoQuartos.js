@@ -1,18 +1,18 @@
 import { link } from "../setup/index.js"
 
-$(document).ready( () => {
+$(document).ready(function() {
     busca_e_exibe_quartos()
-    $(document).on('click', '[class="card"]', () => {
-        var ind = $(this)
-        var ind2 = $(ind[0].children[0])
-        var ind3 = $(ind2[0].children[1])
-        var ind4 = ind3.text()
-        $("#quarto_painel").text(ind4)
+    $(document).on('click', '[class="card"]', function() {
+        var passo = $(this)
+        var passo2 = $(passo[0].children[0])
+        var passo3 = $(passo2[0].children[1])
+        var passo4 = passo3.text()
+        $("#quarto_painel").text(passo4)
         var fm = document.forms['botoes']
         var el = fm.elements
-        el[0].setAttribute("name", ind4)
-        el[1].setAttribute("name", ind4)
-        el[2].setAttribute("name", ind4)
+        el[0].setAttribute("name", passo4)
+        el[1].setAttribute("name", passo4)
+        el[2].setAttribute("name", passo4)
     })
 })
 

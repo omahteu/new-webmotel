@@ -1,7 +1,7 @@
 import { hora_atual } from "../setup/gera_hora.js"
 import { link } from "../setup/index.js"
 
-$("#registrar_produto").click( () => {
+$("#registrar_produto").click(function() {
 	var tipos = ['locado']
 	var tipo = $("#tipo").text()
 

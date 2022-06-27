@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$("#salvarFormPostIg").click( () => {
+$("#salvarFormPostIg").click(function() {
     let bairro = $("#bairroIg").val()
     let cidade = $("#cidadeIg").val()
     let cnpj = $("#cnpjIg").val()

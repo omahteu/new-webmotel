@@ -51,9 +51,8 @@ function mostraVeiculo(identificador){
 	})
 }
 
-$(document).on('click', '[class="card"]', () => {
+$(document).on('click', '[class="card"]', function() {
 	var ind = $(this)
-	console.log(ind)
 	var ind2 = $(ind[0].children[0])
 	var ind3 = $(ind2[0].children[1])
 	var identificador = ind3.text()
@@ -91,7 +90,7 @@ $(document).on('click', '[class="card"]', () => {
 			mostraProduto(identificador)
 			mostraVeiculo(identificador)
 		}
-	}, 500);
+	}, 800);
 })
 
 

@@ -1,7 +1,7 @@
 import { data_atual } from "../setup/gera_data.js"
 import { link } from "../setup/index.js"
 
-$("#salvarFormPostCamareira").click( () => {
+$("#salvarFormPostCamareira").click(function() {
     let camareira = $("#nomeCamareira").val()
     var dados = {
         nome: camareira,
@@ -13,7 +13,7 @@ $("#salvarFormPostCamareira").click( () => {
     })
 })
 
-$("#camareira_limpeza").click( () => {
+$("#camareira_limpeza").click(function() {
     var quarto = $("#quarto_painel").text()
     var hora = $("#hour1").text()
     var minutos = $("#minute1").text()

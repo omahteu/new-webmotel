@@ -1,4 +1,4 @@
-$(".locado").click( () => {
+$(".locado").click(function() {
     const quarto = $("#numquarto").text()
     var flags = $("#intervalo").text().split(",")
     setTimeout( () => {bloqueio(quarto, flags[0], flags[1], flags[2])}, 602000)

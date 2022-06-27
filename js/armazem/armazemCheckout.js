@@ -1,7 +1,7 @@
 import { hora_atual } from "../setup/gera_hora.js"
 import { link } from "../setup/index.js"
 
-$("#adicionar_produto").click( () => {
+$("#adicionar_produto").click(function() {
     registroProduto()
 })
 
@@ -10,7 +10,7 @@ function registroProduto(){
 	var descricao = $("#descricao_produto").val()
     var quantidade = $("#quantidade_produto").val()
 	var valorTotal = $("#total_produto").val()
-    var quarto =  sessionStorage.getItem("quarto")
+    var quarto =  localStorage.getItem("quarto")
     var valorUnitario = $("#valor_unitario_produto").val()
 	var hora = hora_atual()
     // Objetos
@@ -59,7 +59,7 @@ function mostraProduto(){
 	// Requisição GET
 	$.get(link[5], (retorno) => {
 		// Parâmetro e Instância de Tabela
-		var nQuarto =  sessionStorage.getItem("quarto")
+		var nQuarto =  localStorage.getItem("quarto")
 		var prateleira = document.getElementById('itensComprados');
 		prateleira.innerHTML = '';
 		// Filtro

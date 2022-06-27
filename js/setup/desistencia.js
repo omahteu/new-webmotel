@@ -2,7 +2,7 @@ import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
 import { link } from "./index.js"
 
-$("#desistencia").click( () => {
+$("#desistencia").click(function() {
     setTimeout( () => {desistir()}, 300)
     setTimeout( () => {registrando_desistencia()}, 500)
     setTimeout( () => {limpando_desistencia()}, 800)
@@ -19,7 +19,7 @@ function desistir(){
         alert("campo vazio")
     } else {
         texto.push(motivo)
-        let quarto = sessionStorage.getItem("quarto")
+        let quarto = localStorage.getItem("quarto")
         var box = JSON.parse(localStorage.getItem("dadosQuarto"))
         let dataAtual = data_atual()
         let codigo_ocupacao = gera_codigo()
@@ -41,7 +41,7 @@ function desistir(){
 }
 
 function limpando_desistencia(){
-    var quartx = sessionStorage.getItem("quarto")
+    var quartx = localStorage.getItem("quarto")
     $.get(link[5], (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         var id = dados[0].id
@@ -64,13 +64,13 @@ function limpando_desistencia(){
     })
     localStorage.removeItem(quartx)
     localStorage.removeItem("dadosQuarto")
-    sessionStorage.removeItem(quartx)
-    sessionStorage.removeItem("quarto")
+    localStorage.removeItem(quartx)
+    localStorage.removeItem("quarto")
 }
 
 function registrando_desistencia(){
-    var quarto = sessionStorage.getItem("quarto")
-    var codigo = sessionStorage.getItem(`codigo${quarto}`)
+    var quarto = localStorage.getItem("quarto")
+    var codigo = localStorage.getItem(`codigo${quarto}`)
     var caixa = localStorage.getItem("caixa")
     var motiv = texto[texto.length - 1]
     dados = {

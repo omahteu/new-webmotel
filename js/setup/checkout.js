@@ -1,11 +1,11 @@
 import { link } from "./index.js"
 
-$(document).ready( () => {
+$(document).ready(function() {
 	informacaoes()
 })
 
 function informacaoes(){
-	var numero_quarto = JSON.parse(sessionStorage.getItem('quarto'))
+	var numero_quarto = JSON.parse(localStorage.getItem('quarto'))
 	$.get(link[5], (retorno) => {
 		var sum = 0
 		var valor_quarto

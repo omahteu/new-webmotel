@@ -7,7 +7,7 @@ import { start3 } from "../contadores/contadorTres.js"
 import { start4 } from "../contadores/contadorQuatro.js"
 import { fimModal } from "../setup/camareiras.js"
 
-$(".locado").click( () => {
+$(".locado").click(function() {
     var quarto = $('#quarto_painel').text()
     var rota = $(this).attr('class')
     if(confirm(`DESEJA INICIAR O QUARTO ${quarto}?`) == true){

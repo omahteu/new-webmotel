@@ -8,7 +8,7 @@ export function ultima_limpeza(quartx){
         var dados = e.filter(quartos => quartos.quarto == quartx)
         var id = dados[0].id
         $.ajax({
-            url: url + id + "/",
+            url: link[11] + id + "/",
             type: 'DELETE'
         });
     })

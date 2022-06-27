@@ -1,6 +1,6 @@
 import { link } from "./index.js"
 
-$(document).ready( () => {
+$(document).ready(function() {
     produtoCodigo()
     $.get(link[16], (resultado) => {
     resultado.forEach( (item) => {

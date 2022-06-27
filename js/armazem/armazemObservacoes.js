@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$("#registrar").click( () => {
+$("#registrar").click(function() {
     registroObs()
 })
 

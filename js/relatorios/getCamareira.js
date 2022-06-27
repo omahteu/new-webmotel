@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$(document).ready( () => {
+$(document).ready(function() {
     relatorioCamareiras()
 })
 

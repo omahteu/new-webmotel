@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$("#registrar_veiculo").click( () => {
+$("#registrar_veiculo").click(function() {
 	var tipos = ['locado']
 	var tipo = $("#tipo").text()
 	// Verificação se o quarto está em Pernoite ou Locação

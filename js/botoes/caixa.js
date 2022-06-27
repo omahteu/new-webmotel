@@ -4,7 +4,7 @@ import { link } from "../setup/index.js"
 
 var soma = 0
 
-$(document).ready( () => {
+$(document).ready(function() {
     var nomeUsuario = localStorage.getItem('nome')
     $("#usuario").val(nomeUsuario)
     bloqueiaAbertura()
@@ -12,7 +12,7 @@ $(document).ready( () => {
     validarUsoFundoCaixa()
 })
 
-$("#abrirCaixa").click( () => {
+$("#abrirCaixa").click(function() {
     var utilizar_fundo_caixa = $("#usarFundoCaixa").val()
     if(utilizar_fundo_caixa == 'Usar Fundo de Caixa?'){
         alert('Escolha se ultilizará o fundo de caixa!')
@@ -82,7 +82,7 @@ function validarUsoFundoCaixa(){
     })
 }
 
-$("#fecharCaixa").click( () => {
+$("#fecharCaixa").click(function() {
     enviando_relatorio()
     setTimeout( () => {busca_de_valores_de_caixa()}, 200)
 })

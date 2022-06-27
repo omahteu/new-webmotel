@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$("#salvarFormPostEmail").click( () => {
+$("#salvarFormPostEmail").click(function() {
 
     let usuario = $("#usuarioEmail").val()
     let senha = $("#senhaEmail").val()

@@ -3,7 +3,7 @@ import { resposta2 } from './acaoRespostaDois.js'
 import { resposta3 } from './acaoRespostaTres.js'
 import { resposta4 } from './acaoRespostaQuatro.js'
 
-$("[name=botao]").click( () => {
+$("[name=botao]").click(function(){
     var status = $(this).val()
     let numeroQuarto = $("#numquarto").text()
 	let valorQuarto = $("#valor-quarto").text()

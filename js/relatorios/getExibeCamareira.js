@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$(document).ready( () => {
+$(document).ready(function() {
     $.get(link[3], (resultado) => {
         resultado.forEach( (item) => {
             $('#comboCamareiras').append('<option>' + item.nome + '</option>');

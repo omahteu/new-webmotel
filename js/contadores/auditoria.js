@@ -4,7 +4,7 @@ import { data_atual } from "../setup/gera_data.js"
 
 var horas = []
 
-$(document).ready(() => {
+$(document).ready(function() {
     auditando()
 })
 

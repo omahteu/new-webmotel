@@ -1,7 +1,7 @@
 import { link } from "../setup/index.js"
 
 
-$(document).ready( () => {
+$(document).ready(function() {
     $.get(link[10], (resultado) => {
         if(resultado.length != 0){
             $("#salvarFormPostIg").css('display', 'none')
@@ -9,7 +9,7 @@ $(document).ready( () => {
     })
 })
 
-$("#alteraFormPostIg").click( () => {
+$("#alteraFormPostIg").click(function() {
     $.get(link[10], (resultado) => {
         if(resultado.length != 0){
             atualizaIg()

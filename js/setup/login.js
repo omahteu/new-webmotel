@@ -48,7 +48,7 @@ $(document).keypress( (event) => {
     }
 }) 
 
-$("#btn-acessar").click( () => {
+$("#btn-acessar").click(function() {
     var nome = $("#usuario")
     var senha = $("#senha")
     if(nome.val() == ''){

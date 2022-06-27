@@ -2,13 +2,13 @@ import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
 import { link } from "../setup/index.js"
 
-$("#encerrar").click( () => {
+$("#encerrar").click(function() {
     setTimeout( () => {registrando()}, 300)
     setTimeout( () => {ocupacao()}, 500)
     setTimeout( () => {limpando()}, 800)
-    setTimeout( () => {
+    /*setTimeout( () => {
         window.close()
-    }, 1000)
+    }, 1000)*/
 })
 
 function clean(id){
@@ -23,7 +23,7 @@ function clean(id){
 }
 
 function limpando(){
-    var quartx = sessionStorage.getItem("quarto")
+    var quartx = localStorage.getItem("quarto")
     $.get(link[5], (e) =>{
         var dados = e.filter(quartos => quartos.quarto == quartx)
         dados.forEach(element => {
@@ -45,12 +45,12 @@ function limpando(){
     })
     localStorage.removeItem(quartx)
     localStorage.removeItem("dadosQuarto")
-    sessionStorage.removeItem(quartx)
-    sessionStorage.removeItem("quarto")
+    localStorage.removeItem(quartx)
+    localStorage.removeItem("quarto")
 }
 
 function registrando(){
-    let quarto = sessionStorage.getItem("quarto")
+    let quarto = localStorage.getItem("quarto")
     var box = []
     $.get(link[5], (e) =>{
         var dados_comanda = e.filter(quartos => quartos.quarto == quarto)
@@ -102,7 +102,7 @@ function gera_codigo(){
 }
 
 function ocupacao(){
-    let quarto = sessionStorage.getItem("quarto")
+    let quarto = localStorage.getItem("quarto")
     var box = JSON.parse(localStorage.getItem("dadosQuarto"))
     let dataAtual = data_atual()
     let codigo_ocupacao = gera_codigo()
@@ -110,7 +110,7 @@ function ocupacao(){
     let saida = hora_atual()
     let total = $("#totalGeral").text()
     localStorage.setItem(`codigo${quarto}`, codigo_ocupacao)
-    dados = {
+    var dados = {
         data: dataAtual,
         codigo: codigo_ocupacao,
         quarto: quarto,

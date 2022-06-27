@@ -2,7 +2,7 @@ import { link } from "../setup/index.js"
 
 var soma = 0
 
-$("#mostrarRelatorio").click( () => {
+$("#mostrarRelatorio").click(function() {
     var option = $('#selectUsuarios').find(":selected").text()
     var data_rel = $("#data_relatorio").val()
     elo = new Date(data_rel)

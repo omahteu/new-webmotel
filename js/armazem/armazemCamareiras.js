@@ -2,7 +2,7 @@ import { desfazer } from "../tags/desfazer.js"
 import { pause, reset } from '../contadores/contadorUm.js'
 import { fimModal } from "../js/camareiras.js"
 
-$("#selecionaCamareiraLimpeza").click( () => {
+$("#selecionaCamareiraLimpeza").click(function() {
 
     // DECIDIR PRA ONDE VAI ESSE REGISTRO
     

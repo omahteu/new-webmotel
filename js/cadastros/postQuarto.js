@@ -1,6 +1,6 @@
 import { link } from "../setup/index.js"
 
-$(document).ready( () => {
+$(document).ready(function() {
     busca_ultimo_quarto()
 })
 
@@ -14,7 +14,7 @@ async function busca_ultimo_quarto(){
     });
 }
 
-$("#salvarFormPostQuarto").click( () => {
+$("#salvarFormPostQuarto").click(function() {
     var codigoQuarto = $("#codigoQuarto").val()
     var numeroQuarto = nu + 1
     var percentual = $("#adicionarPercentualQuarto").val()

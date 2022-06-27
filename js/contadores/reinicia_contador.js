@@ -1,7 +1,7 @@
 import { start_plus } from "../contadores/um_plus.js"
 import { link } from "../setup/index.js"
 
-$(document).one("click", '[class="card"]', () => {
+$(document).one("click", '[class="card"]', function() {
     definindo_tempo()
 })
 
