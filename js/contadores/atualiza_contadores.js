@@ -31,7 +31,7 @@ const converter = (minutos) => {
   return `${textoHoras}:${textoMinutos}`;
 };
 
-$.get(link[12], e => {
+$.get(link[11], e => {
   e.forEach(el => {
     var ohra = el.datahora
     var ohra_formatada = ohra.split(":")
@@ -46,7 +46,7 @@ $.get(link[12], e => {
     var quarto = el.quarto
     var tipo = el.tipo
     $.ajax({
-      url: link[12] + id + "/",
+      url: link[11] + id + "/",
       type: "PUT",
       dataType: "json",
       data: {
