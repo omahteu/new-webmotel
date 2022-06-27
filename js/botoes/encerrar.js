@@ -6,9 +6,9 @@ $("#encerrar").click(function() {
     setTimeout( () => {registrando()}, 300)
     setTimeout( () => {ocupacao()}, 500)
     setTimeout( () => {limpando()}, 800)
-    /*setTimeout( () => {
+    setTimeout( () => {
         window.close()
-    }, 1000)*/
+    }, 1000)
 })
 
 function clean(id){
