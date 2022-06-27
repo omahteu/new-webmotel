@@ -1,7 +1,5 @@
 $(document).ready( () => {
-
     bloqueioRelatorios()
-
 })
 
 // verificar o historico da pagina para voltar para o mesmo lugar

@@ -1,7 +1,5 @@
 $(document).ready( () => {
-
     bloqueioImpressaoRelatorios()
-
 })
 
 function bloqueioImpressaoRelatorios(){
