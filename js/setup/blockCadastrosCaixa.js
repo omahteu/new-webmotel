@@ -5,6 +5,7 @@ $(document).ready(function() {
 function bloqueioCadastros(){
     let info = localStorage.getItem("usuarioLogado")
     if(info === 'caixa'){
+        $("[name='codProdutos']").css("display", "none")
         $("[name='cadQuartos']").css('display', 'none')
         $("[name='cadIgs']").css('display', 'none')
         $("[name='cadEmail']").css('display', 'none')
