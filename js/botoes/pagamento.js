@@ -24,14 +24,14 @@ async function buscaTarifasBandeiras() {
         $('#modo_pagamento').append(`<option value="${resultado}" >Crédito ${elemento.bandeira} - ${resultado}%</option>`)
     });
 
-    $("#modo_pagamento").change( () => {
-        escolha = $(this).val()
+    $("#modo_pagamento").change(function() {
+        var escolha = $(this).val()
         if(escolha > 2.0){
             let confirmacao_cartao = confirm(`Crédito com acréscimo de ${escolha}%\nConfirme a opção desejada!`)
             if(confirmacao_cartao){
                 let campo_parcelas = $("#numero_parcelas")
                 campo_parcelas.css('display', 'inline')
-                $("#confirma_parcelas").click( () => {
+                $("#confirma_parcelas").click(function() {
                     npc(escolha, campo_parcelas.val())
                 })
             } else {

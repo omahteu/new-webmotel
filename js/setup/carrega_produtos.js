@@ -6,12 +6,12 @@ $(document).ready(function() {
     resultado.forEach( (item) => {
         $('#lista_produto').append('<option>' + item.descricao + '</option>');
     });
-    $('#lista_produto').change( () => {
+    $('#lista_produto').change(function() {
         var option = $('#lista_produto').find(":selected").index()
         var db = option - 1
         $("#descricao_produto").val(resultado[db].descricao)
         $("#valor_unitario_produto").val('R$ ' + resultado[db].valorunitario)
-        $('#quantidade_produto').keyup( () => {
+        $('#quantidade_produto').keyup(function() {
             var qtd = $(this).val()
             var total = parseFloat(resultado[db]['valorunitario']) * parseInt(qtd)
             $("#total_produto").val('R$ ' + total)
