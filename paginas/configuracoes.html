@@ -58,7 +58,7 @@
                 <!--Tabs-->
                 <ul class="nav nav-tabs">
                   <!--Tempo-->
-                  <li>
+                  <li class="active">
                     <a data-toggle="tab" href="#tempo">Tempo</a>
                   </li>
                   <!--Pernoite-->
@@ -70,7 +70,7 @@
                     <a data-toggle="tab" href="#cartoes">Cartões</a>
                   </li>
                   <!--Quartos-->
-                  <li class="active">
+                  <li>
                     <a data-toggle="tab" href="#quartos">Quartos</a>
                   </li>
                   <!--Valores-->
@@ -80,8 +80,9 @@
                 </ul>
                 <form class="form-horizontal" id="formCadastros">
                   <div class="widget-content nopadding tab-content">
+
                     <!-- Tempo -->
-                    <div id="tempo" class="tab-pane fade">
+                    <div id="tempo" class="tab-pane fade in active">
 
                       <!--Select-->
                       <div class="control-group" name="config_tempo"> 
@@ -199,10 +200,10 @@
                     </div>
 
                     <!--Quarto-->
-                    <div id="quartos" class="tab-pane fade in active">
+                    <div id="quartos" class="tab-pane fade">
 
                       <!--Tabela-->
-                      <div class="control-group"> 
+                      <div class="control-group" name="config_quartos"> 
                           <label for="codigoProduto" class="control-label">Código</label>
                           <div class="controls"> 
                           <select id="escolha_tabela_precos">
@@ -215,7 +216,7 @@
                       </div>
 
                       <!--Botões-->
-                      <div class="form-actions">
+                      <div class="form-actions" name="config_quartos">
                         <div class="span8">
                           <div class="span9"> 
                               <button type="button" class="button btn btn-primary" id="SalvarConfigEscolhaTabelaPreco"> 

@@ -2,8 +2,6 @@ $(document).ready(function() {
     bloqueioRelatorios()
 })
 
-// verificar o historico da pagina para voltar para o mesmo lugar
-
 function bloqueioRelatorios(){
     let info = localStorage.getItem("usuarioLogado")
     if(info === 'caixa'){
@@ -12,5 +10,6 @@ function bloqueioRelatorios(){
         $("#relEmail").css('display', 'none')
         $("#relOcupacoes").css('display', 'none')
         $("#relCartoes").css('display', 'none')
+        $("[id='relAuditoria']").css("display", "none")
     }
 }
