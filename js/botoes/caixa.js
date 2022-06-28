@@ -72,7 +72,7 @@ function bloqueiaFundo(){
 }
 
 function validarUsoFundoCaixa(){
-    $("#usarFundoCaixa").change( () => {
+    $("#usarFundoCaixa").change(function() {
         var escolha = $(this).val()
         if(escolha == 'sim'){
             $("#valorFundoCaixa").css('display', 'inline')              
