@@ -19,16 +19,20 @@ $("#salvarFormPostQuarto").click(function() {
     var numeroQuarto = nu + 1
     var percentual = $("#adicionarPercentualQuarto").val()
     var suite = $("#tipoSuiteQuarto").val()
-    var tabela = $("#tabelaQuarto").val()
+    // var tabela = $("#tabelaQuarto").val()
     var dados = {
         codigo: codigoQuarto,
         numero: String(numeroQuarto),
         tipo_quarto: suite,
-        tipo_tabela: tabela,
+        tipo_tabela: "",
         percentual: percentual,
     }
     $.post(link[17], dados, () => {
         alert("Quarto Registrado!")
         document.getElementById('formCadastros').reset()
     })
+})
+
+$("#limparFormPostQuarto").click(function() {
+    document.getElementById('formCadastros').reset()
 })

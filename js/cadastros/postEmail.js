@@ -28,3 +28,7 @@ $("#salvarFormPostEmail").click(function() {
         document.getElementById('formCadastros').reset()
     })
 })
+
+$("#limparFormPostEmail").click(function() {
+    document.getElementById('formCadastros').reset()
+})

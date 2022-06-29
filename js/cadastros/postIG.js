@@ -29,3 +29,7 @@ $("#salvarFormPostIg").click(function() {
         document.getElementById('formCadastros').reset()
     })
 })
+
+$("#limparFormPostIg").click(function() {
+    document.getElementById('formCadastros').reset()
+})
