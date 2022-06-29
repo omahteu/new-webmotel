@@ -179,6 +179,35 @@
                     <!-- Cartões -->
                     <div id="cartoes" class="tab-pane fade">
 
+                      <!--Select Cartões-->
+                      <div class="control-group" name=""> 
+                        <div class="controls"> 
+                          <select id="tipo_cartao">
+                            <option value="" hidden>Tipo</option>
+                            <option value="credito">Crédito</option>
+                            <option value="debito">Débito</option>
+                          </select> 
+                        </div>
+                      </div>
+
+                      <div class="control-group" name=""> 
+                        <div class="controls"> 
+                          <select id="bandeira_cartao">
+                            <option value="" hidden>Bandeira</option>
+                            <option value="master">Master</option>
+                            <option value="visa">Visa</option>
+                            <option value="elo">Elo</option>
+                          </select> 
+                        </div>
+                      </div>
+
+                      <!--Troca de Quarto-->
+                      <div class="control-group" name=""> 
+                          <div class="controls"> 
+                            <input type="text" id="" placeholder="Porcentagem"> 
+                          </div>
+                      </div>
+
                       <div class="form-actions" name="config_cartoes">
                         <div class="span8">
                           <div class="span9"> 
@@ -377,6 +406,7 @@
 
   <script type="module" src="../js/configuracoes/index.js"></script>
   <script type="module" src="../js/configuracoes/main.js"></script>
+  <script type="module" src="../js/configuracoes/cartao.js"></script>
   
   <script type="module" src="../js/contadores/auditoria.js"></script>
 
