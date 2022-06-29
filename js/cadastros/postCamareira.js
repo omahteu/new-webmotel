@@ -38,6 +38,10 @@ $("#camareira_limpeza").click(function() {
     $.post(link[12], dados2, () => {})
 })
 
+$("#limparFormPostCamareira").click(function(){
+    document.getElementById('formCadastros').reset()
+})
+
 function gera_id(){
 	var size = 3
 	var randomized = Math.ceil(Math.random() * Math.pow(10,size))

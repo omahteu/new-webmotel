@@ -1,7 +1,6 @@
 import { link } from "../setup/index.js"
 
 $("#salvarFormPostEmail").click(function() {
-
     let usuario = $("#usuarioEmail").val()
     let senha = $("#senhaEmail").val()
     let smtp = $("#smtpEmail").val()
@@ -10,7 +9,6 @@ $("#salvarFormPostEmail").click(function() {
     let destino = $("#emailDestinoEmail").val()
     let contabilidade = $("#emailContabilidadeEmail").val()
     let gridCheck = $("#autenticacaoEmail").val()
-
     let dados = {
         usuario: usuario,
         senha: senha,
@@ -24,7 +22,6 @@ $("#salvarFormPostEmail").click(function() {
 
     $.post(link[9], dados,  () => {
         alert("Email Registrado!")
-
         document.getElementById('formCadastros').reset()
     })
 })
