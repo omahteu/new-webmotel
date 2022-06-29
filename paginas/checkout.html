@@ -77,6 +77,9 @@
                   <li>
                     <a data-toggle="tab" href="#produtos">Produtos</a>
                   </li>
+                  <li>
+                    <a data-toggle="tab" href="#desistencia">Desistência</a>
+                  </li>
 
                 </ul>
 
@@ -215,6 +218,47 @@
                         </form>
 
                       </div>
+
+                      <div id="desistencia" class="tab-pane fade">
+
+                        <!--Motivo-->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <select id="modo_desconto">
+                              <option value="a" hidden>Modo</option>
+                              <option value="valor">Valor</option>
+                              <option value="porcento">Porcento</option>
+                            </select>
+                            <input type="text" id="valor_desconto" placeholder="Valor Desconto">
+                            <button type="button" class="btn btn-primary" id="aplicar_desconto">Aplicar</button>
+                          </div>
+                        </div>
+
+                        <!--Camareira-->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <select id="selecionaCamareira">
+                              <option value="" hidden>Camareira</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!--Pagamento-->
+                        <div class="control-group"> 
+                          <div class="controls">
+                            <form id="bandeiras_cartoes">
+                              <select id="modo_pagamento">
+                                <option value="" hidden>Método de Pagamento</option>
+                                <option value="dinheiro" selected>Dinheiro</option>
+                              </select>
+                              <input type="number" min="1"id="numero_parcelas" placeholder="P/">
+                              <button type="button" class="btn btn-primary" id="confirma_parcelas">Selecionar</button>
+                            </form>
+                          </div>
+                        </div>
+
+                      </div>
+
                     </div>
                 </form>
               </div>
