@@ -9,7 +9,7 @@ $(document).ready(function() {
                 $('#checkbox_produto').append('<option>' + item.descricao + '</option>');
             }
         });
-        $('#checkbox_produto').change( () => {
+        $('#checkbox_produto').change(function() {
             var option = $('#checkbox_produto').find(":selected").index()
             var db = option - 1
             $("#descricao").val(resultado[db].descricao)
