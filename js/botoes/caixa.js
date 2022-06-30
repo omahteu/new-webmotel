@@ -14,10 +14,12 @@ $(document).ready(function() {
 
 $("#abrirCaixa").click(function() {
     var utilizar_fundo_caixa = $("#usarFundoCaixa").val()
-    if(utilizar_fundo_caixa == 'Usar Fundo de Caixa?'){
-        alert('Escolha se ultilizará o fundo de caixa!')
-    } else if(utilizar_fundo_caixa == "sim") {
+    var usar_produtos_sem_caixa = $("#usarProdutosSemCaixa").val()
+    if(utilizar_fundo_caixa == 'Usar Fundo de Caixa?' || usar_produtos_sem_caixa == "usar_produtos_sem_caixa"){
+        alert('Escolha se ultilizará o fundo de caixa ou Produtos sem estoque!')
+    } else if(utilizar_fundo_caixa == "sim" && usar_produtos_sem_caixa == "sim") {
         localStorage.setItem('caixa', 'aberto')
+        localStorage.setItem("prod", usar_produtos_sem_caixa)
         var usuario = $("#usuario").val()
         let dataAtual = data_atual()
         let horaAtual = hora_atual()
@@ -35,8 +37,49 @@ $("#abrirCaixa").click(function() {
             alert('Caixa Aberto!')
             $(location).attr('href', '../paginas/home.html')
         })
-    } else {
+    } else if(utilizar_fundo_caixa == "sim" && usar_produtos_sem_caixa == "nao") {
         localStorage.setItem('caixa', 'aberto')
+        localStorage.setItem("prod", usar_produtos_sem_caixa)
+        var usuario = $("#usuario").val()
+        let dataAtual = data_atual()
+        let horaAtual = hora_atual()
+        var fundoCaixa = $("#valorFundoCaixa").val()
+        var fundoCaixa_formatado = String(fundoCaixa).replace(",", ".")
+        var dados = {
+            data: dataAtual,
+            entrada: horaAtual,
+            usuario: usuario,
+            fundo: fundoCaixa_formatado,
+            total: "",
+            saida: ""
+        }
+        $.post(link[2], dados, () => {
+            alert('Caixa Aberto!')
+            $(location).attr('href', '../paginas/home.html')
+        })
+    } else if(utilizar_fundo_caixa == "nao" && usar_produtos_sem_caixa == "sim") {
+        localStorage.setItem('caixa', 'aberto')
+        localStorage.setItem("prod", usar_produtos_sem_caixa)
+        var usuario = $("#usuario").val()
+        let dataAtual = data_atual()
+        let horaAtual = hora_atual()
+        var fundoCaixa = "0"
+        var fundoCaixa_formatado = String(fundoCaixa).replace(",", ".")
+        var dados = {
+            data: dataAtual,
+            entrada: horaAtual,
+            usuario: usuario,
+            fundo: fundoCaixa_formatado,
+            total: "",
+            saida: ""
+        }
+        $.post(link[2], dados, () => {
+            alert('Caixa Aberto!')
+            $(location).attr('href', '../paginas/home.html')
+        })
+    } else if(utilizar_fundo_caixa == "nao" && usar_produtos_sem_caixa == "nao") {
+        localStorage.setItem('caixa', 'aberto')
+        localStorage.setItem("prod", usar_produtos_sem_caixa)
         var usuario = $("#usuario").val()
         let dataAtual = data_atual()
         let horaAtual = hora_atual()

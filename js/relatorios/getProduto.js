@@ -5,9 +5,15 @@ $(document).ready(function() {
     $.get(link[16], (resultado) => {
         resultado.forEach(function(item){
             var estoque = item.quantidade
-            if(estoque.length != 0){
+            var permis = localStorage.getItem("prod")
+            if(permis == "não"){
+                if(estoque.length != 0){
+                    $('#checkbox_produto').append('<option>' + item.descricao + '</option>');
+                }
+            } else if(permis == "sim"){
                 $('#checkbox_produto').append('<option>' + item.descricao + '</option>');
             }
+
         });
         $('#checkbox_produto').change(function() {
             var option = $('#checkbox_produto').find(":selected").index()
