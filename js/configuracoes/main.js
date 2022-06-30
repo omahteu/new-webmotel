@@ -105,21 +105,21 @@ $("#SalvarConfigValores").click(function() {
     var valor5hora = $("#v5hQuarto").val()
     var valor6hora = $("#v6hQuarto").val()
     var dados = {
-        horas_locacao: horasLocacao,
-        valor_locacao: valorLocacao,
-        tempo_especial: tempoEspecial,
-        valor_especial: valorEspecial,
-        horas_diaria: horasDiarias,
-        valor_diaria: valorDiaria,
-        tempo_adicional: tempoAdicional,
-        valor_adicional: valorHoraAdicional,
-        tolerancia: tolerancia,
-        vh1: valor1hora,
-        vh2: valor2hora,
-        vh3: valor3hora,
-        vh4: valor4hora,
-        vh5: valor5hora,
-        vh6: valor6hora
+        horas_locacao: horasLocacao == "" ? $("#quantidadeHorasLocacaoQuarto").attr('placeholder') : horasLocacao,
+        valor_locacao: valorLocacao == "" ? $("#valorLocacaoQuarto").attr('placeholder') : valorLocacao,
+        tempo_especial: tempoEspecial == "" ? $("#tempoEspecialQuarto").attr('placeholder') : tempoEspecial,
+        valor_especial: valorEspecial == "" ? $("#valorEspecialQuarto").attr('placeholder') : valorEspecial,
+        horas_diaria: horasDiarias == "" ? $("#quantidadeHorasDiariasQuarto").attr('placeholder') : horasDiarias,
+        valor_diaria: valorDiaria == "" ? $("#valorDiariaQuarto").attr('placeholder') : valorDiaria,
+        tempo_adicional: tempoAdicional == "" ? $("#tempoAdicionalQuarto").attr('placeholder') : tempoAdicional,
+        valor_adicional: valorHoraAdicional == "" ? $("#valorHoraAdicionalQuarto").attr('placeholder') : valorHoraAdicional,
+        tolerancia: tolerancia == "" ? $("#toleranciaQuarto").attr('placeholder') : tolerancia,
+        vh1: valor1hora == "" ? $("#v1hQuarto").attr('placeholder') : valor1hora,
+        vh2: valor2hora == "" ? $("#v2hQuarto").attr('placeholder') : valor2hora,
+        vh3: valor3hora == "" ? $("#v3hQuarto").attr('placeholder') : valor3hora,
+        vh4: valor4hora == "" ? $("#v4hQuarto").attr('placeholder') : valor4hora,
+        vh5: valor5hora == "" ? $("#v5hQuarto").attr('placeholder') : valor5hora,
+        vh6: valor6hora == "" ? $("#v6hQuarto").attr('placeholder') : valor6hora,
     }
     $.post(link[21], dados, () => {
         alert("Quarto Registrado!")
