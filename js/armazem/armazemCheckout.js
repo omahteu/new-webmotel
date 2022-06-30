@@ -1,4 +1,4 @@
-import { hora_atual } from "../setup/gera_hora.js"
+import { hora_atual } from "../geradores/hora.js"
 import { link } from "../setup/index.js"
 
 $("#adicionar_produto").click(function() {
@@ -6,14 +6,12 @@ $("#adicionar_produto").click(function() {
 })
 
 function registroProduto(){
-	// Parâmetros
 	var descricao = $("#descricao_produto").val()
     var quantidade = $("#quantidade_produto").val()
 	var valorTotal = $("#total_produto").val()
     var quarto =  localStorage.getItem("quarto")
     var valorUnitario = $("#valor_unitario_produto").val()
 	var hora = hora_atual()
-    // Objetos
 	var produto = {
 		quarto: quarto,
 		descricao: descricao,
@@ -23,12 +21,10 @@ function registroProduto(){
 		datahora: hora,
 		valor_quarto: "0"
 	}
-	// Requisição POST
 	$.post(link[5], produto,  () => {
 		alert('Produto Adicionado!')
 		mostraProduto();
     })
-	// Limpa os Campos
 	document.getElementById('produtos_checkout').reset();
 }
 
@@ -55,16 +51,11 @@ function removeProduto(operacao){
 }
 
 function mostraProduto(){
-
-	// Requisição GET
 	$.get(link[5], (retorno) => {
-		// Parâmetro e Instância de Tabela
 		var nQuarto =  localStorage.getItem("quarto")
 		var prateleira = document.getElementById('itensComprados');
 		prateleira.innerHTML = '';
-		// Filtro
 		var dados = retorno.filter(quartos => quartos.quarto == nQuarto)
-		// Percorrendo o Array e Formantando uma Tabela
 		dados.forEach( (resultado) => {
 			var id = resultado.id
 			var descricao = resultado.descricao

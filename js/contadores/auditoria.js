@@ -1,6 +1,6 @@
-import { hora_atual } from "../setup/gera_hora.js"
-import { horas_para_minutos } from "../setup/gera_minutos.js"
-import { data_atual } from "../setup/gera_data.js"
+import { hora_atual } from "../geradores/hora.js"
+import { horas_para_minutos } from "../geradores/minuto.js"
+import { data_atual } from "../geradores/data.js"
 
 var horas = []
 

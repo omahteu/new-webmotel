@@ -1,4 +1,4 @@
-import { hora_atual } from "../setup/gera_hora.js"
+import { hora_atual } from "../geradores/gera_hora.js"
 import { link } from "../setup/index.js"
 
 export function locado(q, t,  x, y, z) {   

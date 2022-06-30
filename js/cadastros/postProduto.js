@@ -1,4 +1,4 @@
-import { data_atual } from "../setup/gera_data.js"
+import { data_atual } from "../geradores/data.js"
 import { link } from "../setup/index.js"
 
 $("#salvarFormPostProduto").click(function() {

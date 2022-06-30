@@ -1,5 +1,6 @@
-import { data_atual } from "../setup/gera_data.js"
+import { data_atual } from "../geradores/data.js"
 import { link } from "../setup/index.js"
+import { gera_id } from "../geradores/id.js"
 
 $("#salvarFormPostCamareira").click(function() {
     let camareira = $("#nomeCamareira").val()
@@ -41,9 +42,3 @@ $("#camareira_limpeza").click(function() {
 $("#limparFormPostCamareira").click(function(){
     document.getElementById('formCadastros').reset()
 })
-
-function gera_id(){
-	var size = 3
-	var randomized = Math.ceil(Math.random() * Math.pow(10,size))
-	return randomized
-}

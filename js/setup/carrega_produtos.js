@@ -28,7 +28,7 @@ function produtoCodigo(){
                 var db = 0
                 $("#descricao_produto").val(resultado[db].descricao)
                 $("#valor_unitario_produto").val('R$ ' + resultado[db].valorunitario)
-                $('#quantidade_produto').keyup( () => {
+                $('#quantidade_produto').keyup(function() {
                     var qtd = $(this).val()
                     var total = Number(resultado[db]['valorunitario']) * Number(qtd)
                     $("#total_produto").val('R$ ' + total)

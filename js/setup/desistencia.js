@@ -1,5 +1,5 @@
-import { data_atual } from "../setup/gera_data.js"
-import { hora_atual } from "../setup/gera_hora.js"
+import { data_atual } from "../geradores/data.js"
+import { hora_atual } from "../geradores/hora.js"
 import { link } from "./index.js"
 
 $("#aceitar_desistencia").click(function() {
