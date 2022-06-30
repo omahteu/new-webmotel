@@ -4378,3 +4378,7 @@ fieldset[disabled] .btn-info.active {
 .iconBx {
   cursor: pointer;
 }
+
+#mmotivo_desistencia {
+  width: 500px;
+}

@@ -2,7 +2,7 @@ import { data_atual } from "../setup/gera_data.js"
 import { hora_atual } from "../setup/gera_hora.js"
 import { link } from "./index.js"
 
-$("#desistencia").click(function() {
+$("#aceitar_desistencia").click(function() {
     setTimeout( () => {desistir()}, 300)
     setTimeout( () => {registrando_desistencia()}, 500)
     setTimeout( () => {limpando_desistencia()}, 800)

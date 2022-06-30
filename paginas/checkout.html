@@ -78,188 +78,158 @@
                     <a data-toggle="tab" href="#produtos">Produtos</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#desistencia">Desistência</a>
+                    <a data-toggle="tab" href="#desisto">Desistência</a>
                   </li>
 
                 </ul>
 
                 <form action="" id="formConfigurar" method="post" class="form-horizontal">
-                    <div class="widget-content nopadding tab-content">
+                  <div class="widget-content nopadding tab-content">
 
-                      <!---->
-                      <div id="opcoes" class="tab-pane fade in active">
+                    <!---->
+                    <div id="opcoes" class="tab-pane fade in active">
 
-                        <!--Porcentagem-->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <select id="modo_desconto">
-                              <option value="a" hidden>Modo</option>
-                              <option value="valor">Valor</option>
-                              <option value="porcento">Porcento</option>
-                            </select>
-                            <input type="text" id="valor_desconto" placeholder="Valor Desconto">
-                            <button type="button" class="btn btn-primary" id="aplicar_desconto">Aplicar</button>
-                          </div>
+                      <!--Porcentagem-->
+                      <div class="control-group"> 
+                        <div class="controls">
+                          <select id="modo_desconto">
+                            <option value="a" hidden>Modo</option>
+                            <option value="valor">Valor</option>
+                            <option value="porcento">Porcento</option>
+                          </select>
+                          <input type="text" id="valor_desconto" placeholder="Valor Desconto">
+                          <button type="button" class="btn btn-primary" id="aplicar_desconto">Aplicar</button>
                         </div>
-
-                        <!--Camareira-->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <select id="selecionaCamareira">
-                              <option value="" hidden>Camareira</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <!--Pagamento-->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <form id="bandeiras_cartoes">
-                              <select id="modo_pagamento">
-                                <option value="" hidden>Método de Pagamento</option>
-                                <option value="dinheiro" selected>Dinheiro</option>
-                              </select>
-                              <input type="number" min="1"id="numero_parcelas" placeholder="P/">
-                              <button type="button" class="btn btn-primary" id="confirma_parcelas">Selecionar</button>
-                            </form>
-                          </div>
-                        </div>
-
                       </div>
 
-                      <!---->
-                      <div id="detalhes" class="tab-pane fade">
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th>Descrição</th>
-                              <th>Quantidade</th>
-                              <th>Valor Unitário</th>
-                              <th>Valor Total</th>
-                            </tr>
-                          </thead>
-                          <tbody id="itensComprados"></tbody>
-                        </table>
+                      <!--Camareira-->
+                      <div class="control-group"> 
+                        <div class="controls">
+                          <select id="selecionaCamareira">
+                            <option value="" hidden>Camareira</option>
+                          </select>
+                        </div>
                       </div>
 
-                      <!---->
-                      <div id="produtos" class="tab-pane fade">
-
-                        <!--Campo Pessoas
-                        <div class="control-group"> 
-                          <div class="controls"> 
-                            <input type="text" id="pessoasProduto" placeholder="Pessoas"> 
-                          </div>
-                        </div>-->
-                        <form id="produtos_checkout">
-                          <!--Campo Código-->
-                          <div class="control-group"> 
-                            <div class="controls"> 
-                              <input type="text" id="codigo_produto" placeholder="Código"> 
-                            </div>
-                          </div>
-
-                          <!--Campo Produto-->
-                          <div class="control-group"> 
-                            <div class="controls"> 
-                              <select name="" id="lista_produto">
-                                <option value="" hidden>Produto</option>
-                              </select>
-                            </div>
-                          </div>
-
-                          <!--Campo Quantidade-->
-                          <div class="control-group"> 
-                            <div class="controls"> 
-                              <input type="text" id="quantidade_produto" placeholder="Quantidade"> 
-                            </div>
-                          </div>
-
-                          <!--Campo Descrição-->
-                          <div class="control-group"> 
-                            <div class="controls"> 
-                              <input type="text" id="descricao_produto" placeholder="Descrição" disabled> 
-                            </div>
-                          </div>
-
-                          <!--Campo Valor Unitário-->
-                          <div class="control-group"> 
-                            <div class="controls"> 
-                              <input type="text" id="valor_unitario_produto" placeholder="Valor Unitário" disabled> 
-                            </div>
-                          </div>
-
-                          <!--Campo Total-->
-                          <div class="control-group"> 
-                            <div class="controls"> 
-                              <input type="text" id="total_produto" placeholder="Total" disabled> 
-                            </div>
-                          </div>
-
-                          <!--Botões-->
-                          <div class="form-actions">
-                            <div class="span8">
-                              <div class="span9"> 
-                                <button type="button" class="button btn btn-primary" id="adicionar_produto"> 
-                                  <span class="button__icon">
-                                    <i class="fa-solid fa-floppy-disk"></i>
-                                  </span>
-                                  <span class="button__text2">Cadastrar</span>
-                                </button>
-                                <button type="button" class="button btn btn-danger" id=""> 
-                                  <span class="button__icon">
-                                    <i class="fa-solid fa-xmark"></i>
-                                  </span>
-                                  <span class="button__text2">Limpar</span>
-                                </button>   
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-
-                      </div>
-
-                      <div id="desistencia" class="tab-pane fade">
-
-                        <!--Motivo-->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <select id="modo_desconto">
-                              <option value="a" hidden>Modo</option>
-                              <option value="valor">Valor</option>
-                              <option value="porcento">Porcento</option>
+                      <!--Pagamento-->
+                      <div class="control-group"> 
+                        <div class="controls">
+                          <form id="bandeiras_cartoes">
+                            <select id="modo_pagamento">
+                              <option value="" hidden>Método de Pagamento</option>
+                              <option value="dinheiro" selected>Dinheiro</option>
                             </select>
-                            <input type="text" id="valor_desconto" placeholder="Valor Desconto">
-                            <button type="button" class="btn btn-primary" id="aplicar_desconto">Aplicar</button>
-                          </div>
+                            <input type="number" min="1"id="numero_parcelas" placeholder="P/">
+                            <button type="button" class="btn btn-primary" id="confirma_parcelas">Selecionar</button>
+                          </form>
                         </div>
-
-                        <!--Camareira-->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <select id="selecionaCamareira">
-                              <option value="" hidden>Camareira</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <!--Pagamento-->
-                        <div class="control-group"> 
-                          <div class="controls">
-                            <form id="bandeiras_cartoes">
-                              <select id="modo_pagamento">
-                                <option value="" hidden>Método de Pagamento</option>
-                                <option value="dinheiro" selected>Dinheiro</option>
-                              </select>
-                              <input type="number" min="1"id="numero_parcelas" placeholder="P/">
-                              <button type="button" class="btn btn-primary" id="confirma_parcelas">Selecionar</button>
-                            </form>
-                          </div>
-                        </div>
-
                       </div>
 
                     </div>
+
+                    <!---->
+                    <div id="detalhes" class="tab-pane fade">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Descrição</th>
+                            <th>Quantidade</th>
+                            <th>Valor Unitário</th>
+                            <th>Valor Total</th>
+                          </tr>
+                        </thead>
+                        <tbody id="itensComprados"></tbody>
+                      </table>
+                    </div>
+
+                    <!---->
+                    <div id="produtos" class="tab-pane fade">
+
+                      <!--Campo Pessoas
+                      <div class="control-group"> 
+                        <div class="controls"> 
+                          <input type="text" id="pessoasProduto" placeholder="Pessoas"> 
+                        </div>
+                      </div>-->
+                      <form id="produtos_checkout">
+                        <!--Campo Código-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="codigo_produto" placeholder="Código"> 
+                          </div>
+                        </div>
+
+                        <!--Campo Produto-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <select name="" id="lista_produto">
+                              <option value="" hidden>Produto</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!--Campo Quantidade-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="quantidade_produto" placeholder="Quantidade"> 
+                          </div>
+                        </div>
+
+                        <!--Campo Descrição-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="descricao_produto" placeholder="Descrição" disabled> 
+                          </div>
+                        </div>
+
+                        <!--Campo Valor Unitário-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="valor_unitario_produto" placeholder="Valor Unitário" disabled> 
+                          </div>
+                        </div>
+
+                        <!--Campo Total-->
+                        <div class="control-group"> 
+                          <div class="controls"> 
+                            <input type="text" id="total_produto" placeholder="Total" disabled> 
+                          </div>
+                        </div>
+
+                        <!--Botões-->
+                        <div class="form-actions">
+                          <div class="span8">
+                            <div class="span9"> 
+                              <button type="button" class="button btn btn-primary" id="adicionar_produto"> 
+                                <span class="button__icon">
+                                  <i class="fa-solid fa-floppy-disk"></i>
+                                </span>
+                                <span class="button__text2">Cadastrar</span>
+                              </button>
+                              <button type="button" class="button btn btn-danger" id=""> 
+                                <span class="button__icon">
+                                  <i class="fa-solid fa-xmark"></i>
+                                </span>
+                                <span class="button__text2">Limpar</span>
+                              </button>   
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+
+                    </div>
+
+                    <div id="desisto" class="tab-pane fade">
+
+                      <!--Motivo-->
+                      <div class="control-group"> 
+                        <div class="controls"> 
+                          <input type="text" id="mmotivo_desistencia" placeholder="Motivo da Desistência" required>
+                          <button type="button" class="btn btn-primary" id="aceitar_desistencia">OK</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
@@ -328,12 +298,6 @@
                                     <i class="fa-solid fa-check"></i>
                                   </span>
                                   <span class="button__text2">Finalizar</span>
-                                </button>
-                                <button type="button" class="button btn btn-danger" id="desistencia"> 
-                                  <span class="button__icon">
-                                    <i class="fa-solid fa-xmark"></i>
-                                  </span>
-                                  <span class="button__text2">Desistir</span>
                                 </button>
                               </td>
                             </tr>
