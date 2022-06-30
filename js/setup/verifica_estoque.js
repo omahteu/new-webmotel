@@ -10,11 +10,6 @@ async function auditoria_estoque(){
     dados.forEach(e => {
         if(e.quantidade == 0){
             alert(`O estoque do produto ${e.descricao} acabou!`)
-            $.ajax({
-                url: link[16] + e.id,
-                method: 'DELETE',
-                dataType: 'json',
-            })
         }
     });
 }
