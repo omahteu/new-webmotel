@@ -7,7 +7,7 @@ $(document).ready(function() {
 async function relatorioProdutos() {
     const resposta = await fetch(link[16])
     const dados = await resposta.json()
-    var tabela = document.getElementById('tabelaRelatorioProdutos')
+    var tabela = document.getElementById('tabelaEstoque')
     tabela.innerHTML = ''
     dados.forEach(elemento => {
         var codigo = elemento.codigo

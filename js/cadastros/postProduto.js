@@ -17,12 +17,13 @@ $("#salvarFormPostProduto").click(function() {
             categoria: categoria,
             data: dataAtual
     }
+    console.table(dados)
     $.post(link[16], dados, () => {
         alert("Produto Registrado!")
-        document.getElementById('formCadastros').reset()
+        document.getElementById('formEstoque').reset()
     })
 })
 
 $("#limparFormPostProduto").click(function() {
-    document.getElementById('formCadastros').reset()
+    document.getElementById('formEstoque').reset()
 })

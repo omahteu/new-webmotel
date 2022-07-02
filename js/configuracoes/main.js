@@ -11,7 +11,7 @@ $("#SalvarConfigEscolhaTabelaPreco").click(function() {
             data: {
                 tabela: tabela_preco_selecionada
             },
-            success: () => {
+            success: function() {
                 alert("Nova tabela selecionada!")
                 location.reload()
             }
@@ -22,54 +22,17 @@ $("#SalvarConfigEscolhaTabelaPreco").click(function() {
 })
 
 $("#SalvarConfigEscohaTempos").click(function() {
-    var option = $("#escolhe_tempo").find(":selected").text()
-    if(option == "Troca de Quarto"){
-        let tempo_troca_quarto = $("#tempo_troca_quarto").val()
-        var tempo = {
-            troca: tempo_troca_quarto,
-            desistencia: $("#tempo_desistencia").attr('placeholder'),
-            limpeza: $("#tempo_limpeza").attr('placeholder'),
-            faxina: $("#tempo_faxina").attr('placeholder'),
-            manutencao: $("#tempo_manutencao").attr('placeholder')
-        }
-    } else if(option == "Desistência"){
-        let tempo_desistencia = $("#tempo_desistencia").val()
-        var tempo = {
-            troca: $("#tempo_troca_quarto").attr('placeholder'),
-            desistencia: tempo_desistencia,
-            limpeza: $("#tempo_limpeza").attr('placeholder'),
-            faxina: $("#tempo_faxina").attr('placeholder'),
-            manutencao: $("#tempo_manutencao").attr('placeholder')
-        }
-    } else if(option == "Limpeza"){
-        let tempo_limpeza = $("#tempo_limpeza").val()
-        var tempo = {
-            troca: $("#tempo_troca_quarto").attr('placeholder'),
-            desistencia: $("#tempo_desistencia").attr('placeholder'),
-            limpeza: tempo_limpeza,
-            faxina: $("#tempo_faxina").attr('placeholder'),
-            manutencao: $("#tempo_manutencao").attr('placeholder')
-        }
-    } else if(option == "Faxina"){
-        let tempo_faxina = $("#tempo_faxina").val()
-        var tempo = {
-            troca: $("#tempo_troca_quarto").attr('placeholder'),
-            desistencia: $("#tempo_desistencia").attr('placeholder'),
-            limpeza: $("#tempo_limpeza").attr('placeholder'),
-            faxina: tempo_faxina,
-            manutencao: $("#tempo_manutencao").attr('placeholder')
-        }
-    } else if(option == "Manutenção"){
-        let tempo_manutencao = $("#tempo_manutencao").val()
-        var tempo = {
-            troca: $("#tempo_troca_quarto").attr('placeholder'),
-            desistencia: $("#tempo_desistencia").attr('placeholder'),
-            limpeza: $("#tempo_limpeza").attr('placeholder'),
-            faxina: $("#tempo_faxina").attr('placeholder'),
-            manutencao: tempo_manutencao
-        }
-    } else {
-        console.log("Passa")
+    let tempo_troca_quarto = $("#tempo_troca_quarto").val()
+    let tempo_desistencia = $("#tempo_desistencia").attr('placeholder')
+    let tempo_limpeza = $("#tempo_limpeza").attr('placeholder')
+    let tempo_faxina = $("#tempo_faxina").attr('placeholder')
+    let tempo_manutencao = $("#tempo_manutencao").attr('placeholder')
+    var dados = {
+        troca: tempo_troca_quarto == "" || isNaN(tempo_troca_quarto) == true ? $("#tempo_troca_quarto").attr('placeholder') : tempo_troca_quarto,
+        desistencia: tempo_desistencia == "" || isNaN(tempo_desistencia) == true ? $("#tempo_desistencia").attr('placeholder') : tempo_desistencia,
+        limpeza: tempo_limpeza == "" || isNaN(tempo_limpeza) == true ? $("#tempo_limpeza").attr('placeholder') : tempo_limpeza,
+        faxina: tempo_faxina == "" || isNaN(tempo_faxina) == true ? $("#tempo_faxina").attr('placeholder') : tempo_faxina,
+        manutencao: tempo_manutencao == "" || isNaN(tempo_manutencao) == true ? $("#tempo_manutencao").attr('placeholder') : tempo_manutencao,
     }
     var confirmacao = confirm(`Confirme para atualizar a tabela de tempo!`)
     if(confirmacao == true){
@@ -77,8 +40,8 @@ $("#SalvarConfigEscohaTempos").click(function() {
             url: link[19],
             type: 'PUT',
             dataType: 'json',
-            data: tempo,
-            success: () => {
+            data: dados,
+            success: function() {
                 alert("Atalizado!")
                 location.reload()
             }
@@ -105,23 +68,23 @@ $("#SalvarConfigValores").click(function() {
     var valor5hora = $("#v5hQuarto").val()
     var valor6hora = $("#v6hQuarto").val()
     var dados = {
-        horas_locacao: horasLocacao == "" ? $("#quantidadeHorasLocacaoQuarto").attr('placeholder') : horasLocacao,
-        valor_locacao: valorLocacao == "" ? $("#valorLocacaoQuarto").attr('placeholder') : valorLocacao,
-        tempo_especial: tempoEspecial == "" ? $("#tempoEspecialQuarto").attr('placeholder') : tempoEspecial,
-        valor_especial: valorEspecial == "" ? $("#valorEspecialQuarto").attr('placeholder') : valorEspecial,
-        horas_diaria: horasDiarias == "" ? $("#quantidadeHorasDiariasQuarto").attr('placeholder') : horasDiarias,
-        valor_diaria: valorDiaria == "" ? $("#valorDiariaQuarto").attr('placeholder') : valorDiaria,
-        tempo_adicional: tempoAdicional == "" ? $("#tempoAdicionalQuarto").attr('placeholder') : tempoAdicional,
-        valor_adicional: valorHoraAdicional == "" ? $("#valorHoraAdicionalQuarto").attr('placeholder') : valorHoraAdicional,
-        tolerancia: tolerancia == "" ? $("#toleranciaQuarto").attr('placeholder') : tolerancia,
-        vh1: valor1hora == "" ? $("#v1hQuarto").attr('placeholder') : valor1hora,
-        vh2: valor2hora == "" ? $("#v2hQuarto").attr('placeholder') : valor2hora,
-        vh3: valor3hora == "" ? $("#v3hQuarto").attr('placeholder') : valor3hora,
-        vh4: valor4hora == "" ? $("#v4hQuarto").attr('placeholder') : valor4hora,
-        vh5: valor5hora == "" ? $("#v5hQuarto").attr('placeholder') : valor5hora,
-        vh6: valor6hora == "" ? $("#v6hQuarto").attr('placeholder') : valor6hora,
+        horas_locacao: horasLocacao == "" || isNaN(horasLocacao) == true ? $("#quantidadeHorasLocacaoQuarto").attr('placeholder') : horasLocacao,
+        valor_locacao: valorLocacao == "" || isNaN(valorLocacao) == true ? $("#valorLocacaoQuarto").attr('placeholder') : valorLocacao,
+        tempo_especial: tempoEspecial == "" || isNaN(tempoEspecial) == true ? $("#tempoEspecialQuarto").attr('placeholder') : tempoEspecial,
+        valor_especial: valorEspecial == "" || isNaN(valorEspecial) == true ? $("#valorEspecialQuarto").attr('placeholder') : valorEspecial,
+        horas_diaria: horasDiarias == "" || isNaN(horasDiarias) == true ? $("#quantidadeHorasDiariasQuarto").attr('placeholder') : horasDiarias,
+        valor_diaria: valorDiaria == "" || isNaN(valorDiaria) == true ? $("#valorDiariaQuarto").attr('placeholder') : valorDiaria,
+        tempo_adicional: tempoAdicional == "" || isNaN(tempoAdicional) == true ? $("#tempoAdicionalQuarto").attr('placeholder') : tempoAdicional,
+        valor_adicional: valorHoraAdicional == "" || isNaN(valorHoraAdicional) == true ? $("#valorHoraAdicionalQuarto").attr('placeholder') : valorHoraAdicional,
+        tolerancia: tolerancia == "" || isNaN(tolerancia) == true ? $("#toleranciaQuarto").attr('placeholder') : tolerancia,
+        vh1: valor1hora == "" || isNaN(valor1hora) == true ? $("#v1hQuarto").attr('placeholder') : valor1hora,
+        vh2: valor2hora == "" || isNaN(valor2hora) == true ? $("#v2hQuarto").attr('placeholder') : valor2hora,
+        vh3: valor3hora == "" || isNaN(valor3hora) == true ? $("#v3hQuarto").attr('placeholder') : valor3hora,
+        vh4: valor4hora == "" || isNaN(valor4hora) == true ? $("#v4hQuarto").attr('placeholder') : valor4hora,
+        vh5: valor5hora == "" || isNaN(valor5hora) == true ? $("#v5hQuarto").attr('placeholder') : valor5hora,
+        vh6: valor6hora == "" || isNaN(valor6hora) == true ? $("#v6hQuarto").attr('placeholder') : valor6hora,
     }
-    $.post(link[21], dados, () => {
+    $.post(link[21], dados, function() {
         alert("Quarto Registrado!")
         document.getElementById('formCadastros').reset()
     })
