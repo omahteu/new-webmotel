@@ -1,4 +1,4 @@
-import { hora_atual } from "../geradores/gera_hora.js"
+import { hora_atual } from "../geradores/hora.js"
 
 export function limpeza(q, t, x, y, z) {
 
