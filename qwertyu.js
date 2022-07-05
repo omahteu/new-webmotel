@@ -1,11 +1,8 @@
-import { minuto_para_segundo } from "./js/conversores/minutos_segundos.js"
+import { jsPDF } from "./paginas/relatorios.js"
 
-$(document).ready(function(){
-    var minutos = 60
-    var segundos = minutos ** 3
+$("#peQuartos").click(function(){
+    const doc = new jsPDF()
 
-    var x1 = 2
-    var x2 = x1 * 60
-    var x3 = x2 * 1000
-    console.log(x3)
+    doc.text("Hello world!", 10, 10)
+    doc.save("a4.pdf")
 })
