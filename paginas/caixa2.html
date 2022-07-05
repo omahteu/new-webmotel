@@ -55,6 +55,48 @@
                   </span>
                   <h5>Menu Caixa</h5>
                 </div>
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a data-toggle="tab" href="#sangria">Sangria</a>
+                  </li>
+                </ul>
+
+                <form class="form-horizontal" id="formCadastros">
+                  <div class="widget-content nopadding tab-content">
+
+                    <!--Sangria-->
+                    <div id="sangria" class="tab-pane fade in active">
+
+                      <!--Campo Código-->
+                      <div class="control-group" name=""> 
+                        <div class="controls"> 
+                          <h3>Valor em Caixa: R$ <span id="valor_emcaixa">0</span></h3>
+                        </div>
+                      </div>
+
+                      <!--Campo retirada-->
+                      <div class="control-group" name=""> 
+                        <div class="controls"> 
+                          <input type="text" id="retirada" placeholder="Valor Retirado"> 
+                        </div>
+                      </div>
+
+                      <!--Botões-->
+                      <div class="form-actions" name="">
+                        <div class="span8">
+                          <div class="span9"> 
+                            <button type="button" class="button btn btn-primary" id=""> 
+                              <span class="button__icon">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                              </span>
+                              <span class="button__text2">Retirar</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
