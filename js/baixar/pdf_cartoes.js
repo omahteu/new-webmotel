@@ -1,46 +1,67 @@
 import { link } from "../setup/index.js"
 
 $("#peCartoes").click(function(){
-    $.get(link[9], function(e){
-        e.forEach(element => {
-            var janela = window.open()
-            janela.document.write(
-                "<html>"+
-                    "<head>"+
-                        "<title>Relatório de Produtos | PDF</title>"+
-                    "</head>"+
-                    "<body>"+
-                        "<table border='1'>"+
-                            "<thead>"+
-                                "<tr>"+
-                                    "<th>Usuário</th>"+
-                                    "<th>Senha</th>"+
-                                    "<th>Smtp</th>"+
-                                    "<th>Porta</th>"+
-                                    "<th>Timeout</th>"+
-                                    "<th>Email Destino</th>"+
-                                    "<th>Email Contabilidade</th>"+
-                                    "<th>Autênticacao</th>"+
-                                "</tr>"+
-                            "</thead>"+
-                            "<tbody"+
-                                '<tr>'+
-                                    '<td>' + element.usuario + '</td>'+
-                                    '<td>' + element.senha + '</td>'+
-                                    '<td>' + element.smtp + '</td>'+
-                                    '<td>' + element.porta + '</td>'+
-                                    '<td>' + element.timeout + '</td>'+
-                                    '<td>' + element.email_destino + '</td>'+
-                                    '<td>' + element.email_contabilidade + '</td>'+  
-                                    '<td>' + element.autenticacao + '</td>'+          
-                                '</tr>'+
-                            "</tbody"+
-                        "</table>"+
-                    "</body>"+
-                "</html>"
-            )
-            janela.document.close()
-            janela.print()
+
+
+    var jan = window.open()
+    janela.document.write(
+        "<html>"+
+            "<head>"+
+                "<title>Relatório de Produtos | PDF</title>"+
+            "</head>"+
+            "<body>"+
+                "<table border='1'>"+
+                    "<thead>"+
+                        "<tr>"+
+                            "<th>bandeira</th>"+
+                            "<th>porcentagem</th>"+
+                        "</tr>"+
+                    "</thead>"+
+                    "<tbody id='pdf_rel_cartoes'>"+
+                    "</tbody>"+
+                "</table>"+
+            "</body>"+
+        "</html>"
+    )
+    jan.innerHTML = tab
+    //rel_pdf_credito()
+})
+
+function rel_pdf_credito(){
+    /*
+    var janela = window.open()
+    janela.document.write(
+        "<html>"+
+            "<head>"+
+                "<title>Relatório de Produtos | PDF</title>"+
+            "</head>"+
+            "<body>"+
+                "<table border='1'>"+
+                    "<thead>"+
+                        "<tr>"+
+                            "<th>bandeira</th>"+
+                            "<th>porcentagem</th>"+
+                        "</tr>"+
+                    "</thead>"+
+                    "<tbody id='pdf_rel_cartoes'>"+
+                    "</tbody>"+
+                "</table>"+
+            "</body>"+
+        "</html>"
+    )
+    */
+
+    $.get(link[4], function(){
+        var lista = document.getElementById("pdf_rel_cartoes")
+        lista.innerHTML = ''
+        dados.forEach(e => {
+            console.log(e)
+            lista.innerHTML += '<tr>'+
+                                    '<td>' + e.bandeira + '</td>'+
+                                    '<td>' + e.porcentagem + '</td>'+        
+                                '</tr>'
         });
     })
-})
+
+
+}

@@ -1,8 +1,27 @@
-import { jsPDF } from "./paginas/relatorios.js"
+$(document).ready(function(){
+    var ds = das()
+    console.log(qw)
 
-$("#peQuartos").click(function(){
-    const doc = new jsPDF()
+    var po = window.open()
+    for(var i = 0; i < qw.length; i++){
+        po.document.write(
+            `<h1>${qw[i]}</h1>`
+        )
+    }
 
-    doc.text("Hello world!", 10, 10)
-    doc.save("a4.pdf")
 })
+
+var qw = []
+
+function das(){
+    $.get("https://demomotelapi.herokuapp.com/credito/", function(e){
+        e.forEach(element => {
+            qw.push(element)
+        });
+    })
+    $.get("https://demomotelapi.herokuapp.com/debito/", function(el){
+        el.forEach(ele => {
+            qw.push(ele)
+        })
+    })
+}
