@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../css/css.css">
   <link rel="stylesheet" href="../css/css2.css">
   <link rel="stylesheet" href="../css/boxicons.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 
 <body>
@@ -374,7 +374,7 @@
     <script src="../js/estilo/datatables.min.js"></script>
     <script src="../js/estilo/sweetalert.min.js"></script>
     <script src="../js/estilo/bootstrap.min.js"></script>
-    <script src="../js/estilo/matrix.js"></script>
+    
     <script src="../js/estilo/nomes.js"></script>
 
     <script src="../js/setup/blockRelatoriosCaixa.js"></script>
@@ -406,5 +406,22 @@
     <script type="module" src="../js/baixar/pdf_camareiras.js"></script>
     <script type="module" src="../js/baixar/pdf_ocupacoes.js"></script>
     <script type="module" src="../js/baixar/pdf_cartoes.js"></script>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#peQuartos").click(function(e){
+          e.preventDefault()
+          var divTabela = document.getElementById("quartos")
+          var dados = new Blob(['\ufeff' + divTabela.outerHTML], {type:'application/vnd.ms-excel'})
+          var url = window.URL.createObjectURL(dados)
+          var a = document.createElement('a')
+          a.href = url
+          a.download = "relatorios"
+          a.click()
+        })
+      })
+    </script>
     
 </html>
