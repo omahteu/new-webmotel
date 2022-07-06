@@ -29,16 +29,6 @@ $(document).ready(function(){
 
 })
 
-function exportReportToExcel() {
-    let table = document.getElementsByID("relCartoes");
-    TableToExcel.convert(table[0], { 
-      name: `file.xlsx`,
-      sheet: {
-        name: 'Sheet 1'
-      }
-    });
-    console.log('doc criado')
-}
 
 var qw = []
 
