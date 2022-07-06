@@ -74,25 +74,9 @@
                       </a>
                     </li>
                     <li style="width: 200px;">
-                      <a id="peQuartos">
+                      <a id="peQuartosx">
                         <i class="fa-regular fa-file-excel"></i>
                         <small>Todos os Quartos - EXCEL</small>
-                      </a>
-                    </li>
-                  </ul>
-
-                  <!-- PE Produtos -->
-                  <ul style="flex-direction: row;" class="site-stats">
-                    <li style="width: 200px;">
-                      <a id="peProdutos">
-                        <i class="fa-regular fa-file-pdf"></i>
-                        <small>Todos os Produtos - PDF</small>
-                      </a>
-                    </li>
-                    <li style="width: 200px;">
-                      <a id="peProdutos">
-                        <i class="fa-regular fa-file-excel"></i>
-                        <small>Todos os Produtos - EXCEL</small>
                       </a>
                     </li>
                   </ul>
@@ -106,7 +90,7 @@
                       </a>
                     </li>
                     <li style="width: 200px;">
-                      <a id="peIgs">
+                      <a id="peIgsx">
                         <i class="fa-regular fa-file-excel"></i>
                         <small>Todos os IGS - EXCEL</small>
                       </a>
@@ -122,7 +106,7 @@
                       </a>
                     </li>
                     <li style="width: 200px;">
-                      <a id="peemails">
+                      <a id="peemailsx">
                         <i class="fa-regular fa-file-excel"></i>
                         <small>Todos os Emails - EXCEL</small>
                       </a>
@@ -138,7 +122,7 @@
                       </a>
                     </li>
                     <li style="width: 200px;">
-                      <a id="peCamareiras">
+                      <a id="peCamareirasx">
                         <i class="fa-regular fa-file-excel"></i>
                         <small>Todos as Camareiras - EXCEL</small>
                       </a>
@@ -154,7 +138,7 @@
                       </a>
                     </li>
                     <li style="width: 200px;">
-                      <a id="peOcupacoes">
+                      <a id="peOcupacoesx">
                         <i class="fa-regular fa-file-excel"></i>
                         <small>Todas as Ocupações - EXCEL</small>
                       </a>
@@ -170,7 +154,7 @@
                       </a>
                     </li>
                     <li style="width: 200px;">
-                      <a id="peCartoes">
+                      <a id="peCartoesx">
                         <i class="fa-regular fa-file-excel"></i>
                         <small>Todos os Cartões - EXCEL</small>
                       </a>
@@ -190,9 +174,6 @@
 
                 <ul class="nav nav-tabs">
                   <li class="active">
-                    <a data-toggle="tab" href="#produtos">Produtos</a>
-                  </li>
-                  <li>
                     <a data-toggle="tab" href="#quartos">Quartos</a>
                   </li>
                   <li>
@@ -218,25 +199,8 @@
                 <form action="" id="formConfigurar" method="post" class="form-horizontal">
                   <div class="widget-content nopadding tab-content">
 
-                    <!-- Relatório de Produtos -->
-                    <div id="produtos" class="tab-pane fade in active">
-                      <table id="" class="table table-bordered  dataTable no-footer" role="grid">
-                        <thead>
-                          <tr role="row">
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Código</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Descrição</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Valor Unitário</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Estoque</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Categoria</th>
-                            <th class="sorting_disabled" rowspan="1" colspan="1">Compra</th>
-                          </tr>
-                        </thead>
-                        <tbody id="tabelaRelatorioProdutos"></tbody>
-                      </table>
-                    </div>
-
                     <!-- Relatório de Quartos -->
-                    <div id="quartos" class="tab-pane fade">
+                    <div id="quartos" class="tab-pane fade in active">
                       <table id="relQuartos" class="table table-bordered  dataTable no-footer" role="grid">
                         <thead>
                           <tr role="row">
@@ -400,28 +364,17 @@
     <script type="module" src="../js/cadastros/postAuditoria.js"></script>
 
     <script type="module" src="../js/baixar/pdf_quartos.js"></script>
-    <script type="module" src="../js/baixar/pdf_produtos.js"></script>
     <script type="module" src="../js/baixar/pdf_igs.js"></script>
     <script type="module" src="../js/baixar/pdf_emails.js"></script>
     <script type="module" src="../js/baixar/pdf_camareiras.js"></script>
     <script type="module" src="../js/baixar/pdf_ocupacoes.js"></script>
     <script type="module" src="../js/baixar/pdf_cartoes.js"></script>
 
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("#peQuartos").click(function(e){
-          e.preventDefault()
-          var divTabela = document.getElementById("quartos")
-          var dados = new Blob(['\ufeff' + divTabela.outerHTML], {type:'application/vnd.ms-excel'})
-          var url = window.URL.createObjectURL(dados)
-          var a = document.createElement('a')
-          a.href = url
-          a.download = "relatorios"
-          a.click()
-        })
-      })
-    </script>
+    <script src="../js/baixar/excel_quartos.js"></script>
+    <script src="../js/baixar/excel_igs.js"></script>
+    <script src="../js/baixar/excel_emails.js"></script>
+    <script src="../js/baixar/excel_camareiras.js"></script>
+    <script src="../js/baixar/excel_ocupacoes.js"></script>
+    <script src="../js/baixar/excel_cartoes.js"></script>
     
 </html>
