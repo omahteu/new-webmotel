@@ -1,56 +1,15 @@
 $(document).ready(function(){
-    /*
-    das()
-    console.log(qw)
-
-    setTimeout( () => {
-        var po = window.open()
-        po.document.write(
-            '<html>'+
-                '<body>'
-        )
+    var patch = {
+        "quantidade" : "50"
+    }
     
-        po.document.write(
-            `<h1>${qw[0]}</h1>`
-        )
-        po.document.write(
-                '</body>'+
-            '</html>'
-        )
-    }, 2000)
-    */
-
+    $.ajax({
+       type: 'PATCH',
+       url: "https://demomotelapi.herokuapp.com/produtos/",
+       data: JSON.stringify(patch),
+       processData: false,
+       contentType: 'application/merge-patch+json',
     
-    setTimeout( function(){
-        exportReportToExcel()
-    }, 2000)
-
-
-
-})
-
-function exportReportToExcel() {
-    let table = document.getElementsByID("relCartoes");
-    TableToExcel.convert(table[0], { 
-      name: `file.xlsx`,
-      sheet: {
-        name: 'Sheet 1'
-      }
+       /* success and error handling omitted for brevity */
     });
-    console.log('doc criado')
-}
-
-var qw = []
-
-function das(){
-    $.get("https://demomotelapi.herokuapp.com/credito/", function(e){
-        e.forEach(element => {
-            qw.push(element)
-        });
-    })
-    $.get("https://demomotelapi.herokuapp.com/debito/", function(el){
-        el.forEach(ele => {
-            qw.push(ele)
-        })
-    })
-}
+})

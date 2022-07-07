@@ -1,3 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <input type="button" value="Download PDF File" onclick="DownloadFile('Sample.pdf')" />
+    
+    <script type="text/javascript">
+        function DownloadFile(fileName) {
+            //Set the File URL.
+            var url = "Files/" + fileName;
+
+            //Create XMLHTTP Request.
+            var req = new XMLHttpRequest();
+            req.open("GET", url, true);
+            req.responseType = "blob";
+            req.onload = function () {
+                //Convert the Byte Data to BLOB object.
+                var blob = new Blob([req.response], { type: "application/octetstream" });
+
+                //Check the Browser type and download the File.
+                var isIE = false || !!document.documentMode;
+                if (isIE) {
+                    window.navigator.msSaveBlob(blob, fileName);
+                } else {
+                    var url = window.URL || window.webkitURL;
+                    link = url.createObjectURL(blob);
+                    var a = document.createElement("a");
+                    a.setAttribute("download", fileName);
+                    a.setAttribute("href", link);
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+            };
+            req.send();
+        };
+    </script>
+</body>
+
+</html>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -57,7 +102,7 @@
                 </div>
                 <ul class="nav nav-tabs">
                   <li class="active">
-                    <a data-toggle="tab" href="#cadastros">Movimentação de Estoque</a>
+                    <a data-toggle="tab" href="#cadastros">Adicionar Produto</a>
                   </li>
                   <li>
                     <a data-toggle="tab" href="#relatorios">Lista de Produtos</a>
@@ -69,68 +114,56 @@
                     <!-- Produtos -->
                     <div id="cadastros" class="tab-pane fade in active">
 
-
-
-                      <!--Código-->
+                      <!--Campo Código-->
                       <div class="control-group" name="codProdutos"> 
                         <div class="controls"> 
                           <input type="text" id="codigoProduto" placeholder="Código"> 
                         </div>
                       </div>
 
+                      <!--Campo Descrição-->
                       <div class="control-group" name="codProdutos"> 
                         <div class="controls"> 
-                          <h5 class="texto_produto" id="descricaoProduto"></h5>
+                          <input type="text" id="descricaoProduto" placeholder="Descrição"> 
                         </div>
                       </div>
 
-
+                      <!--Campo Valor Unitário-->
                       <div class="control-group" name="codProdutos"> 
                         <div class="controls"> 
-                          <h5 class="texto_produto" id="valorUnitarioProduto"></h5>
+                          <input type="text" id="valorUnitarioProduto" placeholder="Valor Unitário"> 
                         </div>
                       </div>
 
-                      <div class="control-group" name="codProdutos"> 
-                        <div class="controls"> 
-                          <h5 class="texto_produto" id="categoriaProduto"></h5>
-                        </div>
-                      </div>
-
-                      <!--Ação-->
-                      <div class="control-group" name="codProdutos"> 
-                        <div class="controls"> 
-                          <select name="" id="acao_movimentacao">
-                            <option value="" hidden>Ação</option>
-                            <option value="entrada">Entrada</option>
-                            <option value="saida">Saída</option>
-                          </select>
-                        </div>
-                      </div>
-
+                      <!--Campo Quantidade-->
                       <div class="control-group" name="codProdutos"> 
                         <div class="controls"> 
                           <input type="text" id="quantidadeProduto" placeholder="Quantidade"> 
                         </div>
                       </div>
 
-
+                      <!--Campo Categoria-->
+                      <div class="control-group" name="codProdutos"> 
+                        <div class="controls"> 
+                          <input type="text" id="categoriaProduto" placeholder="Categoria"> 
+                        </div>
+                      </div>
 
                       <!--Botões-->
                       <div class="form-actions" name="codProdutos">
                         <div class="span8">
                           <div class="span9"> 
-                            <button type="button" class="button btn btn-primary" id="BuscaInfoProduto"> 
+                            <button type="button" class="button btn btn-primary" id="salvarFormPostProduto"> 
                               <span class="button__icon">
                                 <i class="fa-solid fa-floppy-disk"></i>
                               </span>
-                              <span class="button__text2">Buscar</span>
+                              <span class="button__text2">Cadastrar</span>
                             </button>
-                            <button type="button" class="button btn btn-warning" id="SalvarMovimentoEstoque"> 
+                            <button type="button" class="button btn btn-danger" id="limparFormPostProduto"> 
                               <span class="button__icon">
                                 <i class="fa-solid fa-xmark"></i>
                               </span>
-                              <span class="button__text2">Salvar</span>
+                              <span class="button__text2">Limpar</span>
                             </button>   
                           </div>
                         </div>
@@ -162,9 +195,6 @@
       </div>
     </div>
   </div>
-  <span id="idx"></span>
-  <span id="datax"></span>
-  <span id="quantidadex"></span>
 </body>
   <script src="../js/jquery.js"></script>
 
@@ -185,10 +215,5 @@
   <script type="module" src="../js/contadores/auditoria.js"></script>
 
   <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
-
-  <script src="../js/estoque/busca.js"></script>
-  <script type="module" src="../js/estoque/movimentacao.js"></script>
-
-
   
 </html>

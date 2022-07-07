@@ -4382,3 +4382,16 @@ fieldset[disabled] .btn-info.active {
 #mmotivo_desistencia {
   width: 500px;
 }
+
+#acao_movimentacao,
+#quantidadeProduto,
+#SalvarMovimentoEstoque,
+#idx,
+#datax,
+#quantidadex {
+  display: none;
+}
+
+.texto_produto {
+  margin-left: -125px;
+}
