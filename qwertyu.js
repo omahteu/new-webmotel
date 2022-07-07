@@ -19,14 +19,9 @@ $(document).ready(function(){
         )
     }, 2000)
     */
-
-    
     setTimeout( function(){
         exportReportToExcel()
     }, 2000)
-
-
-
 })
 
 
