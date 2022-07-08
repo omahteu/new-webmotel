@@ -11,6 +11,7 @@ $("#SalvarMovimentoEstoque").click(function(){
         var quantidade_base = $("#quantidadex").text()
         let quantidade_atualizada = parseInt(quantidade_movimento) + parseInt(quantidade_base)
         let cod = $("#codigoProduto").text()
+        let nome = $("#usuario_sistema").text()
         let desc = $("#descricaoProduto").text()
         let vun = $("#valorUnitarioProduto").text()
         let cat = $("#categoriaProduto").text()
@@ -29,7 +30,7 @@ $("#SalvarMovimentoEstoque").click(function(){
             },
             success: () => {
                 alert("Entrada Registrada!")
-                registro_movimento(dat, cod, escolha_movimento, quantidade_atualizada)
+                registro_movimento(dat,nome, cod, escolha_movimento, quantidade_movimento)
                 setTimeout( () => {
                     location.reload()
                 }, 1000)
@@ -39,22 +40,28 @@ $("#SalvarMovimentoEstoque").click(function(){
     } else if(escolha_movimento == "saida"){
         let id = $("#idx").text()
         var quantidade_base = $("#quantidadex").text()
-        let quantidade_atualizada = parseInt(quantidade_base) - parseInt(quantidade_movimento) 
+        let quantidade_atualizada = parseInt(quantidade_base) - parseInt(quantidade_movimento)
+        let cod = $("#codigoProduto").text()
+        let nome = $("#usuario_sistema").text()
+        let desc = $("#descricaoProduto").text()
+        let vun = $("#valorUnitarioProduto").text()
+        let cat = $("#categoriaProduto").text()
+        let dat = $("#datax").text()
         $.ajax({
             url: link[16] + id + "/",
             type: "PUT",
             dataType: "json",
             data: {
-                codigo: $("#codigoProduto").text(),
-                descricao: $("#descricaoProduto").text(),
-                valorunitario: $("#valorUnitarioProduto").text(),
+                codigo: cod,
+                descricao: desc,
+                valorunitario: vun,
                 quantidade: quantidade_atualizada,
-                categoria: $("#categoriaProduto").text(),
-                data: $("#datax").text()
+                categoria: cat,
+                data: dat
             },
             success: () => {
                 alert("Saída Registrada!")
-                registro_movimento(dat, cod, escolha_movimento, quantidade_atualizada)
+                registro_movimento(dat, nome, cod, escolha_movimento, quantidade_movimento)
                 setTimeout( () => {
                     location.reload()
                 }, 1000)

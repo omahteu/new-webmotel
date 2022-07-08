@@ -1,6 +1,7 @@
-export function registro_movimento(data, codigo, tipo, quantidade){ 
+export function registro_movimento(data, nome, codigo, tipo, quantidade){ 
     var dados = {
         data: data,
+        nome: nome,
         codigo: codigo,
         tipo: tipo,
         quantidade: quantidade
