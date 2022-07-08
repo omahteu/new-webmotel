@@ -10,22 +10,29 @@ $("#SalvarMovimentoEstoque").click(function(){
         let id = $("#idx").text()
         var quantidade_base = $("#quantidadex").text()
         let quantidade_atualizada = parseInt(quantidade_movimento) + parseInt(quantidade_base)
+        let cod = $("#codigoProduto").text()
+        let desc = $("#descricaoProduto").text()
+        let vun = $("#valorUnitarioProduto").text()
+        let cat = $("#categoriaProduto").text()
+        let dat = $("#datax").text()
         $.ajax({
             url: link[16] + id + "/",
             type: "PUT",
             dataType: "json",
             data: {
-                codigo: $("#codigoProduto").text(),
-                descricao: $("#descricaoProduto").text(),
-                valorunitario: $("#valorUnitarioProduto").text(),
+                codigo: cod,
+                descricao: desc,
+                valorunitario: vun,
                 quantidade: quantidade_atualizada,
-                categoria: $("#categoriaProduto").text(),
-                data: $("#datax").text()
+                categoria: cat,
+                data: dat
             },
             success: () => {
                 alert("Entrada Registrada!")
-                location.reload()
-                registro_movimento()
+                registro_movimento(dat, cod, escolha_movimento, quantidade_atualizada)
+                setTimeout( () => {
+                    location.reload()
+                }, 1000)
             }
         })
         
@@ -47,9 +54,11 @@ $("#SalvarMovimentoEstoque").click(function(){
             },
             success: () => {
                 alert("Saída Registrada!")
-                location.reload()
+                registro_movimento(dat, cod, escolha_movimento, quantidade_atualizada)
+                setTimeout( () => {
+                    location.reload()
+                }, 1000)
             }
         })
     }
 })
-
