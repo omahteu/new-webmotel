@@ -3820,10 +3820,11 @@ form {
   .fc .fc-daygrid-day-top {
     font-size: 15px;
   }
-
+/*
   .form-horizontal .controls {
     margin-left: 0 !important;
   }
+*/
 
   .dropdown-menu>li>a {
     padding  : 5px 13px;
