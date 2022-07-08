@@ -1,4 +1,4 @@
-import { minuto_para_segundo } from "../conversores/minutos_segundos.js"
+import { minuto_para_segundo } from "../conversores/minutos_milisegundos.js"
 
 $(".locado").click(function() {
     $.get("https://demomotelapi.herokuapp.com/tempos/", function(e){
