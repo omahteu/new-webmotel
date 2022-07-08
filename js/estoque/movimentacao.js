@@ -1,4 +1,5 @@
 import { link } from "../setup/index.js"
+import { registro_movimento } from "../cadastros/postMovimentos.js"
 
 $("#SalvarMovimentoEstoque").click(function(){
     var escolha_movimento = $("#acao_movimentacao").val()
@@ -24,6 +25,7 @@ $("#SalvarMovimentoEstoque").click(function(){
             success: () => {
                 alert("Entrada Registrada!")
                 location.reload()
+                registro_movimento()
             }
         })
         
@@ -50,3 +52,4 @@ $("#SalvarMovimentoEstoque").click(function(){
         })
     }
 })
+
