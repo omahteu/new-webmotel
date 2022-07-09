@@ -6,7 +6,7 @@ $(document).ready(function() {
         resultado.forEach(function(item){
             var estoque = item.quantidade
             var permis = localStorage.getItem("prod")
-            if(permis == "não"){
+            if(permis == "nao"){
                 if(estoque.length != 0){
                     $('#checkbox_produto').append('<option>' + item.descricao + '</option>');
                 }

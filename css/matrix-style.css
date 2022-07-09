@@ -2884,12 +2884,12 @@ form {
   padding-top: 15px;
   width      : 180px;
 }
-
+/*
 .form-horizontal .controls {
   margin-left: 200px;
   padding    : 10px 0;
 }
-
+*/
 .row-fluid .span20 {
   width: 97.8%;
 }
@@ -4041,12 +4041,13 @@ form {
   #userr .userT {
     font-size: 1.13em;
   }
-
+  /*
   .cardHeader {
     font-size    : 1.45em;
     padding      : 5px 0 0 15px;
     margin-bottom: 0;
   }
+  */
 
   input[type="number"] {
     margin-top: -2px !important;
