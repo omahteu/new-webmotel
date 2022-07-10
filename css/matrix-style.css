@@ -2873,7 +2873,8 @@ form {
 .form-horizontal .control-group {
   border-top   : 1px solid #ffffff;
   border-bottom: 1px solid #eeeeee;
-  margin-bottom: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .form-horizontal .control-group:last-child {
