@@ -4041,13 +4041,13 @@ form {
   #userr .userT {
     font-size: 1.13em;
   }
-  /*
+  
   .cardHeader {
     font-size    : 1.45em;
     padding      : 5px 0 0 15px;
     margin-bottom: 0;
   }
-  */
+  
 
   input[type="number"] {
     margin-top: -2px !important;

@@ -13,5 +13,10 @@
     .new-bottons {
         grid-template-columns: repeat(2, 2fr);
         padding              : 5px 0px;
-      }
+    }
+
+    #campo_produtos {
+        margin-left: 130px;
+        margin-bottom: 10px;
+    }
 }
