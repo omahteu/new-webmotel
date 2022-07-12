@@ -51,22 +51,40 @@
                 </div>
                 <ul class="nav nav-tabs">
                   <li class="active">
-                    <a data-toggle="tab" href="#">Conferência</a>
+                    <a data-toggle="tab" href="#conferencia">Conferência</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#">Encerramento de Conta</a>
+                    <a data-toggle="tab" href="#encerramento">Encerramento de Conta</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#">Início de Limpeza</a>
+                    <a data-toggle="tab" href="#ilimpeza">Início de Limpeza</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#">Pagamentos</a>
+                    <a data-toggle="tab" href="#pagamentos">Pagamentos</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#">Limpeza</a>
+                    <a data-toggle="tab" href="#limpeza">Limpeza</a>
                   </li>
                   <li>
                     <a data-toggle="tab" href="#">Faxina</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#">Manutenção</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#">Locações</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#">Revisões</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#">Troca de Quartos</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#">Desistências</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#">Produtos</a>
                   </li>
                 </ul>
 
@@ -74,99 +92,178 @@
                   <div class="widget-content nopadding tab-content">
 
                     <!---->
-                    <div id="" class="tab-pane fade in active">
+                    <div id="conferencia" class="tab-pane fade in active">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Tipo</th>
+                            <th>Bandeira</th>
+                            <th>Porcentagem</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
+                    </div>
 
-                      <!--Campo Código-->
-                      <div class="control-group" name=""> 
-                        <div class="controls"> 
-                          <h3>Valor em Caixa: R$ <span id="valor_emcaixa">0</span></h3>
-                        </div>
-                      </div>
+                    <!--ENCERRAMENTO-->
+                    <div id="encerramento" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Caixa</th>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Tempo</th>
+                          </tr>
+                        </thead>
+                        <tbody id=""></tbody>
+                      </table>
+                    </div>
 
-                      <!--Campo retirada-->
-                      <div class="control-group" name=""> 
-                        <div class="controls"> 
-                          <input type="text" id="retirada" placeholder="Valor Retirado"> 
-                        </div>
-                      </div>
+                    <!--I. LIMPEZA-->
+                    <div id="ilimpeza" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Caixa</th>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Quarto</th>
+                            <th>Tempo</th>
+                          </tr>
+                        </thead>
+                        <tbody id=""></tbody>
+                      </table>
+                    </div>
 
-                      <!--Botões-->
-                      <div class="form-actions" name="">
-                        <div class="span8">
-                          <div class="span9"> 
-                            <button type="button" class="button btn btn-primary" id=""> 
-                              <span class="button__icon">
-                                <i class="fa-solid fa-floppy-disk"></i>
-                              </span>
-                              <span class="button__text2">Retirar</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
+                    <!--PAGAMENTOS-->
+                    <div id="pagamentos" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Caixa</th>
+                            <th>Data</th>
+                            <th>Cartão</th>
+                            <th>Pix</th>
+                            <th>Dinheiro</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
+                    </div>
+
+                    <!--LIMPEZA-->
+                    <div id="limpeza" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Caixa</th>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Quarto</th>
+                            <th>Duração</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
                     </div>
 
                     <!---->
                     <div id="" class="tab-pane fade">
-
-                        <!--Campo Código-->
-                        <div class="control-group" name=""> 
-                          <div class="controls"> 
-                            <h3>Valor em Caixa: R$ <span id="valor_emcaixa">0</span></h3>
-                          </div>
-                        </div>
-  
-                        <!--Campo retirada-->
-                        <div class="control-group" name=""> 
-                          <div class="controls"> 
-                            <input type="text" id="retirada" placeholder="Valor Retirado"> 
-                          </div>
-                        </div>
-  
-                        <!--Botões-->
-                        <div class="form-actions" name="">
-                          <div class="span8">
-                            <div class="span9"> 
-                              <button type="button" class="button btn btn-primary" id=""> 
-                                <span class="button__icon">
-                                  <i class="fa-solid fa-floppy-disk"></i>
-                                </span>
-                                <span class="button__text2">Retirar</span>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Tipo</th>
+                            <th>Bandeira</th>
+                            <th>Porcentagem</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
                     </div>
 
                     <!---->
                     <div id="" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Tipo</th>
+                            <th>Bandeira</th>
+                            <th>Porcentagem</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
+                    </div>
 
-                        <!--Campo Código-->
-                        <div class="control-group" name=""> 
-                            <div class="controls"> 
-                            <h3>Valor em Caixa: R$ <span id="valor_emcaixa">0</span></h3>
-                            </div>
-                        </div>
-    
-                        <!--Campo retirada-->
-                        <div class="control-group" name=""> 
-                            <div class="controls"> 
-                            <input type="text" id="retirada" placeholder="Valor Retirado"> 
-                            </div>
-                        </div>
-    
-                        <!--Botões-->
-                        <div class="form-actions" name="">
-                            <div class="span8">
-                            <div class="span9"> 
-                                <button type="button" class="button btn btn-primary" id=""> 
-                                <span class="button__icon">
-                                    <i class="fa-solid fa-floppy-disk"></i>
-                                </span>
-                                <span class="button__text2">Retirar</span>
-                                </button>
-                            </div>
-                            </div>
-                        </div>
+                    <!---->
+                    <div id="" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Tipo</th>
+                            <th>Bandeira</th>
+                            <th>Porcentagem</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
+                    </div>
+
+                    <!---->
+                    <div id="" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Tipo</th>
+                            <th>Bandeira</th>
+                            <th>Porcentagem</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
+                    </div>
+
+                    <!---->
+                    <div id="" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Tipo</th>
+                            <th>Bandeira</th>
+                            <th>Porcentagem</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
+                    </div>
+
+                    <!---->
+                    <div id="" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Tipo</th>
+                            <th>Bandeira</th>
+                            <th>Porcentagem</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
+                    </div>
+
+                    <!---->
+                    <div id="" class="tab-pane fade">
+                      <table id="relCartoes" class="table table-bordered  dataTable no-footer" role="grid">
+                        <thead>
+                          <tr role="row">
+                            <th>Tipo</th>
+                            <th>Bandeira</th>
+                            <th>Porcentagem</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tabelaRelatorioCartoes"></tbody>
+                      </table>
                     </div>
 
                   </div>
