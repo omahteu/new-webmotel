@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/matrix-style.css">
   <link rel="stylesheet" href="../css/matrix-media.css">
+  <link rel="stylesheet" href="../css/caixa.css">
 
 </head>
 <body>
@@ -288,25 +289,17 @@
       </div>
     </div>
   </div>
-    <!--Container Inicial-->
-    <div id="modau-camareiras" class="modau-container">
-      <div class="modau">
-        <button class="fechar">X</button>
-        <h3 id="titulo_caixa">Ações</h3>
-        <form id="FormMain" name="botoes">
-          <button type="button" name="" id="botaoq1" class="btn manutencao">Manutenção</button>
-          <button type="button" name="" id="botaoq1" class="btn locado">Locação</button>
-          <button type="button" name="" id="botaoq1" class="btn faxina">Faxina</button>
-          <input type="button" id="botao_inferior_um" class="btn btn-warning acoes1" name="botao" value="">
-          <input type="button" id="botao_inferior_dois" class="btn btn-warning acoes2" name="botao" value="">
-          <input type="button" id="botao_inferior_tres"  class="btn btn-warning acoes3" name="botao" value="">
-          <select id="selecionar_camareira">
-              <option value="">Camareiras</option>
-          </select>
-          <button type="button" name="botao" class="btn btn-warning" id="camareira_limpeza" value="">OK</button>
-        </form>
-      </div>s
+  <div id="modau-caixa" class="modau-container">
+    <div class="modau">
+      <button class="fechar">X</button>
+      <h3 id="titulo_caixa">Dados do Caixa</h3>
+      <form id="FormMainCaixa" name="botoes">
+        <input type="text" name="" id="" placeholder="Código do Caixa">
+        <input type="date" name="" id="">
+        <button type="button" name="botao" class="btn btn-warning" id="camareira_limpeza" value="">Buscar</button>
+      </form>
     </div>
+  </div>
   </div>
 </body>
   <script src="../js/jquery.js"></script>
@@ -320,5 +313,7 @@
   <script src="../js/setup/blockConfigsCaixa.js"></script>
 
   <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
+
+  <script src="../js/setup/caixa.js"></script>
   
 </html>

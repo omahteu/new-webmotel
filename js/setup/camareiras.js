@@ -13,5 +13,3 @@ export function fimModal(){
     $('#modau-camareiras').removeClass('modau-container mostrar').addClass('modau-container')
     document.getElementById('FormMain').reset()
 }
-
-
