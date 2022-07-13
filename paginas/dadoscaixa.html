@@ -294,9 +294,9 @@
       <button class="fechar">X</button>
       <h3 id="titulo_caixa">Dados do Caixa</h3>
       <form id="FormMainCaixa" name="botoes">
-        <input type="text" name="" id="" placeholder="Código do Caixa">
-        <input type="date" name="" id="">
-        <button type="button" name="botao" class="btn btn-warning" id="camareira_limpeza" value="">Buscar</button>
+        <input type="text" name="" id="codigo_caixa" placeholder="Código do Caixa">
+        <input type="date" name="" id="data_filtro">
+        <button type="button" name="botao" class="btn btn-warning" id="buscar_dados" value="">Buscar</button>
       </form>
     </div>
   </div>
@@ -314,6 +314,8 @@
 
   <script src="https://kit.fontawesome.com/88ea2c002f.js" crossorigin="anonymous"></script>
 
-  <script src="../js/setup/caixa.js"></script>
+  <script type="module" src="../js/setup/caixa.js"></script>
+
+  <script type="module" src="../js/relatorios/dadosCaixa.js"></script>
   
 </html>

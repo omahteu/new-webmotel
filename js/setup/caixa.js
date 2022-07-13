@@ -14,7 +14,7 @@ $(document).ready(function(){
     modal.classList.add('mostrar')
 })
 
-function fimModalCaixa(){
+export function fimModalCaixa(){
     $('#modau-caixa').removeClass('modau-container mostrar').addClass('modau-container')
     document.getElementById('FormMainCaixa').reset()
 }
