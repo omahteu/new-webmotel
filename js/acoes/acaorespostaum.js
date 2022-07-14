@@ -8,6 +8,9 @@ import { fimModal } from "../setup/camareiras.js"
 import { busca_permanencia } from "../setup/permanencia.js"
 import { atualiza_status } from "../setup/atualiza.js"
 import { ultima_limpeza } from "../botoes/limpar.js"
+import { data_atual } from "../geradores/data.js"
+import { hora_atual } from "../geradores/hora.js"
+import { envia_dados_limpeza } from "../caixa/limpeza.js"
 import { pause_plus } from "../contadores/um_plus.js"
 import { reset_plus } from "../contadores/um_plus.js"
 
@@ -52,6 +55,9 @@ export function resposta1(status){
     } else if(status == "Encerrar Limpeza"){
         if(confirm('DESEJA DISPONIBILIZAR O QUARTO ' + quarto + ' ?') == true){
             camareiras()
+            console.log($("#usuario_sistema").text())
+            console.log(data_atual())
+            console.log(hora_atual())
         } else {
             console.log('cancelado')
         }

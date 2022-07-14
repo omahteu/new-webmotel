@@ -22,6 +22,10 @@ export var link = [
     "https://demomotelapi.herokuapp.com/usuarios/",
     "https://demomotelapi.herokuapp.com/valores/",
     "https://demomotelapi.herokuapp.com/movimentos/",
+    "https://demomotelapi.herokuapp.com/faxina/",
+    "https://demomotelapi.herokuapp.com/manutencao/",
+    "https://demomotelapi.herokuapp.com/revisao/",
+    "https://demomotelapi.herokuapp.com/troca/"
 ]
 
 /*
@@ -48,4 +52,8 @@ export var link = [
 20: USUÁRIO
 21: VALOR
 22: MOVIMENTAÇÃO
+23: FAXINA
+24: MANUTENÇÃO
+25: REVISÃO
+26: TROCA
 */
