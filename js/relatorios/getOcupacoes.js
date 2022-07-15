@@ -10,6 +10,7 @@ async function relatorioOcupacoes(){
     var tabela = document.getElementById('tabelaRelatorioOcupacoes')
     tabela.innerHTML = ''
     dados.forEach(elemento => {
+        var usuario = elemento.usuario
         var data = elemento.data
         var codigo = elemento.codigo
         var quarto = elemento.quarto
@@ -17,6 +18,7 @@ async function relatorioOcupacoes(){
         var saida = elemento.saida
         var total = elemento.total
         tabela.innerHTML += '<tr>'+
+                                '<td>' + usuario + '</td>'+
                                 '<td>' + data + '</td>'+
                                 '<td>' + codigo + '</td>'+
                                 '<td>' + quarto + '</td>'+

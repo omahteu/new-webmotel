@@ -19,6 +19,7 @@ function desistir(){
         alert("campo vazio")
     } else {
         texto.push(motivo)
+        let usuario = $("#usuario_sistema").text()
         let quarto = localStorage.getItem("quarto")
         var box = JSON.parse(localStorage.getItem("dadosQuarto"))
         let dataAtual = data_atual()
@@ -27,6 +28,7 @@ function desistir(){
         let saida = hora_atual()
         localStorage.setItem(`codigo${quarto}`, codigo_ocupacao)
         dados = {
+            usuario: usuario,
             data: dataAtual,
             codigo: codigo_ocupacao,
             quarto: quarto,

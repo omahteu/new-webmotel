@@ -10,10 +10,8 @@ import { fimModal } from "../setup/camareiras.js"
 $(".manutencao").click(function() {
     var quarto = $('#quarto_painel').text()
     var obs = prompt('INFORME O MOTIVO DA MANUTENÇÃO!')
-    let hatexto = ''
+    localStorage.setItem("motivo", obs)
     if(obs != null){
-        hatexto = obs
-        //$("#muralObs").text(obs) <--
         if(quarto == "1"){
             var flags = modos.slice(0, 3)
             manutencao(quarto, flags[0], flags[1], flags[2])

@@ -278,7 +278,7 @@
         </div>
     </div>
 
-    <!--Container Inicial-->
+    <!--MODAU MENU, CAMAREIRAS-->
     <div id="modau-camareiras" class="modau-container">
         <div class="modau">
           <button class="fechar">X</button>
@@ -294,6 +294,21 @@
                 <option value="">Camareiras</option>
             </select>
             <button type="button" name="botao" class="btn btn-warning" id="camareira_limpeza" value="">OK</button>
+          </form>
+        </div>
+    </div>
+
+    <div id="modau-troca" class="modau-container">
+        <div class="modau">
+          <button class="fechar">X</button>
+          <h3 id="titulo_caixa">Troca de Suítes</h3>
+          <form id="FormMainTroca" name="botoes">
+            <input type="text" id="quarto_antigo" disabled>
+            <select id="quartos_disponiveis">
+                <option hidden>Suítes Disponíveis</option>
+            </select>
+
+            <button type="button" name="botao" class="btn btn-warning" id="substituir" value="">Substituir</button>
           </form>
         </div>
     </div>
@@ -353,4 +368,10 @@
     <script type="module" src="../js/cadastros/postAuditoria.js"></script>
     
     <script type="module" src="../js/contadores/auditoria.js"></script>
+
+    <script type="module" src="../js/setup/troca.js"></script>
+
+    <script type="module" src="../js/relatorios/quartosDisponiveis.js"></script>
+
+    <script type="module" src="../js/setup/substituir.js"></script>
 </html>

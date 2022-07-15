@@ -102,6 +102,7 @@ function gera_codigo(){
 }
 
 function ocupacao(){
+    let usuario = $("#usuario_sistema").text()
     let quarto = localStorage.getItem("quarto")
     var box = JSON.parse(localStorage.getItem("dadosQuarto"))
     let dataAtual = data_atual()
@@ -111,6 +112,7 @@ function ocupacao(){
     let total = $("#totalGeral").text()
     localStorage.setItem(`codigo${quarto}`, codigo_ocupacao)
     var dados = {
+        usuario: usuario,
         data: dataAtual,
         codigo: codigo_ocupacao,
         quarto: quarto,
