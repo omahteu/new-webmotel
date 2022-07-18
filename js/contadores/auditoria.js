@@ -1,6 +1,7 @@
 import { hora_atual } from "../geradores/hora.js"
 import { horas_para_minutos } from "../geradores/minuto.js"
 import { data_atual } from "../geradores/data.js"
+import { link } from "../setup/index.js"
 
 var horas = []
 
@@ -11,6 +12,8 @@ $(document).ready(function() {
 window.onbeforeunload = () => {
     saindo()
     calc()
+    tempo_quarto()
+    return 'Tem a certeza que quer fechar a janela?';
 }
 
 function auditando(){
@@ -39,4 +42,21 @@ function calc(){
         hoje: hoje
     }
     localStorage.setItem('permanencia', JSON.stringify(dados))
+}
+
+async function tempo_quarto(){
+    const resposta = await fetch(link[11])
+    const dados = await resposta.json()
+    var ver = []
+    dados.forEach(e => {
+        var restaurar = e.quarto
+        ver.push(restaurar)
+    });
+    for(var i = 0; i < ver.length; i++){
+        var hora = $(`#hora${ver[i]}`).text()
+        var minutos = $(`#minuto${ver[i]}`).text()
+        var segundos = $(`#segundo${ver[i]}`).text()
+        var permanencia = hora + ":" + minutos + ":" + segundos
+        localStorage.setItem(ver[i], permanencia)
+    }
 }

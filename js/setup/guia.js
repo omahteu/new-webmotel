@@ -1,6 +1,6 @@
 import { link } from "./index.js"
 
-window.onbeforeunload = function() {
+window.onbeforeunload = () => {
     tempo_quarto()
     return 'Tem a certeza que quer fechar a janela?';
  };
