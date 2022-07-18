@@ -1,4 +1,5 @@
 import { link } from "../setup/index.js"
+import {start_plusx} from "../contadores/hub_contador.js"
 
 $("#substituir").click(function(){
     $.get(link[5], function(e){
@@ -13,7 +14,7 @@ $("#substituir").click(function(){
                     'Accept' : 'application/json',
                     'Content-Type' : 'application/json'
                 },
-                url : link[5] + id + "/",
+                url : link[5] + id + "/#",
                 type : 'PATCH',
                 data : JSON.stringify({quarto: "2"}),
                 success : function() {
@@ -29,7 +30,7 @@ $("#substituir").click(function(){
                     'Accept' : 'application/json',
                     'Content-Type' : 'application/json'
                 },
-                url : link[15] + id + "/",
+                url : link[15] + id + "#/",
                 type : 'PATCH',
                 data : JSON.stringify({quarto: "2"}),
                 success : function() {
@@ -39,6 +40,8 @@ $("#substituir").click(function(){
                     console.log(`ERRO: ${textStatus} - ${errorThrown}`)
                 }
             })
+            // TEMPO
+            start_plusx("2", '1', '2', '3')
         })
     })
 })

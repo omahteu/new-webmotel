@@ -3,7 +3,6 @@ import { desfazer } from "../tags/desfazer.js"
 import { faxina } from "../tags/faxina.js"
 import { limpeza } from "../tags/limpeza.js"
 import { camareiras } from "../tags/camareira.js"
-import { pause, reset, start } from '../contadores/contadorUm.js'
 import { fimModal } from "../setup/camareiras.js"
 import { busca_permanencia } from "../setup/permanencia.js"
 import { atualiza_status } from "../setup/atualiza.js"
@@ -15,10 +14,11 @@ import { envia_dados_faxina } from "../caixa/faxina.js"
 import { envia_dados_manutencao } from "../caixa/manutencao.js"
 import { inicioModalTroca } from "../setup/troca.js"
 import { ver_quartos_disponiveis } from "../relatorios/quartosDisponiveis.js"
+import { iniciar, parar, reiniciar } from "../contadores/index.js"
 
 var rota = 'rota'
 
-export function resposta1(status){
+export function reacao(status){
     var quarto = $("#numquarto").text()
     var flags = $("#intervalo").text().split(",")
     if(status == "Disponibilizar Quarto"){
@@ -41,20 +41,20 @@ export function resposta1(status){
         setTimeout( () => {fimModal()}, 1001)
         setTimeout( () => {
             alert(`DESEJA DISPONIBILIZAR O QUARTO ${quarto}?`)
-            pause()
-            reset()
+            parar()
+            reiniciar(quarto)
         }, 500)
     } else if(status == "Iniciar Faxina"){
         alert(`DESEJA INICIAR FAXINA NO QUARTO ${quarto}?`)
-        pause()
-        reset()
-        start()
+        parar()
+        reiniciar(quarto)
+        iniciar(quarto)
         setTimeout( () => {faxina(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
         setTimeout( () => {fimModal()}, 1001)
     } else if(status == "Iniciar Limpeza"){
         alert(`DESEJA INICIAR LIMPEZA NO QUARTO ${quarto}?`)
-        reset()
-        start()
+        reiniciar(quarto)
+        iniciar(quarto)
         setTimeout( () => {limpeza(quarto, rota, flags[0], flags[1], flags[2])}, 1000)
         setTimeout( () => {atualiza_status(quarto, "limpeza"), 1500})
         setTimeout( () => {fimModal()}, 1001)
@@ -70,13 +70,14 @@ export function resposta1(status){
             var permanencia = h + ":" + m + ":" + s
             localStorage.setItem("tt", permanencia)
         }, 150)
+        ver_quartos_disponiveis()
         setTimeout( () => {
-            ver_quartos_disponiveis()
-        })
+            busca_permanencia(quarto, "passagem")
+        }, 200)
     } else if(status == "Encerrar"){
         if(confirm(`DESEJA ENCERRAR x QUARTO ${quarto}?`)){
-            pause()
-            busca_permanencia()
+            parar()
+            setTimeout( () => {busca_permanencia(quarto)}, 500)
             setTimeout( () => {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
             sessionStorage.setItem('quarto', quarto)
             window.open('../paginas/checkout.html', '_blank')
@@ -107,8 +108,8 @@ export function resposta1(status){
         }
     } else if(status == "OK"){
         alert('Camareira Selecionada')
-        pause()
-        reset()
+        parar()
+        reiniciar(quarto)
         setTimeout( () => {fimModal()}, 500)
         setTimeout( () => {desfazer(quarto, flags[0], flags[1], flags[2])}, 600)
         setTimeout( () => {ultima_limpeza(quarto)}, 800)

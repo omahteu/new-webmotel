@@ -42,7 +42,7 @@ async function definindo_tempo(){
         var diferenca_formatada_horas_texto = String(diferenca_formatada_horas).split(":")
 
         if(quarto == "1"){
-            start_plus(diferenca_formatada_horas_texto[0], diferenca_formatada_horas_texto[1], s)
+            start_plus(quarto, diferenca_formatada_horas_texto[0], diferenca_formatada_horas_texto[1], s)
         } else if(quarto == "2"){
             console.log("Casa")
         }
