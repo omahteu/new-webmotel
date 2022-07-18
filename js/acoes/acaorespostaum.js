@@ -64,6 +64,11 @@ export function resposta1(status){
         setTimeout( () => {
             var antigo = $("#quarto_painel").text()
             $("#quarto_antigo").val(antigo)
+            var h = $("#hour1").text()
+            var m = $("#minute1").text()
+            var s = $("#second1").text()
+            var permanencia = h + ":" + m + ":" + s
+            localStorage.setItem("tt", permanencia)
         }, 150)
         setTimeout( () => {
             ver_quartos_disponiveis()
