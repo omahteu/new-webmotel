@@ -1,52 +1,52 @@
 "use strict";
 
-let hour
-let minute
-let second
-let millisecond = 0
+let hora
+let minuto
+let segundo
+let msegundo = 0
 let cron;
 
 
-export function start_plus(a, b, c){
-    hour = Number(a)
-    minute = Number(b)
-    second = Number(c)
-    cron = setInterval(() => { times_plus() }, 10);
+export function start_plus(id, a, b, c){
+    hora = Number(a)
+    minuto = Number(b)
+    segundo = Number(c)
+    cron = setInterval(() => { times_plus(id) }, 10);
 }
 
 export function pause_plus() {
     clearInterval(cron);
 }
 
-export function reset_plus() {
-    hour = 0;
-    minute = 0;
-    second = 0;
-    millisecond = 0;
-    document.getElementById('hour1').innerText = '00';
-    document.getElementById('minute1').innerText = '00';
-    document.getElementById('second1').innerText = '00';
+export function reset_plus(id) {
+    hora = 0;
+    minuto = 0;
+    segundo = 0;
+    msegundo = 0;
+    document.getElementById(`hora${id}`).innerText = '00';
+    document.getElementById(`minuto${id}`).innerText = '00';
+    document.getElementById(`segundo${id}`).innerText = '00';
 }
   
-export function times_plus(){
-    if ((millisecond += 10) == 1000) {
-        millisecond = 0;
-        second++;
+export function times_plus(id){
+    if ((msegundo += 10) == 1000) {
+        msegundo = 0;
+        segundo++;
     }
-    if (second == 60) {
-        second = 0;
-        minute++;
+    if (segundo == 60) {
+        segundo = 0;
+        minuto++;
     }
-    if (minute == 60) {
-        minute = 0;
-        hour++;
+    if (minuto == 60) {
+        minuto = 0;
+        hora++;
     }
-    $("#hour1").text("")
-    $("#hour1").text(returnData(hour))
-    $("#minute").text("")
-    $("#minute1").text(returnData(minute))
-    $("#minute").text("")
-    $("#second1").text(returnData(second))
+    $(`hora${id}`).text("")
+    $(`hora${id}`).text(returnData(hora))
+    $(`minuto${id}`).text("")
+    $(`minuto${id}`).text(returnData(minuto))
+    $(`minuto${id}`).text("")
+    $(`segundo${id}`).text(returnData(segundo))
 }
   
 export function returnData(input) {

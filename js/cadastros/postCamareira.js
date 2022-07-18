@@ -16,9 +16,9 @@ $("#salvarFormPostCamareira").click(function() {
 
 $("#camareira_limpeza").click(function() {
     var quarto = $("#quarto_painel").text()
-    var hora = $("#hour1").text()
-    var minutos = $("#minute1").text()
-    var segundos = $("#second1").text()
+    var hora = $(`#hora${quarto}`).text()
+    var minutos = $(`#minuto${quarto}`).text()
+    var segundos = $(`#segundo${quarto}`).text()
     var permanencia = hora + ":" + minutos + ":" + segundos
     var nome = $('#selecionar_camareira').find(":selected").val()
     var quarto = $("#numquarto").text()
