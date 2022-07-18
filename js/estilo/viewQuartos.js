@@ -50,13 +50,16 @@ function mostraVeiculo(identificador){
 	})
 }
 
-$(document).on('click', '[class="card"]', function() {
+$(document).ready(function() {
+	
 	var ind = $(this)
 	var ind2 = $(ind[0].children[0])
 	var ind3 = $(ind2[0].children[1])
 	var identificador = ind3.text()
+	console.log(identificador)
 	setTimeout( () => {
-		var cor = $(`.cardBox .card:nth-child(${identificador})`).css("background-color")
+		var cor = $(`.cardBox, .card:nth-child(${identificador})`).css("background-color")
+		console.log(cor)
 		if(cor == 'rgb(169, 169, 169)'){
 			$("#tipo").text('manutencao')
 		} else if(cor == 'rgb(255, 0, 0)'){
