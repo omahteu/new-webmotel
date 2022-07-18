@@ -1,7 +1,4 @@
-import { resposta1 } from './acaorespostaum.js'
-import { resposta2 } from './acaoRespostaDois.js'
-import { resposta3 } from './acaoRespostaTres.js'
-import { resposta4 } from './acaoRespostaQuatro.js'
+import { reacao } from "./index.js"
 
 $("[name=botao]").click(function(){
     var status = $(this).val()
@@ -16,16 +13,16 @@ $("[name=botao]").click(function(){
     var quartos = []
     quartos.push(quarto)
     if(numeroQuarto == "1"){
-        resposta1(status)
+        reacao(status)
         localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
     } else if(numeroQuarto == "2"){
-        resposta2(status)
+        reacao(status)
         localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
     } else if(numeroQuarto == "3"){
-        resposta3(status)
+        reacao(status)
         localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
     } else if(numeroQuarto == "4"){
-        resposta4(status)
+        reacao(status)
         localStorage.setItem('dadosQuarto', JSON.stringify(quartos))
     }
 })

@@ -1,8 +1,8 @@
-export function busca_permanencia(){
+export function busca_permanencia(id, nome, variavel){
     var quarto = $("#quarto_painel").text()
-    var hora = $("#hour1").text()
-    var minutos = $("#minute1").text()
-    var segundos = $("#second1").text()
+    var hora = $(`hour${id}`).text()
+    var minutos = $(`minute${id}`).text()
+    var segundos = $(`second${id}`).text()
     var permanencia = hora + ":" + minutos + ":" + segundos
-    localStorage.setItem(quarto, String(permanencia))
+    localStorage.setItem(nome != undefined ? nome : quarto , String(variavel == undefined ? permanencia : variavel))
 }

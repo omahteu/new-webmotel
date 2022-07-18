@@ -25,7 +25,7 @@ async function busca_e_exibe_quartos(){
         $(".cardBox").append(`<li class="card">`+
                                 '<div>'+
                                     '<h3 id="contador">'+
-                                        `<span id="hour${indice}">00</span>:<span id="minute${indice}">00</span>:<span id="second${indice}">00</span>`+
+                                        `<span id="hora${indice}">00</span>:<span id="minuto${indice}">00</span>:<span id="segundo${indice}">00</span>`+
                                     '</h3>'+
                                     `<div class="cardName" id="suite">${indice}</div>`+
                                     `<h4 id="tipo_suite${indice}">${tipo_quarto}</h4>`+
