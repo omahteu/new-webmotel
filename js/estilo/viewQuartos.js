@@ -51,47 +51,46 @@ function mostraVeiculo(identificador){
 }
 
 $(document).ready(function() {
-	
-	var ind = $(this)
-	var ind2 = $(ind[0].children[0])
-	var ind3 = $(ind2[0].children[1])
-	var identificador = ind3.text()
-	console.log(identificador)
 	setTimeout( () => {
-		var cor = $(`.cardBox, .card:nth-child(${identificador})`).css("background-color")
-		console.log(cor)
-		if(cor == 'rgb(169, 169, 169)'){
-			$("#tipo").text('manutencao')
-		} else if(cor == 'rgb(255, 0, 0)'){
-			$("#tipo").text('locado')
-		} else if(cor == 'rgb(255, 228, 196)'){
-			$("#tipo").text('faxina')
-		} else if(cor == 'rgb(75, 192, 192)'){
-			$("#tipo").text('livre')
-		}
-		if(identificador == '1'){
-			var flags = modos.slice(0, 3)
-			$("#intervalo").text(modos.slice(0, 3))
-			backupInfos(identificador, flags[0], flags[1], flags[2])
-		} else if(identificador == '2'){
-			var flags = modos.slice(3, 6)
-			$("#intervalo").text(modos.slice(3, 6))
-			backupInfos(identificador, flags[0], flags[1], flags[2])
-		} else if(identificador == '3'){
-			var flags = modos.slice(6, 9)
-			$("#intervalo").text(modos.slice(6, 9))
-			backupInfos(identificador, flags[0], flags[1], flags[2])
-		} else if(identificador == 4){
-			var flags = modos.slice(9, 12)
-			$("#intervalo").text(modos.slice(9, 12))
-			backupInfos(identificador, flags[0], flags[1], flags[2])
-		}
-		let tipo = $("#tipo").text()
-		let tipos = ['locado']
-		if(tipos.includes(tipo)){
-			mostraProduto(identificador)
-			mostraVeiculo(identificador)
-		}
+		var identificador = $("[id='suite']").text()
+		const strReverse = identificador.split('')
+		strReverse.forEach(e => {
+			var cor = $(`.cardBox .card:nth-child(${e})`).css("background-color")
+			if(cor == 'rgb(169, 169, 169)'){
+				$("#tipo").text('manutencao')
+			} else if(cor == 'rgb(255, 0, 0)'){
+				$("#tipo").text('locado')
+			} else if(cor == 'rgb(255, 228, 196)'){
+				$("#tipo").text('faxina')
+			} else if(cor == 'rgb(75, 192, 192)'){
+				$("#tipo").text('livre')
+			}
+			if(e == '1'){
+				var flags = modos.slice(0, 3)
+				console.log(flags)
+				$(`#intervalo${e}`).text(modos.slice(0, 3))
+				backupInfos(e, flags[0], flags[1], flags[2])
+			} else if(e == '2'){
+				var flags = modos.slice(3, 6)
+				console.log(flags)
+				$(`#intervalo${e}`).text(modos.slice(3, 6))
+				backupInfos(e, flags[0], flags[1], flags[2])
+			} else if(e == '3'){
+				var flags = modos.slice(6, 9)
+				$("#intervalo").text(modos.slice(6, 9))
+				backupInfos(e, flags[0], flags[1], flags[2])
+			} else if(e == '4'){
+				var flags = modos.slice(9, 12)
+				$("#intervalo").text(modos.slice(9, 12))
+				backupInfos(e, flags[0], flags[1], flags[2])
+			}
+			let tipo = $("#tipo").text()
+			let tipos = ['locado']
+			if(tipos.includes(tipo)){
+				mostraProduto(e)
+				mostraVeiculo(e)
+			}
+		})
 	}, 800);
 })
 

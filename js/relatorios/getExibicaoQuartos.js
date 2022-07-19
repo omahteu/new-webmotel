@@ -35,6 +35,7 @@ async function busca_e_exibe_quartos(){
                                         '<i class="fa fa-gear"></i>'+
                                     '</div>'+
                                 '</a>'+
+                                `<span id="intervalo${indice}" hidden></span>`+
                             '</li>')
     }
 }

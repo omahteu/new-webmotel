@@ -23,18 +23,14 @@ export function reacao(status){
     var flags = $("#intervalo").text().split(",")
     if(status == "Disponibilizar Quarto"){
         var condicao = $("#tipo").text()
+        var h = $(`#hora${quarto}`).text()
+        var m = $(`#minuto${quarto}`).text()
+        var s = $(`#segundo${quarto}`).text()
+        var tempo = `${h}:${m}:${s}`
         if(condicao == "faxina"){
-            var h = $("#hour1").text()
-            var m = $("#minute1").text()
-            var s = $("#second1").text()
-            var tempo = `${h}:${m}:${s}`
             envia_dados_faxina($("#usuario_sistema").text(), data_atual(), hora_atual(), $("#suite").text(), tempo)
         } else if(condicao == "manutencao"){
             var razao = localStorage.getItem("motivo")
-            var h = $("#hour1").text()
-            var m = $("#minute1").text()
-            var s = $("#second1").text()
-            var tempo = `${h}:${m}:${s}`
             envia_dados_manutencao($("#usuario_sistema").text(), data_atual(), hora_atual(), $("#suite").text(), razao, tempo)
         }
         setTimeout( () => {desfazer(quarto, flags[0], flags[1], flags[2])}, 1000)
@@ -64,15 +60,15 @@ export function reacao(status){
         setTimeout( () => {
             var antigo = $("#quarto_painel").text()
             $("#quarto_antigo").val(antigo)
-            var h = $("#hour1").text()
-            var m = $("#minute1").text()
-            var s = $("#second1").text()
+            var h = $(`#hora${quarto}`).text()
+            var m = $(`#minuto${quarto}`).text()
+            var s = $(`#segundo${quarto}`).text()
             var permanencia = h + ":" + m + ":" + s
             localStorage.setItem("tt", permanencia)
         }, 150)
         ver_quartos_disponiveis()
         setTimeout( () => {
-            busca_permanencia(quarto, "passagem")
+            busca_permanencia(quarto)
         }, 200)
     } else if(status == "Encerrar"){
         if(confirm(`DESEJA ENCERRAR x QUARTO ${quarto}?`)){
@@ -89,10 +85,10 @@ export function reacao(status){
         if(confirm('DESEJA DISPONIBILIZAR O QUARTO ' + quarto + ' ?') == true){
             camareiras()
             setTimeout( () => {
-                var h = $("#hour1").text()
-                var m = $("#minute1").text()
-                var s = $("#second1").text()
-                var permanencia = h + ":" + m + ":" + s
+                var h = $(`#hora${quarto}`).text()
+                var m = $(`#minuto${quarto}`).text()
+                var s = $(`#segundo${quarto}`).text()
+                var permanencia = `${h}:${m}:${s}`
                 var dados = {
                     caixa: $("#usuario_sistema").text(),
                     data: data_atual(),

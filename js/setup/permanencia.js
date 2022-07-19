@@ -4,5 +4,5 @@ export function busca_permanencia(id, nome, variavel){
     var minutos = $(`#minuto${id}`).text()
     var segundos = $(`#segundo${id}`).text()
     var permanencia = hora + ":" + minutos + ":" + segundos
-    localStorage.setItem(nome != undefined ? nome : quarto , String(variavel == undefined ? permanencia : variavel))
+    localStorage.setItem(quarto, String(variavel == undefined ? permanencia : variavel))
 }
