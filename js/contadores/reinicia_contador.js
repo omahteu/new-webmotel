@@ -3,7 +3,8 @@ import { link } from "../setup/index.js"
 
 var box = []
 
-$(document).click(function() {
+$(document).on("click", '[class="card"]', function() {
+    console.log(this)
     definindo_tempo()
 })
 
@@ -44,6 +45,8 @@ async function definindo_tempo(){
 
 
         var tempo_formatado = String(dados).split(":")
+        
+        iniciara(quarto, tempo_formatado[0], tempo_formatado[1], tempo_formatado[2])
         //console.log(tempo_formatado)
         /*
         var hora_salva = e.datahora
