@@ -1,8 +1,8 @@
-import { hora_atual } from "../geradores/hora.js"
+import { hora_atual_completa } from "../geradores/hora.js"
 import { link } from "../setup/index.js";
 
 export function index(){
-    var datahora = hora_atual()
+    var datahora = hora_atual_completa()
     var valor = $("#valor-quarto").text()
     var quarto = $("#numquarto").text()
     var tipo = $("#tipo").text()

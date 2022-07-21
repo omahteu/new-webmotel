@@ -9,3 +9,11 @@ export function hora_atual(){
     //var segundo = base.getSeconds()
     return `${hora}:${minuto}`
 }
+
+export function hora_atual_completa(){
+    var base = new Date();
+    var hora = zeroFill(base.getHours())
+    var minuto = zeroFill(base.getMinutes())
+    var segundo = base.getSeconds()
+    return `${hora}:${minuto}:${segundo}`
+}

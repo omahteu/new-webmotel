@@ -1,11 +1,11 @@
 "use strict";
 
-export let hora = 0;
-export let minuto = 0;
-export let segundo = 0;
-export let msegundo = 0;
+export let hora = 0
+export let minuto = 0
+export let segundo = 0
+export let msegundo = 0
 
-export let kronos;
+export let kronos
 export let id
 
 export  function iniciar(id) {
@@ -55,6 +55,4 @@ export function retorno(input) {
   } else {
       return `0${input}`
   }
-
-  //return input > 10 ? input : `0${input}`
 }

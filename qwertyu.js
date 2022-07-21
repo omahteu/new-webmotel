@@ -1,47 +1,11 @@
-$(document).ready(function(){
-    var patch = {
-        "quantidade" : "50"
-    }
-    
-<<<<<<< HEAD
-    $.ajax({
-       type: 'PATCH',
-       url: "https://demomotelapi.herokuapp.com/produtos/",
-       data: JSON.stringify(patch),
-       processData: false,
-       contentType: 'application/merge-patch+json',
-    
-       /* success and error handling omitted for brevity */
-    });
-})
-=======
-        po.document.write(
-            `<h1>${qw[0]}</h1>`
-        )
-        po.document.write(
-                '</body>'+
-            '</html>'
-        )
-    }, 2000)
-    */
-    setTimeout( function(){
-        exportReportToExcel()
-    }, 2000)
-})
+var nu = 09
+console.log(nu)
+console.log(typeof nu)
 
-
-var qw = []
-
-function das(){
-    $.get("https://demomotelapi.herokuapp.com/credito/", function(e){
-        e.forEach(element => {
-            qw.push(element)
-        });
-    })
-    $.get("https://demomotelapi.herokuapp.com/debito/", function(el){
-        el.forEach(ele => {
-            qw.push(ele)
-        })
-    })
+if(nu >= 10){
+    console.log(nu)
+} else if(Number(nu) >= 1 && Number(nu) <= 9){
+    console.log(`0${nu}`) 
+} else if(Number(nu) == 0){
+    console.log(`${nu}`)
 }
->>>>>>> 9d3b887538b497f1f008235352a8d3d2174afe6c
